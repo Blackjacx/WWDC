@@ -1,4 +1,4 @@
-# WWDC
+# WWDC 2019 Session Notes
 
 Usually it is much faster to read through some bulet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
@@ -6,9 +6,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
-## Session Notes WWDC 2019
-
-### Table of Contents
+## Table of Contents
 
 - [What's New in Swift](#whats-new-in-swift)
 - [Introducing SF Symbols](#introducing-sf-symbols)
@@ -37,7 +35,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - [Cryptography and Your Apps](#cryptography-and-your-apps)
 - [All About Notarization](#all-about-notarization)
 
-### What's New in Swift
+## What's New in Swift
 
 https://developer.apple.com/wwdc19/402
 
@@ -50,7 +48,7 @@ https://developer.apple.com/wwdc19/402
 - **Property Wrappers:** Wrapper type to define custom access patterns. Property can adopt this by adding attribute to its declaration. In the case of UserDefaults you can define properties that know how to read/write from/to UserDefaults.
 - **Embedded DSLs**
 
-### Introducing SF Symbols
+## Introducing SF Symbols
 
 https://developer.apple.com/wwdc19/206
 
@@ -75,7 +73,7 @@ https://developer.apple.com/wwdc19/206
 - **No frame settings necessary for NSTextAttachment** for placing images in text
 - **UIImage tint support** `image.withTintColor(UIColor)` - yeah 🥳 
 
-### Advances in Foundation
+## Advances in Foundation
 
 https://developer.apple.com/wwdc19/723
 
@@ -92,7 +90,7 @@ https://developer.apple.com/wwdc19/723
 - **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
 - Use `DataProtocol`instead of `UInt8`
 
-### What's New In App Store Connect
+## What's New In App Store Connect
 
 https://developer.apple.com/wwdc19/301
 
@@ -108,7 +106,7 @@ https://developer.apple.com/wwdc19/301
 - **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3+. Only for homescreen and storage deletions. Resetting device doesn't count.
 - **24h live dashboard** hourly updated statistics for all apps to better understand sales data (e.g. in-app purchase) as it is rolled out
 
-### Great Developer Habits
+## Great Developer Habits
 
 https://developer.apple.com/wwdc19/239
 
@@ -142,7 +140,7 @@ https://developer.apple.com/wwdc19/239
   - Have a plan when a dependency goes away or is not maintained anymore
   - Ensure privacy
 
-### Writing Great Accessibility Labels
+## Writing Great Accessibility Labels
 
 https://developer.apple.com/wwdc19/254
 
@@ -153,7 +151,7 @@ https://developer.apple.com/wwdc19/254
   - should contain context if multiple similar elements visible (multiple add buttons)
 - don't add redundant context, e.g. if you're in a music player avoid `song` from the accessibility label of next, previous, ...
 
-### What's New in Xcode 11
+## What's New in Xcode 11
 
 https://developer.apple.com/wwdc19/401
 
@@ -191,7 +189,7 @@ https://developer.apple.com/wwdc19/401
 - **SwiftUI** enables `Canvas previews, Code and Canvas Editors, Code Hot Swapping, Rich Preview API, Preview Pinning, Instruments Template, On-Device Previews, Action Popover Actions, Library Views and Modifiers, Canvas Editor for Code, Preview Debugging, Development Time Assets`
 - **Most Awesome SwiftUI Tutorials I've Ever Seen Right In Xcode's Documentation Window**
 
-### What's New in Authentication
+## What's New in Authentication
 
 https://developer.apple.com/wwdc19/516
 
@@ -202,7 +200,7 @@ https://developer.apple.com/wwdc19/516
 - **Weak Password Assistant** detects weak passwords and offers you to change it
 - **ASWebAuthenticationSession** provides easy OAuth workflow and deprecates SFAuthenticationSession
 
-### Introducing Sign In with Apple
+## Introducing Sign In with Apple
 
 https://developer.apple.com/wwdc19/706
 
@@ -230,7 +228,7 @@ https://developer.apple.com/wwdc19/706
 - Listen to `NSNotification.Name.ASAuthorizationAppleIDProviderCredentialRevoked` and sign the user out if called
 - **Password Autofill** integrates with Apple Sign In. Triggerd if the device detects a stored credential
 
-### Building Great Shortcuts
+## Building Great Shortcuts
 
 https://developer.apple.com/wwdc19/805
 
@@ -242,7 +240,7 @@ https://developer.apple.com/wwdc19/805
 - **Input and Output** concept used to make actions work together. Actions can now output information for others to use, e.g. action could find a note wheas action 2 processes this. Both can be chained together.
 - **Intent Editor** lets the developer modify intents
 
-### Designing Great Shortcuts
+## Designing Great Shortcuts
 
 https://developer.apple.com/wwdc19/806
 
@@ -261,7 +259,7 @@ https://developer.apple.com/wwdc19/806
 - **Don't Include Users Name** since it might sound repetitive
 - **Avoid first-person pronouns** use something like *There are the following options*
 
-### Integrating with Siri Event Suggestions
+## Integrating with Siri Event Suggestions
 
 https://developer.apple.com/wwdc19/243
 
@@ -288,7 +286,7 @@ https://developer.apple.com/wwdc19/243
     - explicitly via UI elements
   - If reservation is cancelled, donate the reservation with `reservationStatus` set to `.cancelled`
 
-### Modern Swift API Design
+## Modern Swift API Design
 
 https://developer.apple.com/wwdc19/415
 
@@ -319,7 +317,7 @@ https://developer.apple.com/wwdc19/415
   - Examples from SwiftUI are `@State`, `@Binding`
 - Use protocols for code reuse not for classification
 
-### Core NFC Enhancements
+## Core NFC Enhancements
 
 https://developer.apple.com/wwdc19/715
 
@@ -339,7 +337,7 @@ https://developer.apple.com/wwdc19/715
 - **Native Tag Reading** supports also MIFARE, ISO15693, FeliCa (from Sony - heavily used by transit and payment sytems in Japan)
 - Watch technical session video for implementation details to all supported **Native Tag Reading**
 
-### Testing in Xcode
+## Testing in Xcode
 
 https://developer.apple.com/wwdc19/413
 
@@ -369,7 +367,7 @@ https://developer.apple.com/wwdc19/413
   - programmatically accessible via `xcresulttool`
   - used to get code coverage diff via `xccov diff --json Before.xcresult After.xcresult`
 
-### Advances in Networking, Part 1
+## Advances in Networking, Part 1
 
 https://developer.apple.com/wwdc19/712
 
@@ -397,7 +395,7 @@ https://developer.apple.com/wwdc19/712
   - Apps can adopt **Multipath Transport** which requires the server to do so too
   - High-Level APIs `URLSession / Network` gain benefits from improvements
 
-### Advances in Networking, Part 2
+## Advances in Networking, Part 2
 
 https://developer.apple.com/wwdc19/713
 
@@ -431,7 +429,7 @@ https://developer.apple.com/wwdc19/713
   - SPDY replaced by HTTP/2
   - Secure transport doesn't support TLS 1.3 / Use URLSession / Network.framework instead
 
-### Getting Started with Xcode
+## Getting Started with Xcode
 
 https://developer.apple.com/wwdc19/404
 
@@ -449,7 +447,7 @@ https://developer.apple.com/wwdc19/404
   - and many more...
 - It is perfectly suited for new developers that have never worked with Xcode, but also for experienced ones to get to know the new UI of Xcode 11
 
-### Modernizing Your UI for iOS 13
+## Modernizing Your UI for iOS 13
 
 https://developer.apple.com/wwdc19/224
 
@@ -493,7 +491,7 @@ https://developer.apple.com/wwdc19/224
   - `UIViewControllerPreviewing` (peek & pop) is deprecated for sake of this new API
   - replace long-press driven behavior/menus by this new API
 
-### What's New in Safari
+## What's New in Safari
 
 https://developer.apple.com/wwdc19/515
 
@@ -508,7 +506,7 @@ https://developer.apple.com/wwdc19/515
   - associate content blocker with safari extension to get notified when content is blocked
 - **UNiversal Links** for macOS so ordinary https links open app if installed
 
-### What's New in Safari Extensions
+## What's New in Safari Extensions
 
 https://developer.apple.com/wwdc19/720
 
@@ -535,7 +533,7 @@ https://developer.apple.com/wwdc19/720
   - Sending messages from app >>> extension: `SFSafariApplication.dispatchMessage` 
   - Receive message in extension by implementing `SFSafariExtensionHandling.messageReceivedFromContainingApp` (Possible also when safari is not running - launched eventually)
 
-### Designing Audio-Haptic Experiences
+## Designing Audio-Haptic Experiences
 
 https://developer.apple.com/wwdc19/810
 
@@ -550,7 +548,7 @@ https://developer.apple.com/wwdc19/810
 - use transient building blocks for *sharp, crisp and short sounds*
 - use continuous primitives for *smooth, extended sounds*
 
-### Introducing Core Haptics
+## Introducing Core Haptics
 
 https://developer.apple.com/wwdc19/520
 
@@ -567,14 +565,14 @@ https://developer.apple.com/wwdc19/520
   - Separate content from code
 - Read more at the updated [Human Interface Guidelines (HIG) for haptics](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/haptics/)
 
-### Expanding the Sensory Experience with Core Haptics
+## Expanding the Sensory Experience with Core Haptics
 
 https://developer.apple.com/wwdc19/223
 
 - This is basically a merge of sessions [Designing Audio-Haptic Experiences](https://developer.apple.com/wwdc19/810) and [Introducing Core Haptics](https://developer.apple.com/wwdc19/520)
 - For an in-depth example scroll the video to 40:10
 
-### Cryptography and Your Apps
+## Cryptography and Your Apps
 
 https://developer.apple.com/wwdc19/709
 
@@ -597,7 +595,7 @@ https://developer.apple.com/wwdc19/709
 - Customizing Authentication Context with `LAContext`: `try SecureEnclave.P256.Signing.PrivateKey(accessControl:authenticationContext:)`
 - **Performant** through usage of CoreCrypto, hand-tuned assembly code and usage of the A12 Bionic
 
-### All About Notarization
+## All About Notarization
 
 https://developer.apple.com/wwdc19/703
 
