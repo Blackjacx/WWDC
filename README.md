@@ -601,7 +601,6 @@ https://developer.apple.com/wwdc19/709
 https://developer.apple.com/wwdc19/703
 
 - **I highly recommend watching this session if you ever run into any problems regarding notarization** since this is a complex topic and this video is packed of useful examples
-
 - **Notarization** identifies and blocks malicious software prior to distribution. It is **NOT** an App Review!
 - comes on top of your Developer ID - no new registration
 - **Notary Service** performs automated security checks
@@ -615,7 +614,6 @@ https://developer.apple.com/wwdc19/703
 - Software **signed on or after June 1, 2019** must adopt
   - complete and correct signing
   - the hardened runtime
-
 - **Complete and Correct Signing** involves
   - signing **everything** (`Bundles`, `Mach-Os`, `Installer packages`) with your Developer ID Application Certificate and include a secure timestamp
   - Executables must opt-in  the hardened runtime
@@ -652,3 +650,6 @@ https://developer.apple.com/wwdc19/703
 - Notarization can be done easily via the Archive menu from within Xcode
 - `xcrun altool --notarize-app ...` to submit an app via command line and check via `xcrun altool --notarization-info <request_id_from_submission> …`  for the current status
 - Use `xcrun altool --notarization-history …` to get on overview of all the software submitted on your account
+
+
+
