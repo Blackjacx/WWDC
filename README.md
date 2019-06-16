@@ -511,7 +511,7 @@ https://developer.apple.com/wwdc19/515
 
 https://developer.apple.com/wwdc19/720
 
-- **Distributable** via 
+- **Distributable** via
   - App on AppStore (show up immediately in Safari)
   - App on your web site after running through the notarization service (show up in Safari after first launch of the app)
 - **Unsigned Extensions** must be allowed each time Safari is run from the Developer menu
