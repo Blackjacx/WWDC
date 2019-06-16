@@ -1,7 +1,5 @@
 # WWDC
 
-Don't have the time to watch all those session videos from WWDC? No problem I extracted the gist for you 🥳
-
 Usually it is much faster to read through some bulet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
 Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion.
