@@ -68,7 +68,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - adds a custom onboarding screen to app the first time the app is tested. 
   - can be enabled/disabled via testflight for each tester group
 - **Crashes** automatically trigger the feedback dialog. Feedback viewable/downloadable in ASC.
-- **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3++. Only for homescreen and storage deletions. Resetting device doesn't count.
+- **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3+. Only for homescreen and storage deletions. Resetting device doesn't count.
 - **24h live dashboard** hourly updated statistics for all apps to better understand sales data (e.g. in-app purchase) as it is rolled out
 
 ### [Great Developer Habits](https://developer.apple.com/wwdc19/239)
@@ -288,7 +288,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - **Unit Tests** as foundation help to test a single piece of code - write many
   - **Integration Tests** validate larger section of code (clusters of classes). Verify that different parts behave corctly together. You need less of these than unit tests.
   - **UI Tests** oberserve the user-facing behavior of your app. Requires more maintenance, run slow. You need the least ones 
-- **XCTUnwrap** is equivalent to: `assert not nil; guard let <contition> else throw`
+- **XCTUnwrap** is equivalent to: `assert not nil; guard let <condition> else throw`
 - **XCTAssertEqual** gains an `accuracy` argument for comparing double values
 - **XCTAssertThrowsError** has a closure to evaluate the thrown error. Ideal to write negative test cases.
 - **UITests** property isHittable ensures that an element exists, is on the screen and you can interact with it
