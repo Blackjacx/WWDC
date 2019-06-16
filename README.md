@@ -8,7 +8,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 ## Session Notes WWDC 2019
 
-### [What's New in Swift](https://developer.apple.com/wwdc19/402)
+### What's New in Swift
+
+https://developer.apple.com/wwdc19/402
 
 - **ABI Stability (Application Binary Interface):** App and Framework built by different compilers can now be used together (in the past ensured by building with same compiler)
 - **Module Stability:** Swift module file and App build by different compilers can now be used together by introducing *stable and textual .swiftinterface file*
@@ -19,7 +21,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **Property Wrappers:** Wrapper type to define custom access patterns. Property can adopt this by adding attribute to its declaration. In the case of UserDefaults you can define properties that know how to read/write from/to UserDefaults.
 - **Embedded DSLs**
 
-### [Introducing SF Symbols](https://developer.apple.com/wwdc19/206)
+### Introducing SF Symbols
+
+https://developer.apple.com/wwdc19/206
 
 - **Alignment** is perfect surrounding text
 - **1500** vector symbols designed by Apple in all weights available
@@ -42,7 +46,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **No frame settings necessary for NSTextAttachment** for placing images in text
 - **UIImage tint support** `image.withTintColor(UIColor)` - yeah 🥳 
 
-### [Advances in Foundation](https://developer.apple.com/wwdc19/723)
+### Advances in Foundation
+
+https://developer.apple.com/wwdc19/723
 
 - **Ordered Collection Diffing**
 - **Compression API** to transmit resources compressed (CompressionAlgorithm.[lzfse, lz4, lzma, .zlib])
@@ -57,7 +63,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
 - Use `DataProtocol`instead of `UInt8`
 
-### [What's New In App Store Connect](https://developer.apple.com/wwdc19/301)
+### What's New In App Store Connect
+
+https://developer.apple.com/wwdc19/301
 
 - **AppStore for Messages** with full TestFlight capabilities
 - **Transporter** Mac app for submission of IPA, PKG, ITMSP files. ApplicationLoader deprecated.
@@ -71,7 +79,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3++. Only for homescreen and storage deletions. Resetting device doesn't count.
 - **24h live dashboard** hourly updated statistics for all apps to better understand sales data (e.g. in-app purchase) as it is rolled out
 
-### [Great Developer Habits](https://developer.apple.com/wwdc19/239)
+### Great Developer Habits
+
+https://developer.apple.com/wwdc19/239
 
 - **Use groups** for project organization
 - **Mirror** project and file structure
@@ -103,7 +113,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - Have a plan when a dependency goes away or is not maintained anymore
   - Ensure privacy
 
-### [Writing Great Accessibility Labels](https://developer.apple.com/wwdc19/254)
+### Writing Great Accessibility Labels
+
+https://developer.apple.com/wwdc19/254
 
 - **Accessibility Label** is a human understandable label
   - gives meaning to the elements of your app
@@ -112,7 +124,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - should contain context if multiple similar elements visible (multiple add buttons)
 - don't add redundant context, e.g. if you're in a music player avoid `song` from the accessibility label of next, previous, ...
 
-### [What's New in Xcode 11](https://developer.apple.com/wwdc19/401)
+### What's New in Xcode 11
+
+https://developer.apple.com/wwdc19/401
 
 - **Editor splitting** is now unlimited and allowed horizontally and vertically
 - **Source control log** info moved to inspector and can thus be used for *any* file any time
@@ -148,7 +162,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **SwiftUI** enables `Canvas previews, Code and Canvas Editors, Code Hot Swapping, Rich Preview API, Preview Pinning, Instruments Template, On-Device Previews, Action Popover Actions, Library Views and Modifiers, Canvas Editor for Code, Preview Debugging, Development Time Assets`
 - **Most Awesome SwiftUI Tutorials I've Ever Seen Right In Xcode's Documentation Window**
 
-### [What's New in Authentication](https://developer.apple.com/wwdc19/516)
+### What's New in Authentication
+
+https://developer.apple.com/wwdc19/516
 
 - **Sign in With Apple**
   - lets choose users which information is delivered
@@ -157,7 +173,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **Weak Password Assistant** detects weak passwords and offers you to change it
 - **ASWebAuthenticationSession** provides easy OAuth workflow and deprecates SFAuthenticationSession
 
-### [Introducing Sign In with Apple](https://developer.apple.com/wwdc19/706)
+### Introducing Sign In with Apple
+
+https://developer.apple.com/wwdc19/706
 
 - **Secure** - backed by 2FA of the AppleID
 - **Private** - not tracked by Apple
@@ -183,7 +201,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - Listen to `NSNotification.Name.ASAuthorizationAppleIDProviderCredentialRevoked` and sign the user out if called
 - **Password Autofill** integrates with Apple Sign In. Triggerd if the device detects a stored credential
 
-### [Building Great Shortcuts](https://developer.apple.com/wwdc19/805)
+### Building Great Shortcuts
+
+https://developer.apple.com/wwdc19/805
 
 - Summary of an Action should be short and only contain necessary parameter
 - Best way to add shortcut is right inside the app after the action that should be added has been completed
@@ -193,7 +213,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **Input and Output** concept used to make actions work together. Actions can now output information for others to use, e.g. action could find a note wheas action 2 processes this. Both can be chained together.
 - **Intent Editor** lets the developer modify intents
 
-### [Designing Great Shortcuts](https://developer.apple.com/wwdc19/806)
+### Designing Great Shortcuts
+
+https://developer.apple.com/wwdc19/806
 
 - **Shortcut Use Cases** are `Accelerate an Action`, `Present Concise Information`, `Multi-Step Shortcuts`
 - **Great Shortcuts** wrap actions the user has to to often in your app. Offer adding an action to Siri after this action has been completed
@@ -210,7 +232,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **Don't Include Users Name** since it might sound repetitive
 - **Avoid first-person pronouns** use something like *There are the following options*
 
-### [Integrating with Siri Event Suggestions](https://developer.apple.com/wwdc19/243)
+### Integrating with Siri Event Suggestions
+
+https://developer.apple.com/wwdc19/243
 
 - **Apps can donate information** to the system via `INInteraction` so the system can show them to the user at appropriate time, location or in related apps
 - All this magic happend directly on the device
@@ -235,7 +259,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
     - explicitly via UI elements
   - If reservation is cancelled, donate the reservation with `reservationStatus` set to `.cancelled`
 
-### [Modern Swift API Design](https://developer.apple.com/wwdc19/415)
+### Modern Swift API Design
+
+https://developer.apple.com/wwdc19/415
 
 - **Clarity at point of use** is the most important goal as an API designer
 - **No prefixes** in Swift-only frameworks
@@ -264,7 +290,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - Examples from SwiftUI are `@State`, `@Binding`
 - Use protocols for code reuse not for classification
 
-### [Core NFC Enhancements](https://developer.apple.com/wwdc19/715)
+### Core NFC Enhancements
+
+https://developer.apple.com/wwdc19/715
 
 - Support for reading **Passports**, interacting with **smart cards** from iPhone 7 ++
 - **NFCTagReaderSession** allows to scan native tags like ISO14443, ISO15693, ISO18092
@@ -282,7 +310,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - **Native Tag Reading** supports also MIFARE, ISO15693, FeliCa (from Sony - heavily used by transit and payment sytems in Japan)
 - Watch technical session video for implementation details to all supported **Native Tag Reading**
 
-### [Testing in Xcode](https://developer.apple.com/wwdc19/413)
+### Testing in Xcode
+
+https://developer.apple.com/wwdc19/413
 
 - **Testing Pyramid Refresher**
   - **Unit Tests** as foundation help to test a single piece of code - write many
@@ -310,7 +340,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - programmatically accessible via `xcresulttool`
   - used to get code coverage diff via `xccov diff --json Before.xcresult After.xcresult`
 
-### [Advances in Networking, Part 1](https://developer.apple.com/wwdc19/712)
+### Advances in Networking, Part 1
+
+https://developer.apple.com/wwdc19/712
 
 - **Low Data Mode** enables configuration per wi-fi and cellular network how `expensive` the connection is
   - delays discretionary tasks
@@ -336,7 +368,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - Apps can adopt **Multipath Transport** which requires the server to do so too
   - High-Level APIs `URLSession / Network` gain benefits from improvements
 
-### [Advances in Networking, Part 2](https://developer.apple.com/wwdc19/713)
+### Advances in Networking, Part 2
+
+https://developer.apple.com/wwdc19/713
 
 - **Bonjour** available on EVERY native platform
   - powers wide-area service discovery
@@ -368,7 +402,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - SPDY replaced by HTTP/2
   - Secure transport doesn't support TLS 1.3 / Use URLSession / Network.framework instead
 
-### [Getting Started with Xcode](https://developer.apple.com/wwdc19/404)
+### Getting Started with Xcode
+
+https://developer.apple.com/wwdc19/404
 
 - 1h presentation about all the power Xcode offers
 - You learn about all the UI elements and functionality of Xcode
@@ -384,7 +420,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - and many more...
 - It is perfectly suited for new developers that have never worked with Xcode, but also for experienced ones to get to know the new UI of Xcode 11
 
-### [Modernizing Your UI for iOS 13](https://developer.apple.com/wwdc19/224)
+### Modernizing Your UI for iOS 13
+
+https://developer.apple.com/wwdc19/224
 
 - **Deprecation of LaunchImages** use Launch Storyboards instead
 - **New App Store Requirement** Any app linking to iOS 13 must ensure correct layout at any size 
@@ -426,7 +464,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - `UIViewControllerPreviewing` (peek & pop) is deprecated for sake of this new API
   - replace long-press driven behavior/menus by this new API
 
-### [What's New in Safari](https://developer.apple.com/wwdc19/515)
+### What's New in Safari
+
+https://developer.apple.com/wwdc19/515
 
 - **Desktop-class website browsing**
 - **Legacy Safrai Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
@@ -439,7 +479,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - associate content blocker with safari extension to get notified when content is blocked
 - **UNiversal Links** for macOS so ordinary https links open app if installed
 
-### [What's New in Safari Extensions](https://developer.apple.com/wwdc19/720)
+### What's New in Safari Extensions
+
+https://developer.apple.com/wwdc19/720
 
 - **Distributable** via 
   - App on AppStore (show up immediately in Safari)
@@ -464,7 +506,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - Sending messages from app >>> extension: `SFSafariApplication.dispatchMessage` 
   - Receive message in extension by implementing `SFSafariExtensionHandling.messageReceivedFromContainingApp` (Possible also when safari is not running - launched eventually)
 
-### [Designing Audio-Haptic Experiences](https://developer.apple.com/wwdc19/810)
+### Designing Audio-Haptic Experiences
+
+https://developer.apple.com/wwdc19/810
 
 - **Core Haptics** allows to use taptic engine fully in **iPhone**
 -  Developers can change the *Haptic Intensity* and the *Haptic Sharpness*
@@ -477,7 +521,9 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - use transient building blocks for *sharp, crisp and short sounds*
 - use continuous primitives for *smooth, extended sounds*
 
-### [Introducing Core Haptics](https://developer.apple.com/wwdc19/520)
+### Introducing Core Haptics
+
+https://developer.apple.com/wwdc19/520
 
 - Event based audio-/haptic rendering API - a synthesizer
 - same feel on iPhone 8, 8 Plus, X, XS, XR, XS Max
@@ -492,12 +538,16 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
   - Separate content from code
 - Read more at the updated [Human Interface Guidelines (HIG) for haptics](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/haptics/)
 
-### [Expanding the Sensory Experience with Core Haptics](https://developer.apple.com/wwdc19/223)
+### Expanding the Sensory Experience with Core Haptics
+
+https://developer.apple.com/wwdc19/223
 
 - This is basically a merge of sessions [Designing Audio-Haptic Experiences](https://developer.apple.com/wwdc19/810) and [Introducing Core Haptics](https://developer.apple.com/wwdc19/520)
 - For an in-depth example scroll the video to 40:10
 
-### [Cryptography and Your Apps](https://developer.apple.com/wwdc19/709)
+### Cryptography and Your Apps
+
+https://developer.apple.com/wwdc19/709
 
 - **Cryptography is hard to get right** don't do it yourself unless you are an cryptography expert
 - **Use [Data Protection](https://developer.apple.com/documentation/uikit/protecting_the_user_s_privacy/encrypting_your_app_s_files)** to protect your data on the device: `try data.write(to: fileURL, options: .completeFileProtection)` if you don't do so yet
