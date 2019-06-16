@@ -6,58 +6,6 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
-## Table of Contents
-
-[<a href="https://developer\.apple\.com/wwdc19/402" rel="nofollow">What's New in Swift</a>](#whats-new-in-swift)
-
-[<a href="https://developer\.apple\.com/wwdc19/206" rel="nofollow">Introducing SF Symbols</a>](#introducing-sf-symbols)
-
-[<a href="https://developer\.apple\.com/wwdc19/723" rel="nofollow">Advances in Foundation</a>](#advances-in-foundation)
-
-[<a href="https://developer\.apple\.com/wwdc19/301" rel="nofollow">What's New In App Store Connect</a>](#whats-new-in-app-store-connect)
-
-[<a href="https://developer\.apple\.com/wwdc19/239" rel="nofollow">Great Developer Habits</a>](#great-developer-habits)
-
-[<a href="https://developer\.apple\.com/wwdc19/254" rel="nofollow">Writing Great Accessibility Labels</a>](#writing-great-accessibility-labels)
-
-[<a href="https://developer\.apple\.com/wwdc19/401" rel="nofollow">What's New in Xcode 11</a>](#whats-new-in-xcode-11)
-
-[<a href="https://developer\.apple\.com/wwdc19/516" rel="nofollow">What's New in Authentication</a>](#whats-new-in-authentication)
-
-[<a href="https://developer\.apple\.com/wwdc19/706" rel="nofollow">Introducing Sign In with Apple</a>](#introducing-sign-in-with-apple)
-
-[<a href="https://developer\.apple\.com/wwdc19/805" rel="nofollow">Building Great Shortcuts</a>](#building-great-shortcuts)
-
-[<a href="https://developer\.apple\.com/wwdc19/806" rel="nofollow">Designing Great Shortcuts</a>](#designing-great-shortcuts)
-
-[<a href="https://developer\.apple\.com/wwdc19/243" rel="nofollow">Integrating with Siri Event Suggestions</a>](#integrating-with-siri-event-suggestions)
-
-[<a href="https://developer\.apple\.com/wwdc19/415" rel="nofollow">Modern Swift API Design</a>](#modern-swift-api-design)
-
-[<a href="https://developer\.apple\.com/wwdc19/715" rel="nofollow">Core NFC Enhancements</a>](#core-nfc-enhancements)
-
-[<a href="https://developer\.apple\.com/wwdc19/413" rel="nofollow">Testing in Xcode</a>](#testing-in-xcode)
-
-[<a href="https://developer\.apple\.com/wwdc19/712" rel="nofollow">Advances in Networking, Part 1</a>](#advances-in-networking-part-1)
-
-[<a href="https://developer\.apple\.com/wwdc19/713" rel="nofollow">Advances in Networking, Part 2</a>](#advances-in-networking-part-2)
-
-[<a href="https://developer\.apple\.com/wwdc19/404" rel="nofollow">Getting Started with Xcode</a>](#getting-started-with-xcode)
-
-[<a href="https://developer\.apple\.com/wwdc19/224" rel="nofollow">Modernizing Your UI for iOS 13</a>](#modernizing-your-ui-for-ios-13)
-
-[<a href="https://developer\.apple\.com/wwdc19/515" rel="nofollow">What's New in Safari</a>](#whats-new-in-safari)
-
-[<a href="https://developer\.apple\.com/wwdc19/720" rel="nofollow">What's New in Safari Extensions</a>](#whats-new-in-safari-extensions)
-
-[<a href="https://developer\.apple\.com/wwdc19/810" rel="nofollow">Designing Audio\-Haptic Experiences</a>](#designing-audio-haptic-experiences)
-
-[<a href="https://developer\.apple\.com/wwdc19/520" rel="nofollow">Introducing Core Haptics</a>](#introducing-core-haptics)
-
-[<a href="https://developer\.apple\.com/wwdc19/223" rel="nofollow">Expanding the Sensory Experience with Core Haptics</a>](#expanding-the-sensory-experience-with-core-haptics)
-
-[<a href="https://developer\.apple\.com/wwdc19/709" rel="nofollow">Cryptography and Your Apps</a>](#cryptography-and-your-apps)
-
 ## Session Notes WWDC 2019
 
 ### [What's New in Swift](https://developer.apple.com/wwdc19/402)
