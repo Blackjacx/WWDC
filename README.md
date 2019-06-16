@@ -35,6 +35,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - [Introducing Core Haptics](#introducing-core-haptics)
 - [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
 - [Cryptography and Your Apps](#cryptography-and-your-apps)
+- [All About Notarization](#all-about-notarization)
 
 ### What's New in Swift
 
