@@ -8,6 +8,34 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 ## Session Notes WWDC 2019
 
+### Table of Contents
+
+- [What's New in Swift](#whats-new-in-swift)
+- [Introducing SF Symbols](#introducing-sf-symbols)
+- [Advances in Foundation](#advances-in-foundation)
+- [What's New In App Store Connect](#whats-new-in-app-store-connect)
+- [Great Developer Habits](#great-developer-habits)
+- [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
+- [What's New in Xcode 11](#whats-new-in-xcode-11)
+- [What's New in Authentication](#whats-new-in-authentication)
+- [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
+- [Building Great Shortcuts](#building-great-shortcuts)
+- [Designing Great Shortcuts](#designing-great-shortcuts)
+- [Integrating with Siri Event Suggestions](#integrating-with-siri-event-suggestions)
+- [Modern Swift API Design](#modern-swift-api-design)
+- [Core NFC Enhancements](#core-nfc-enhancements)
+- [Testing in Xcode](#testing-in-xcode)
+- [Advances in Networking, Part 1](#advances-in-networking-part-1)
+- [Advances in Networking, Part 2](#advances-in-networking-part-2)
+- [Getting Started with Xcode](#getting-started-with-xcode)
+- [Modernizing Your UI for iOS 13](#modernizing-your-ui-for-ios-13)
+- [What's New in Safari](#whats-new-in-safari)
+- [What's New in Safari Extensions](#whats-new-in-safari-extensions)
+- [Designing Audio\-Haptic Experiences](#designing-audio-haptic-experiences)
+- [Introducing Core Haptics](#introducing-core-haptics)
+- [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
+- [Cryptography and Your Apps](#cryptography-and-your-apps)
+
 ### What's New in Swift
 
 https://developer.apple.com/wwdc19/402
