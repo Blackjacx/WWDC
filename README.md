@@ -527,7 +527,6 @@ https://developer.apple.com/wwdc19/720
   - Directly navigate to certain tabs without scripting from the extension
   - All open tabs and windows are visible from an extension
 - **Popovers** can be shown/dismissed programmatically
-
 - **Communication between App and Extension**
   - Possible by NSXPCConnection (extension and app must be part of the same app group)
   - Share data by using `UserDefaults(suiteName:)`
@@ -652,6 +651,7 @@ https://developer.apple.com/wwdc19/703
 - Use `xcrun altool --notarization-history …` to get on overview of all the software submitted on your account
 
 ## Introducing Multi-Camera Capture for iOS
+
 https://developer.apple.com/wwdc19/249
 
 - supported on iPhone `XS, XS Max, XR, iPad Pro 3rd Gen`
