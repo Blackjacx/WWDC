@@ -310,7 +310,7 @@ https://developer.apple.com/wwdc19/415
   - Eliminate boilerplate & get more expressive UIs
   - add the attribute `@propertyWrapper` to your generic type (requires implementing `public var value: Value` )
   - **Use Your Property Wrapper** by defining a property this way: `@YourPropertyWrapperType var name: String` which will internally expand to a private backing property as well as a computed property that uses the implementation of your generic type.
-  - `@UserDefault(key: "BOOSTER_IGNITED, defaultValue: false")`
+  - `@UserDefault(key: "BOOSTER_IGNITED", defaultValue: false)`
     `static var isBoosterIgnited: Bool`
   - `@ThreadSpecific var localPool: MemoryPool`
   - `@Option(shorthand: "m", documentation: "Minimum Value", defaultValue: 0)`
