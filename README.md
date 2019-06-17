@@ -1,6 +1,6 @@
 # WWDC 2019 Session Notes
 
-Usually it is much faster to read through some bulet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
+Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
 Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion.
 
@@ -496,7 +496,7 @@ https://developer.apple.com/wwdc19/224
 https://developer.apple.com/wwdc19/515
 
 - **Desktop-class website browsing**
-- **Legacy Safrai Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
+- **Legacy Safari Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
 - **Safari Extensions**
   - deliver bundles with app OR after notarization via web site
   - Get the visible content of the web page (screenshot)
@@ -504,14 +504,14 @@ https://developer.apple.com/wwdc19/515
   - delegate informs about navigating/redirect to new site
 - **Content Blocker**
   - associate content blocker with safari extension to get notified when content is blocked
-- **UNiversal Links** for macOS so ordinary https links open app if installed
+- **Universal Links** for macOS so ordinary https links open app if installed
 
 ## What's New in Safari Extensions
 
 https://developer.apple.com/wwdc19/720
 
 - **Distributable** via
-  - App on AppStore (show up immediately in Safari)
+  - App on App Store (show up immediately in Safari)
   - App on your web site after running through the notarization service (show up in Safari after first launch of the app)
 - **Unsigned Extensions** must be allowed each time Safari is run from the Developer menu
 - **ContentBlocker** can now tell Safari App Extensions bout its activity
@@ -538,7 +538,7 @@ https://developer.apple.com/wwdc19/720
 https://developer.apple.com/wwdc19/810
 
 - **Core Haptics** allows to use taptic engine fully in **iPhone**
--  Developers can change the *Haptic Intensity* and the *Haptic Sharpness*
+- Developers can change the *Haptic Intensity* and the *Haptic Sharpness*
 - 3 Guiding principles: *Causality*, *Harmony*, *Utility*
 - **Causality** means that haptic feedback and the event causing it must match our expectations
 - **Harmony** means how sound/haptic/visuals work together 
@@ -649,6 +649,3 @@ https://developer.apple.com/wwdc19/703
 - Notarization can be done easily via the Archive menu from within Xcode
 - `xcrun altool --notarize-app ...` to submit an app via command line and check via `xcrun altool --notarization-info <request_id_from_submission> …`  for the current status
 - Use `xcrun altool --notarization-history …` to get on overview of all the software submitted on your account
-
-
-
