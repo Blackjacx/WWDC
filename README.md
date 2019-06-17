@@ -41,6 +41,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
 - [What's New in iOS Design](#whats-new-in-ios-design)
 - [Implementing Dark Mode on iOS](#implementing-dark-mode-on-ios)
+- [What's New in Universal Links](#whats-new-in-universal-links)
 
 ## What's New in Swift
 
@@ -739,3 +740,23 @@ https://developer.apple.com/wwdc19/214
 - **UIActivityIndicatorView styles deprecated** Use `.style = [.medium|.large]` and `.color`.
 - Use **NSAttributedString** always with dynamic `.foregroundColor` to have the auto-switching effect
 - **iOS/tvOS** apps built using iOS/tvOS 13 SDK supposed to support Dark Mode
+
+## What's New in Universal Links
+
+https://developer.apple.com/wwdc19/717
+
+- **macOS 10.15** supports Universal Links with AppKit / UIKit
+- **Securely associated** between your app & website
+- recommended over custom URL schemes
+- **Webserver Config**
+  - HTTPS certificate mandatory. Custom root certificates not supported
+  - Add the file at `https://yourDomain.com/.well-known/apple-app-site-association`
+  - URLs and pattern matching are ASCII
+- **App Config**
+  - add `Associated Domains` capability and add `applinks:www.example.com` entries (patterns possible - specific subdomains prioritized)
+  - `userActivity.activityType == NSUserActivityTypeBrowsingWeb` in `func application(_ application: UIApplication, continue userActivity: NSUserActivity, ...)` indicates Universal Link
+  - get URL components `URLComponents(url: userActivity.webpageURL, resolvingAgainstBaseURL: true)`
+- **For macOS Apps**
+  - app must be on local volume
+  - App Store distribution recommended
+  - Developer ID signed apps must be launched first
