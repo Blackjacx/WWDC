@@ -95,7 +95,7 @@ https://developer.apple.com/wwdc19/723
 
 https://developer.apple.com/wwdc19/301
 
-- **AppStore for Messages** with full TestFlight capabilities
+- **App Store for Messages** with full TestFlight capabilities
 - **Transporter** Mac app for submission of IPA, PKG, ITMSP files. ApplicationLoader deprecated.
 - **Build Activity View** shows all uploaded builds, download sizes for each device, detailed information for each build
 - **TestFlight Feedback** 
@@ -504,7 +504,7 @@ https://developer.apple.com/wwdc19/515
   - show and dismiss popovers
   - delegate informs about navigating/redirect to new site
 - **Content Blocker**
-  - associate content blocker with safari extension to get notified when content is blocked
+  - associate content blocker with Safari Extension to get notified when content is blocked
 - **Universal Links** for macOS so ordinary https links open app if installed
 
 ## What's New in Safari Extensions
