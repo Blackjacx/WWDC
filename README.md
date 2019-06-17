@@ -6,7 +6,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
-## Interesting WWDC Related Links
+## Interesting WWDC-Related Links
 
 - [WWDC 2019 - The Things You May Have Missed](https://patrickbalestra.com/blog/2019/06/07/wwdc-2019-the-things-you-may-have-missed.html) by [@BalestraPatrick](https://twitter.com/BalestraPatrick)
 
@@ -39,6 +39,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - [Cryptography and Your Apps](#cryptography-and-your-apps)
 - [All About Notarization](#all-about-notarization)
 - [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
+- [What's New in iOS Design](#whats-new-in-ios-design)
 
 ## What's New in Swift
 
@@ -685,3 +686,29 @@ https://developer.apple.com/wwdc19/249
   - actually `front mic` and `back mic` are a lie since different devices have multiple mics but not explicitly fron/back ones. This is achieved by `Microphone Beam Forming` - done automatically by CoreAudio `micInput.ports(for: .audio, sourceDeviceType: micDevice.deviceType, sourceDevicePosition: .front).first`
   - Beam forming only works with built-in mics
   - audio can be arbitrarily configured by creating custom AVAudioSession
+
+## What's New in iOS Design
+
+https://developer.apple.com/wwdc19/808
+
+- **Dark Mode**
+  - all apps should support Dark Mode
+  - adopt iOS design system to `maintain familarity`, `provide platform consistency`, `convey clear information hierarchy`
+  - always use semantic colors like `backgroundColor`, `highlightColor`, ... instead of `red`, `green`, ...
+  - color hierarchy: Title > Subtitle > Placeholder > Disabled Text
+  - color hierarchy naming: `background`, `secondaryBackground`, `tertiaryBackground`, `quaternaryBackground`, ...
+  - `don't just use color inversion` between light/dark mode 
+  - `avoid alpha values` since it might look broken when different colors overlap
+  - check colors with `online contrast calculator` should give 4.5...1 or higher
+  - `layered interfaces` should use drop shadow in light / elevated bg color in dark mode
+  - all controls are drawn with semantic colors - perfectly blend between light/dark
+- **Card Style** modal presentation style
+  - default - opt-out by `viewController.modalPresentationStyle = .fullScreen`
+  - pull-down to dismiss (can be prevented when there is a mandatory decision in the modal)
+  - **Modals are for switching modes. Don't use them because you like the animation**
+- **Contextual Menus**
+  - activate by tap & hold
+  - puts the focus on actions not on the preview (like peek & pop)
+  - available on any device since it doesn't rely on force touch
+  - consist on a list of actions and an optional previews
+  - all actions should be available somewhere else in the UI. Don't rely on the fact that users discover your menu.
