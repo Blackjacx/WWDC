@@ -360,7 +360,7 @@ https://developer.apple.com/wwdc19/413
 - **Test Configuration** represents a single run of your tests with certain set of options
 - **Shared Settings** are inherited by all test configurations
 - **Localization Screenshots** for preserving all screenshots from all runs with different localizations 
-- **Example Configurations With Different Focus Are No Problem Anymore: ** `Memory Checking` (Address Sanitizer + Zombie Objects), `Concurrency` (Thread Sanitizer, Undefined behavior Sanitizer, Random Order), `Extra Diagnostics` (ENBLE_LOGGING=1, Keep Attachments)
+- **Example Configurations With Different Focus Are No Problem Anymore:** `Memory Checking` (Address Sanitizer + Zombie Objects), `Concurrency` (Thread Sanitizer, Undefined behavior Sanitizer, Random Order), `Extra Diagnostics` (ENBLE_LOGGING=1, Keep Attachments)
 - **Xcode Server** is finally usable to share test configuration between different bots. The ideal (and free) solution to test a white-labelled app with lots of targets
 - **Result Bundles** 
   - 4 times smaller due to optimized file format
