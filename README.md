@@ -202,7 +202,7 @@ https://developer.apple.com/wwdc19/401
 https://developer.apple.com/wwdc19/516
 
 - **Sign in With Apple**
-  - lets choose users which information is delivered
+  - lets users choose which information is delivered
   - creates random email and forwards it directly to your AppleID to disguise your original email 
 - **Password Auto-Fill** for iPad apps on the Mac
 - **Weak Password Assistant** detects weak passwords and offers you to change it
