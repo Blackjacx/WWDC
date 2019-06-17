@@ -40,6 +40,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - [All About Notarization](#all-about-notarization)
 - [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
 - [What's New in iOS Design](#whats-new-in-ios-design)
+- [Implementing Dark Mode on iOS](#implementing-dark-mode-on-ios)
 
 ## What's New in Swift
 
@@ -712,3 +713,29 @@ https://developer.apple.com/wwdc19/808
   - available on any device since it doesn't rely on force touch
   - consist on a list of actions and an optional previews
   - all actions should be available somewhere else in the UI. Don't rely on the fact that users discover your menu.
+
+## Implementing Dark Mode on iOS
+
+https://developer.apple.com/wwdc19/214
+
+- Use **Semantic Colors** from now on! They are actually color independent. Name stays the same in light/dark mode.
+- **Color can have different appearances** light/dark
+- **Asset Catalog** lets you easily customize colors and imagesfor light/dark
+- **New Set of Dynamic Colors** automatically switch between light/dark versions
+- **New Materials** are more than colors. Can include blur effect.
+- **Auto-Updating Materials** by `UIBlurEffect(style: .systemThinMaterial)` and `UIVibrancyEffect(blurEffect: blur, style: .secondaryLabel)`
+- **Static Color** by `dynamicColor.resolvedColor(with: traitCollection)`
+- **Initilize Dynamic UIColor** by `UIColor(dynamicProvider: (UITraitCollection) -> UIColor)` and  `switch traitCollection.userInterfaceStyle {}`
+- **CALayer** won't understand dynamic colors - you need to do this manually
+- **Create Dynamic Images** with `UIImageAsset.registerImage:withTraitCollection` 
+- **Check for Changes In Trait Collection** with `override func traitCollectionDidChange(_:)` use `traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)` 
+- **Traits predicted during Initialization**  `traitCollectionDidChange(_:)` only called for changes
+- **Debugging** with launch argument `UITraitCollectionChangeLoggingEnabled=YES`
+- **Override Specific UI** by  `UIViewController./UIView.overrideUserInterfaceStyle: UserInterfaceStyle` 
+- **Complete App [light|dark]** with `Info.plist.UIUserInterfaceStyle=[Light|Dark]` 
+- `var overrideTraitCollection: UITraitCollection?` on UIPresentationController
+- `func setOverrideTraitCollection(_: UITraitCollection?, forChild: UIViewController)` on UIViewController
+- **UIStatusBarStyle.[default(automatic)|light|dark]**
+- **UIActivityIndicatorView styles deprecated** Use `.style = [.medium|.large]` and `.color`.
+- Use **NSAttributedString** always with dynamic `.foregroundColor` to have the auto-switching effect
+- **iOS/tvOS** apps built using iOS/tvOS 13 SDK supposed to support Dark Mode
