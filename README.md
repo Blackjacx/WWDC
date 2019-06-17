@@ -1,6 +1,6 @@
 # WWDC 2019 Session Notes
 
-Usually it is much faster to read through some bulet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
+Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
 Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion.
 
@@ -440,7 +440,7 @@ https://developer.apple.com/wwdc19/404
   - fix issues in SwiftUI
   - add capabilities
   - create Swift Packages
-  - how to add dependencies via Swpft Package Manager
+  - how to add dependencies via Swift Package Manager
   - unit testing
   - target memberships
   - running and debugging
