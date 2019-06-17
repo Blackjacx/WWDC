@@ -43,7 +43,7 @@ https://developer.apple.com/wwdc19/402
 - **Module Stability:** Swift module file and App build by different compilers can now be used together by introducing *stable and textual .swiftinterface file*
 - **Binary Frameworks:** Result of ABI and Module stability. Can be shared with others.
 - obsolete **return** if it is the only line in a closure / function
-- auto-generated struct initializers now allow to pass only some of the aguments
+- auto-generated struct initializers now allow to pass only some of the arguments
 - **Opaque Return Types:** Let you return the same type without leaking implementation details. Use keyword `some`
 - **Property Wrappers:** Wrapper type to define custom access patterns. Property can adopt this by adding attribute to its declaration. In the case of UserDefaults you can define properties that know how to read/write from/to UserDefaults.
 - **Embedded DSLs**
@@ -88,7 +88,7 @@ https://developer.apple.com/wwdc19/723
   - BarrierBlock lets run a completion task safely when all other tasks are finished
   - progress reporting
 - **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
-- Use `DataProtocol`instead of `UInt8`
+- Use `DataProtocol` instead of `UInt8`
 
 ## What's New In App Store Connect
 
@@ -96,7 +96,7 @@ https://developer.apple.com/wwdc19/301
 
 - **AppStore for Messages** with full TestFlight capabilities
 - **Transporter** Mac app for submission of IPA, PKG, ITMSP files. ApplicationLoader deprecated.
-- **Build Activity View** shows all uploaded builds, download sizes for each device, detailled information for each build
+- **Build Activity View** shows all uploaded builds, download sizes for each device, detailed information for each build
 - **TestFlight Feedback** 
   - lets users talke screenshots in TestFlight and send them with a description to developer
   - accessible/downloadable from ASC
@@ -118,7 +118,7 @@ https://developer.apple.com/wwdc19/239
 - **Unused code** should be deleted, not commented out - we all have source control, right?
 - **Warnings** resolve them immediately. Never check in code with warnings. Treat them as errors.
 - **Commit small changes** a Git commit should contain only small code changes
-- **Write useful commit messages** that have a shord title and a descriptive body
+- **Write useful commit messages** that have a short title and a descriptive body
 - **Use branches** to isolate changes that belong to a certain feature
 - **Write documentation** about WHY the code has been written and WHAT it is doing
 - **Use descriptive variable names** instead of `id`, `state`, etc.
@@ -131,7 +131,7 @@ https://developer.apple.com/wwdc19/239
   - build and run the project
   - run the tests
   - proofread comments and documentation
-  - look for spelling and grammer errors
+  - look for spelling and grammar errors
   - ensure consistency in codebase
 - **Decouple your code** by creating packages and shared frameworks to reduce code size and share code between multiple app targets
 - **Dependencies** should be used responsibly
@@ -161,10 +161,10 @@ https://developer.apple.com/wwdc19/401
   - Assistent and Authors are moved there
   - Holding ⌥ + ⇧ when clicking a new file shows the destination selector that lets you choose in which split editor to open the file
 - **Editor and Canvas option** shows the current views preview if there is one
-- **Canvas / Assistent hides automatically** if there is  othing to see for the currently selected file
+- **Canvas / Assistent hides automatically** if there is nothing to see for the currently selected file
 - **The Minimap** is loaded with functionality
   - Landmarks, Syntax coloring, Navigation, shows symbol names on hover, highlights search results
-  - Holding ⌘ shows all symbols in the file when hobvering over the minimap
+  - Holding ⌘ shows all symbols in the file when hovering over the minimap
 - **Powered up Documentation** formats the doc block in a markdown like style
   - add missing documentation / or fill up gaps by selecting `Editor > Structure > Add Documentation`
 - **Show Change** after click on change bar shows inline diff
@@ -175,7 +175,7 @@ https://developer.apple.com/wwdc19/401
   - `Project Editor > Project > Swift Packages Tab` shows all personal and starred repos when logged in
   - Source browsing of packages is possible
   - helps sharing own packages with the world
-- **Source Control** extendeb by `stashing` and `cherry pick`
+- **Source Control** extended by `stashing` and `cherry pick`
 - **Asset Catalog** can provide assets and colors for dark mode. Image assets are localizable now.
 - **Environment Overrides** in the debug bar lets you change dynamic text size, appearance and accessibility settings
 - **Device Conditions** in the devices window let you change network throughput and thermal state of your device
@@ -206,13 +206,13 @@ https://developer.apple.com/wwdc19/706
 
 - **Secure** - backed by 2FA of the AppleID
 - **Private** - not tracked by Apple
-- **Fast and Easy** - user dosn't even need a keyboard
+- **Fast and Easy** - user doesn't even need a keyboard
 - **User controls** which data to share
 - **Seamless Across Device** recognizes that already signed in on other device
 - **Requires Capability** for Apple Sign In has to be added
 - **Private E-Mail Relay** links random mail to your AppleID
   - Apple never retains messages
-  - Can be used for any email communication liek receipts, ...
+  - Can be used for any email communication like receipts, ...
   - Two-Way Relay
 - **Anti-Fraud Detection** can tell if a robot tries to sign in or not
 - **Cross Platform** iOS, macOS, watchOS, tvOS, JavaScript (Android Websites)
@@ -226,7 +226,7 @@ https://developer.apple.com/wwdc19/706
   - **Credential State** tells if UserID is `authorized` (let user pass), `revoked` (handle unlink) or `not Found` (show login)
 - **Always check on AppStart** with `provider.getCredentialState(userID)` which runs very fast
 - Listen to `NSNotification.Name.ASAuthorizationAppleIDProviderCredentialRevoked` and sign the user out if called
-- **Password Autofill** integrates with Apple Sign In. Triggerd if the device detects a stored credential
+- **Password Autofill** integrates with Apple Sign In. Triggered if the device detects a stored credential
 
 ## Building Great Shortcuts
 
@@ -248,9 +248,9 @@ https://developer.apple.com/wwdc19/806
 - **Great Shortcuts** wrap actions the user has to to often in your app. Offer adding an action to Siri after this action has been completed
 - **Provided Add to Siri Button** should be used to add an action to Siri
 - **Activation Phrase** should have a great default
-- **Action** should provide as much etail as possible to the user has to fill out as less as necessary
+- **Action** should provide as much detail as possible to the user has to fill out as less as necessary
 - **Prompts** can be used to collect a value from the user.
-- **Minimize Disambiguation Prompts** by providing an optios list upfront
+- **Minimize Disambiguation Prompts** by providing an options list upfront
 - **Pronounciation Hints** can be provided on devices lacking a display
 - **Providing Synonyms** to options helps Siri to understand the user
 - **The Final Confirmation Dialog** should be used to summarize everything the user has specified. Keep in mind to design a more descriptive one for devices without display!
@@ -264,15 +264,15 @@ https://developer.apple.com/wwdc19/806
 https://developer.apple.com/wwdc19/243
 
 - **Apps can donate information** to the system via `INInteraction` so the system can show them to the user at appropriate time, location or in related apps
-- All this magic happend directly on the device
+- All this magic happened directly on the device
 - **Intents framework** supports reservations acroll many categories like Flights, Restaurant, Movies, Ticket Events, Car Rentals, Train, Hotels, Flights
 - `INReservation`, `INGetReservationDetailsIntent` and `INGetReservationDetailsIntentResponse` to donate reservation information to the system
-- **NSUserActivity** is used to handle app launches from Siri suggestion throughout the iOS sytsem
+- **NSUserActivity** is used to handle app launches from Siri suggestion throughout the iOS system
   - can be used to provide web-based flow if app is not installed > `NSUserActivity.webpageURL `
 - **Shortcut** appears on the lockscreen and in the search UI when specified parameters match (user is at specified location, time of the event is close, …). On tap it launches the app.
 - **Reservation Details** are automatically synced across the users devices using end-to-end encryption
 - **Donating Reservations**
-  - If you don't have the coorindate provide `0, 0`. Siri will only use the postal address.
+  - If you don't have the coordinate provide `0, 0`. Siri will only use the postal address.
   - Make sure to set the correct time zone of the event location for the event
   - If no end time is available - set it nil
   - In case of multiple `INReservation` items:
@@ -296,7 +296,7 @@ https://developer.apple.com/wwdc19/415
   - reference counting or deinitialization is needed
   - the value is shared
 - **Use private backing variables** and additionally a computed property for reference types if you need to copy them
-- **Only manually copy reference types** if `isKnownUniquelyReferenced` returnes `false`. 
+- **Only manually copy reference types** if `isKnownUniquelyReferenced` returns `false`. 
 - **Don't start off with protocols** rather start with concrete types • discover the need for generic code • try to use existing protocols • consider generics over protocols. 
   **This will also decrease binary size and increase compile time.**
 - **Get familiar with SIMD types** which are perfectly suited for geometric calculations
@@ -306,7 +306,7 @@ https://developer.apple.com/wwdc19/415
   - any property is automatically exposed as computed property
 - **Property Wrappers** offer code reuse out of computed properties by using Generics. 
   - Describe the policy behind your data access 
-  - Eleminate boilerplate & get more expressive UIs
+  - Eliminate boilerplate & get more expressive UIs
   - add the attribute `@propertyWrapper` to your generic type (requires implementing `public var value: Value` )
   - **Use Your Property Wrapper** by defining a property this way: `@YourPropertyWrapperType var name: String` which will internally expand to a private backing property as well as a computed property that uses the implementation of your generic type.
   - `@UserDefault(key: "BOOSTER_IGNITED, defaultValue: false")`
@@ -326,7 +326,7 @@ https://developer.apple.com/wwdc19/715
 - **NFCNDEFReaderSession** supports discovery of NDEF tag objects and read/write operations for those
 - **Workflow to Use NFC**
   - Enable Xcode Capability
-  - Use one of the sessions described abobe
+  - Use one of the sessions described above
   - receive tags in discovery callbacks
   - connect to tag
   - perform operations
@@ -334,7 +334,7 @@ https://developer.apple.com/wwdc19/715
 - **Native Tag Reading** supports ISO7816
   - info.plist must contain a list of ApplicationIdentifiers (AID)
   - detect-tag callback invoked when tag is ISO7816 and AID is contains in info.plist
-- **Native Tag Reading** supports also MIFARE, ISO15693, FeliCa (from Sony - heavily used by transit and payment sytems in Japan)
+- **Native Tag Reading** supports also MIFARE, ISO15693, FeliCa (from Sony - heavily used by transit and payment systems in Japan)
 - Watch technical session video for implementation details to all supported **Native Tag Reading**
 
 ## Testing in Xcode
@@ -343,8 +343,8 @@ https://developer.apple.com/wwdc19/413
 
 - **Testing Pyramid Refresher**
   - **Unit Tests** as foundation help to test a single piece of code - write many
-  - **Integration Tests** validate larger section of code (clusters of classes). Verify that different parts behave corctly together. You need less of these than unit tests.
-  - **UI Tests** oberserve the user-facing behavior of your app. Requires more maintenance, run slow. You need the least ones 
+  - **Integration Tests** validate larger section of code (clusters of classes). Verify that different parts behave correctly together. You need less of these than unit tests.
+  - **UI Tests** observe the user-facing behavior of your app. Requires more maintenance, run slow. You need the least ones 
 - **XCTUnwrap** is equivalent to: `assert not nil; guard let <condition> else throw`
 - **XCTAssertEqual** gains an `accuracy` argument for comparing double values
 - **XCTAssertThrowsError** has a closure to evaluate the thrown error. Ideal to write negative test cases.
@@ -355,11 +355,11 @@ https://developer.apple.com/wwdc19/413
   - can be shared between multiple schemes
   - supported in Xcode and xcodebuild for CI Xcode Server
 - **Test Plans** let you specify the following by using `Configurations`
-  - language, region, user location, automatioc screenshots, localization screenshots, execution order, code coverage, sanitizers, API checking, memory management options, arguments and environment variables
+  - language, region, user location, automatic screenshots, localization screenshots, execution order, code coverage, sanitizers, API checking, memory management options, arguments and environment variables
 - **Test Configuration** represents a single run of your tests with certain set of options
 - **Shared Settings** are inherited by all test configurations
 - **Localization Screenshots** for preserving all screenshots from all runs with different localizations 
-- **Example Configurations With Different Focus Are No Problem Anymore: ** `Memory Checking` (Address Sanitizer + Zombie Objects), `Concurrency` (Thread Sanitizer, Undefined behavior Sanitizer, Random Order), `Extra Diagnostics` (ENBLE_LOGGING=1, Keep Attachments)
+- **Example Configurations With Different Focus Are No Problem Anymore: ** `Memory Checking` (Address Sanitizer + Zombie Objects), `Concurrency` (Thread Sanitizer, Undefined behavior Sanitizer, Random Order), `Extra Diagnostics` (ENABLE_LOGGING=1, Keep Attachments)
 - **Xcode Server** is finally usable to share test configuration between different bots. The ideal (and free) solution to test a white-labelled app with lots of targets
 - **Result Bundles** 
   - 4 times smaller due to optimized file format
@@ -373,7 +373,7 @@ https://developer.apple.com/wwdc19/712
 
 - **Low Data Mode** enables configuration per wi-fi and cellular network how `expensive` the connection is
   - delays discretionary tasks
-  - disables backround app refresh
+  - disables background app refresh
   - apps have to adopt to it by `reduce image quality (symbols vs. images)`, `reduce prefetching`, `synchronize less often`, `mark background tasks as discretionary`, `disable auto-play`, `don't block user-initiated work`
   - first try expensive prefetch by `allowConstrainedNetworkAccess = false`. On failure `error.networkUnavailableReason == .constrained` try low data alternative
   - `URLSession.allowExpensiveNetworkAccess`
@@ -414,8 +414,8 @@ https://developer.apple.com/wwdc19/713
   - byte counts, packet counts, round-trip-times
   - start and end reports to correspond to application activity
   - multiple reports simultaneously
-  - per-path breakdown for mlti-path protocols
-- **iPad Apps For Mac** opt-in to allow incoming conections - outgoing on by default
+  - per-path breakdown for multi-path protocols
+- **iPad Apps For Mac** opt-in to allow incoming connections - outgoing on by default
 - **CNCopyCurrentNetworkInfo** needs capability `Access Wi Fi Information` & must meet at least 1 of:
   - permission to location
   - VPN enabled
@@ -439,7 +439,7 @@ https://developer.apple.com/wwdc19/404
   - fix issues in SwiftUI
   - add capabilities
   - create Swift Packages
-  - how to add dependencies via Swpft Package Manager
+  - how to add dependencies via Swift Package Manager
   - unit testing
   - target memberships
   - running and debugging
@@ -464,7 +464,7 @@ https://developer.apple.com/wwdc19/224
 - **UIModalPresentationStyle.[automatic | formSheet | pageSheet]** are able to stack behind each other
   - `.automatic` is the new default; gets resolved at presentation time
   - get the old behavior by `viewController.modalPresentationStyle = .fullScreen`
-  - sheets get gesture recognizer aded automatically to support `pull-to-dismiss` - opt-out possible (see link in description for example project)
+  - sheets get gesture recognizer added automatically to support `pull-to-dismiss` - opt-out possible (see link in description for example project)
   - **Appearance Callbacks Not Called for .PageSheet and .FormSheet** on presentingViewController:
     `viewWillAppear`, `viewDisappear`, `viewWillDisappear`, `viewDidDisappear`
 - **Search UI** 
@@ -484,7 +484,7 @@ https://developer.apple.com/wwdc19/224
   - opt out by `responder.editingInteractionConfiguration = .none`
 - **UIContextMenuInteraction** context menus with `rich preview`, `nested menus`, `in-line sections`
   - transform to context menus on macOS
-  - `UIMenu` & `UIInteraction` provide hierarichal menu construction system
+  - `UIMenu` & `UIInteraction` provide hierarchical menu construction system
   - adopt by `view.addInteraction(UIContextMenuInteraction(delegate: self))`
   - customize how  view and menu will be presented: `UITargetedPreview & UITargetedDragPreview`
   - convenience delegate methods for context menus on UITableView & UICollectionView
@@ -496,7 +496,7 @@ https://developer.apple.com/wwdc19/224
 https://developer.apple.com/wwdc19/515
 
 - **Desktop-class website browsing**
-- **Legacy Safrai Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
+- **Legacy Safari Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
 - **Safari Extensions**
   - deliver bundles with app OR after notarization via web site
   - Get the visible content of the web page (screenshot)
@@ -504,7 +504,7 @@ https://developer.apple.com/wwdc19/515
   - delegate informs about navigating/redirect to new site
 - **Content Blocker**
   - associate content blocker with safari extension to get notified when content is blocked
-- **UNiversal Links** for macOS so ordinary https links open app if installed
+- **Universal Links** for macOS so ordinary https links open app if installed
 
 ## What's New in Safari Extensions
 
@@ -515,9 +515,9 @@ https://developer.apple.com/wwdc19/720
   - App on your web site after running through the notarization service (show up in Safari after first launch of the app)
 - **Unsigned Extensions** must be allowed each time Safari is run from the Developer menu
 - **ContentBlocker** can now tell Safari App Extensions bout its activity
-- **Page Naviagtion Delegate** informs about navigating/redirect to new site
+- **Page Navigation Delegate** informs about navigating/redirect to new site
 - Adopting ContentBlocker and PageNavigation extensions allows 
-  - replacing arbitrary contentent on websites
+  - replacing arbitrary content on websites
   - updating toolbar icon badge, e.g. with content items blocked count
   - blocking certain content from web sites you browse on
 - **Screenshots** of web sites are now possible
@@ -585,7 +585,7 @@ https://developer.apple.com/wwdc19/709
 - **Use SecTrust** to verify remote parties.
 - **Adopt CryptoKit**
   - AES encryption inn just one line
-  - strongkly typed interfaces
+  - strongly typed interfaces
   - memory management
   - equatable conformances
   - generics
@@ -624,14 +624,14 @@ https://developer.apple.com/wwdc19/703
     - configurable via entitlements
     - Adopt via `codesign --sign "Developer ID" --timestamp --options runtime My.app`
     - Verify via `codesign --display --verbose=2 My.app` and make sure `runtime` is printed next to `flags`
-    - Look into `12:04` for detailled description
+    - Look into `12:04` for detailed description
     - Look into `12:41` if your app crashes because you use JIT
     - Look into `13:54` if  your app crashes because you patch system frameworks - **don't do this**
     - If your app crashes on auto-update: create a new file when you update a signed file
   - **Library Validation** 
     - protects your app from code injection and dylibs hijacking
     - prevents loading unsigned or adhoc-signed code
-    - Detailled solutions for common issues can be fount at `16:00`, e.g. `App loads plugins from other devs in-process`, 
+    - Detailed solutions for common issues can be fount at `16:00`, e.g. `App loads plugins from other devs in-process`, 
   - **DYLD Variable Environment Protection**
     - can inject libs and modify framework and lib search path - useful for testing
     - Blocks `DYLD_LIBRARY_PATH`, `DYLD_INSERT_LIBRARIES`, `DYLD_FRAMEWORK_PATH` by default
