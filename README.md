@@ -6,7 +6,11 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
-## Table of Contents
+## Interesting WWDC Related Links
+
+- [https://patrickbalestra.com/blog/2019/06/07/wwdc-2019-the-things-you-may-have-missed.html](WWDC 2019 - The Things You May Have Missed)
+
+## Video ToC
 
 - [What's New in Swift](#whats-new-in-swift)
 - [Introducing SF Symbols](#introducing-sf-symbols)
@@ -654,7 +658,7 @@ https://developer.apple.com/wwdc19/703
 
 https://developer.apple.com/wwdc19/249
 
-- supported on iPhone `XS, XS Max, XR, iPad Pro 3rd Gen`
+- Supported on iPhone `XS, XS Max, XR, iPad Pro 3rd Gen`
 - **AVCaptureMultiCamSession**
   - Multiple `AVCaptureDeiceInputs`, `AVCaptureDeiceOutputs` of the same type, `AVCaptureVideoPreviewLayers`
   - Don't use implicit connection forming but use `addInputWithNoConnections`, `addOutputWithNoConnections` or `AVCaptureVideoPreviewLayer.setSessionWithNoConnection`
