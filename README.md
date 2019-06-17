@@ -34,6 +34,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 - [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
 - [Cryptography and Your Apps](#cryptography-and-your-apps)
 - [All About Notarization](#all-about-notarization)
+- [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
 
 ## What's New in Swift
 
@@ -649,6 +650,35 @@ https://developer.apple.com/wwdc19/703
 - Notarization can be done easily via the Archive menu from within Xcode
 - `xcrun altool --notarize-app ...` to submit an app via command line and check via `xcrun altool --notarization-info <request_id_from_submission> …`  for the current status
 - Use `xcrun altool --notarization-history …` to get on overview of all the software submitted on your account
+## Introducing Multi-Camera Capture for iOS
 
+- supported on iPhone `XS, XS Max, XR, iPad Pro 3rd Gen`
+- **AVCaptureMultiCamSession**
+  - Multiple `AVCaptureDeiceInputs`, `AVCaptureDeiceOutputs` of the same type, `AVCaptureVideoPreviewLayers`
+  - Don't use implicit connection forming but use `addInputWithNoConnections`, `addOutputWithNoConnections` or `AVCaptureVideoPreviewLayer.setSessionWithNoConnection`
 
+- **AVCaptureSession** is still the way to got for single cam session
+- Simultaneous photo shooting, movie recording, barcode scanning, etc.
+- **Limitiations**
+  - only one input per camera in a session 
+  - connecting one camera to multiple video data outouts is not possible
+  - no presets supported on session since different cams might run with different qualities
+  - multi-cam session has `hardwareCost` reporting. Session runnable when `0 <= cost <= 1` 
+  - lower cost by `lower resolution`, `choose binned format`, `deviceInput.videoMinFrameDurationOverride = CMTimeMake(1, 30) to set max framrate override /* 30 FPS */`
+  - lower system pressure like `temperature, power demands, infrared projector temperature` by 
+    - lowering frame rates, throttle GPU/CPU processing code, disable one camera
+  - run indefinitely with `multiSession.systemPressureCost < 1.0`; device shutdown with `cost > 3.0`
+  - iOS can run only one session at a time (with mutli cams though)
+-  **Virtual Camera** is the new name wor software cameras like `True-Tone- or Dual-Camera`
+  - `device.isVirtualDevice` - get its physical devices by `device.constituentDevices` for e.g. synchronized camera streaming
+  - `AVCaptureDataOutputSynchronizer` ensures you get two outputs in one callback
+  - virtual devices have **secret ports** so you can get 2 streams - you need to explicitly query them
+- **Dual Camera Hography Aids**
+  - `CameraIntrinsics` (Optical center / focal length) and `CameraExtrinsics` (rotation matrix / translation vector for both wide- and tele cameras)
+- **Multi-Microphone capture**
+  - By default front cam uses `front mic` and back cam uses `back mic`
+  - actually `front mic` and `back mic` are a lie since different devices have multiple mics but not explicitly fron/back ones. This is achieved by `Microphone Beam Forming` - done automatically by CoreAudio
+    `micInput.ports(for: .audio, sourceDeviceType: micDevice.deviceType, sourceDevicePosition: .front).first`
+  - Beam forming only works with built-in mics
+  - audio can be arbitrarily configured by creating custom AVAudioSession
 
