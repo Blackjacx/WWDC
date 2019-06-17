@@ -512,7 +512,7 @@ https://developer.apple.com/wwdc19/515
 https://developer.apple.com/wwdc19/720
 
 - **Distributable** via
-  - App on AppStore (show up immediately in Safari)
+  - App on App Store (show up immediately in Safari)
   - App on your web site after running through the notarization service (show up in Safari after first launch of the app)
 - **Unsigned Extensions** must be allowed each time Safari is run from the Developer menu
 - **ContentBlocker** can now tell Safari App Extensions bout its activity
@@ -538,7 +538,7 @@ https://developer.apple.com/wwdc19/720
 https://developer.apple.com/wwdc19/810
 
 - **Core Haptics** allows to use taptic engine fully in **iPhone**
--  Developers can change the *Haptic Intensity* and the *Haptic Sharpness*
+- Developers can change the *Haptic Intensity* and the *Haptic Sharpness*
 - 3 Guiding principles: *Causality*, *Harmony*, *Utility*
 - **Causality** means that haptic feedback and the event causing it must match our expectations
 - **Harmony** means how sound/haptic/visuals work together 
@@ -681,4 +681,3 @@ https://developer.apple.com/wwdc19/249
   - actually `front mic` and `back mic` are a lie since different devices have multiple mics but not explicitly fron/back ones. This is achieved by `Microphone Beam Forming` - done automatically by CoreAudio `micInput.ports(for: .audio, sourceDeviceType: micDevice.deviceType, sourceDevicePosition: .front).first`
   - Beam forming only works with built-in mics
   - audio can be arbitrarily configured by creating custom AVAudioSession
-
