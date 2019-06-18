@@ -1,5 +1,7 @@
 # WWDC 2019 Session Notes
 
+[![GitSpo Mentions](https://gitspo.com/badges/mentions/Blackjacx/WWDC?style=flat-square)](https://gitspo.com/mentions/Blackjacx/WWDC)
+
 Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
 Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion.
@@ -760,3 +762,31 @@ https://developer.apple.com/wwdc19/717
   - app must be on local volume
   - App Store distribution recommended
   - Developer ID signed apps must be launched first
+
+## Optimizing App Launch
+
+https://developer.apple.com/wwdc19/423
+
+- **Cold Launch** after boot, when app is not in memory, no process exists
+- **Warm Launch** app recently terminated, app partially in memory, no process exists
+- **Resume** app suspended, app fully in memory, process exists
+- target for startup time of 400ms - like a resume
+- iOS13 caches runtime dependencies to improve warm launch
+- avoid linking unused frameworks
+- avoid dynamic library loading during launch
+- hard-link all your dependencies
+- **Static Runtime Init**
+  - expose dedicated init API in frameworks
+  - reduce impact to launch by avoiding +[Class load]
+  - use +[Class initialize] to lazily conduct static init
+- Minimize work in UIApplication/UIApplicationDelegate subclass or move it to another thread
+- Initialize your view controllers in `scene:willConnectToSession:options:` when using UISceneDelegate
+- flatten view hierarchies
+- reduce the number of autolayout constraints
+- **Measure in a clean and consistent environment**
+  - reboot and let system settle 2-3 min
+  - enable airplane mode or mock network
+  - log out from iCloud
+  - use release build of your app
+  - measure warm launches
+  - measure launch with XCTest. Provides statistical results
