@@ -10,6 +10,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 ## Interesting WWDC-Related Links
 
+- [Apple Developer Documentation](https://developer.apple.com/documentation) by [@Apple](https://twitter.com/apple)
 - [WWDC 2019 - The Things You May Have Missed](https://patrickbalestra.com/blog/2019/06/07/wwdc-2019-the-things-you-may-have-missed.html) by [@BalestraPatrick](https://twitter.com/BalestraPatrick)
 
 ## Video ToC
