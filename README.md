@@ -4,12 +4,13 @@
 
 Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
-Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion.
+Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion. Also have a quick look in [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
 ## Interesting WWDC-Related Links
 
+- [Apple Developer Documentation](https://developer.apple.com/documentation) by [@Apple](https://twitter.com/apple)
 - [WWDC 2019 - The Things You May Have Missed](https://patrickbalestra.com/blog/2019/06/07/wwdc-2019-the-things-you-may-have-missed.html) by [@BalestraPatrick](https://twitter.com/BalestraPatrick)
 
 ## Video ToC
@@ -205,7 +206,7 @@ https://developer.apple.com/wwdc19/401
 https://developer.apple.com/wwdc19/516
 
 - **Sign in With Apple**
-  - lets choose users which information is delivered
+  - lets users choose which information is delivered
   - creates random email and forwards it directly to your AppleID to disguise your original email 
 - **Password Auto-Fill** for iPad apps on the Mac
 - **Weak Password Assistant** detects weak passwords and offers you to change it
@@ -400,7 +401,7 @@ https://developer.apple.com/wwdc19/712
     - works with firewalls / CDNs
     - proxy support
   - **URLWebSocketTask** is exciting simple! Example at `31:32`
-    - NSConnection / NSListener offers client/server support for partial or complete WebSocket messages
+    - NWConnection / NWListener offers client/server support for partial or complete WebSocket messages
 - **Mobility Improvements** never turn off Wi-Fi anymore when walking off home with slowly fading connection
   - Improved **Wi-Fi Assit**: Cross-Layer Mobility Detection from all Frameworks `(Network.framework, URLSession, Wi-Fi, Cellular)`
   - Apps can adopt **Multipath Transport** which requires the server to do so too
@@ -414,7 +415,7 @@ https://developer.apple.com/wwdc19/713
   - powers wide-area service discovery
   - native browser support in Network framework via `NWBrowser` (discover)
   - `NWListener` provides advertising support
-  - `NSConnection` handles the connection
+  - `NWConnection` handles the connection
 - **Building Framing Protocols**
   - Developers can write their own framing protocol that runs in the same networking thread as TCP
   - encapsulate or encode application messages
