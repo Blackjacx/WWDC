@@ -17,6 +17,8 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 ## Interesting WWDC-Related Links
 
 - [Apple Developer Documentation](https://developer.apple.com/documentation) by [@Apple](https://twitter.com/apple)
+- [Xcode Release Notes (overwhelming)](https://developer.apple.com/documentation/xcode_release_notes/)
+- [iOS & iPadOS Release Notes](https://developer.apple.com/documentation/ios_ipados_release_notes)
 - [WWDC 2019 - The Things You May Have Missed](https://patrickbalestra.com/blog/2019/06/07/wwdc-2019-the-things-you-may-have-missed.html) by [@BalestraPatrick](https://twitter.com/BalestraPatrick)
 
 ## Video ToC
