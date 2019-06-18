@@ -8,6 +8,19 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
+## Contributers
+
+Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list. I love you ❤️:
+
+- [@matthew_spear](https://twitter.com/matthew_spear) added [Advances in Speech Recognition](#advances-in-speech-recognition)
+- @rukano fixed typos
+- @Borzoo fixed typos
+- @viktorasl fixed typos
+- @ezefranca fixed typos
+- @0xflotus fixed typos
+- @lachlanjc fixed typos
+- @Sherlouk fixed typos
+
 ## Interesting WWDC-Related Links
 
 - [Apple Developer Documentation](https://developer.apple.com/documentation) by [@Apple](https://twitter.com/apple)
@@ -764,34 +777,6 @@ https://developer.apple.com/wwdc19/717
   - app must be on local volume
   - App Store distribution recommended
   - Developer ID signed apps must be launched first
-
-## Optimizing App Launch
-
-https://developer.apple.com/wwdc19/423
-
-- **Cold Launch** after boot, when app is not in memory, no process exists
-- **Warm Launch** app recently terminated, app partially in memory, no process exists
-- **Resume** app suspended, app fully in memory, process exists
-- target for startup time of 400ms - like a resume
-- iOS13 caches runtime dependencies to improve warm launch
-- avoid linking unused frameworks
-- avoid dynamic library loading during launch
-- hard-link all your dependencies
-- **Static Runtime Init**
-  - expose dedicated init API in frameworks
-  - reduce impact to launch by avoiding +[Class load]
-  - use +[Class initialize] to lazily conduct static init
-- Minimize work in UIApplication/UIApplicationDelegate subclass or move it to another thread
-- Initialize your view controllers in `scene:willConnectToSession:options:` when using UISceneDelegate
-- flatten view hierarchies
-- reduce the number of autolayout constraints
-- **Measure in a clean and consistent environment**
-  - reboot and let system settle 2-3 min
-  - enable airplane mode or mock network
-  - log out from iCloud
-  - use release build of your app
-  - measure warm launches
-  - measure launch with XCTest. Provides statistical results
   
 ## Advances in Speech Recognition
 
