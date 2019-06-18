@@ -829,6 +829,6 @@ https://developer.apple.com/wwdc19/423
   - Select profile scheme (long press button) to install release-mode app
   - Hitting the record button in instruments launches your app
   - Allows you to analyze each pase of app launch (finds problems with `static class initializers`, `blocking code in app delegate`)
-- **Use XCTest** performance tests to measure app launch time regularly. `measure(metrics: [XCTOSSignpostMetric.applicationLaunch])`
+- **Use XCTest** performance tests to measure app launch time regularly. `measure(metrics: [XCTOSSignpostMetric.applicationLaunch], options:block:)`
 - **Monitor Customer Launches** in Xcode Organizer
 - **Custom power/performance metrics** by adopting MetricKit
