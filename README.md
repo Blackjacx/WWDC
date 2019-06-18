@@ -400,7 +400,7 @@ https://developer.apple.com/wwdc19/712
     - works with firewalls / CDNs
     - proxy support
   - **URLWebSocketTask** is exciting simple! Example at `31:32`
-    - NSConnection / NSListener offers client/server support for partial or complete WebSocket messages
+    - NWConnection / NWListener offers client/server support for partial or complete WebSocket messages
 - **Mobility Improvements** never turn off Wi-Fi anymore when walking off home with slowly fading connection
   - Improved **Wi-Fi Assit**: Cross-Layer Mobility Detection from all Frameworks `(Network.framework, URLSession, Wi-Fi, Cellular)`
   - Apps can adopt **Multipath Transport** which requires the server to do so too
@@ -414,7 +414,7 @@ https://developer.apple.com/wwdc19/713
   - powers wide-area service discovery
   - native browser support in Network framework via `NWBrowser` (discover)
   - `NWListener` provides advertising support
-  - `NSConnection` handles the connection
+  - `NWConnection` handles the connection
 - **Building Framing Protocols**
   - Developers can write their own framing protocol that runs in the same networking thread as TCP
   - encapsulate or encode application messages
