@@ -21,37 +21,38 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 
 ## Video ToC
 
-- [What's New in Swift](#whats-new-in-swift)
-- [Introducing SF Symbols](#introducing-sf-symbols)
-- [Advances in Foundation](#advances-in-foundation)
-- [What's New In App Store Connect](#whats-new-in-app-store-connect)
-- [Great Developer Habits](#great-developer-habits)
-- [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
-- [What's New in Xcode 11](#whats-new-in-xcode-11)
-- [What's New in Authentication](#whats-new-in-authentication)
-- [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
-- [Building Great Shortcuts](#building-great-shortcuts)
-- [Designing Great Shortcuts](#designing-great-shortcuts)
-- [Integrating with Siri Event Suggestions](#integrating-with-siri-event-suggestions)
-- [Modern Swift API Design](#modern-swift-api-design)
-- [Core NFC Enhancements](#core-nfc-enhancements)
-- [Testing in Xcode](#testing-in-xcode)
-- [Advances in Networking, Part 1](#advances-in-networking-part-1)
-- [Advances in Networking, Part 2](#advances-in-networking-part-2)
-- [Getting Started with Xcode](#getting-started-with-xcode)
-- [Modernizing Your UI for iOS 13](#modernizing-your-ui-for-ios-13)
-- [What's New in Safari](#whats-new-in-safari)
-- [What's New in Safari Extensions](#whats-new-in-safari-extensions)
-- [Designing Audio\-Haptic Experiences](#designing-audio-haptic-experiences)
-- [Introducing Core Haptics](#introducing-core-haptics)
-- [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
-- [Cryptography and Your Apps](#cryptography-and-your-apps)
-- [All About Notarization](#all-about-notarization)
-- [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
-- [What's New in iOS Design](#whats-new-in-ios-design)
-- [Implementing Dark Mode on iOS](#implementing-dark-mode-on-ios)
-- [What's New in Universal Links](#whats-new-in-universal-links)
-- [Advances in Speech Recognition](#advances-in-speech-recognition)
+* [What's New in Swift](#whats-new-in-swift)
+* [Introducing SF Symbols](#introducing-sf-symbols)
+* [Advances in Foundation](#advances-in-foundation)
+* [What's New In App Store Connect](#whats-new-in-app-store-connect)
+* [Great Developer Habits](#great-developer-habits)
+* [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
+* [What's New in Xcode 11](#whats-new-in-xcode-11)
+* [What's New in Authentication](#whats-new-in-authentication)
+* [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
+* [Building Great Shortcuts](#building-great-shortcuts)
+* [Designing Great Shortcuts](#designing-great-shortcuts)
+* [Integrating with Siri Event Suggestions](#integrating-with-siri-event-suggestions)
+* [Modern Swift API Design](#modern-swift-api-design)
+* [Core NFC Enhancements](#core-nfc-enhancements)
+* [Testing in Xcode](#testing-in-xcode)
+* [Advances in Networking, Part 1](#advances-in-networking-part-1)
+* [Advances in Networking, Part 2](#advances-in-networking-part-2)
+* [Getting Started with Xcode](#getting-started-with-xcode)
+* [Modernizing Your UI for iOS 13](#modernizing-your-ui-for-ios-13)
+* [What's New in Safari](#whats-new-in-safari)
+* [What's New in Safari Extensions](#whats-new-in-safari-extensions)
+* [Designing Audio\-Haptic Experiences](#designing-audio-haptic-experiences)
+* [Introducing Core Haptics](#introducing-core-haptics)
+* [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
+* [Cryptography and Your Apps](#cryptography-and-your-apps)
+* [All About Notarization](#all-about-notarization)
+* [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
+* [What's New in iOS Design](#whats-new-in-ios-design)
+* [Implementing Dark Mode on iOS](#implementing-dark-mode-on-ios)
+* [What's New in Universal Links](#whats-new-in-universal-links)
+* [Advances in Speech Recognition](#advances-in-speech-recognition)
+* [Optimizing App Launch](#optimizing-app-launch)
 
 ## What's New in Swift
 
@@ -793,3 +794,39 @@ https://developer.apple.com/wwdc19/256
 	* Pitch – Measures frequency characteristics of voice
 	* Voicing – Identifies voiced regions in speech
 
+## Optimizing App Launch
+
+https://developer.apple.com/wwdc19/423
+
+- **Cold Launch** (slow) > **Warm Launch** (medium) > **Resume** (fastest)
+- iOS13 caches runtime dependencies to improve warm launch
+- **Measure LaunchTime in clean environment**
+  - Reboot and let system settle 2-3 min
+  - Enable airplane mode or mock network
+  - Log out from iCloud
+  - Use release build of your app
+  - Measure warm launches
+- **Improve Launch**
+  - Target for startup time ~400ms
+  - Defer work unrelated to first frame
+  - Move blocking work off main thread
+  - Reduce memory usage
+  - Choose the right quality of service for tasks
+  - Optimize algorithms & data structures
+  - Cache resources and computations
+  - Flatten View Hierarchies
+  - Reduce Autolayout Constraint Count
+  - Initialize your view controllers in `scene:willConnectToSession:options:` when adopted `UISceneDelegate`
+  - Minimize work in UIApplication/UIApplicationDelegate subclass or move it to another thread
+  - Avoid `linking unused frameworks` and `Dynamic Library Loading during launch`
+  - Hard-link all your dependencies
+  - Expose dedicated init API in frameworks
+  - Reduce impact to launch by avoiding +[Class load]
+  - Use +[Class initialize] to lazily conduct static init
+- **New App Launch Template** of instruments to measure launch time
+  - Select profile scheme (long press button) to install release-mode app
+  - Hitting the record button in instruments launches your app
+  - Allows you to analyze each pase of app launch (finds problems with `static class initializers`, `blocking code in app delegate`)
+- **Use XCTest** performance tests to measure app launch time regularly. `measure(metrics: [XCTOSSignpostMetric.applicationLaunch])`
+- **Monitor Customer Launches** in Xcode Organizer
+- **Custom power/performance metrics** by adopting MetricKit
