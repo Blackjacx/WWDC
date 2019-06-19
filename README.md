@@ -878,3 +878,18 @@ https://developer.apple.com/wwdc19/507
   - HLS validation by `mediastreamvalidator` & `hlsreport.py`
   - always use both validation tools
   - HLSReport now checks all rule-sets by default
+
+## AUv3 Extensions User Presets
+
+https://developer.apple.com/wwdc19/509
+
+- **Presets** fine-tunes set of parameter values
+- **Capture Snapshot** of state of Audio Unit's parameters
+- Loading preset restores Audio Unit to same state
+- `AUAudioUnit.factoryPresets` built into the unit by manufacturer. Immutable.
+- `AUAudioUnit.userPresets` are new and are created by user. Mutable. Unit exposes them to all host applications.
+- `supportsUserPreset: Bool` used to verify support by the host
+- `saveUserPreset(_:)` & `deleteUserPreset(_:)`
+- `presetState(for:) throws -> [String : Any]` to get state.
+- `isLoadedInProcess: Bool` is a macOS only feature
+- Methods above have default implementations. Can be overridden.
