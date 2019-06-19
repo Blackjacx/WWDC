@@ -59,6 +59,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [Visual Design and Accessibility](#visual-design-and-accessibility)
 * [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
+* [Game Center Player Identifiers](#game-center-player-identifiers)
 
 ## What's New in Swift
 
@@ -900,4 +901,13 @@ https://developer.apple.com/wwdc19/509
 
 https://developer.apple.com/wwdc19/615
 
-- 
+- **GKLocalPlayer** represents authenticated player. Has persistent teamPlayerID & gamePlayerID
+- **GKPlayer** provides info about other players. Uses scoped IDs
+- **Scoped IDs** teamplayerID and gamePlayerID
+  - properties on GKPlayer
+  - increase player privacy
+  - replace the playerID (has been deprecated) with scoped IDs (save game data / backend)
+  - perform conversion after next authentication
+  - teamPlayerID scoped to development team
+  - gamePlayerID scoped to game
+- `loadPlayersForIdentifiers:withCompletionHandler:`
