@@ -838,6 +838,8 @@ https://developer.apple.com/wwdc19/423
 
 https://developer.apple.com/wwdc19/257
 
-- **find, diagnose, fix** accessibility issues
-- **Open** via `Xcode > Open Developer Tool > Accessibility Inspector`
-- 
+- **Helps find and fix** accessibility issues
+- **Open** via `Xcode > Open Developer Tool > Accessibility Inspector` and run an audit to find possible issues
+- **AccessibilityLabel** should be set to meaningful and localized string
+- **Contrast Debugging** useful if ratio between foreground & background is not sufficient
+- **Open Color Contrast Calculator** in Accessibility Inspector via `Window > Show Color Contrast Calculator`
