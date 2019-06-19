@@ -56,6 +56,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [Advances in Speech Recognition](#advances-in-speech-recognition)
 * [Optimizing App Launch](#optimizing-app-launch)
 * [Accessibility Inspector](#accessibility-inspector)
+* [Visual Design and Accessibility](#visual-design-and-accessibility)
 
 ## What's New in Swift
 
@@ -843,3 +844,21 @@ https://developer.apple.com/wwdc19/257
 - **AccessibilityLabel** should be set to meaningful and localized string
 - **Contrast Debugging** useful if ratio between foreground & background is not sufficient
 - **Open Color Contrast Calculator** in Accessibility Inspector via `Window > Show Color Contrast Calculator`
+
+## Visual Design and Accessibility
+
+https://developer.apple.com/wwdc19/244
+
+- **Dynamic Type**
+  - make as much text as possible dynamic
+  - use as much of the screen width as possible
+  - don't truncate text
+  - scale glyphs (icons/images) next to your text with your text
+  - iOS provides 11 text styles
+  - custom font support made easier in iOS 11
+- **Reduce Motion**
+  - adapt animations if `UIAccessibility.isReduceMotionEnabled == true` (there is a notification too)
+  - consider disabling autoplaying videos if `UIAccessibility.isVideoAutoplayEnabled == false` (there is a notification too)
+- **Differentiate Without Color** is new in iOS13
+  - do not rely on color alone
+  - add additional indicators (icons) where color is the only way to convey information if `UIAccessibility.shouldDifferentiateWithoutColor == true` (there is a notification too)
