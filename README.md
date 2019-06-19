@@ -57,6 +57,8 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [Optimizing App Launch](#optimizing-app-launch)
 * [Accessibility Inspector](#accessibility-inspector)
 * [Visual Design and Accessibility](#visual-design-and-accessibility)
+* [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
+* [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 
 ## What's New in Swift
 
