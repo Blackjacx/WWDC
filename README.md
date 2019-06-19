@@ -862,3 +862,19 @@ https://developer.apple.com/wwdc19/244
 - **Differentiate Without Color** is new in iOS13
   - do not rely on color alone
   - add additional indicators (icons) where color is the only way to convey information if `UIAccessibility.shouldDifferentiateWithoutColor == true` (there is a notification too)
+
+## HLS Authoring for AirPlay 2 Video
+
+https://developer.apple.com/wwdc19/507
+
+- AirPlay directly built into TVs
+- **Video Requirements**
+  - sync variants
+  - avoid changes at discontinuities
+  - full range of variants for each codec
+  - 10% partial encryption
+  - provide compatible format: HDR content with only HDR formats, WebVTT for subtitles, use recommended MIME types
+- **Cahnges to Validation**
+  - HLS validation by `mediastreamvalidator` & `hlsreport.py`
+  - always use both validation tools
+  - HLSReport now checks all rule-sets by default
