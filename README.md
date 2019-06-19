@@ -895,3 +895,9 @@ https://developer.apple.com/wwdc19/509
 - `presetState(for:) throws -> [String : Any]` to get state.
 - `isLoadedInProcess: Bool` is a macOS only feature
 - Methods above have default implementations. Can be overridden.
+
+## Game Center Player Identifiers
+
+https://developer.apple.com/wwdc19/615
+
+- 
