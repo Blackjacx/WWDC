@@ -55,6 +55,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [What's New in Universal Links](#whats-new-in-universal-links)
 * [Advances in Speech Recognition](#advances-in-speech-recognition)
 * [Optimizing App Launch](#optimizing-app-launch)
+* [Accessibility Inspector](#accessibility-inspector)
 
 ## What's New in Swift
 
@@ -832,3 +833,11 @@ https://developer.apple.com/wwdc19/423
 - **Use XCTest** performance tests to measure app launch time regularly. `measure(metrics: [XCTOSSignpostMetric.applicationLaunch], options:block:)`
 - **Monitor Customer Launches** in Xcode Organizer
 - **Custom power/performance metrics** by adopting MetricKit
+
+## Accessibility Inspector
+
+https://developer.apple.com/wwdc19/257
+
+- **find, diagnose, fix** accessibility issues
+- **Open** via `Xcode > Open Developer Tool > Accessibility Inspector`
+- 
