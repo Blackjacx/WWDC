@@ -55,6 +55,11 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [What's New in Universal Links](#whats-new-in-universal-links)
 * [Advances in Speech Recognition](#advances-in-speech-recognition)
 * [Optimizing App Launch](#optimizing-app-launch)
+* [Accessibility Inspector](#accessibility-inspector)
+* [Visual Design and Accessibility](#visual-design-and-accessibility)
+* [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
+* [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
+* [Game Center Player Identifiers](#game-center-player-identifiers)
 * [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
 
 ## What's New in Swift
@@ -834,20 +839,94 @@ https://developer.apple.com/wwdc19/423
 - **Monitor Customer Launches** in Xcode Organizer
 - **Custom power/performance metrics** by adopting MetricKit
 
+## Accessibility Inspector
+
+https://developer.apple.com/wwdc19/257
+
+- **Helps find and fix** accessibility issues
+- **Open** via `Xcode > Open Developer Tool > Accessibility Inspector` and run an audit to find possible issues
+- **AccessibilityLabel** should be set to meaningful and localized string
+- **Contrast Debugging** useful if ratio between foreground & background is not sufficient
+- **Open Color Contrast Calculator** in Accessibility Inspector via `Window > Show Color Contrast Calculator`
+
+## Visual Design and Accessibility
+
+https://developer.apple.com/wwdc19/244
+
+- **Dynamic Type**
+  - make as much text as possible dynamic
+  - use as much of the screen width as possible
+  - don't truncate text
+  - scale glyphs (icons/images) next to your text with your text
+  - iOS provides 11 text styles
+  - custom font support made easier in iOS 11
+- **Reduce Motion**
+  - adapt animations if `UIAccessibility.isReduceMotionEnabled == true` (there is a notification too)
+  - consider disabling autoplaying videos if `UIAccessibility.isVideoAutoplayEnabled == false` (there is a notification too)
+- **Differentiate Without Color** is new in iOS13
+  - do not rely on color alone
+  - add additional indicators (icons) where color is the only way to convey information if `UIAccessibility.shouldDifferentiateWithoutColor == true` (there is a notification too)
+
+## HLS Authoring for AirPlay 2 Video
+
+https://developer.apple.com/wwdc19/507
+
+- AirPlay directly built into TVs
+- **Video Requirements**
+  - sync variants
+  - avoid changes at discontinuities
+  - full range of variants for each codec
+  - 10% partial encryption
+  - provide compatible format: HDR content with only HDR formats, WebVTT for subtitles, use recommended MIME types
+- **Cahnges to Validation**
+  - HLS validation by `mediastreamvalidator` & `hlsreport.py`
+  - always use both validation tools
+  - HLSReport now checks all rule-sets by default
+
+## AUv3 Extensions User Presets
+
+https://developer.apple.com/wwdc19/509
+
+- **Presets** fine-tunes set of parameter values
+- **Capture Snapshot** of state of Audio Unit's parameters
+- Loading preset restores Audio Unit to same state
+- `AUAudioUnit.factoryPresets` built into the unit by manufacturer. Immutable.
+- `AUAudioUnit.userPresets` are new and are created by user. Mutable. Unit exposes them to all host applications.
+- `supportsUserPreset: Bool` used to verify support by the host
+- `saveUserPreset(_:)` & `deleteUserPreset(_:)`
+- `presetState(for:) throws -> [String : Any]` to get state.
+- `isLoadedInProcess: Bool` is a macOS only feature
+- Methods above have default implementations. Can be overridden.
+
+## Game Center Player Identifiers
+
+https://developer.apple.com/wwdc19/615
+
+- **GKLocalPlayer** represents authenticated player. Has persistent teamPlayerID & gamePlayerID
+- **GKPlayer** provides info about other players. Uses scoped IDs
+- **Scoped IDs** teamplayerID and gamePlayerID
+  - properties on GKPlayer
+  - increase player privacy
+  - replace the playerID (has been deprecated) with scoped IDs (save game data / backend)
+  - perform conversion after next authentication
+  - teamPlayerID scoped to development team
+  - gamePlayerID scoped to game
+- `loadPlayersForIdentifiers:withCompletionHandler:`
+
 ## Text Recognition in Vision Framework
 
 https://developer.apple.com/wwdc19/234
 
 - Now it's **no more necessary use a OCR / CoreML Model** to detect text using Vision Framework.
 - Introduced a new request class **VNRecognizeTextRequest** that returns **[VNRecognizedTextObservation]**
-  - The request can configure the speed / accuracy of recognition using `VNRequestTextRecognitionLevel`
-  - **Fast** mode should take 0.25s / **Accurate** mode should take 2.0s
-  - Also, is possible set custom words to recognize, minimum height of words, priority of languages, and, the possibility of auto-correct detected content.
+- The request can configure the speed / accuracy of recognition using `VNRequestTextRecognitionLevel`
+- **Fast** mode should take 0.25s / **Accurate** mode should take 2.0s
+- Also, is possible set custom words to recognize, minimum height of words, priority of languages, and, the possibility of auto-correct detected content.
 - More about **VNRecognizedTextObservation**
-  - Call `topCandidates` to get a list of `VNRecognizedText`
-  - `VNRecognizedText` is the type of object that gives the **String** detected
+- Call `topCandidates` to get a list of `VNRecognizedText`
+- `VNRecognizedText` is the type of object that gives the **String** detected
 - **Best Practices**
-  - Specify language in use
-  - Set custom words when need domain-specific text
-  - Consider increse the accuracy when text is confusable or illegible
-  - Manage progress of request using `progressHandler` / `cancel()`
+- Specify language in use
+- Set custom words when need domain-specific text
+- Consider increse the accuracy when text is confusable or illegible
+- Manage progress of request using `progressHandler` / `cancel()`
