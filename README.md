@@ -55,6 +55,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [What's New in Universal Links](#whats-new-in-universal-links)
 * [Advances in Speech Recognition](#advances-in-speech-recognition)
 * [Optimizing App Launch](#optimizing-app-launch)
+* [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
 
 ## What's New in Swift
 
@@ -832,3 +833,21 @@ https://developer.apple.com/wwdc19/423
 - **Use XCTest** performance tests to measure app launch time regularly. `measure(metrics: [XCTOSSignpostMetric.applicationLaunch], options:block:)`
 - **Monitor Customer Launches** in Xcode Organizer
 - **Custom power/performance metrics** by adopting MetricKit
+
+## Text Recognition in Vision Framework
+
+https://developer.apple.com/wwdc19/234
+
+- Now it's **no more necessary use a OCR / CoreML Model** to detect text using Vision Framework.
+- Introduced a new request class **VNRecognizeTextRequest** that returns **[VNRecognizedTextObservation]**
+  - The request can configure the speed / accuracy of recognition using `VNRequestTextRecognitionLevel`
+  - **Fast** mode should take 0.25s / **Accurate** mode should take 2.0s
+  - Also, is possible set custom words to recognize, minimum height of words, priority of languages, and, the possibility of auto-correct detected content.
+- More about **VNRecognizedTextObservation**
+  - Call `topCandidates` to get a list of `VNRecognizedText`
+  - `VNRecognizedText` is the type of object that gives the **String** detected
+- **Best Practices**
+  - Specify language in use
+  - Set custom words when need domain-specific text
+  - Consider increse the accuracy when text is confusable or illegible
+  - Manage progress of request using `progressHandler` / `cancel()`
