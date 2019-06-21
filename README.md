@@ -60,6 +60,9 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 * [Game Center Player Identifiers](#game-center-player-identifiers)
+* [What's new in Machine Learning](#whats-new-in-machine-learning)
+* [Understanding Images in Vision](#understanding-images-in-vision)
+* [Text Recognition in Vision](#text-recognition-in-vision)
 
 ## What's New in Swift
 
@@ -911,3 +914,52 @@ https://developer.apple.com/wwdc19/615
   - teamPlayerID scoped to development team
   - gamePlayerID scoped to game
 - `loadPlayersForIdentifiers:withCompletionHandler:`
+
+## What's new in Machine Learning
+
+https://developer.apple.com/wwdc19/209
+
+- Domain APIs
+- Vision - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
+  - Image Saliency: most interesting image area
+  - OCR, Document Camera
+- Text, Natural Language
+  - Sentiment Analysis
+  - Word Embeddings
+- Core ML 3
+  - On-Device Model Personalization
+  
+ ## Understanding Images in Vision
+ 
+ https://developer.apple.com/wwdc19/222
+ 
+- Saliency: attention and objectless-based (Brittany Weinert)
+- [Highlighting Areas of Interest in an Image Using Saliency | Apple Developer Documentation](https://developer.apple.com/documentation/vision/highlighting_areas_of_interest_in_an_image_using_saliency)
+  - small buffers
+  - bounding box (multiple for objectless)
+  - Use to zoom in on relevant parts or defer interesting parts to classification
+- Classification, multi-label model
+- Hierarchical taxonomy for label and confidence
+  - Precision vs. recall
+  - `filter(hasMinimumPrecision, …)`
+- Image similarity (demo)
+- Face recognition / understanding
+  - pupil detection
+  - confidence per 76 face points (landmarks)
+  - face capture quality (comparative measure of same subject)
+- Detectors
+  - human (upper body) - bounding box
+  - animal (cats + dogs) - bounding box + label
+- Tracking
+  - `VNSequenceRequestHandler`
+- Integration with CoreML
+  - Multi-Image Inputs
+	
+## Text Recognition in Vision
+- `VNRecognizeTextRequest`
+  - fast vs accurate
+- Accumulate evidence over multiple frames
+- Progress management (progressHandler)
+- `Observation.topCandidates()`
+- `NSDataDetector`
+- Improve results using geometric relations, domain knowledge and CoreML
