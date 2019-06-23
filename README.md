@@ -8,11 +8,11 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 > This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
-## Contributers
+## Contributors
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@DmIvanov](https://github.com/DmIvanov)
 
 ## Interesting WWDC-Related Links
 
@@ -60,6 +60,8 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 * [Game Center Player Identifiers](#game-center-player-identifiers)
+* [Data Flow Through SwiftUI](#data-flow-through-swiftUI)
+* [Binary Frameworks in Swift](#binary-frameworks-in-swift)
 
 ## What's New in Swift
 
@@ -911,3 +913,81 @@ https://developer.apple.com/wwdc19/615
   - teamPlayerID scoped to development team
   - gamePlayerID scoped to game
 - `loadPlayersForIdentifiers:withCompletionHandler:`
+
+## Data Flow Through SwiftUI
+
+https://developer.apple.com/videos/play/wwdc2019/226/
+
+(Luca Bernardy, Raj Ramamurthy)
+
+**Main principles:**
+- Data access is a dependency
+- Every UI piece of data has its source of truth (have a single one)
+
+**@State** property wrapper
+- framework allocates the storage and initiate redraw when it's changed
+- it is a source of truth
+
+**@Binding** property wrapper
+- doesn't create a new state (another source of truth), just a reference to an existing state
+
+- SwiftUI as a remedy for Massive View Controller
+
+- Standart components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
+
+- Adding a reaction to external actions - via Combine's publishers
+
+- BindableObject protocol to conform when creating bindable data models
+
+**@ObjectBinding** property wrapper 
+- the same as @Binding but for reference-type objects
+
+- Using **Environment** object for indirect dependencies
+
+- Prefer immutable access (Swift properties, Environment) over the mutable one (Binding) wherever possible
+
+- Use state effectively
+  - limit the usage, use bindings instead
+  - when using consider the context of it
+
+## Binary Frameworks in Swift
+
+https://developer.apple.com/videos/play/wwdc2019/416/
+
+(Harlan Haskins, Jordan Rose)
+
+Two main ways to distribute third party code
+- for shipping the source code - Swift Packages
+- for shipping binaries - XCFrameworks (new format for distributing binary libraries)
+
+Introducing **XCFrameworks**
+- One bundle for different binaries (iOS Device, iOS Simulator, macOS, tvOC, watchOS)
+- Ability to distribute frameworks and static libraries
+- Support for Swift and C-based code
+
+Demo: How to use the binary from XCFramework
+- adding the framework to the project configuration (drag&drop)
+- autocomplete, jump to defenition
+
+Security/Trust consideration
+- Entitlements and permissions granted to the app are granted to the frameworks as well (and all this dependencies)
+
+Creating a XCFramework
+- Build Settings -> `Build library for distribution`
+- New Swift Module Interfaces - a text file with the metadata about the compiler (version, flags) and all the publich API of the framework
+- XCode (or `$ xcodebuild archive` command) creates bundle for different targets/architectures and puts it to the `Archive` folder
+- `$ xcodebuild -create-xcframework` to bundle all the binaries together (seems like no UI in the XCode for this step so far)
+
+Framework Author Consideration
+- Carefully consider versioning (frameworks plist), use semantic versioning (An example how to pick a new version number)
+- Keep you API small (the smaller the more flexible)
+- Choose names and requirements carefully
+- Avoid unnecessary extensibility (Crossing ABI boundary is like using dynamic method dispatch in ObjC)
+- Use compiler optimizations notation when possible (so the client code's compiler can optimize the usage of the framework):
+  - `@inlinable` functions (with `@usableFromInline` property modifier)
+  - `@frozen` enums and structs
+- Minimize and document your framework's entitlements, permissions and dependencies
+- Handle the permissions' denial gracefully
+- All the framework's dependencies has to be build with this new mechanism themselves
+- Binary dependencies cannot depend on packages (source code modules)
+- Switch off ObjC headers generation if you don't have ObjC interfaces
