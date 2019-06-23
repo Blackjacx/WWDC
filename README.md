@@ -931,22 +931,22 @@ https://developer.apple.com/videos/play/wwdc2019/226/
 **@Binding** property wrapper
 - doesn't create a new state (another source of truth), just a reference to an existing state
 
-- SwiftUI as a remedy for Massive View Controller
+SwiftUI as a remedy for Massive View Controller
 
-- Standart components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
+Standart components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
 
-- Adding a reaction to external actions - via Combine's publishers
+Adding a reaction to external actions - via Combine's publishers
 
-- BindableObject protocol to conform when creating bindable data models
+BindableObject protocol to conform when creating bindable data models
 
 **@ObjectBinding** property wrapper 
 - the same as @Binding but for reference-type objects
 
-- Using **Environment** object for indirect dependencies
+Using **Environment** object for indirect dependencies
 
-- Prefer immutable access (Swift properties, Environment) over the mutable one (Binding) wherever possible
+Prefer immutable access (Swift properties, Environment) over the mutable one (Binding) wherever possible
 
-- Use state effectively
+Use state effectively
   - limit the usage, use bindings instead
   - when using consider the context of it
 
