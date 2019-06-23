@@ -60,6 +60,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 * [Game Center Player Identifiers](#game-center-player-identifiers)
+* [Advances in UI Data Sources](#advances-in-ui-data-sources)
 
 ## What's New in Swift
 
@@ -911,3 +912,54 @@ https://developer.apple.com/wwdc19/615
   - teamPlayerID scoped to development team
   - gamePlayerID scoped to game
 - `loadPlayersForIdentifiers:withCompletionHandler:`
+
+## Advances in UI Data Sources
+
+https://developer.apple.com/wwdc19/220
+
+The new diffable data source API helps you handle changes in your data source to reflect on your UI in a new, easy and safe way.
+
+**Current state-of-the-art** : UICollectionDataSource is straightforward and flexible, but generating UI updates can be challenging
+
+**Batchupdates** :
+When updates go wrong -> crash - Invalid number of sections ...  
+Usually we would use `reloadData()`, which works, but at the cost of the user experience as there are no animations to emphasis the changes.
+
+
+- **Where is our truth ?**
+  - Or data source and current UI state must always agree
+  - Current approach is error prone
+  - No centralized truth
+- **A new approach** : Diffable Data Source
+  - A declarative approach to UI State
+    - `performBatchUpdates()` -> Crashing, hassles, complexity
+    - `apply()` -> Simple, automatic diffing
+- **Snapshots**
+  - Truth of UI State
+  - Unique identifiers for sections and items
+  - No more IndexPaths
+- **3 steps to update**
+  - Create snapshot
+  - Modify the snapshot with new data
+  - apply() the snapshot
+- **Diffable data source updates**
+  - Conforms to `UITableViewDiffableDataSource` or `UICollectionViewDiffableDataSource`
+  - Always call `apply()`
+  - Never call `performBatchUpdates()`, `insertItems()`, etc
+- **Constructing Snapshots**
+  - Empty snapshot
+    - `let snapshot = NSDiffableDataSourceSnapshot<Section, UUID>()`
+  - Current data source snapshot copy
+    - `let snapshot = datasource.snapshot()`
+- **Identifiers**
+  - Must be unique (UUID)
+  - Conforms to Hashable
+  - Data model or identifier
+- **Performance**
+  - Fast
+  - Safe to call `apply()` from a background queue
+    - Although always call exclusively from the main queue or a background queue and stay consistent (if you choose to go background, always go background)
+- **apply()**
+  - Available for iOS, tvOS and macOS
+  - Automates animation
+  - Easy, fast and robust
