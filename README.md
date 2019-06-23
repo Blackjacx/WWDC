@@ -919,47 +919,55 @@ https://developer.apple.com/wwdc19/615
 
 https://developer.apple.com/wwdc19/209
 
-- Domain APIs
-- Vision - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
-  - Image Saliency: most interesting image area
-  - OCR, Document Camera
-- Text, Natural Language
-  - Sentiment Analysis
-  - Word Embeddings
-- Core ML 3
-  - On-Device Model Personalization
+- Gaurav Kapoor
+- Apple Goals: easy, flexible, powerful - Machine Learning for Everyone
+- Many Domain APIs
+  - **Vision** - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
+    - Image Saliency: most interesting image area
+    - Text Recognition: OCR, Document Camera
+  - **Natural Language**
+    - Sentiment Analysis
+    - Word Embeddings
+  - **Speech and Sound**
+  - Combine Domains, for example semantic search in images
+- **Core ML 3**
+  - on device, all platforms, hardware accelerated
+  - model flexibility: layer types, conversions from TensorFlow and later ONNX
+  - model personalization: fine-tuning on device (improved privacy) possible as background processing
   
- ## Understanding Images in Vision
+## Understanding Images in Vision
  
- https://developer.apple.com/wwdc19/222
+https://developer.apple.com/wwdc19/222
  
-- Saliency: attention and objectless-based (Brittany Weinert)
-- [Highlighting Areas of Interest in an Image Using Saliency | Apple Developer Documentation](https://developer.apple.com/documentation/vision/highlighting_areas_of_interest_in_an_image_using_saliency)
-  - small buffers
-  - bounding box (multiple for objectless)
-  - Use to zoom in on relevant parts or defer interesting parts to classification
-- Classification, multi-label model
-- Hierarchical taxonomy for label and confidence
-  - Precision vs. recall
-  - `filter(hasMinimumPrecision, …)`
-- Image similarity (demo)
-- Face recognition / understanding
-  - pupil detection
-  - confidence per 76 face points (landmarks)
-  - face capture quality (comparative measure of same subject)
-- Detectors
-  - human (upper body) - bounding box
-  - animal (cats + dogs) - bounding box + label
-- Tracking
-  - `VNSequenceRequestHandler`
-- Integration with CoreML
-  - Multi-Image Inputs
-	
-## Text Recognition in Vision
-- `VNRecognizeTextRequest`
-  - fast vs accurate
-- Accumulate evidence over multiple frames
-- Progress management (progressHandler)
-- `Observation.topCandidates()`
-- `NSDataDetector`
-- Improve results using geometric relations, domain knowledge and CoreML
+- New: **Image Saliency**: attention and objectness based (Brittany Weinert)
+  - attention based saliency
+    - heat map - where do humans look (e.g. faces)
+    - using contrast, faces, subjects, horizons, light
+    - perceived motion
+  - objectness based saliency
+    - object segmentation for foreground objects
+  - [Highlighting Areas of Interest in an Image Using Saliency | Apple Developer Documentation](https://developer.apple.com/documentation/vision/highlighting_areas_of_interest_in_an_image_using_saliency)
+  - small buffers (float values: 0-1) and bounding boxes (multiple for objectness)
+  - `VNGenerateAttentionBasedSaliencyImageRequest` and `VNGenerateAttentionBasedSaliencyImageRequest `
+  - Use as graphical mask, to zoom in on relevant parts of an image or to defer interesting parts to classification
+- New: **Classification** (Rohan Chandra)
+  - Bringing the complex task of classifying images on device into the API using the same network as for photo search.
+  - multi-label model: identifying multiple objects in one image
+  - Hierarchical taxonomy for label and confidence
+  - `NClassifyImageRequest`
+    - Interpreting the result, we have to pick thresholds
+    - Precision vs. recall (by  `filter(hasMinimumPrecision, …)` vs. `filter(hasMinimumRecall(), …)`)
+- New: **Image similarity** (demo)
+  - should regard the content instead of pixel values (semantic similarity)
+  - feature vector of classifying computation `featurePrintObservationForImage()` -> `computeDistance()`
+- **Face technologies** (Sergey Kamensky)
+  - Face recognition / understanding with `VNDetectFaceLandmarksRequest`
+    - improved pupil detection
+    - confidence per 76 face points (landmarks)
+    - face capture quality (comparative measure of same subject) `VNDetectFaceCaptureQualityRequest`
+- **New detectors, tracking and integration** (Sergey Kamensky)
+  - human detector (upper body) - bounding box
+  - animal detector(cats + dogs) - bounding box + label
+  - Tracking improved for occlusion, efficient in background, ML-based `VNSequenceRequestHandler`
+  - Integration with CoreML now also for multi image inputs	
+
