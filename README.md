@@ -12,7 +12,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet)
 
 ## Interesting WWDC-Related Links
 
@@ -61,6 +61,8 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 * [Game Center Player Identifiers](#game-center-player-identifiers)
 * [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
+* [What's new in Machine Learning](#whats-new-in-machine-learning)
+* [Understanding Images in Vision](#understanding-images-in-vision)
 
 ## What's New in Swift
 
@@ -930,3 +932,59 @@ https://developer.apple.com/wwdc19/234
   - Set custom words when need domain-specific text
   - Consider increse the accuracy when text is confusable or illegible
   - Manage progress of request using `progressHandler` / `cancel()`
+
+## What's new in Machine Learning
+
+https://developer.apple.com/wwdc19/209
+
+- Presented by Gaurav Kapoor
+- Apple Goals: easy, flexible, powerful - Machine Learning for Everyone
+- Many Domain APIs
+  - **Vision** - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
+    - Image Saliency: most interesting image area
+    - Text Recognition: OCR, Document Camera
+  - **Natural Language**
+    - Sentiment Analysis
+    - Word Embeddings
+  - **Speech and Sound**
+  - Combine Domains, for example semantic search in images
+- **Core ML 3**
+  - on device, all platforms, hardware accelerated
+  - model flexibility: layer types, conversions from TensorFlow and later ONNX
+  - model personalization: fine-tuning on device (improved privacy) possible as background processing
+  
+## Understanding Images in Vision
+ 
+https://developer.apple.com/wwdc19/222
+ 
+- New: **Image Saliency**: attention and objectness based (presented by Brittany Weinert)
+  - attention based saliency
+    - heat map - where do humans look (e.g. faces)
+    - using contrast, faces, subjects, horizons, light
+    - perceived motion
+  - objectness based saliency
+    - object segmentation for foreground objects
+  - [Highlighting Areas of Interest in an Image Using Saliency | Apple Developer Documentation](https://developer.apple.com/documentation/vision/highlighting_areas_of_interest_in_an_image_using_saliency)
+  - small buffers (float values: 0-1) and bounding boxes (multiple for objectness)
+  - `VNGenerateAttentionBasedSaliencyImageRequest` and `VNGenerateAttentionBasedSaliencyImageRequest `
+  - Use as graphical mask, to zoom in on relevant parts of an image or to defer interesting parts to classification
+- New: **Classification** (presented by Rohan Chandra)
+  - Bringing the complex task of classifying images on device into the API using the same network as for photo search.
+  - multi-label model: identifying multiple objects in one image
+  - Hierarchical taxonomy for label and confidence
+  - `NClassifyImageRequest`
+    - Interpreting the result, we have to pick thresholds
+    - Precision vs. recall (by  `filter(hasMinimumPrecision, …)` vs. `filter(hasMinimumRecall(), …)`)
+- New: **Image similarity** (demo)
+  - should regard the content instead of pixel values (semantic similarity)
+  - feature vector of classifying computation `featurePrintObservationForImage()` -> `computeDistance()`
+- **Face technologies** (Sergey Kamensky)
+  - Face recognition / understanding with `VNDetectFaceLandmarksRequest`
+    - improved pupil detection
+    - confidence per 76 face points (landmarks)
+    - face capture quality (comparative measure of same subject) `VNDetectFaceCaptureQualityRequest`
+- **New detectors, tracking and integration** (presented by Sergey Kamensky)
+  - human detector (upper body) - bounding box
+  - animal detector(cats + dogs) - bounding box + label
+  - Tracking improved for occlusion, efficient in background, ML-based `VNSequenceRequestHandler`
+  - Integration with CoreML now also for multi image inputs	
