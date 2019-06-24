@@ -12,7 +12,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@Gerriet](https://github.com/gerriet)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet)
 
 ## Interesting WWDC-Related Links
 
@@ -60,6 +60,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 * [Game Center Player Identifiers](#game-center-player-identifiers)
+* [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
 * [What's new in Machine Learning](#whats-new-in-machine-learning)
 * [Understanding Images in Vision](#understanding-images-in-vision)
 
@@ -95,7 +96,7 @@ https://developer.apple.com/wwdc19/206
 - **Baseline alignment** to align symbol to first line of text
 - **Regular images** are aligned baseline aligned by generating a new image with `image.withBaselineOffsetFromBottom(GGFloat)`
 - **Prefer horizontal and vertical center alignment** instead of edge alignment
-- **Buttons with symbol images** are created using `UIImage.system(image:target:action)`
+- **Buttons with symbol images** are created using `UIButton.system(image:target:action)`
 - **UIButton Symbol Configuration** changed by `UIButton.setPreferredSymbolConfiguration(config:forState:)`
 - **Auto-scaling UIBarButtonItems** from `SymbolScale.large` to `SymbolScale.medium` in landscape
 - **No frame settings necessary for NSTextAttachment** for placing images in text
@@ -126,9 +127,9 @@ https://developer.apple.com/wwdc19/301
 - **Transporter** Mac app for submission of IPA, PKG, ITMSP files. ApplicationLoader deprecated.
 - **Build Activity View** shows all uploaded builds, download sizes for each device, detailed information for each build
 - **TestFlight Feedback** 
-  - lets users talke screenshots in TestFlight and send them with a description to developer
+  - lets users take screenshots in TestFlight and send them with a description to developer
   - accessible/downloadable from ASC
-  - adds a custom onboarding screen to app the first time the app is tested. 
+  - adds a custom onboarding screen to the app when it is tested via TestFlight and opened the first time. 
   - can be enabled/disabled via testflight for each tester group
 - **Crashes** automatically trigger the feedback dialog. Feedback viewable/downloadable in ASC.
 - **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3+. Only for homescreen and storage deletions. Resetting device doesn't count.
@@ -914,11 +915,29 @@ https://developer.apple.com/wwdc19/615
   - gamePlayerID scoped to game
 - `loadPlayersForIdentifiers:withCompletionHandler:`
 
+## Text Recognition in Vision Framework
+
+https://developer.apple.com/wwdc19/234
+
+- **Not necessary anymore to use OCR / CoreML Model** to detect text using Vision Framework
+- **VNRecognizeTextRequest** that returns **[VNRecognizedTextObservation]** introduced as new request class
+- Request can configure speed / accuracy of recognition using **VNRequestTextRecognitionLevel**
+- **Fast mode** should take 0.25s / **Accurate mode** should take 2.0s
+- Possibility to set custom words to recognize. Minimum height of words. Priority of languages. Possibility of auto-correct detected content.
+- More about **VNRecognizedTextObservation**
+  - Call `topCandidates` to get a list of `VNRecognizedText`
+  - `VNRecognizedText` is the type of object that gives the **String** detected
+- **Best Practices**
+  - Specify language in use
+  - Set custom words when need domain-specific text
+  - Consider increse the accuracy when text is confusable or illegible
+  - Manage progress of request using `progressHandler` / `cancel()`
+
 ## What's new in Machine Learning
 
 https://developer.apple.com/wwdc19/209
 
-- Gaurav Kapoor
+- Presented by Gaurav Kapoor
 - Apple Goals: easy, flexible, powerful - Machine Learning for Everyone
 - Many Domain APIs
   - **Vision** - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
@@ -938,7 +957,7 @@ https://developer.apple.com/wwdc19/209
  
 https://developer.apple.com/wwdc19/222
  
-- New: **Image Saliency**: attention and objectness based (Brittany Weinert)
+- New: **Image Saliency**: attention and objectness based (presented by Brittany Weinert)
   - attention based saliency
     - heat map - where do humans look (e.g. faces)
     - using contrast, faces, subjects, horizons, light
@@ -949,7 +968,7 @@ https://developer.apple.com/wwdc19/222
   - small buffers (float values: 0-1) and bounding boxes (multiple for objectness)
   - `VNGenerateAttentionBasedSaliencyImageRequest` and `VNGenerateAttentionBasedSaliencyImageRequest `
   - Use as graphical mask, to zoom in on relevant parts of an image or to defer interesting parts to classification
-- New: **Classification** (Rohan Chandra)
+- New: **Classification** (presented by Rohan Chandra)
   - Bringing the complex task of classifying images on device into the API using the same network as for photo search.
   - multi-label model: identifying multiple objects in one image
   - Hierarchical taxonomy for label and confidence
@@ -964,9 +983,8 @@ https://developer.apple.com/wwdc19/222
     - improved pupil detection
     - confidence per 76 face points (landmarks)
     - face capture quality (comparative measure of same subject) `VNDetectFaceCaptureQualityRequest`
-- **New detectors, tracking and integration** (Sergey Kamensky)
+- **New detectors, tracking and integration** (presented by Sergey Kamensky)
   - human detector (upper body) - bounding box
   - animal detector(cats + dogs) - bounding box + label
   - Tracking improved for occlusion, efficient in background, ML-based `VNSequenceRequestHandler`
   - Integration with CoreML now also for multi image inputs	
-
