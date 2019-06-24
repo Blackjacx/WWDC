@@ -917,16 +917,16 @@ https://developer.apple.com/wwdc19/615
 
 https://developer.apple.com/wwdc19/234
 
-- Now it's **no more necessary use a OCR / CoreML Model** to detect text using Vision Framework.
-- Introduced a new request class **VNRecognizeTextRequest** that returns **[VNRecognizedTextObservation]**
-- The request can configure the speed / accuracy of recognition using `VNRequestTextRecognitionLevel`
-- **Fast** mode should take 0.25s / **Accurate** mode should take 2.0s
-- Also, is possible set custom words to recognize, minimum height of words, priority of languages, and, the possibility of auto-correct detected content.
+- **Not necessary anymore to use OCR / CoreML Model** to detect text using Vision Framework
+- **VNRecognizeTextRequest** that returns **[VNRecognizedTextObservation]** introduced as new request class
+- Request can configure speed / accuracy of recognition using **VNRequestTextRecognitionLevel**
+- **Fast mode** should take 0.25s / **Accurate mode** should take 2.0s
+- Possibility to set custom words to recognize. Minimum height of words. Priority of languages. Possibility of auto-correct detected content.
 - More about **VNRecognizedTextObservation**
-- Call `topCandidates` to get a list of `VNRecognizedText`
-- `VNRecognizedText` is the type of object that gives the **String** detected
+  - Call `topCandidates` to get a list of `VNRecognizedText`
+  - `VNRecognizedText` is the type of object that gives the **String** detected
 - **Best Practices**
-- Specify language in use
-- Set custom words when need domain-specific text
-- Consider increse the accuracy when text is confusable or illegible
-- Manage progress of request using `progressHandler` / `cancel()`
+  - Specify language in use
+  - Set custom words when need domain-specific text
+  - Consider increse the accuracy when text is confusable or illegible
+  - Manage progress of request using `progressHandler` / `cancel()`
