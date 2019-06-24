@@ -126,7 +126,7 @@ https://developer.apple.com/wwdc19/301
 - **TestFlight Feedback** 
   - lets users take screenshots in TestFlight and send them with a description to developer
   - accessible/downloadable from ASC
-  - adds a custom onboarding screen to the app which is tested at the first time. 
+  - adds a custom onboarding screen to the app when it is tested via TestFlight and opened the first time. 
   - can be enabled/disabled via testflight for each tester group
 - **Crashes** automatically trigger the feedback dialog. Feedback viewable/downloadable in ASC.
 - **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3+. Only for homescreen and storage deletions. Resetting device doesn't count.
