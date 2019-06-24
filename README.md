@@ -12,7 +12,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov)
 
 ## Interesting WWDC-Related Links
 
@@ -64,6 +64,8 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [What's new in Machine Learning](#whats-new-in-machine-learning)
 * [Understanding Images in Vision](#understanding-images-in-vision)
 * [Advances in UI Data Sources](#advances-in-ui-data-sources)
+* [Data Flow Through SwiftUI](#data-flow-through-swiftUI)
+* [Binary Frameworks in Swift](#binary-frameworks-in-swift)
 
 ## What's New in Swift
 
@@ -994,15 +996,11 @@ https://developer.apple.com/wwdc19/222
 
 https://developer.apple.com/wwdc19/220
 
-The new diffable data source API helps you handle changes in your data source to reflect on your UI in a new, easy and safe way.
-
-**Current state-of-the-art** : UICollectionDataSource is straightforward and flexible, but generating UI updates can be challenging
-
-**Batchupdates** :
-When updates go wrong -> crash - Invalid number of sections ...  
-Usually we would use `reloadData()`, which works, but at the cost of the user experience as there are no animations to emphasis the changes.
-
-
+- The new diffable data source API helps you handle changes in your data source to reflect on your UI in a new, easy and safe way.
+- **Current state-of-the-art** : UICollectionDataSource is straightforward and flexible, but generating UI updates can be challenging
+- **Batchupdates**
+  - When updates go wrong -> crash - Invalid number of sections ...  
+  - Usually we would use `reloadData()`, which works, but at the cost of the user experience as there are no animations to emphasis the changes.
 - **Where is our truth ?**
   - Or data source and current UI state must always agree
   - Current approach is error prone
@@ -1040,3 +1038,63 @@ Usually we would use `reloadData()`, which works, but at the cost of the user ex
   - Available for iOS, tvOS and macOS
   - Automates animation
   - Easy, fast and robust
+
+## Data Flow Through SwiftUI
+
+https://developer.apple.com/videos/play/wwdc2019/226/
+
+(Luca Bernardy, Raj Ramamurthy)
+
+- **Main principles**
+  - Data access is a dependency
+  - Every UI piece of data has its source of truth (have a single one)
+- **@State** property wrapper
+  - framework allocates the storage and initiate redraw when it's changed
+  - it is a source of truth
+- **@Binding** property wrapper
+  - doesn't create a new state (another source of truth), just a reference to an existing state
+- **SwiftUI as a remedy** for Massive View Controller
+- Standart components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
+- **Adding reaction** to external actions - via Combine's publishers
+- **BindableObject protocol** to conform when creating bindable data models
+- **@ObjectBinding** property wrapper 
+  - the same as @Binding but for reference-type objects
+- **Using Environment** object for indirect dependencies
+- **Prefer immutable access** (Swift properties, Environment) over the mutable one (Binding) wherever possible
+- **Use state effectively**
+  - limit the usage, use bindings instead
+  - when using consider the context of it
+
+## Binary Frameworks in Swift
+
+https://developer.apple.com/videos/play/wwdc2019/416/
+
+(Harlan Haskins, Jordan Rose)
+
+- **Two main ways to distribute 3rd-party code**
+  - for shipping the source code - Swift Packages
+  - for shipping binaries - XCFrameworks (new format for distributing binary libraries)
+- **XCFramework**
+  - One bundle for different binaries (iOS Device, iOS Simulator, macOS, tvOC, watchOS)
+  - Ability to distribute frameworks and static libraries
+  - Support for Swift and C-based code
+- **Security/Trust** consideration
+  - Entitlements and permissions granted to the app are granted to the frameworks as well (and all this dependencies)
+- **Creating a XCFramework**
+  - Build Settings -> `Build library for distribution`
+  - New Swift Module Interfaces - a text file with the metadata about the compiler (version, flags) and all the publich API of the framework
+  - Xcode (or `$ xcodebuild archive` command) creates bundle for different targets/architectures and puts it to the `Archive` folder
+  - `$ xcodebuild -create-xcframework` to bundle all the binaries together (seems like no UI in the Xcode for this step so far)
+- **Framework Author** Consideration
+  - Carefully consider versioning (frameworks plist), use semantic versioning (An example how to pick a new version number)
+  - Keep you API small (the smaller the more flexible)
+  - Choose names and requirements carefully
+  - Avoid unnecessary extensibility (Crossing ABI boundary is like using dynamic method dispatch in ObjC)
+  - Use compiler optimizations notation when possible (so the client code's compiler can optimize the usage of the framework):
+    - `@inlinable` functions (with `@usableFromInline` property modifier)
+    - `@frozen` enums and structs
+  - Minimize and document your framework's entitlements, permissions and dependencies
+  - Handle the permissions' denial gracefully
+  - All the framework's dependencies have to be build with this new mechanism themselves
+  - Binary dependencies cannot depend on packages (source code modules)
+  - Switch off ObjC headers generation if you don't have ObjC interfaces
