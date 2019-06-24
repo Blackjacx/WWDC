@@ -60,6 +60,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [HLS Authoring for AirPlay 2 Video](#hls-authoring-for-airplay-2-video)
 * [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 * [Game Center Player Identifiers](#game-center-player-identifiers)
+* [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
 
 ## What's New in Swift
 
@@ -911,3 +912,21 @@ https://developer.apple.com/wwdc19/615
   - teamPlayerID scoped to development team
   - gamePlayerID scoped to game
 - `loadPlayersForIdentifiers:withCompletionHandler:`
+
+## Text Recognition in Vision Framework
+
+https://developer.apple.com/wwdc19/234
+
+- Now it's **no more necessary use a OCR / CoreML Model** to detect text using Vision Framework.
+- Introduced a new request class **VNRecognizeTextRequest** that returns **[VNRecognizedTextObservation]**
+- The request can configure the speed / accuracy of recognition using `VNRequestTextRecognitionLevel`
+- **Fast** mode should take 0.25s / **Accurate** mode should take 2.0s
+- Also, is possible set custom words to recognize, minimum height of words, priority of languages, and, the possibility of auto-correct detected content.
+- More about **VNRecognizedTextObservation**
+- Call `topCandidates` to get a list of `VNRecognizedText`
+- `VNRecognizedText` is the type of object that gives the **String** detected
+- **Best Practices**
+- Specify language in use
+- Set custom words when need domain-specific text
+- Consider increse the accuracy when text is confusable or illegible
+- Manage progress of request using `progressHandler` / `cancel()`
