@@ -124,7 +124,7 @@ https://developer.apple.com/wwdc19/301
 - **Transporter** Mac app for submission of IPA, PKG, ITMSP files. ApplicationLoader deprecated.
 - **Build Activity View** shows all uploaded builds, download sizes for each device, detailed information for each build
 - **TestFlight Feedback** 
-  - lets users talke screenshots in TestFlight and send them with a description to developer
+  - lets users take screenshots in TestFlight and send them with a description to developer
   - accessible/downloadable from ASC
   - adds a custom onboarding screen to app the first time the app is tested. 
   - can be enabled/disabled via testflight for each tester group
