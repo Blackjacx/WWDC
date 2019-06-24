@@ -93,7 +93,7 @@ https://developer.apple.com/wwdc19/206
 - **Baseline alignment** to align symbol to first line of text
 - **Regular images** are aligned baseline aligned by generating a new image with `image.withBaselineOffsetFromBottom(GGFloat)`
 - **Prefer horizontal and vertical center alignment** instead of edge alignment
-- **Buttons with symbol images** are created using `UIImage.system(image:target:action)`
+- **Buttons with symbol images** are created using `UIButton.system(image:target:action)`
 - **UIButton Symbol Configuration** changed by `UIButton.setPreferredSymbolConfiguration(config:forState:)`
 - **Auto-scaling UIBarButtonItems** from `SymbolScale.large` to `SymbolScale.medium` in landscape
 - **No frame settings necessary for NSTextAttachment** for placing images in text
@@ -124,9 +124,9 @@ https://developer.apple.com/wwdc19/301
 - **Transporter** Mac app for submission of IPA, PKG, ITMSP files. ApplicationLoader deprecated.
 - **Build Activity View** shows all uploaded builds, download sizes for each device, detailed information for each build
 - **TestFlight Feedback** 
-  - lets users talke screenshots in TestFlight and send them with a description to developer
+  - lets users take screenshots in TestFlight and send them with a description to developer
   - accessible/downloadable from ASC
-  - adds a custom onboarding screen to app the first time the app is tested. 
+  - adds a custom onboarding screen to the app which is tested at the first time. 
   - can be enabled/disabled via testflight for each tester group
 - **Crashes** automatically trigger the feedback dialog. Feedback viewable/downloadable in ASC.
 - **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3+. Only for homescreen and storage deletions. Resetting device doesn't count.
