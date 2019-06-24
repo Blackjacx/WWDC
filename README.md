@@ -93,7 +93,7 @@ https://developer.apple.com/wwdc19/206
 - **Baseline alignment** to align symbol to first line of text
 - **Regular images** are aligned baseline aligned by generating a new image with `image.withBaselineOffsetFromBottom(GGFloat)`
 - **Prefer horizontal and vertical center alignment** instead of edge alignment
-- **Buttons with symbol images** are created using `UIImage.system(image:target:action)`
+- **Buttons with symbol images** are created using `UIButton.system(image:target:action)`
 - **UIButton Symbol Configuration** changed by `UIButton.setPreferredSymbolConfiguration(config:forState:)`
 - **Auto-scaling UIBarButtonItems** from `SymbolScale.large` to `SymbolScale.medium` in landscape
 - **No frame settings necessary for NSTextAttachment** for placing images in text
