@@ -19,7 +19,7 @@ This repo has been already mentioned in the following places:
 - [iOS Dev Weekly Issue 409](https://iosdevweekly.com/issues/409)
 - [iOS Goodies Issue 287](https://ios-goodies.com/post/185729205551/week-287)
 - [Swift Developments Issue 189](https://andybargh.com/swiftdevelopments-189/)
-- [Twitter](https://gitspo.com/mentions/Blackjacx/WWDC)
+- [Twitter](https://gitspo.com/mentions/Blackjacx/WWDC) [![GitSpo Mentions](https://gitspo.com/badges/mentions/Blackjacx/WWDC?style=flat-square)](https://gitspo.com/mentions/Blackjacx/WWDC)
 
 ## Interesting WWDC-Related Links
 
