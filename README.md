@@ -64,8 +64,9 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 * [What's new in Machine Learning](#whats-new-in-machine-learning)
 * [Understanding Images in Vision](#understanding-images-in-vision)
 * [Advances in UI Data Sources](#advances-in-ui-data-sources)
-* [Data Flow Through SwiftUI](#data-flow-through-swiftUI)
+* [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 * [Binary Frameworks in Swift](#binary-frameworks-in-swift)
+* [Creating Great Localized Experiences with Xcode 11](#creating-great-localized-experiences-with-xcode-11)
 
 ## What's New in Swift
 
@@ -1098,3 +1099,35 @@ https://developer.apple.com/videos/play/wwdc2019/416/
   - All the framework's dependencies have to be build with this new mechanism themselves
   - Binary dependencies cannot depend on packages (source code modules)
   - Switch off ObjC headers generation if you don't have ObjC interfaces
+
+## Creating Great Localized Experiences with Xcode 11
+
+https://developer.apple.com/wwdc19/403
+
+- **New Features**
+  - Language setting per app
+  - keyboards for 38 languages & easier keyboard switching
+  - handwriting for Chinese
+  - Localized relationships in Contacts
+  - language detection for dictation
+  - enhanced language setup for multilingual users
+- **Per-App Language Setting**
+  - Possible in watchOS (via phone sync), macOS
+  - No developer action required
+  - Changing language in code is not supported anymore
+  - Use `UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)` to guide the user to the setting
+  - Changing language will re-launch the app
+  - Use `State Restoration` to make language switching seamless: `viewController.restorationIdentifier`
+  - Scene state restoration by implementing `SceneDelegate.stateRestaurationActivity(for scene:) -> NSUserActivity`
+  - Use `Bundle.main.preferredLocalizations.first` to get current running app language
+  - If you have a list of languages (obtained from e.g. a server) get best matching language by `Bundle.preferredLocalizations(from: availableLanguages).first`
+- 15x faster localization export/import by `xcodebuild -importLocalizations -project <pname> -localizationPath <path>` && `xcodebuild -exportLocalizations -project <pname> -localizationPath <path> -includeScreenshots`
+- New stringdict rule `NSStringDeviceSpecificRuleType` to specify device-specific localizations
+  - accepts the values `appletv`, `applewatch`, `ipad`, `iphone`, `ipod`, `mac`
+  - can be combined with plural and variable width rules
+- **Settings bundle** included in Localization catalog
+- **Localization of image/symbol sets** in AssetCatalog
+- **Use Test Plans** to test Localization topics like clipping, truncation, layout overlapping, right-to-left languages
+  - gather screenshots for localizations for the use cases "App Store Screenshots", "Forward them to Localizers To Provide Context"
+  - UI Test Attachments, e.g. screenshots, can be added to Localization Catalog
+  - on localization export Xcode even provides the frame of localizable content on the screenshot so tools can visualize it appropriately
