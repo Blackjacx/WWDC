@@ -486,7 +486,8 @@ https://developer.apple.com/wwdc19/224
 
 - **Deprecation of LaunchImages** use Launch Storyboards instead
 - **New App Store Requirement** Any app linking to iOS 13 must ensure correct layout at any size 
-- **Split Screen Multitasking** is required for iPad Apps
+- **Split Screen Multitasking** is strongly recommended for iPad Apps
+  - Apple is going to expect that **most** of the applications, **unless** you want to provide a truly immersive experience, are going to support split screen multitasking
 - **UINavigationBarAppearance** customize `.standardAppearance` (iPhone portrait), `.compactAppearance` (iPhone landscape), `.scrollEdgeAppearance` (if attached to scrollView and scrolled to top, bar uses this one)
   - settable per `navigationItem` so customization per view controller possible (including color, transparency, …)
     `let appearance = navigationBar.standardAppearance.copy()`
