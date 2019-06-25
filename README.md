@@ -1,7 +1,5 @@
 # WWDC 2019 Session Notes
 
-[![GitSpo Mentions](https://gitspo.com/badges/mentions/Blackjacx/WWDC?style=flat-square)](https://gitspo.com/mentions/Blackjacx/WWDC)
-
 Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
 Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion. Also have a quick look in [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
@@ -13,6 +11,15 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
 [@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703)
+
+## Mentions
+
+This repo has been already mentioned in the following places:
+
+- [iOS Dev Weekly Issue 409](https://iosdevweekly.com/issues/409)
+- [iOS Goodies Issue 287](https://ios-goodies.com/post/185729205551/week-287)
+- [Swift Developments Issue 189](https://andybargh.com/swiftdevelopments-189/)
+- [Twitter](https://gitspo.com/mentions/Blackjacx/WWDC)
 
 ## Interesting WWDC-Related Links
 
