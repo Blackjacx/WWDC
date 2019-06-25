@@ -2,11 +2,11 @@
 
 Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
+> This is work in progress since it is a lot of effort to watch all the videos by myself. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
+
+## Contribution
+
 Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion. Also have a quick look in [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
-
-> This is work in progress since also for me it is a lot of effort to watch all the videos. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
-
-## Contributors
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
