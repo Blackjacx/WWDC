@@ -74,6 +74,7 @@ This repo has been already mentioned in the following places:
 * [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 * [Binary Frameworks in Swift](#binary-frameworks-in-swift)
 * [Creating Great Localized Experiences with Xcode 11](#creating-great-localized-experiences-with-xcode-11)
+* [Introducing Combine](#introducing-combine)
 
 ## What's New in Swift
 
@@ -1139,3 +1140,50 @@ https://developer.apple.com/wwdc19/403
   - gather screenshots for localizations for the use cases "App Store Screenshots", "Forward them to Localizers To Provide Context"
   - UI Test Attachments, e.g. screenshots, can be added to Localization Catalog
   - on localization export Xcode even provides the frame of localizable content on the screenshot so tools can visualize it appropriately
+
+## Introducing Combine
+
+https://developer.apple.com/wwdc19/722
+
+- **Combine is a unified, declarative API for processing values over time**
+  - Generic
+  - Type safe
+  - Composition safe
+  - Request driven
+- **Key concepts**
+  - Publisher
+    - Defines how values and errors are produced
+    - Value type (struct)
+    - Allows registration of a `Subscriber`
+  - Subscriber
+    - Receives value
+    - Reference type (class)
+  - Operator
+    - Adopts `Publisher`
+    - Describes a behavior for changing values
+    - Subscribes to a `Publisher` (“upstream”)
+    - Sends result to a `Subscriber` (“downstream”)
+    - Value type
+- **Relations**
+  - `Subscriber` is attached to `Publisher`  
+  - `Publisher` sends a `Subscription`  
+  - `Subscriber` requests N values  
+  - `Publisher` sends N values or less  
+  - `Publisher` sends completion
+  - The value sent from the `Publisher` should be the same type as the one expected from the `Subscriber`. In case of a mismatch you need to create an `Operator` to transform the value.
+- **Combining Publishers**
+  - Zip
+  - CombineLatest
+- **Zip**
+  - Converts several inputs into a single tuple
+  - A "when/and" operation
+  - Requires input from all to proceed
+- **Combine Latest**
+  - Converts several inputs into a single value
+  - A "when/or" operation
+  - Requires input from any to proceed
+  - Stores last value
+- **Examples of usage**
+  - Process a `NotificationCenter` post with `filter`
+  - Await completion of two network requests with `zip`
+  - `decode` the data of a `URLResponse`
