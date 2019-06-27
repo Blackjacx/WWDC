@@ -1141,55 +1141,49 @@ https://developer.apple.com/wwdc19/403
   - UI Test Attachments, e.g. screenshots, can be added to Localization Catalog
   - on localization export Xcode even provides the frame of localizable content on the screenshot so tools can visualize it appropriately
 
-  ## Introducing Combine
+## Introducing Combine
 
-  https://developer.apple.com/wwdc19/722
+https://developer.apple.com/wwdc19/722
 
-  - **Combine is a unified, declarative API for processing values over time**
-    - Generic
-    - Type safe
-    - Composition safe
-    - Request driven
-  - **Key concepts**
-    - Publishers
-    - Subscribers
-    - Operators
-  - **Publisher**
+- **Combine is a unified, declarative API for processing values over time**
+  - Generic
+  - Type safe
+  - Composition safe
+  - Request driven
+- **Key concepts**
+  - Publisher
     - Defines how values and errors are produced
     - Value type (struct)
     - Allows registration of a `Subscriber`
-  - **Subscriber**
+  - Subscriber
     - Receives value
     - Reference type (class)
-
-
-  1. `Subscriber` is attached to `Publisher`  
-  2. `Publisher` sends a `Subscription`  
-  3. `Subscriber` requests N values  
-  4. `Publisher` sends N values or less  
-  5. `Publisher` sends completion  
-
-  The value sent from the `Publisher` should be the same type as the one expected from the `Subscriber`. In case of a mismatch you need to create an `Operator` to transform the value.
-
-  - **Operator**
+  - Operator
     - Adopts `Publisher`
     - Describes a behavior for changing values
     - Subscribes to a `Publisher` (“upstream”)
     - Sends result to a `Subscriber` (“downstream”)
     - Value type
-  - **Combining Publishers**
-    - Zip
-    - CombineLatest
-  - **Zip**
-    - Converts several inputs into a single tuple
-    - A “when/and“ operation
-    - Requires input from all to proceed
-  - **Combine Latest**
-    - Converts several inputs into a single value
-    - A “when/or” operation
-    - Requires input from any to proceed
-    - Stores last value
-  - **Examples of usage**
-    - Process a `NotificationCenter` post with `filter`
-    - Await completion of two network requests with `zip`
-    - `decode` the data of a `URLResponse`
+- **Relations**
+  - `Subscriber` is attached to `Publisher`  
+  - `Publisher` sends a `Subscription`  
+  - `Subscriber` requests N values  
+  - `Publisher` sends N values or less  
+  - `Publisher` sends completion
+  - The value sent from the `Publisher` should be the same type as the one expected from the `Subscriber`. In case of a mismatch you need to create an `Operator` to transform the value.
+- **Combining Publishers**
+  - Zip
+  - CombineLatest
+- **Zip**
+  - Converts several inputs into a single tuple
+  - A "when/and" operation
+  - Requires input from all to proceed
+- **Combine Latest**
+  - Converts several inputs into a single value
+  - A "when/or" operation
+  - Requires input from any to proceed
+  - Stores last value
+- **Examples of usage**
+  - Process a `NotificationCenter` post with `filter`
+  - Await completion of two network requests with `zip`
+  - `decode` the data of a `URLResponse`
