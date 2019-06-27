@@ -75,6 +75,7 @@ This repo has been already mentioned in the following places:
 * [Binary Frameworks in Swift](#binary-frameworks-in-swift)
 * [Creating Great Localized Experiences with Xcode 11](#creating-great-localized-experiences-with-xcode-11)
 * [Introducing Combine](#introducing-combine)
+* [Getting the Most Out of Simulator](#getting-the-most-out-of-simulator)
 
 ## What's New in Swift
 
@@ -1187,3 +1188,47 @@ https://developer.apple.com/wwdc19/722
   - Process a `NotificationCenter` post with `filter`
   - Await completion of two network requests with `zip`
   - `decode` the data of a `URLResponse`
+
+## Getting the Most Out of Simulator
+
+https://developer.apple.com/wwdc19/418
+
+- **What is Simulator?**
+  - isolated userspaces (iOS, watchOS, tvOS) running on macOS kernel
+  - seperate launchd, deamons, URLSessions, mach bootstrap, ...
+  - same filesystem, different $HOME
+  - memory and CPU limits are NOT simulated
+  - App Sandbox is not enforced
+  - Simulates case-sensitive filesystem
+  - thread sanitizer supported
+- **Burning FAQs**
+  - **Zoom in** by Click&Drag while holding down the `⌥` key
+  - **Simulate Drag&Drop** by drag an app; hold `⌃` to simulate a hold; select the page you want to drop the app; release `⌃`
+  - **Select Used Autio-Output Device** from menu `Hardware > Audio Output`.
+  - **Log in To iCloud** to access all your photos, calendars, etc
+  - **Trigger iCloud Sync** to manually sync iCloud with Simulator
+  - **Install additional (older) Simulators** by pressing `⇧ + ⌘ + 2`, click on `Simulators` and then the `+` button at the bottom left
+  - **Change SImulator Window Size** from the `Window` menu
+  - **Activate Slow Animations** to debug animations by `Debug > Slow Animations (⌘ + T)`
+  - **Siri** supported on all Simulators
+  - **Control tvOS** with software remote, hardware remote (after paired), game controllers, bluetooth keyboard
+  - **Running xOS 13 simulator with Xcode 10.x** is possible by this weird combination of actions (look at 13:00)
+  - **Drag&Drop** App bundles, locations, images, videos, URLs
+  - **Share via Share Sheet** to multiple simulators at the same time
+  - **Simulate Custom Location** via `Debug > Location > Custom Location...`
+  - **Simulate Active-Call Statusbar** by `Hardware > Toggle In-Call Status Bar (⌘ + Y)` 
+  - More Available Features: External Displays, Dark Mode Toggle, Setting Alternate Backgrounds, Dictation, Alternate Software Keyboards, Quick Path (Swipe-To-Type)
+- **simctl**
+  - `xcrun simctl help`
+  - `xcrun simctl list devices` to list all devices.
+  - `xcrun simctl --json` outputs JSON for automation purposes.
+  - `xcrun simctl create` to create new simulators. Outputs the device id.
+  - `xcrun simctl spawn <device> <command> <argument>` spawn command in simulator, e.g. change application user defaults.
+  - `xcrun simctl diagnose` collect logs on disk, dumps sytsem state, etc. Great for test failures in automated systems. Use `-l` flag to skip privacy hint. Attach when filing feedback!
+  - `xcrun simctl launch` to launch an application.
+  - `xcrun simctl launch --console-pty booted com.apple.example -MyDefaultKey YES` to display the log output in the current terminal window and provide (overwrite) launch arguments.
+  - `xcrun simctl boot <device>` to boot simulator with the given id.
+  - `xcrun simctl shutdown all` to shutdown all simulators.
+  - `xcrun simctl delete <device>` to delete simulator with the given id.
+  - `xcrun simctl delete unavailable` to delete simulators using an unavailable runtime.
+  - `xcrun simctl pair <watch> <phone>` to a watch sim to a phone sim
