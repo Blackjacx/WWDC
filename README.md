@@ -1196,30 +1196,30 @@ https://developer.apple.com/wwdc19/418
 - **What is Simulator?**
   - isolated userspaces (iOS, watchOS, tvOS) running on macOS kernel
   - seperate launchd, deamons, URLSessions, mach bootstrap, ...
-  - same filesystem, different $HOME
+  - same filesystem, different `$HOME`
   - memory and CPU limits are NOT simulated
   - App Sandbox is not enforced
   - Simulates case-sensitive filesystem
   - thread sanitizer supported
 - **Burning FAQs**
-  - **Zoom in** by Click&Drag while holding down the `⌥` key
-  - **Simulate Drag&Drop** by drag an app; hold `⌃` to simulate a hold; select the page you want to drop the app; release `⌃`
+  - **Zoom in** by Click&Drag while holding __⌥__
+  - **Simulate Drag&Drop** by drag an app; hold __⌃__ to simulate a hold; select the page you want to drop the app; release __⌃__
   - **Select Used Autio-Output Device** from menu `Hardware > Audio Output`.
   - **Log in To iCloud** to access all your photos, calendars, etc
   - **Trigger iCloud Sync** to manually sync iCloud with Simulator
-  - **Install additional (older) Simulators** by pressing `⇧ + ⌘ + 2`, click on `Simulators` and then the `+` button at the bottom left
+  - **Install additional (older) Simulators** by pressing __⇧__ + __⌘__ + __2__, click on `Simulators` and then the __+__ button at the bottom left
   - **Change SImulator Window Size** from the `Window` menu
-  - **Activate Slow Animations** to debug animations by `Debug > Slow Animations (⌘ + T)`
+  - **Activate Slow Animations** to debug animations by `Debug > Slow Animations` (__⌘__ + __T__)
   - **Siri** supported on all Simulators
   - **Control tvOS** with software remote, hardware remote (after paired), game controllers, bluetooth keyboard
-  - **Running xOS 13 simulator with Xcode 10.x** is possible by this weird combination of actions (look at 13:00)
+  - **Running xOS 13 simulator with Xcode 10.x** is possible by this weird combination of actions (look at `13:00`)
   - **Drag&Drop** App bundles, locations, images, videos, URLs
   - **Share via Share Sheet** to multiple simulators at the same time
   - **Simulate Custom Location** via `Debug > Location > Custom Location...`
-  - **Simulate Active-Call Statusbar** by `Hardware > Toggle In-Call Status Bar (⌘ + Y)` 
+  - **Simulate Active-Call Statusbar** by `Hardware > Toggle In-Call Status Bar` (__⌘__ + __Y__)
   - More Available Features: External Displays, Dark Mode Toggle, Setting Alternate Backgrounds, Dictation, Alternate Software Keyboards, Quick Path (Swipe-To-Type)
 - **simctl**
-  - `xcrun simctl help`
+  - `xcrun simctl help` to show all the commands of the simctl command. See some examples below.
   - `xcrun simctl list devices` to list all devices.
   - `xcrun simctl --json` outputs JSON for automation purposes.
   - `xcrun simctl create` to create new simulators. Outputs the device id.
@@ -1231,4 +1231,17 @@ https://developer.apple.com/wwdc19/418
   - `xcrun simctl shutdown all` to shutdown all simulators.
   - `xcrun simctl delete <device>` to delete simulator with the given id.
   - `xcrun simctl delete unavailable` to delete simulators using an unavailable runtime.
-  - `xcrun simctl pair <watch> <phone>` to a watch sim to a phone sim
+  - `xcrun simctl pair <watch> <phone>` to a watch simulator with a phone simulator.
+  - `xcrun simctl addmedia <device> <file1> <file2>` to add media to the simulator.
+  - `xcrun simctl get_app_container <device> <bundle id> <type>` get app container path.
+  - `xcrun simctl install <device> <example.app>` to install an app.
+  - `xcrun simctl io <device> screenshot <output.png>` to take a screenshot.
+  - `xcrun simctl clone <device> clone name` to clone the simulator instance by taking advantage of the APFS file sytem. Needs to be shutdown before cloning.
+- **Metal in Simulator**
+  - Simulator is much faster and is fully GPU accelerated
+  - Metal hardware-accelerated renderings are now possible the first time
+  - MTLGPUFamilyApple2 support (common to all simulator devices)
+  - All Apple frameworks use Metal as well
+  - Metal takes advantage of GPU of the underlying Mac system
+  - Texture storage modes are different on macOS/iOS
+  - Always test performance on actual devices! (For additional infos `38:30`) 
