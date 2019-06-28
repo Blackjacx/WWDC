@@ -10,7 +10,7 @@ I watch sessions in 1.5 speed using the awesome player from wwdc.io. This is the
 
 First of all the list is not sorted. If you want to add a new session, please just put it at the bottom. Don't forget to add an entry to the `table of contents` and your name to `Contributors` 🤝
 
-Please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with a some notes of what you have done (read more about [pull requests](http://help.github.com/pull-requests/)).
+Please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with some notes of what you have done (read more about [pull requests](http://help.github.com/pull-requests/)).
 
 Try to write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
 
