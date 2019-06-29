@@ -77,7 +77,6 @@ This repo has been already mentioned in the following places:
 * [Introducing Combine](#introducing-combine)
 * [Getting the Most Out of Simulator](#getting-the-most-out-of-simulator)
 * [SwiftUI on watchOS](#swiftui-on-watchos)
-* [Advances in Speech Recognition](#advances-in-speech-recognition)
 
 ## What's New in Swift
 
@@ -1292,17 +1291,4 @@ https://developer.apple.com/wwdc19/219
 		- sensitivity (how much rotation need to be applied to move from one element to the next)
 		- isContinuous (don't stop at either limit of sequence)
 		
-## Advances in Speech Recognition
-
-https://developer.apple.com/wwdc19/256
-
-- **Highlights**
-  - Over 10 languages supported offline (50+ for online)
-  - No limit on duration or number of offline requests
-  - Available on iPhone 6S and later
-  - We get transcriptions, alternative interpretations, confidence levels and timing info
-- **What else is new?**
-  - Speaking rate - words per minute
-  - Average pause duration
-  - Voice analytics features - Jitter, Shimmer, Pitch and Voicing (If the person is tired, these features will be different than usual)
-  
+		
