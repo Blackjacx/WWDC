@@ -77,6 +77,7 @@ This repo has been already mentioned in the following places:
 * [Introducing Combine](#introducing-combine)
 * [Getting the Most Out of Simulator](#getting-the-most-out-of-simulator)
 * [SwiftUI on watchOS](#swiftui-on-watchos)
+* [Core ML 3 Framework](#core-ml-3-framework)
 
 ## What's New in Swift
 
@@ -1291,4 +1292,35 @@ https://developer.apple.com/wwdc19/219
 		- sensitivity (how much rotation need to be applied to move from one element to the next)
 		- isContinuous (don't stop at either limit of sequence)
 		
+#  Core ML 3 Framework
+
+https://developer.apple.com/wwdc19/704
+
+(Michael Brennan, Anil Katti, Aseem Wadhwa and Allen Lin)
+
+- New **Create ML-App** to create models (beside tools for importing from different sources)
+- Models are usually immutable on-device, how can we **personalize** to each user without going back to the cloud (so that data stays private, we have no server costs and no connectivity needs)?
+- **Core ML 3** adds update parameters and update interface to the model, you just add training examples and get a new personalized model
+- Supported for Nearest Neighbor Classifiers, Neural Networks, Pipeline Models
+- Demo: Personalized Grading App
+  - Learn how own sketches map to emoji - only some samples to learn
+- Three steps for updating
+  1. Get the bundle
+  2. Prepare the training data
+  3. Create an `MLUpdateTask`
+- More complex: updatable Neural Networks
+  - configure some layers as updatable  (convolutional and fully connected)
+  - works with different loss types and optimizers
+  - `MLModelConfiguration` parameters can be changed at runtime
+- Core ML in the Background:  `BGTaskScheduler` and `BGProcessingTaskRequest`
+- Correspondence between network layers and computation graphs
+  - new in Core ML 3: control flow (conditions, loops), dynamic layers
+  - lots of new layers, close to current research
+- Improved converters: „Smooth road ahead“
+- **Natural Language Processing**: asking questions about an article (demo)
+  - **BERT**-Model, trained with TensorFlow, converted to protobuf with just three lines of Python
+  - Integrated with Speech-To-Text, NaturalLanguage API, Text-To-Speech
+- Multiple Models with shared submodels - use a **linked model** multiple times for memory reduction (like a dynamic library)
+- `MLFeatureValue` Image Extension for automatic scaling and format conversion (without calling Vision framework)
+- `MLModelConfiguration`  has new options `preferredMetalDevice`and `allowLowPrecisionAccumulationOnGPU`
 		
