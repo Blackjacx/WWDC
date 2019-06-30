@@ -79,6 +79,7 @@ This repo has been already mentioned in the following places:
 * [SwiftUI on watchOS](#swiftui-on-watchos)
 * [Core ML 3 Framework](#core-ml-3-framework)
 * [Introducing ARKit 3](#introducing-arkit-3)
+* [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
 
 ## What's New in Swift
 
@@ -1328,7 +1329,7 @@ https://developer.apple.com/wwdc19/704
 
 # Introducing ARKit 3
 
-https://developer.apple.com/wwdc/604
+https://developer.apple.com/wwdc19/604
 
 (Andreas Moeller, Thomas Berton)
 
@@ -1381,6 +1382,39 @@ https://developer.apple.com/wwdc/604
 - **Visual coherence enhancements**
   - Depth of Field
   - Motion Blur
-  - HDR rnvironment textures
+  - HDR environment textures
   - Camera Grain
 - **Record and replay** with [Reality composer app](https://developer.apple.com/augmented-reality/reality-composer/) to use in Xcode  - improved developer experience 
+
+## Introducing RealityKit and Reality Composer
+
+https://developer.apple.com/wwdc19/603
+
+(Cody White, Tyler Casella)
+
+- **RealityKit**  is a new AR-first Swift framework for realistic rendering and simulation (iOS and macOS) 
+- **Reality Composer** is a macOS and iOS tool for simple AR-based content creation
+- RealityKit takes care of
+  - Rendering: physical-based shading, built with Metal
+  - Animation supports skeletal animations, transform animations and motion capture
+  - Physics
+  - Synchronization: multi-device
+  - Entity-Component System: composition vs. inheritance
+  - Audio: map audio to objects in 3D
+  - Reality File: optimized content in one file - faster uploading
+- Basics of RealityKit
+  - **ARView** sets up the environment, gesture support, realistic camera effects
+    - shadows, motion blur, depth of field, camera noise
+  - **Entity**: building block of every AR object, establishes scene structure, provides transform hierarchy
+  - Hierarchy: ARView -> Scene -> Anchor -> Entity
+- Entities and Components: entities made up of individual components
+  - `AnchorEntity`  attaches to real world objects, tracks target
+  - `ModelEntity` represents visual parts of a scene (loaded directly from used or reality file or directly from code)
+    - contains mesh resource
+    - contains Materials (`SimpleMaterial`, `UnlitMaterial`, `OcclusionMaterial`)
+  - Animation
+- **Reality Composer** to get started with AR and 3D
+  - provides content library, layout
+  - Pre-Visualization (with or without AR)
+  - Simple Interactions (add behavior)
+  - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
