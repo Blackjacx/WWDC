@@ -78,6 +78,7 @@ This repo has been already mentioned in the following places:
 * [Getting the Most Out of Simulator](#getting-the-most-out-of-simulator)
 * [SwiftUI on watchOS](#swiftui-on-watchos)
 * [Core ML 3 Framework](#core-ml-3-framework)
+* [Introducing ARKit 3](#introducing-arkit-3)
 
 ## What's New in Swift
 
@@ -1324,3 +1325,62 @@ https://developer.apple.com/wwdc19/704
 - `MLFeatureValue` Image Extension for automatic scaling and format conversion (without calling Vision framework)
 - `MLModelConfiguration`  has new options `preferredMetalDevice`and `allowLowPrecisionAccumulationOnGPU`
 		
+
+# Introducing ARKit 3
+
+https://developer.apple.com/wwdc/604
+
+(Andreas Moeller, Thomas Berton)
+
+- Review of modern ARKit apps
+- Three pillars of ARKit
+  - **Tracking**: where is the device in relation to environment; tracking world, faces, images.
+  - **Scene Understanding**: identify surfaces, images, 3D objects
+  - **Rendering**: SceneKit, SpriteKit, Metal and new **RealityKit**
+- New: **People occlusion** (available on A12 or later)
+  - People correctly occlude rendered objects that they are in front of
+  - Based on segmenting people and depth estimation
+  - Works for multiple people and for people only partially in the scene
+  - Use `frameSemantics`in `ARConfiguration` with `.personSegmentation` or `.personSegmentationWithDepth` or directly access `segmentationBuffer` in `ARFrame`
+  - Example in code
+- New: **Motion Capture** (available on A12 or later)
+  - Track the body of a person, enables transferring to a virtual character in real time
+  - Provides skeleton representation (in 2D and 3D)
+  - `.frameSemantics`-Option `.bodyDetection`
+  - Joints are named (e.g. `rightFoot`, `leftShoulder`, …) and a definition gives the hierarchy
+  - `ARBodyTrackingConfiguration`
+  - 3D: additional  `ARBodyAnchor` with `estimatedScaleFactor` and `transform`
+  - 3D skeleton has more joints
+  - Example application for animating 3D characters. Needs a rigged mesh
+  - `BodyTrackedEntity`
+- New: **Simultaneous Front- and Back-Camera** (available on A12 or later)
+  - `userFaceTrackingEnabled`  in `ARFaceTrackingConfiguration` 
+- **Collaborative Sessions**
+  - In ARKit 2 only one-time map-sharing between devices
+  - New: **continiously** share mapping information and ARAnchors
+  - Maps will be integrated internally
+  - `setupMultipeerConnectivity()`,  `isCollaborationEnabled` , sending ARCollaborationData, using `session()`-Callbacks for sending and receiving
+- **AR Coaching UI** - guiding the user is important and can be difficult
+  - Additional to HIG now **AR Coaching View**: overlay to guide users for good tracking experiences
+  - On-Boarding and guide with different consistent overlays
+  - Add as child of ARView, connect to session, optional delegates and specification of coaching goals
+- **Multi Face tracking**
+  - Up to 3 faces simultaneously
+  - Persistent face anchor IDs
+- New: `ARPositionalTrackingConfiguration` for low power consumption tracking only
+- **Scene Understanding Improvements**
+  - Up to 100 images
+  - Detect scale
+  - Image quality at runtime
+  - Faster and more robust object detection
+  - Plane estimation improved (more accurate, faster): door and window additional to wall, floor, ceiling, table, seat
+- **Raycasting**: new API
+  - not only vertical/horizontal
+  - tracked over time
+  - `RaycastQuery`
+- **Visual coherence enhancements**
+  - Depth of Field
+  - Motion Blur
+  - HDR rnvironment textures
+  - Camera Grain
+- **Record and replay** with [Reality composer app](https://developer.apple.com/augmented-reality/reality-composer/) to use in Xcode  - improved developer experience 
