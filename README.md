@@ -79,6 +79,7 @@ This repo has been already mentioned in the following places:
 * [SwiftUI on watchOS](#swiftui-on-watchos)
 * [Core ML 3 Framework](#core-ml-3-framework)
 * [Introducing ARKit 3](#introducing-arkit-3)
+* [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
 
 ## What's New in Swift
 
@@ -1293,17 +1294,18 @@ https://developer.apple.com/wwdc19/219
 		- sensitivity (how much rotation need to be applied to move from one element to the next)
 		- isContinuous (don't stop at either limit of sequence)
 		
-#  Core ML 3 Framework
+## Core ML 3 Framework
 
 https://developer.apple.com/wwdc19/704
 
 (Michael Brennan, Anil Katti, Aseem Wadhwa and Allen Lin)
 
-- New **Create ML-App** to create models (beside tools for importing from different sources)
-- Models are usually immutable on-device, how can we **personalize** to each user without going back to the cloud (so that data stays private, we have no server costs and no connectivity needs)?
-- **Core ML 3** adds update parameters and update interface to the model, you just add training examples and get a new personalized model
+- **New: Create ML-App** to create models (beside tools for importing from different sources)
+- How can we **personalize** to each user without going back to the cloud (so that data stays private, we have no server costs and no connectivity needs)? Models are usually immutable on-device.
+  - Core ML 3 adds update parameters and update interface to the model
+  - You just add training examples and get a new personalized model
 - Supported for Nearest Neighbor Classifiers, Neural Networks, Pipeline Models
-- Demo: Personalized Grading App
+- **Demo:** Personalized Grading App
   - Learn how own sketches map to emoji - only some samples to learn
 - Three steps for updating
   1. Get the bundle
@@ -1326,9 +1328,9 @@ https://developer.apple.com/wwdc19/704
 - `MLModelConfiguration`  has new options `preferredMetalDevice`and `allowLowPrecisionAccumulationOnGPU`
 		
 
-# Introducing ARKit 3
+## Introducing ARKit 3
 
-https://developer.apple.com/wwdc/604
+https://developer.apple.com/wwdc19/604
 
 (Andreas Moeller, Thomas Berton)
 
@@ -1337,13 +1339,13 @@ https://developer.apple.com/wwdc/604
   - **Tracking**: where is the device in relation to environment; tracking world, faces, images.
   - **Scene Understanding**: identify surfaces, images, 3D objects
   - **Rendering**: SceneKit, SpriteKit, Metal and new **RealityKit**
-- New: **People occlusion** (available on A12 or later)
+- **New: People occlusion** (available on A12 or later)
   - People correctly occlude rendered objects that they are in front of
   - Based on segmenting people and depth estimation
   - Works for multiple people and for people only partially in the scene
-  - Use `frameSemantics`in `ARConfiguration` with `.personSegmentation` or `.personSegmentationWithDepth` or directly access `segmentationBuffer` in `ARFrame`
+  - Use `frameSemantics` in `ARConfiguration` with `.personSegmentation` or `.personSegmentationWithDepth` or directly access `segmentationBuffer` in `ARFrame`
   - Example in code
-- New: **Motion Capture** (available on A12 or later)
+- **New: Motion Capture** (available on A12 or later)
   - Track the body of a person, enables transferring to a virtual character in real time
   - Provides skeleton representation (in 2D and 3D)
   - `.frameSemantics`-Option `.bodyDetection`
@@ -1353,7 +1355,7 @@ https://developer.apple.com/wwdc/604
   - 3D skeleton has more joints
   - Example application for animating 3D characters. Needs a rigged mesh
   - `BodyTrackedEntity`
-- New: **Simultaneous Front- and Back-Camera** (available on A12 or later)
+- **New: Simultaneous Front- and Back-Camera** (available on A12 or later)
   - `userFaceTrackingEnabled`  in `ARFaceTrackingConfiguration` 
 - **Collaborative Sessions**
   - In ARKit 2 only one-time map-sharing between devices
@@ -1367,7 +1369,7 @@ https://developer.apple.com/wwdc/604
 - **Multi Face tracking**
   - Up to 3 faces simultaneously
   - Persistent face anchor IDs
-- New: `ARPositionalTrackingConfiguration` for low power consumption tracking only
+- **New: ARPositionalTrackingConfiguration** for low power consumption tracking only
 - **Scene Understanding Improvements**
   - Up to 100 images
   - Detect scale
@@ -1381,6 +1383,39 @@ https://developer.apple.com/wwdc/604
 - **Visual coherence enhancements**
   - Depth of Field
   - Motion Blur
-  - HDR rnvironment textures
+  - HDR environment textures
   - Camera Grain
 - **Record and replay** with [Reality composer app](https://developer.apple.com/augmented-reality/reality-composer/) to use in Xcode  - improved developer experience 
+
+## Introducing RealityKit and Reality Composer
+
+https://developer.apple.com/wwdc19/603
+
+(Cody White, Tyler Casella)
+
+- **RealityKit**  is a new AR-first Swift framework for realistic rendering and simulation (iOS and macOS) 
+- **Reality Composer** is a macOS and iOS tool for simple AR-based content creation
+- RealityKit takes care of
+  - Rendering: physical-based shading, built with Metal
+  - Animation supports skeletal animations, transform animations and motion capture
+  - Physics
+  - Synchronization: multi-device
+  - Entity-Component System: composition vs. inheritance
+  - Audio: map audio to objects in 3D
+  - Reality File: optimized content in one file - faster uploading
+- Basics of RealityKit
+  - **ARView** sets up the environment, gesture support, realistic camera effects
+    - shadows, motion blur, depth of field, camera noise
+  - **Entity**: building block of every AR object, establishes scene structure, provides transform hierarchy
+  - Hierarchy: ARView > Scene > Anchor > Entity
+- Entities and Components: entities made up of individual components
+  - `AnchorEntity`  attaches to real world objects, tracks target
+  - `ModelEntity` represents visual parts of a scene (loaded directly from used or reality file or directly from code)
+    - contains mesh resource
+    - contains Materials (`SimpleMaterial`, `UnlitMaterial`, `OcclusionMaterial`)
+  - Animation
+- **Reality Composer** to get started with AR and 3D ([download here](https://developer.apple.com/augmented-reality/reality-composer/))
+  - provides content library, layout
+  - Pre-Visualization (with or without AR)
+  - Simple Interactions (add behavior)
+  - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
