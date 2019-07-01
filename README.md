@@ -80,6 +80,9 @@ This repo has been already mentioned in the following places:
 1. [Core ML 3 Framework](#core-ml-3-framework)
 1. [Introducing ARKit 3](#introducing-arkit-3)
 1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
+1. **(ToDo)** [Apple Design Awards](#apple-design-awards)
+1. **(ToDo)** [Keynote](#keynote)
+1. **(ToDo)** [Platforms State of the Union](#platforms-state-of-the-union)
 1. **(ToDo)** [Debugging in Xcode 11](#debugging-in-xcode-11)
 1. **(ToDo)** [Designing Great ML Experiences](#designing-great-ml-experiences)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
@@ -1500,6 +1503,18 @@ https://developer.apple.com/wwdc19/603
   - Pre-Visualization (with or without AR)
   - Simple Interactions (add behavior)
   - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
+
+## Apple Design Awards
+
+https://developer.apple.com/wwdc19/104
+
+## Keynote
+
+https://developer.apple.com/wwdc19/101
+
+## Platforms State of the Union
+
+https://developer.apple.com/wwdc19/103
 
 ## Debugging in Xcode 11
 
