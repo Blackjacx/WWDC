@@ -31,14 +31,24 @@ This repo has been already mentioned in the following places:
 ## Video ToC
 
 1. [What's New in Swift](#whats-new-in-swift)
-1. [Introducing SF Symbols](#introducing-sf-symbols)
-1. [Advances in Foundation](#advances-in-foundation)
 1. [What's New In App Store Connect](#whats-new-in-app-store-connect)
-1. [Great Developer Habits](#great-developer-habits)
-1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
 1. [What's New in Xcode 11](#whats-new-in-xcode-11)
 1. [What's New in Authentication](#whats-new-in-authentication)
+1. [What's New in Safari](#whats-new-in-safari)
+1. [What's New in Safari Extensions](#whats-new-in-safari-extensions)
+1. [What's New in iOS Design](#whats-new-in-ios-design)
+1. [What's New in Universal Links](#whats-new-in-universal-links)
+1. [What's new in Machine Learning](#whats-new-in-machine-learning)
+1. [Introducing SF Symbols](#introducing-sf-symbols)
 1. [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
+1. [Introducing Core Haptics](#introducing-core-haptics)
+1. [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
+1. [Introducing Combine](#introducing-combine)
+1. [Introducing ARKit 3](#introducing-arkit-3)
+1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
+1. [Advances in Foundation](#advances-in-foundation)
+1. [Great Developer Habits](#great-developer-habits)
+1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
 1. [Building Great Shortcuts](#building-great-shortcuts)
 1. [Designing Great Shortcuts](#designing-great-shortcuts)
 1. [Integrating with Siri Event Suggestions](#integrating-with-siri-event-suggestions)
@@ -49,17 +59,11 @@ This repo has been already mentioned in the following places:
 1. [Advances in Networking, Part 2](#advances-in-networking-part-2)
 1. [Getting Started with Xcode](#getting-started-with-xcode)
 1. [Modernizing Your UI for iOS 13](#modernizing-your-ui-for-ios-13)
-1. [What's New in Safari](#whats-new-in-safari)
-1. [What's New in Safari Extensions](#whats-new-in-safari-extensions)
 1. [Designing Audio\-Haptic Experiences](#designing-audio-haptic-experiences)
-1. [Introducing Core Haptics](#introducing-core-haptics)
 1. [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
 1. [Cryptography and Your Apps](#cryptography-and-your-apps)
 1. [All About Notarization](#all-about-notarization)
-1. [Introducing Multi\-Camera Capture for iOS](#introducing-multi-camera-capture-for-ios)
-1. [What's New in iOS Design](#whats-new-in-ios-design)
 1. [Implementing Dark Mode on iOS](#implementing-dark-mode-on-ios)
-1. [What's New in Universal Links](#whats-new-in-universal-links)
 1. [Advances in Speech Recognition](#advances-in-speech-recognition)
 1. [Optimizing App Launch](#optimizing-app-launch)
 1. [Accessibility Inspector](#accessibility-inspector)
@@ -68,18 +72,14 @@ This repo has been already mentioned in the following places:
 1. [AUv3 Extensions User Presets](#auv3-extensions-user-presets)
 1. [Game Center Player Identifiers](#game-center-player-identifiers)
 1. [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
-1. [What's new in Machine Learning](#whats-new-in-machine-learning)
 1. [Understanding Images in Vision](#understanding-images-in-vision)
 1. [Advances in UI Data Sources](#advances-in-ui-data-sources)
 1. [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 1. [Binary Frameworks in Swift](#binary-frameworks-in-swift)
 1. [Creating Great Localized Experiences with Xcode 11](#creating-great-localized-experiences-with-xcode-11)
-1. [Introducing Combine](#introducing-combine)
 1. [Getting the Most Out of Simulator](#getting-the-most-out-of-simulator)
 1. [SwiftUI on watchOS](#swiftui-on-watchos)
 1. [Core ML 3 Framework](#core-ml-3-framework)
-1. [Introducing ARKit 3](#introducing-arkit-3)
-1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
 1. [Debugging in Xcode 11](#debugging-in-xcode-11)
 1. **(ToDo)** [Apple Design Awards](#apple-design-awards)
 1. **(ToDo)** [Keynote](#keynote)
@@ -178,48 +178,6 @@ https://developer.apple.com/wwdc19/402
 - **Property Wrappers:** Wrapper type to define custom access patterns. Property can adopt this by adding attribute to its declaration. In the case of UserDefaults you can define properties that know how to read/write from/to UserDefaults.
 - **Embedded DSLs**
 
-## Introducing SF Symbols
-
-https://developer.apple.com/wwdc19/206
-
-- **Alignment** is perfect surrounding text
-- **1500** vector symbols designed by Apple in all weights available
-- **Margins** of symbols can be different so they are perfectly aligned on screen
-- **Scales** (small, medium, large) ensure
-  - symbols maintain same weight as neighbouring text
-  - symbols are vertically centered to neighbouring text
-- **[SF Symbols](https://developer.apple.com/design) app** to play around and export existing symbols (as SVG template) for customization
-- **UIImage(systemName: String)** is new - just copy the name from the Symbols app
-- **Multiple images** with the same name in Asset Catalog are now possible. Apple first looks for symbol and then for non-symbol (ensures backwards compatibility to iOS 12: uses image in iOS 12 and symbol in iOS 13)
-- **Constraining symbol images** is discouraged. Use natural size or set font size 
-- **Any font** can be used with symbols via `UIImage.symbolConfiguration`
-- **Vertical text alignment** works with single-lined and multi-lined text
-- **Baseline alignment** to align symbol to first line of text
-- **Regular images** are aligned baseline aligned by generating a new image with `image.withBaselineOffsetFromBottom(GGFloat)`
-- **Prefer horizontal and vertical center alignment** instead of edge alignment
-- **Buttons with symbol images** are created using `UIButton.system(image:target:action)`
-- **UIButton Symbol Configuration** changed by `UIButton.setPreferredSymbolConfiguration(config:forState:)`
-- **Auto-scaling UIBarButtonItems** from `SymbolScale.large` to `SymbolScale.medium` in landscape
-- **No frame settings necessary for NSTextAttachment** for placing images in text
-- **UIImage tint support** `image.withTintColor(UIColor)` - yeah 🥳 
-
-## Advances in Foundation
-
-https://developer.apple.com/wwdc19/723
-
-- **Ordered Collection Diffing**
-- **Compression API** to transmit resources compressed (CompressionAlgorithm.[lzfse, lz4, lzma, .zlib])
-- **New Units** bits, bytes, nibbles
-- **RelativeDateTimeFormatter** for get localized, relative date descriptions
-- **ListFormatter** formats list contents localized
-  - correct separator and localized `and` before the last element
-  - specify `itemFormatter` to control how the list items are formatted
-- **OperationQueue**
-  - BarrierBlock lets run a completion task safely when all other tasks are finished
-  - progress reporting
-- **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
-- Use `DataProtocol` instead of `UInt8`
-
 ## What's New In App Store Connect
 
 https://developer.apple.com/wwdc19/301
@@ -235,51 +193,6 @@ https://developer.apple.com/wwdc19/301
 - **Crashes** automatically trigger the feedback dialog. Feedback viewable/downloadable in ASC.
 - **App Deletions 🎉** as metric on APC. Opt-in. Only from iOS 12.3+. Only for homescreen and storage deletions. Resetting device doesn't count.
 - **24h live dashboard** hourly updated statistics for all apps to better understand sales data (e.g. in-app purchase) as it is rolled out
-
-## Great Developer Habits
-
-https://developer.apple.com/wwdc19/239
-
-- **Use groups** for project organization
-- **Mirror** project and file structure
-- **Large Storyboards** should be splitted
-- **Update Project Settings** asap whenever Xcode prompts you
-- **New Build System** should be used asap
-- **Unused code** should be deleted, not commented out - we all have source control, right?
-- **Warnings** resolve them immediately. Never check in code with warnings. Treat them as errors.
-- **Commit small changes** a Git commit should contain only small code changes
-- **Write useful commit messages** that have a short title and a descriptive body
-- **Use branches** to isolate changes that belong to a certain feature
-- **Write documentation** about WHY the code has been written and WHAT it is doing
-- **Use descriptive variable names** instead of `id`, `state`, etc.
-- **Write Unit Tests** to avoid regressions and run them before each commit
-- **Use diagnostics tools** that can be enabled in the scheme settings (Main Thread Checker, Address Sanitizer, Thread Sanitizer, Undefined Behavior Sanitizer)
-- **Gauges** are very useful to see if you have problems with network, memory, disk and CPU usage
-- **Network Link Conditioner** helps tracking down bugs on low connectivity
-- **Do Code Reviews** to track down issues and get a common understanding of the code and its style
-  - understand each changed line
-  - build and run the project
-  - run the tests
-  - proofread comments and documentation
-  - look for spelling and grammar errors
-  - ensure consistency in codebase
-- **Decouple your code** by creating packages and shared frameworks to reduce code size and share code between multiple app targets
-- **Dependencies** should be used responsibly
-  - Understand how a dependency works thoroughly
-  - Read carefully the changes when it is updated
-  - Have a plan when a dependency goes away or is not maintained anymore
-  - Ensure privacy
-
-## Writing Great Accessibility Labels
-
-https://developer.apple.com/wwdc19/254
-
-- **Accessibility Label** is a human understandable label
-  - gives meaning to the elements of your app
-  - value depends completely on the context
-  - should not contain the type of the view. Automatically provided by `accessibilityType`
-  - should contain context if multiple similar elements visible (multiple add buttons)
-- don't add redundant context, e.g. if you're in a music player avoid `song` from the accessibility label of next, previous, ...
 
 ## What's New in Xcode 11
 
@@ -330,6 +243,138 @@ https://developer.apple.com/wwdc19/516
 - **Weak Password Assistant** detects weak passwords and offers you to change it
 - **ASWebAuthenticationSession** provides easy OAuth workflow and deprecates SFAuthenticationSession
 
+## What's New in Safari
+
+https://developer.apple.com/wwdc19/515
+
+- **Desktop-class website browsing**
+- **Legacy Safari Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
+- **Safari Extensions**
+  - deliver bundles with app OR after notarization via web site
+  - Get the visible content of the web page (screenshot)
+  - show and dismiss popovers
+  - delegate informs about navigating/redirect to new site
+- **Content Blocker**
+  - associate content blocker with Safari Extension to get notified when content is blocked
+- **Universal Links** for macOS so ordinary https links open app if installed
+
+## What's New in Safari Extensions
+
+https://developer.apple.com/wwdc19/720
+
+- **Distributable** via
+  - App on App Store (show up immediately in Safari)
+  - App on your web site after running through the notarization service (show up in Safari after first launch of the app)
+- **Unsigned Extensions** must be allowed each time Safari is run from the Developer menu
+- **ContentBlocker** can now tell Safari App Extensions bout its activity
+- **Page Navigation Delegate** informs about navigating/redirect to new site
+- Adopting ContentBlocker and PageNavigation extensions allows 
+  - replacing arbitrary content on websites
+  - updating toolbar icon badge, e.g. with content items blocked count
+  - blocking certain content from web sites you browse on
+- **Screenshots** of web sites are now possible
+- **Tab, Window, Page management**
+  - Get base URI from native code without injection of script
+  - Directly navigate to certain tabs without scripting from the extension
+  - All open tabs and windows are visible from an extension
+- **Popovers** can be shown/dismissed programmatically
+- **Communication between App and Extension**
+  - Possible by NSXPCConnection (extension and app must be part of the same app group)
+  - Share data by using `UserDefaults(suiteName:)`
+  - Sending messages from app >>> extension: `SFSafariApplication.dispatchMessage` 
+  - Receive message in extension by implementing `SFSafariExtensionHandling.messageReceivedFromContainingApp` (Possible also when safari is not running - launched eventually)
+
+## What's New in iOS Design
+
+https://developer.apple.com/wwdc19/808
+
+- **Dark Mode**
+  - all apps should support Dark Mode
+  - adopt iOS design system to `maintain familarity`, `provide platform consistency`, `convey clear information hierarchy`
+  - always use semantic colors like `backgroundColor`, `highlightColor`, ... instead of `red`, `green`, ...
+  - color hierarchy: Title > Subtitle > Placeholder > Disabled Text
+  - color hierarchy naming: `background`, `secondaryBackground`, `tertiaryBackground`, `quaternaryBackground`, ...
+  - `don't just use color inversion` between light/dark mode 
+  - `avoid alpha values` since it might look broken when different colors overlap
+  - check colors with `online contrast calculator` should give 4.5...1 or higher
+  - `layered interfaces` should use drop shadow in light / elevated bg color in dark mode
+  - all controls are drawn with semantic colors - perfectly blend between light/dark
+- **Card Style** modal presentation style
+  - default - opt-out by `viewController.modalPresentationStyle = .fullScreen`
+  - pull-down to dismiss (can be prevented when there is a mandatory decision in the modal)
+  - **Modals are for switching modes. Don't use them because you like the animation**
+- **Contextual Menus**
+  - activate by tap & hold
+  - puts the focus on actions not on the preview (like peek & pop)
+  - available on any device since it doesn't rely on force touch
+  - consist on a list of actions and an optional previews
+  - all actions should be available somewhere else in the UI. Don't rely on the fact that users discover your menu.
+
+## What's New in Universal Links
+
+https://developer.apple.com/wwdc19/717
+
+- **macOS 10.15** supports Universal Links with AppKit / UIKit
+- **Securely associated** between your app & website
+- recommended over custom URL schemes
+- **Webserver Config**
+  - HTTPS certificate mandatory. Custom root certificates not supported
+  - Add the file at `https://yourDomain.com/.well-known/apple-app-site-association`
+  - URLs and pattern matching are ASCII
+- **App Config**
+  - add `Associated Domains` capability and add `applinks:www.example.com` entries (patterns possible - specific subdomains prioritized)
+  - `userActivity.activityType == NSUserActivityTypeBrowsingWeb` in `func application(_ application: UIApplication, continue userActivity: NSUserActivity, ...)` indicates Universal Link
+  - get URL components `URLComponents(url: userActivity.webpageURL, resolvingAgainstBaseURL: true)`
+- **For macOS Apps**
+  - app must be on local volume
+  - App Store distribution recommended
+  - Developer ID signed apps must be launched first
+
+## What's new in Machine Learning
+
+https://developer.apple.com/wwdc19/209
+
+- Presented by Gaurav Kapoor
+- Apple Goals: easy, flexible, powerful - Machine Learning for Everyone
+- Many Domain APIs
+  - **Vision** - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
+    - Image Saliency: most interesting image area
+    - Text Recognition: OCR, Document Camera
+  - **Natural Language**
+    - Sentiment Analysis
+    - Word Embeddings
+  - **Speech and Sound**
+  - Combine Domains, for example semantic search in images
+- **Core ML 3**
+  - on device, all platforms, hardware accelerated
+  - model flexibility: layer types, conversions from TensorFlow and later ONNX
+  - model personalization: fine-tuning on device (improved privacy) possible as background processing
+
+## Introducing SF Symbols
+
+https://developer.apple.com/wwdc19/206
+
+- **Alignment** is perfect surrounding text
+- **1500** vector symbols designed by Apple in all weights available
+- **Margins** of symbols can be different so they are perfectly aligned on screen
+- **Scales** (small, medium, large) ensure
+  - symbols maintain same weight as neighbouring text
+  - symbols are vertically centered to neighbouring text
+- **[SF Symbols](https://developer.apple.com/design) app** to play around and export existing symbols (as SVG template) for customization
+- **UIImage(systemName: String)** is new - just copy the name from the Symbols app
+- **Multiple images** with the same name in Asset Catalog are now possible. Apple first looks for symbol and then for non-symbol (ensures backwards compatibility to iOS 12: uses image in iOS 12 and symbol in iOS 13)
+- **Constraining symbol images** is discouraged. Use natural size or set font size 
+- **Any font** can be used with symbols via `UIImage.symbolConfiguration`
+- **Vertical text alignment** works with single-lined and multi-lined text
+- **Baseline alignment** to align symbol to first line of text
+- **Regular images** are aligned baseline aligned by generating a new image with `image.withBaselineOffsetFromBottom(GGFloat)`
+- **Prefer horizontal and vertical center alignment** instead of edge alignment
+- **Buttons with symbol images** are created using `UIButton.system(image:target:action)`
+- **UIButton Symbol Configuration** changed by `UIButton.setPreferredSymbolConfiguration(config:forState:)`
+- **Auto-scaling UIBarButtonItems** from `SymbolScale.large` to `SymbolScale.medium` in landscape
+- **No frame settings necessary for NSTextAttachment** for placing images in text
+- **UIImage tint support** `image.withTintColor(UIColor)` - yeah 🥳
+
 ## Introducing Sign In with Apple
 
 https://developer.apple.com/wwdc19/706
@@ -357,6 +402,256 @@ https://developer.apple.com/wwdc19/706
 - **Always check on AppStart** with `provider.getCredentialState(userID)` which runs very fast
 - Listen to `NSNotification.Name.ASAuthorizationAppleIDProviderCredentialRevoked` and sign the user out if called
 - **Password Autofill** integrates with Apple Sign In. Triggered if the device detects a stored credential
+
+## Introducing Core Haptics
+
+https://developer.apple.com/wwdc19/520
+
+- Event based audio-/haptic rendering API - a synthesizer
+- same feel on iPhone 8, 8 Plus, X, XS, XR, XS Max
+- Not a replacement for UIFeedbackGenerator! Continue using it for `impact`, `selection` and `notification`
+- Use **Core Haptics** for custom haptics and audio patterns
+- Content  Classes: `CHHapticPattern`, `CHHapticEvengt`, `CHHapticParameter`
+- Playback Classes: `CHHapticEngine`, `CHHapticPatternPlayer`, `CHHapticAdvancedPatternPlayer`
+- Haptics can be coded inside the app or delivered as AHAP (Apple Haptic Audio Pattern) resource file
+  - AHAP describes pattern as text
+  - schema for JSON
+  - Can use Swift Codable
+  - Separate content from code
+- Read more at the updated [Human Interface Guidelines (HIG) for haptics](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/haptics/)
+
+## Introducing Multi-Camera Capture for iOS
+
+https://developer.apple.com/wwdc19/249
+
+- Supported on iPhone `XS, XS Max, XR, iPad Pro 3rd Gen`
+- **AVCaptureMultiCamSession**
+  - Multiple `AVCaptureDeiceInputs`, `AVCaptureDeiceOutputs` of the same type, `AVCaptureVideoPreviewLayers`
+  - Don't use implicit connection forming but use `addInputWithNoConnections`, `addOutputWithNoConnections` or `AVCaptureVideoPreviewLayer.setSessionWithNoConnection`
+- **AVCaptureSession** is still the way to got for single cam session
+  - Simultaneous photo shooting, movie recording, barcode scanning, etc.
+- **Limitiations**
+  - only one input per camera in a session 
+  - connecting one camera to multiple video data outouts is not possible
+  - no presets supported on session since different cams might run with different qualities
+  - multi-cam session has `hardwareCost` reporting. Session runnable when `0 <= cost <= 1` 
+  - lower cost by `lower resolution`, `choose binned format`, `deviceInput.videoMinFrameDurationOverride = CMTimeMake(1, 30) to set max framrate override /* 30 FPS */`
+  - lower system pressure like `temperature, power demands, infrared projector temperature` by 
+    - lowering frame rates, throttle GPU/CPU processing code, disable one camera
+  - run indefinitely with `multiSession.systemPressureCost < 1.0`; device shutdown with `cost > 3.0`
+  - iOS can run only one session at a time (with mutli cams though)
+-  **Virtual Camera** is the new name wor software cameras like `True-Tone- or Dual-Camera`
+  - `device.isVirtualDevice` - get its physical devices by `device.constituentDevices` for e.g. synchronized camera streaming
+  - `AVCaptureDataOutputSynchronizer` ensures you get two outputs in one callback
+  - virtual devices have **secret ports** so you can get 2 streams - you need to explicitly query them
+- **Dual Camera Hography Aids**
+  - `CameraIntrinsics` (Optical center / focal length) and `CameraExtrinsics` (rotation matrix / translation vector for both wide- and tele cameras)
+- **Multi-Microphone capture**
+  - By default front cam uses `front mic` and back cam uses `back mic`
+  - actually `front mic` and `back mic` are a lie since different devices have multiple mics but not explicitly fron/back ones. This is achieved by `Microphone Beam Forming` - done automatically by CoreAudio `micInput.ports(for: .audio, sourceDeviceType: micDevice.deviceType, sourceDevicePosition: .front).first`
+  - Beam forming only works with built-in mics
+  - audio can be arbitrarily configured by creating custom AVAudioSession
+
+## Introducing Combine
+
+https://developer.apple.com/wwdc19/722
+
+- **Combine is a unified, declarative API for processing values over time**
+  - Generic
+  - Type safe
+  - Composition safe
+  - Request driven
+- **Key concepts**
+  - Publisher
+    - Defines how values and errors are produced
+    - Value type (struct)
+    - Allows registration of a `Subscriber`
+  - Subscriber
+    - Receives value
+    - Reference type (class)
+  - Operator
+    - Adopts `Publisher`
+    - Describes a behavior for changing values
+    - Subscribes to a `Publisher` (“upstream”)
+    - Sends result to a `Subscriber` (“downstream”)
+    - Value type
+- **Relations**
+  - `Subscriber` is attached to `Publisher`  
+  - `Publisher` sends a `Subscription`  
+  - `Subscriber` requests N values  
+  - `Publisher` sends N values or less  
+  - `Publisher` sends completion
+  - The value sent from the `Publisher` should be the same type as the one expected from the `Subscriber`. In case of a mismatch you need to create an `Operator` to transform the value.
+- **Combining Publishers**
+  - Zip
+  - CombineLatest
+- **Zip**
+  - Converts several inputs into a single tuple
+  - A "when/and" operation
+  - Requires input from all to proceed
+- **Combine Latest**
+  - Converts several inputs into a single value
+  - A "when/or" operation
+  - Requires input from any to proceed
+  - Stores last value
+- **Examples of usage**
+  - Process a `NotificationCenter` post with `filter`
+  - Await completion of two network requests with `zip`
+  - `decode` the data of a `URLResponse`
+
+## Introducing ARKit 3
+
+https://developer.apple.com/wwdc19/604
+
+(Andreas Moeller, Thomas Berton)
+
+- Review of modern ARKit apps
+- Three pillars of ARKit
+  - **Tracking**: where is the device in relation to environment; tracking world, faces, images.
+  - **Scene Understanding**: identify surfaces, images, 3D objects
+  - **Rendering**: SceneKit, SpriteKit, Metal and new **RealityKit**
+- **New: People occlusion** (available on A12 or later)
+  - People correctly occlude rendered objects that they are in front of
+  - Based on segmenting people and depth estimation
+  - Works for multiple people and for people only partially in the scene
+  - Use `frameSemantics` in `ARConfiguration` with `.personSegmentation` or `.personSegmentationWithDepth` or directly access `segmentationBuffer` in `ARFrame`
+  - Example in code
+- **New: Motion Capture** (available on A12 or later)
+  - Track the body of a person, enables transferring to a virtual character in real time
+  - Provides skeleton representation (in 2D and 3D)
+  - `.frameSemantics`-Option `.bodyDetection`
+  - Joints are named (e.g. `rightFoot`, `leftShoulder`, …) and a definition gives the hierarchy
+  - `ARBodyTrackingConfiguration`
+  - 3D: additional  `ARBodyAnchor` with `estimatedScaleFactor` and `transform`
+  - 3D skeleton has more joints
+  - Example application for animating 3D characters. Needs a rigged mesh
+  - `BodyTrackedEntity`
+- **New: Simultaneous Front- and Back-Camera** (available on A12 or later)
+  - `userFaceTrackingEnabled`  in `ARFaceTrackingConfiguration` 
+- **Collaborative Sessions**
+  - In ARKit 2 only one-time map-sharing between devices
+  - New: **continiously** share mapping information and ARAnchors
+  - Maps will be integrated internally
+  - `setupMultipeerConnectivity()`,  `isCollaborationEnabled` , sending ARCollaborationData, using `session()`-Callbacks for sending and receiving
+- **AR Coaching UI** - guiding the user is important and can be difficult
+  - Additional to HIG now **AR Coaching View**: overlay to guide users for good tracking experiences
+  - On-Boarding and guide with different consistent overlays
+  - Add as child of ARView, connect to session, optional delegates and specification of coaching goals
+- **Multi Face tracking**
+  - Up to 3 faces simultaneously
+  - Persistent face anchor IDs
+- **New: ARPositionalTrackingConfiguration** for low power consumption tracking only
+- **Scene Understanding Improvements**
+  - Up to 100 images
+  - Detect scale
+  - Image quality at runtime
+  - Faster and more robust object detection
+  - Plane estimation improved (more accurate, faster): door and window additional to wall, floor, ceiling, table, seat
+- **Raycasting**: new API
+  - not only vertical/horizontal
+  - tracked over time
+  - `RaycastQuery`
+- **Visual coherence enhancements**
+  - Depth of Field
+  - Motion Blur
+  - HDR environment textures
+  - Camera Grain
+- **Record and replay** with [Reality composer app](https://developer.apple.com/augmented-reality/reality-composer/) to use in Xcode  - improved developer experience 
+
+## Introducing RealityKit and Reality Composer
+
+https://developer.apple.com/wwdc19/603
+
+(Cody White, Tyler Casella)
+
+- **RealityKit**  is a new AR-first Swift framework for realistic rendering and simulation (iOS and macOS) 
+- **Reality Composer** is a macOS and iOS tool for simple AR-based content creation
+- RealityKit takes care of
+  - Rendering: physical-based shading, built with Metal
+  - Animation supports skeletal animations, transform animations and motion capture
+  - Physics
+  - Synchronization: multi-device
+  - Entity-Component System: composition vs. inheritance
+  - Audio: map audio to objects in 3D
+  - Reality File: optimized content in one file - faster uploading
+- Basics of RealityKit
+  - **ARView** sets up the environment, gesture support, realistic camera effects
+    - shadows, motion blur, depth of field, camera noise
+  - **Entity**: building block of every AR object, establishes scene structure, provides transform hierarchy
+  - Hierarchy: ARView > Scene > Anchor > Entity
+- Entities and Components: entities made up of individual components
+  - `AnchorEntity`  attaches to real world objects, tracks target
+  - `ModelEntity` represents visual parts of a scene (loaded directly from used or reality file or directly from code)
+    - contains mesh resource
+    - contains Materials (`SimpleMaterial`, `UnlitMaterial`, `OcclusionMaterial`)
+  - Animation
+- **Reality Composer** to get started with AR and 3D ([download here](https://developer.apple.com/augmented-reality/reality-composer/))
+  - provides content library, layout
+  - Pre-Visualization (with or without AR)
+  - Simple Interactions (add behavior)
+  - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
+
+## Advances in Foundation
+
+https://developer.apple.com/wwdc19/723
+
+- **Ordered Collection Diffing**
+- **Compression API** to transmit resources compressed (CompressionAlgorithm.[lzfse, lz4, lzma, .zlib])
+- **New Units** bits, bytes, nibbles
+- **RelativeDateTimeFormatter** for get localized, relative date descriptions
+- **ListFormatter** formats list contents localized
+  - correct separator and localized `and` before the last element
+  - specify `itemFormatter` to control how the list items are formatted
+- **OperationQueue**
+  - BarrierBlock lets run a completion task safely when all other tasks are finished
+  - progress reporting
+- **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
+- Use `DataProtocol` instead of `UInt8`
+
+## Great Developer Habits
+
+https://developer.apple.com/wwdc19/239
+
+- **Use groups** for project organization
+- **Mirror** project and file structure
+- **Large Storyboards** should be splitted
+- **Update Project Settings** asap whenever Xcode prompts you
+- **New Build System** should be used asap
+- **Unused code** should be deleted, not commented out - we all have source control, right?
+- **Warnings** resolve them immediately. Never check in code with warnings. Treat them as errors.
+- **Commit small changes** a Git commit should contain only small code changes
+- **Write useful commit messages** that have a short title and a descriptive body
+- **Use branches** to isolate changes that belong to a certain feature
+- **Write documentation** about WHY the code has been written and WHAT it is doing
+- **Use descriptive variable names** instead of `id`, `state`, etc.
+- **Write Unit Tests** to avoid regressions and run them before each commit
+- **Use diagnostics tools** that can be enabled in the scheme settings (Main Thread Checker, Address Sanitizer, Thread Sanitizer, Undefined Behavior Sanitizer)
+- **Gauges** are very useful to see if you have problems with network, memory, disk and CPU usage
+- **Network Link Conditioner** helps tracking down bugs on low connectivity
+- **Do Code Reviews** to track down issues and get a common understanding of the code and its style
+  - understand each changed line
+  - build and run the project
+  - run the tests
+  - proofread comments and documentation
+  - look for spelling and grammar errors
+  - ensure consistency in codebase
+- **Decouple your code** by creating packages and shared frameworks to reduce code size and share code between multiple app targets
+- **Dependencies** should be used responsibly
+  - Understand how a dependency works thoroughly
+  - Read carefully the changes when it is updated
+  - Have a plan when a dependency goes away or is not maintained anymore
+  - Ensure privacy
+
+## Writing Great Accessibility Labels
+
+https://developer.apple.com/wwdc19/254
+
+- **Accessibility Label** is a human understandable label
+  - gives meaning to the elements of your app
+  - value depends completely on the context
+  - should not contain the type of the view. Automatically provided by `accessibilityType`
+  - should contain context if multiple similar elements visible (multiple add buttons)
+- don't add redundant context, e.g. if you're in a music player avoid `song` from the accessibility label of next, previous, ...
 
 ## Building Great Shortcuts
 
@@ -622,47 +917,6 @@ https://developer.apple.com/wwdc19/224
   - `UIViewControllerPreviewing` (peek & pop) is deprecated for sake of this new API
   - replace long-press driven behavior/menus by this new API
 
-## What's New in Safari
-
-https://developer.apple.com/wwdc19/515
-
-- **Desktop-class website browsing**
-- **Legacy Safari Extension Support** dropped for sake of `Content Blockers`, `Share Extensions`, `Safari App Extensions`
-- **Safari Extensions**
-  - deliver bundles with app OR after notarization via web site
-  - Get the visible content of the web page (screenshot)
-  - show and dismiss popovers
-  - delegate informs about navigating/redirect to new site
-- **Content Blocker**
-  - associate content blocker with Safari Extension to get notified when content is blocked
-- **Universal Links** for macOS so ordinary https links open app if installed
-
-## What's New in Safari Extensions
-
-https://developer.apple.com/wwdc19/720
-
-- **Distributable** via
-  - App on App Store (show up immediately in Safari)
-  - App on your web site after running through the notarization service (show up in Safari after first launch of the app)
-- **Unsigned Extensions** must be allowed each time Safari is run from the Developer menu
-- **ContentBlocker** can now tell Safari App Extensions bout its activity
-- **Page Navigation Delegate** informs about navigating/redirect to new site
-- Adopting ContentBlocker and PageNavigation extensions allows 
-  - replacing arbitrary content on websites
-  - updating toolbar icon badge, e.g. with content items blocked count
-  - blocking certain content from web sites you browse on
-- **Screenshots** of web sites are now possible
-- **Tab, Window, Page management**
-  - Get base URI from native code without injection of script
-  - Directly navigate to certain tabs without scripting from the extension
-  - All open tabs and windows are visible from an extension
-- **Popovers** can be shown/dismissed programmatically
-- **Communication between App and Extension**
-  - Possible by NSXPCConnection (extension and app must be part of the same app group)
-  - Share data by using `UserDefaults(suiteName:)`
-  - Sending messages from app >>> extension: `SFSafariApplication.dispatchMessage` 
-  - Receive message in extension by implementing `SFSafariExtensionHandling.messageReceivedFromContainingApp` (Possible also when safari is not running - launched eventually)
-
 ## Designing Audio-Haptic Experiences
 
 https://developer.apple.com/wwdc19/810
@@ -677,23 +931,6 @@ https://developer.apple.com/wwdc19/810
   - both can be modulated by haptic intensity/sharpness which work different with the 2 primitives
 - use transient building blocks for *sharp, crisp and short sounds*
 - use continuous primitives for *smooth, extended sounds*
-
-## Introducing Core Haptics
-
-https://developer.apple.com/wwdc19/520
-
-- Event based audio-/haptic rendering API - a synthesizer
-- same feel on iPhone 8, 8 Plus, X, XS, XR, XS Max
-- Not a replacement for UIFeedbackGenerator! Continue using it for `impact`, `selection` and `notification`
-- Use **Core Haptics** for custom haptics and audio patterns
-- Content  Classes: `CHHapticPattern`, `CHHapticEvengt`, `CHHapticParameter`
-- Playback Classes: `CHHapticEngine`, `CHHapticPatternPlayer`, `CHHapticAdvancedPatternPlayer`
-- Haptics can be coded inside the app or delivered as AHAP (Apple Haptic Audio Pattern) resource file
-  - AHAP describes pattern as text
-  - schema for JSON
-  - Can use Swift Codable
-  - Separate content from code
-- Read more at the updated [Human Interface Guidelines (HIG) for haptics](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/haptics/)
 
 ## Expanding the Sensory Experience with Core Haptics
 
@@ -780,64 +1017,6 @@ https://developer.apple.com/wwdc19/703
 - `xcrun altool --notarize-app ...` to submit an app via command line and check via `xcrun altool --notarization-info <request_id_from_submission> …`  for the current status
 - Use `xcrun altool --notarization-history …` to get on overview of all the software submitted on your account
 
-## Introducing Multi-Camera Capture for iOS
-
-https://developer.apple.com/wwdc19/249
-
-- Supported on iPhone `XS, XS Max, XR, iPad Pro 3rd Gen`
-- **AVCaptureMultiCamSession**
-  - Multiple `AVCaptureDeiceInputs`, `AVCaptureDeiceOutputs` of the same type, `AVCaptureVideoPreviewLayers`
-  - Don't use implicit connection forming but use `addInputWithNoConnections`, `addOutputWithNoConnections` or `AVCaptureVideoPreviewLayer.setSessionWithNoConnection`
-- **AVCaptureSession** is still the way to got for single cam session
-  - Simultaneous photo shooting, movie recording, barcode scanning, etc.
-- **Limitiations**
-  - only one input per camera in a session 
-  - connecting one camera to multiple video data outouts is not possible
-  - no presets supported on session since different cams might run with different qualities
-  - multi-cam session has `hardwareCost` reporting. Session runnable when `0 <= cost <= 1` 
-  - lower cost by `lower resolution`, `choose binned format`, `deviceInput.videoMinFrameDurationOverride = CMTimeMake(1, 30) to set max framrate override /* 30 FPS */`
-  - lower system pressure like `temperature, power demands, infrared projector temperature` by 
-    - lowering frame rates, throttle GPU/CPU processing code, disable one camera
-  - run indefinitely with `multiSession.systemPressureCost < 1.0`; device shutdown with `cost > 3.0`
-  - iOS can run only one session at a time (with mutli cams though)
--  **Virtual Camera** is the new name wor software cameras like `True-Tone- or Dual-Camera`
-  - `device.isVirtualDevice` - get its physical devices by `device.constituentDevices` for e.g. synchronized camera streaming
-  - `AVCaptureDataOutputSynchronizer` ensures you get two outputs in one callback
-  - virtual devices have **secret ports** so you can get 2 streams - you need to explicitly query them
-- **Dual Camera Hography Aids**
-  - `CameraIntrinsics` (Optical center / focal length) and `CameraExtrinsics` (rotation matrix / translation vector for both wide- and tele cameras)
-- **Multi-Microphone capture**
-  - By default front cam uses `front mic` and back cam uses `back mic`
-  - actually `front mic` and `back mic` are a lie since different devices have multiple mics but not explicitly fron/back ones. This is achieved by `Microphone Beam Forming` - done automatically by CoreAudio `micInput.ports(for: .audio, sourceDeviceType: micDevice.deviceType, sourceDevicePosition: .front).first`
-  - Beam forming only works with built-in mics
-  - audio can be arbitrarily configured by creating custom AVAudioSession
-
-## What's New in iOS Design
-
-https://developer.apple.com/wwdc19/808
-
-- **Dark Mode**
-  - all apps should support Dark Mode
-  - adopt iOS design system to `maintain familarity`, `provide platform consistency`, `convey clear information hierarchy`
-  - always use semantic colors like `backgroundColor`, `highlightColor`, ... instead of `red`, `green`, ...
-  - color hierarchy: Title > Subtitle > Placeholder > Disabled Text
-  - color hierarchy naming: `background`, `secondaryBackground`, `tertiaryBackground`, `quaternaryBackground`, ...
-  - `don't just use color inversion` between light/dark mode 
-  - `avoid alpha values` since it might look broken when different colors overlap
-  - check colors with `online contrast calculator` should give 4.5...1 or higher
-  - `layered interfaces` should use drop shadow in light / elevated bg color in dark mode
-  - all controls are drawn with semantic colors - perfectly blend between light/dark
-- **Card Style** modal presentation style
-  - default - opt-out by `viewController.modalPresentationStyle = .fullScreen`
-  - pull-down to dismiss (can be prevented when there is a mandatory decision in the modal)
-  - **Modals are for switching modes. Don't use them because you like the animation**
-- **Contextual Menus**
-  - activate by tap & hold
-  - puts the focus on actions not on the preview (like peek & pop)
-  - available on any device since it doesn't rely on force touch
-  - consist on a list of actions and an optional previews
-  - all actions should be available somewhere else in the UI. Don't rely on the fact that users discover your menu.
-
 ## Implementing Dark Mode on iOS
 
 https://developer.apple.com/wwdc19/214
@@ -864,26 +1043,6 @@ https://developer.apple.com/wwdc19/214
 - Use **NSAttributedString** always with dynamic `.foregroundColor` to have the auto-switching effect
 - **iOS/tvOS** apps built using iOS/tvOS 13 SDK supposed to support Dark Mode
 
-## What's New in Universal Links
-
-https://developer.apple.com/wwdc19/717
-
-- **macOS 10.15** supports Universal Links with AppKit / UIKit
-- **Securely associated** between your app & website
-- recommended over custom URL schemes
-- **Webserver Config**
-  - HTTPS certificate mandatory. Custom root certificates not supported
-  - Add the file at `https://yourDomain.com/.well-known/apple-app-site-association`
-  - URLs and pattern matching are ASCII
-- **App Config**
-  - add `Associated Domains` capability and add `applinks:www.example.com` entries (patterns possible - specific subdomains prioritized)
-  - `userActivity.activityType == NSUserActivityTypeBrowsingWeb` in `func application(_ application: UIApplication, continue userActivity: NSUserActivity, ...)` indicates Universal Link
-  - get URL components `URLComponents(url: userActivity.webpageURL, resolvingAgainstBaseURL: true)`
-- **For macOS Apps**
-  - app must be on local volume
-  - App Store distribution recommended
-  - Developer ID signed apps must be launched first
-  
 ## Advances in Speech Recognition
 
 https://developer.apple.com/wwdc19/256
@@ -1034,26 +1193,6 @@ https://developer.apple.com/wwdc19/234
   - Set custom words when need domain-specific text
   - Consider increse the accuracy when text is confusable or illegible
   - Manage progress of request using `progressHandler` / `cancel()`
-
-## What's new in Machine Learning
-
-https://developer.apple.com/wwdc19/209
-
-- Presented by Gaurav Kapoor
-- Apple Goals: easy, flexible, powerful - Machine Learning for Everyone
-- Many Domain APIs
-  - **Vision** - [Vision | Apple Developer Documentation](https://developer.apple.com/documentation/vision)
-    - Image Saliency: most interesting image area
-    - Text Recognition: OCR, Document Camera
-  - **Natural Language**
-    - Sentiment Analysis
-    - Word Embeddings
-  - **Speech and Sound**
-  - Combine Domains, for example semantic search in images
-- **Core ML 3**
-  - on device, all platforms, hardware accelerated
-  - model flexibility: layer types, conversions from TensorFlow and later ONNX
-  - model personalization: fine-tuning on device (improved privacy) possible as background processing
   
 ## Understanding Images in Vision
  
@@ -1230,53 +1369,6 @@ https://developer.apple.com/wwdc19/403
   - UI Test Attachments, e.g. screenshots, can be added to Localization Catalog
   - on localization export Xcode even provides the frame of localizable content on the screenshot so tools can visualize it appropriately
 
-## Introducing Combine
-
-https://developer.apple.com/wwdc19/722
-
-- **Combine is a unified, declarative API for processing values over time**
-  - Generic
-  - Type safe
-  - Composition safe
-  - Request driven
-- **Key concepts**
-  - Publisher
-    - Defines how values and errors are produced
-    - Value type (struct)
-    - Allows registration of a `Subscriber`
-  - Subscriber
-    - Receives value
-    - Reference type (class)
-  - Operator
-    - Adopts `Publisher`
-    - Describes a behavior for changing values
-    - Subscribes to a `Publisher` (“upstream”)
-    - Sends result to a `Subscriber` (“downstream”)
-    - Value type
-- **Relations**
-  - `Subscriber` is attached to `Publisher`  
-  - `Publisher` sends a `Subscription`  
-  - `Subscriber` requests N values  
-  - `Publisher` sends N values or less  
-  - `Publisher` sends completion
-  - The value sent from the `Publisher` should be the same type as the one expected from the `Subscriber`. In case of a mismatch you need to create an `Operator` to transform the value.
-- **Combining Publishers**
-  - Zip
-  - CombineLatest
-- **Zip**
-  - Converts several inputs into a single tuple
-  - A "when/and" operation
-  - Requires input from all to proceed
-- **Combine Latest**
-  - Converts several inputs into a single value
-  - A "when/or" operation
-  - Requires input from any to proceed
-  - Stores last value
-- **Examples of usage**
-  - Process a `NotificationCenter` post with `filter`
-  - Await completion of two network requests with `zip`
-  - `decode` the data of a `URLResponse`
-
 ## Getting the Most Out of Simulator
 
 https://developer.apple.com/wwdc19/418
@@ -1410,99 +1502,6 @@ https://developer.apple.com/wwdc19/704
 - Multiple Models with shared submodels - use a **linked model** multiple times for memory reduction (like a dynamic library)
 - `MLFeatureValue` Image Extension for automatic scaling and format conversion (without calling Vision framework)
 - `MLModelConfiguration`  has new options `preferredMetalDevice`and `allowLowPrecisionAccumulationOnGPU`
-		
-
-## Introducing ARKit 3
-
-https://developer.apple.com/wwdc19/604
-
-(Andreas Moeller, Thomas Berton)
-
-- Review of modern ARKit apps
-- Three pillars of ARKit
-  - **Tracking**: where is the device in relation to environment; tracking world, faces, images.
-  - **Scene Understanding**: identify surfaces, images, 3D objects
-  - **Rendering**: SceneKit, SpriteKit, Metal and new **RealityKit**
-- **New: People occlusion** (available on A12 or later)
-  - People correctly occlude rendered objects that they are in front of
-  - Based on segmenting people and depth estimation
-  - Works for multiple people and for people only partially in the scene
-  - Use `frameSemantics` in `ARConfiguration` with `.personSegmentation` or `.personSegmentationWithDepth` or directly access `segmentationBuffer` in `ARFrame`
-  - Example in code
-- **New: Motion Capture** (available on A12 or later)
-  - Track the body of a person, enables transferring to a virtual character in real time
-  - Provides skeleton representation (in 2D and 3D)
-  - `.frameSemantics`-Option `.bodyDetection`
-  - Joints are named (e.g. `rightFoot`, `leftShoulder`, …) and a definition gives the hierarchy
-  - `ARBodyTrackingConfiguration`
-  - 3D: additional  `ARBodyAnchor` with `estimatedScaleFactor` and `transform`
-  - 3D skeleton has more joints
-  - Example application for animating 3D characters. Needs a rigged mesh
-  - `BodyTrackedEntity`
-- **New: Simultaneous Front- and Back-Camera** (available on A12 or later)
-  - `userFaceTrackingEnabled`  in `ARFaceTrackingConfiguration` 
-- **Collaborative Sessions**
-  - In ARKit 2 only one-time map-sharing between devices
-  - New: **continiously** share mapping information and ARAnchors
-  - Maps will be integrated internally
-  - `setupMultipeerConnectivity()`,  `isCollaborationEnabled` , sending ARCollaborationData, using `session()`-Callbacks for sending and receiving
-- **AR Coaching UI** - guiding the user is important and can be difficult
-  - Additional to HIG now **AR Coaching View**: overlay to guide users for good tracking experiences
-  - On-Boarding and guide with different consistent overlays
-  - Add as child of ARView, connect to session, optional delegates and specification of coaching goals
-- **Multi Face tracking**
-  - Up to 3 faces simultaneously
-  - Persistent face anchor IDs
-- **New: ARPositionalTrackingConfiguration** for low power consumption tracking only
-- **Scene Understanding Improvements**
-  - Up to 100 images
-  - Detect scale
-  - Image quality at runtime
-  - Faster and more robust object detection
-  - Plane estimation improved (more accurate, faster): door and window additional to wall, floor, ceiling, table, seat
-- **Raycasting**: new API
-  - not only vertical/horizontal
-  - tracked over time
-  - `RaycastQuery`
-- **Visual coherence enhancements**
-  - Depth of Field
-  - Motion Blur
-  - HDR environment textures
-  - Camera Grain
-- **Record and replay** with [Reality composer app](https://developer.apple.com/augmented-reality/reality-composer/) to use in Xcode  - improved developer experience 
-
-## Introducing RealityKit and Reality Composer
-
-https://developer.apple.com/wwdc19/603
-
-(Cody White, Tyler Casella)
-
-- **RealityKit**  is a new AR-first Swift framework for realistic rendering and simulation (iOS and macOS) 
-- **Reality Composer** is a macOS and iOS tool for simple AR-based content creation
-- RealityKit takes care of
-  - Rendering: physical-based shading, built with Metal
-  - Animation supports skeletal animations, transform animations and motion capture
-  - Physics
-  - Synchronization: multi-device
-  - Entity-Component System: composition vs. inheritance
-  - Audio: map audio to objects in 3D
-  - Reality File: optimized content in one file - faster uploading
-- Basics of RealityKit
-  - **ARView** sets up the environment, gesture support, realistic camera effects
-    - shadows, motion blur, depth of field, camera noise
-  - **Entity**: building block of every AR object, establishes scene structure, provides transform hierarchy
-  - Hierarchy: ARView > Scene > Anchor > Entity
-- Entities and Components: entities made up of individual components
-  - `AnchorEntity`  attaches to real world objects, tracks target
-  - `ModelEntity` represents visual parts of a scene (loaded directly from used or reality file or directly from code)
-    - contains mesh resource
-    - contains Materials (`SimpleMaterial`, `UnlitMaterial`, `OcclusionMaterial`)
-  - Animation
-- **Reality Composer** to get started with AR and 3D ([download here](https://developer.apple.com/augmented-reality/reality-composer/))
-  - provides content library, layout
-  - Pre-Visualization (with or without AR)
-  - Simple Interactions (add behavior)
-  - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
 
 ## Debugging in Xcode 11
 
