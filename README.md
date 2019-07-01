@@ -80,6 +80,87 @@ This repo has been already mentioned in the following places:
 1. [Core ML 3 Framework](#core-ml-3-framework)
 1. [Introducing ARKit 3](#introducing-arkit-3)
 1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
+1. **(ToDo)** [Debugging in Xcode 11](#debugging-in-xcode-11)
+1. **(ToDo)** [Designing Great ML Experiences](#designing-great-ml-experiences)
+1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
+1. **(ToDo)** [Accessibility in SwiftUI](#accessibility-in-swiftui)
+1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
+1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
+1. **(ToDo)** [Advances in Collection View Layout](#advances-in-collection-view-layout)
+1. **(ToDo)** [Advances in Natural Language Framework](#advances-in-natural-language-framework)
+1. **(ToDo)** [Advances in macOS Security](#advances-in-macos-security)
+1. **(ToDo)** [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
+1. **(ToDo)** [Architecting Your App for Multiple Windows](#architecting-your-app-for-multiple-windows)
+1. **(ToDo)** [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
+1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
+1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
+1. **(ToDo)** [Combine in Practice](#combine-in-practice)
+1. **(ToDo)** [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
+1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
+1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
+1. **(ToDo)** [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
+1. **(ToDo)** [Data Flow Through SwiftUI](#data-flow-through-swiftui-1)
+1. **(ToDo)** [Designing for Privacy](#designing-for-privacy)
+1. **(ToDo)** [Drawing Classification and One\-Shot Object Detection in Turi Create](#drawing-classification-and-one-shot-object-detection-in-turi-create)
+1. **(ToDo)** [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
+1. **(ToDo)** [Exploring New Data Representations in HealthKit](#exploring-new-data-representations-in-healthkit)
+1. **(ToDo)** [Exploring Tinted Graphic Complications](#exploring-tinted-graphic-complications)
+1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
+1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
+1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
+1. **(ToDo)** [Introducing Accelerate for Swift](#introducing-accelerate-for-swift)
+1. **(ToDo)** [Introducing Desktop\-class Browsing on iPad](#introducing-desktop-class-browsing-on-ipad)
+1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
+1. **(ToDo)** [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
+1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
+1. **(ToDo)** [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
+1. **(ToDo)** [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
+1. **(ToDo)** [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
+1. **(ToDo)** [Introducing the Create ML App](#introducing-the-create-ml-app)
+1. **(ToDo)** [Introducing the Indoor Maps Program](#introducing-the-indoor-maps-program)
+1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
+1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
+1. **(ToDo)** [Making Apps with Core Data](#making-apps-with-core-data)
+1. **(ToDo)** [Mastering Xcode Previews](#mastering-xcode-previews)
+1. **(ToDo)** [Metal for Machine Learning](#metal-for-machine-learning)
+1. **(ToDo)** [Network Extensions for the Modern Mac](#network-extensions-for-the-modern-mac)
+1. **(ToDo)** [ResearchKit and CareKit Reimagined](#researchkit-and-carekit-reimagined)
+1. **(ToDo)** [Streaming Audio on watchOS 6](#streaming-audio-on-watchos-6)
+1. **(ToDo)** [Supporting Dark Mode in Your Web Content](#supporting-dark-mode-in-your-web-content)
+1. **(ToDo)** [Supporting New Game Controllers](#supporting-new-game-controllers)
+1. **(ToDo)** [SwiftUI Essentials](#swiftui-essentials)
+1. **(ToDo)** [SwiftUI On All Devices](#swiftui-on-all-devices)
+1. **(ToDo)** [System Extensions and DriverKit](#system-extensions-and-driverkit)
+1. **(ToDo)** [Taking iPad Apps for Mac to the Next Level](#taking-ipad-apps-for-mac-to-the-next-level)
+1. **(ToDo)** [Targeting Content with Multiple Windows](#targeting-content-with-multiple-windows)
+1. **(ToDo)** [Training Object Detection Models in Create ML](#training-object-detection-models-in-create-ml)
+1. **(ToDo)** [Training Recommendation Models in Create ML](#training-recommendation-models-in-create-ml)
+1. **(ToDo)** [Training Sound Classification Models in Create ML](#training-sound-classification-models-in-create-ml)
+1. **(ToDo)** [Training Text Classifiers in Create ML](#training-text-classifiers-in-create-ml)
+1. **(ToDo)** [Understanding CPU Usage with Web Inspector](#understanding-cpu-usage-with-web-inspector)
+1. **(ToDo)** [Using Core Data With CloudKit](#using-core-data-with-cloudkit)
+1. **(ToDo)** [What's New for Web Developers](#whats-new-for-web-developers)
+1. **(ToDo)** [What's New in Apple File Systems](#whats-new-in-apple-file-systems)
+1. **(ToDo)** [What's New in Core Bluetooth](#whats-new-in-core-bluetooth)
+1. **(ToDo)** [What's New in Core Location](#whats-new-in-core-location)
+1. **(ToDo)** [What’s New in AppKit for macOS](#whats-new-in-appkit-for-macos)
+1. **(ToDo)** [What’s New in ClassKit](#whats-new-in-classkit)
+1. **(ToDo)** [What’s New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
+1. **(ToDo)** [What’s New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
+1. **(ToDo)** [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
+1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
+1. **(ToDo)** [Advances in AR Quick Look](#advances-in-ar-quick-look)
+1. **(ToDo)** [Bringing OpenGL Apps to Metal](#bringing-opengl-apps-to-metal)
+1. **(ToDo)** [Bringing People into AR](#bringing-people-into-ar)
+1. **(ToDo)** [Building AR Experiences with Reality Composer](#building-ar-experiences-with-reality-composer)
+1. **(ToDo)** [Building Apps with RealityKit](#building-apps-with-realitykit)
+1. **(ToDo)** [Building Collaborative AR Experiences](#building-collaborative-ar-experiences)
+1. **(ToDo)** [Delivering Optimized Metal Apps and Games](#delivering-optimized-metal-apps-and-games)
+1. **(ToDo)** [Metal for Pro Apps](#metal-for-pro-apps)
+1. **(ToDo)** [Modern Rendering with Metal](#modern-rendering-with-metal)
+1. **(ToDo)** [Ray Tracing with Metal](#ray-tracing-with-metal)
+1. **(ToDo)** [Working with USD](#working-with-usd)
+1. **(ToDo)** [Advances in Camera Capture &amp; Photo Segmentation](#advances-in-camera-capture--photo-segmentation)
 
 ## What's New in Swift
 
@@ -1419,3 +1500,327 @@ https://developer.apple.com/wwdc19/603
   - Pre-Visualization (with or without AR)
   - Simple Interactions (add behavior)
   - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
+
+## Debugging in Xcode 11
+
+https://developer.apple.com/wwdc19/412
+
+## Designing Great ML Experiences
+
+https://developer.apple.com/wwdc19/803
+
+## Designing iPad Apps for Mac
+
+https://developer.apple.com/wwdc19/809
+
+## Accessibility in SwiftUI
+
+https://developer.apple.com/wwdc19/238
+
+## Adding Indoor Maps to your App and Website
+
+https://developer.apple.com/wwdc19/241
+
+## Advances in CarPlay Systems
+
+https://developer.apple.com/wwdc19/252
+
+## Advances in Collection View Layout
+
+https://developer.apple.com/wwdc19/215
+
+## Advances in Natural Language Framework
+
+https://developer.apple.com/wwdc19/232
+
+## Advances in macOS Security
+
+https://developer.apple.com/wwdc19/701
+
+## App Distribution – From Ad-hoc to Enterprise
+
+https://developer.apple.com/wwdc19/304
+
+## Architecting Your App for Multiple Windows
+
+https://developer.apple.com/wwdc19/258
+
+## Auditing Web Content with Web Inspector
+
+https://developer.apple.com/wwdc19/514
+
+## Building Activity Classification Models in Create ML
+
+https://developer.apple.com/wwdc19/426
+
+## Building Custom Views with SwiftUI
+
+https://developer.apple.com/wwdc19/237
+
+## Combine in Practice
+
+https://developer.apple.com/wwdc19/721
+
+## Create ML for Object Detection and Sound Classification
+
+https://developer.apple.com/wwdc19/406
+
+## Creating Great Apps Using Core ML and ARKit
+
+https://developer.apple.com/wwdc19/228
+
+## Creating Independent Watch Apps
+
+https://developer.apple.com/wwdc19/208
+
+## Creating an Accessible Reading Experience
+
+https://developer.apple.com/wwdc19/248
+
+## Data Flow Through SwiftUI
+
+https://developer.apple.com/wwdc19/226
+
+## Designing for Privacy
+
+https://developer.apple.com/wwdc19/708
+
+## Drawing Classification and One-Shot Object Detection in Turi Create
+
+https://developer.apple.com/wwdc19/420
+
+## Embedding and Sharing Visually Rich Links
+
+https://developer.apple.com/wwdc19/262
+
+## Exploring New Data Representations in HealthKit
+
+https://developer.apple.com/wwdc19/218
+
+## Exploring Tinted Graphic Complications
+
+https://developer.apple.com/wwdc19/253
+
+## Extended Runtime for watchOS Apps
+
+https://developer.apple.com/wwdc19/251
+
+## Font Management and Text Scaling
+
+https://developer.apple.com/wwdc19/227
+
+## Integrating SwiftUI
+
+https://developer.apple.com/wwdc19/231
+
+## Introducing Accelerate for Swift
+
+https://developer.apple.com/wwdc19/718
+
+## Introducing Desktop-class Browsing on iPad
+
+https://developer.apple.com/wwdc19/203
+
+## Introducing Multiple Windows on iPad
+
+https://developer.apple.com/wwdc19/212
+
+## Introducing Parameters for Shortcuts
+
+https://developer.apple.com/wwdc19/213
+
+## Introducing PencilKit
+
+https://developer.apple.com/wwdc19/221
+
+## Introducing SiriKit Media Intents
+
+https://developer.apple.com/wwdc19/207
+
+## Introducing SwiftUI: Building Your First App
+
+https://developer.apple.com/wwdc19/204
+
+## Introducing iPad Apps for Mac
+
+https://developer.apple.com/wwdc19/205
+
+## Introducing the Create ML App
+
+https://developer.apple.com/wwdc19/430
+
+## Introducing the Indoor Maps Program
+
+https://developer.apple.com/wwdc19/245
+
+## Large Content Viewer- Ensuring Readability for Everyone
+
+https://developer.apple.com/wwdc19/261
+
+## Making Apps More Accessible With Custom Actions
+
+https://developer.apple.com/wwdc19/250
+
+## Making Apps with Core Data
+
+https://developer.apple.com/wwdc19/230
+
+## Mastering Xcode Previews
+
+https://developer.apple.com/wwdc19/233
+
+## Metal for Machine Learning
+
+https://developer.apple.com/wwdc19/614
+
+## Network Extensions for the Modern Mac
+
+https://developer.apple.com/wwdc19/714
+
+## ResearchKit and CareKit Reimagined
+
+https://developer.apple.com/wwdc19/217
+
+## Streaming Audio on watchOS 6
+
+https://developer.apple.com/wwdc19/716
+
+## Supporting Dark Mode in Your Web Content
+
+https://developer.apple.com/wwdc19/511
+
+## Supporting New Game Controllers
+
+https://developer.apple.com/wwdc19/616
+
+## SwiftUI Essentials
+
+https://developer.apple.com/wwdc19/216
+
+## SwiftUI On All Devices
+
+https://developer.apple.com/wwdc19/240
+
+## System Extensions and DriverKit
+
+https://developer.apple.com/wwdc19/702
+
+## Taking iPad Apps for Mac to the Next Level
+
+https://developer.apple.com/wwdc19/235
+
+## Targeting Content with Multiple Windows
+
+https://developer.apple.com/wwdc19/259
+
+## Training Object Detection Models in Create ML
+
+https://developer.apple.com/wwdc19/424
+
+## Training Recommendation Models in Create ML
+
+https://developer.apple.com/wwdc19/427
+
+## Training Sound Classification Models in Create ML
+
+https://developer.apple.com/wwdc19/425
+
+## Training Text Classifiers in Create ML
+
+https://developer.apple.com/wwdc19/428
+
+## Understanding CPU Usage with Web Inspector
+
+https://developer.apple.com/wwdc19/513
+
+## Using Core Data With CloudKit
+
+https://developer.apple.com/wwdc19/202
+
+## What's New for Web Developers
+
+https://developer.apple.com/wwdc19/518
+
+## What's New in Apple File Systems
+
+https://developer.apple.com/wwdc19/710
+
+## What's New in Core Bluetooth
+
+https://developer.apple.com/wwdc19/901
+
+## What's New in Core Location
+
+https://developer.apple.com/wwdc19/705
+
+## What’s New in AppKit for macOS
+
+https://developer.apple.com/wwdc19/210
+
+## What’s New in ClassKit
+
+https://developer.apple.com/wwdc19/247
+
+## What’s New in File Management and Quick Look
+
+https://developer.apple.com/wwdc19/719
+
+## What’s New in Managing Apple Devices
+
+https://developer.apple.com/wwdc19/303
+
+## What’s New in MapKit and MapKit JS
+
+https://developer.apple.com/wwdc19/236
+
+## Window Management in Your Multitasking App
+
+https://developer.apple.com/wwdc19/246
+
+## Advances in AR Quick Look
+
+https://developer.apple.com/wwdc19/612
+
+## Bringing OpenGL Apps to Metal
+
+https://developer.apple.com/wwdc19/611
+
+## Bringing People into AR
+
+https://developer.apple.com/wwdc19/607
+
+## Building AR Experiences with Reality Composer
+
+https://developer.apple.com/wwdc19/609
+
+## Building Apps with RealityKit
+
+https://developer.apple.com/wwdc19/605
+
+## Building Collaborative AR Experiences
+
+https://developer.apple.com/wwdc19/610
+
+## Delivering Optimized Metal Apps and Games
+
+https://developer.apple.com/wwdc19/606
+
+## Metal for Pro Apps
+
+https://developer.apple.com/wwdc19/608
+
+## Modern Rendering with Metal
+
+https://developer.apple.com/wwdc19/601
+
+## Ray Tracing with Metal
+
+https://developer.apple.com/wwdc19/613
+
+## Working with USD
+
+https://developer.apple.com/wwdc19/602
+
+## Advances in Camera Capture & Photo Segmentation
+
+https://developer.apple.com/wwdc19/225
