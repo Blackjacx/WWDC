@@ -80,10 +80,10 @@ This repo has been already mentioned in the following places:
 1. [Core ML 3 Framework](#core-ml-3-framework)
 1. [Introducing ARKit 3](#introducing-arkit-3)
 1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
+1. [Debugging in Xcode 11](#debugging-in-xcode-11)
 1. **(ToDo)** [Apple Design Awards](#apple-design-awards)
 1. **(ToDo)** [Keynote](#keynote)
 1. **(ToDo)** [Platforms State of the Union](#platforms-state-of-the-union)
-1. **(ToDo)** [Debugging in Xcode 11](#debugging-in-xcode-11)
 1. **(ToDo)** [Designing Great ML Experiences](#designing-great-ml-experiences)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Accessibility in SwiftUI](#accessibility-in-swiftui)
@@ -1504,6 +1504,40 @@ https://developer.apple.com/wwdc19/603
   - Simple Interactions (add behavior)
   - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
 
+## Debugging in Xcode 11
+
+https://developer.apple.com/wwdc19/412
+
+- **Device Conditions**
+  - Thermal State (`fair`, `serious`, `critical`) is now simulatable via Xcode
+    - Subscribe to notification `ProcessInfo.thermalStateDidChangeNotification` to react to changes
+    - reduce resource-intensive operations when runninng on `serious` or `critical`
+  - Network Connection Quality (`Network Link Conditioner`) is now simulatable via Xcode
+- **Environment Overrides**
+  - Light/Dark Mode, Dynamic Type & Many other Accessibility Settings (`INcrease Contrast`, `Bold Text`, `Reduce Transparency`, etc.)
+  - Easily settable while debugging in the debug bar and live-previewable in the new canvas view
+  - Shows example code of an `AdaptingStack` which automatically updates stack axis when not enough space for UI element (`12:15`)
+- **SwiftUI Runtime Issues**
+  - found when process is running
+  - process continues executing
+  - details in issue navigator
+  - supported for all platforms and run destinations
+  - new kind of breakpoint which get hit only on runtime issues
+  - start/stop debug session from play/stop button in canvas
+- **Debugging SwiftUI View Hierarchies**
+  - SwiftUI is interoperable with UIKit
+  - Debug session is tied to lifetime of the Preview Canvas (make sure you don't close it)
+  - Views are Value Types
+  - Platform Specific Views at Runtime
+  - Inspector on the right shows
+    - colors are Dynamic/Static
+    - trait collection (dark/light/size-class) for views/view Controllers
+    - names of images, if it is a symbol image as well as the `SymbolImageConfiguration`
+    - much more details regarding constraints. Looks like Interface builder now
+  - View properties automatically inspected and shown in Inspector on the right
+  - Custom Inspector properties by adopting `CustomReflectable`
+  - Using live Preview Canvas and the Inspectors you almost don't need to compile the whole project anymore
+
 ## Apple Design Awards
 
 https://developer.apple.com/wwdc19/104
@@ -1515,10 +1549,6 @@ https://developer.apple.com/wwdc19/101
 ## Platforms State of the Union
 
 https://developer.apple.com/wwdc19/103
-
-## Debugging in Xcode 11
-
-https://developer.apple.com/wwdc19/412
 
 ## Designing Great ML Experiences
 
