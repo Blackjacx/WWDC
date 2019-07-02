@@ -10,7 +10,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703), [@speedoholic](https://github.com/speedoholic)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703), [@speedoholic](https://github.com/speedoholic), [@sidharthshah](https://github.com/sidharthshah)
 
 ## Mentions
 
@@ -82,7 +82,7 @@ This repo has been already mentioned in the following places:
 1. [SwiftUI on watchOS](#swiftui-on-watchos)
 1. [Core ML 3 Framework](#core-ml-3-framework)
 1. [Debugging in Xcode 11](#debugging-in-xcode-11)
-1. **(ToDo)** [Designing Great ML Experiences](#designing-great-ml-experiences)
+1. [Designing Great ML Experiences](#designing-great-ml-experiences)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Accessibility in SwiftUI](#accessibility-in-swiftui)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
@@ -1665,6 +1665,84 @@ https://developer.apple.com/wwdc19/412
 ## Designing Great ML Experiences
 
 https://developer.apple.com/wwdc19/803
+
+- Products where ML {Machine Learning} is used
+  - **Air Pods**: Summon Siri and Answer calls
+  - **FaceID**: Fast and secure authentication for iOS Devices
+  - **Improve Typing experience**: Increase/decrease of targe tap area based on inputs
+- Diverse applications of ML inside Apple
+  - **Photos**: Create albums and memories. ML is used to regonize entities within pictures {E.g. Searching for dogs by typing}
+- Design more than just the interface
+  - ML for Photos {E.g. Diffentiate between Dog breeds as a category}
+  - ML {a Model} is trained as a function
+    - E.g. Siri is a model that does voice to text translation
+  - Design how it works and how it looks and feels {Model & Interface}
+  - Model {**Data, Metrics**}
+  - Interface {**Input, Output**}
+- Data
+  - Need a lot of diverse data for categories people want to search for
+  - Support for 1000s of categories
+  - Choosing data for improving existing model
+- Data determines the behaviour of the model
+- Data needs to be designed
+  - Historically Facial Recognization hasn't worked well for people of color
+  - Data engineering team gathered lots of data from ethnicity and gender
+  - Collect data intentionally {with special care to inclusiveness and avoid bias}
+  - Optimize for customers you want
+  - How this is done?
+    1. Collect data intentionally
+    1. Test for biases {Catalog your assumptions}
+    1. Update data as products change
+    1. Beware of standard datasets
+- Metrics
+  - Evaluate model by testing it {E.g. 75% of Accuracy}
+  - Designing metrics how model will work and thus the experience
+  - **Metrics reflect values**
+    1. Understand mistakes: Not mistakes are equal {Overtime build better understanding}
+    1. Design failure scenarios
+    1. Evaluate the experience
+    1. Evolve metrics
+  - Metrics are proxies for what we actually care about
+  - AppStore example
+    - Recommendation for New Apps based on what you've downloaded
+    - Diversity is important, Recommendations are balanced by Editorial content
+- Interface
+  - Mapping between Input and Output
+  - Human Inteface guidelines which has more details
+  - Outputs {are design medium}
+    - **Multiple Outputs**: Allow to choose best from multiple options
+      - Siri: Suggestion based on Time, Location and Past Interactions
+      - Ranking adjusted based on interactions
+      - Maps example
+    - **Attribution**: Explaination on how app makes decisions
+      - App Store: Explains how suggestions are made
+      - Siri: Explains how a answer was generated {E.g. Sources}
+    - **Confidence**: Measurement of uncertainty
+      - Numbers might not work in all situation {because its difficult to interpret them}
+      - Ask for user input in case of low confidence
+    - **Limitations**: Difference between mental model vs. how apps actually work
+      - Acknowledge app's limitation and suggest user how to live with it
+      - Inline coaching tips for Emojis in low-light settings
+      - Suggest alternative to achieve goals
+  - Inputs
+    - Calibration: Essential information to engage in experience
+      - Example of Hoop app
+      - FaceID uses calibration
+      - Guiding and confirming calibration
+    - Implicit Feedback: Information arises from user interaction {and using it to improve experience}
+      - Siri: Using time, location for suggestions {E.g. At Home vs Office}
+      - Customization of suggestions {for Privacy results}
+    - Explicit Feedback: Allow to collect information by asking specific questions
+      - Priortize negative feedback over positive
+      - Clearly describe each option and its consequences
+      - Act immediately and persistently
+    - Correction: Fix mistake model has made on known task
+      - Corrections while typing with regards to suggestions
+- Uses of ML at Apple
+  - Attention management
+  - Great recommendations
+  - Contextual information
+  - Automate mundane tasks
 
 ## Designing iPad Apps for Mac
 
