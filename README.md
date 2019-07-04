@@ -10,7 +10,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703), [@speedoholic](https://github.com/speedoholic), [h0shy](https://github.com/h0shy), [@sidharthshah](https://github.com/sidharthshah)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703), [@speedoholic](https://github.com/speedoholic), [h0shy](https://github.com/h0shy), [@sidharthshah](https://github.com/sidharthshah), [@sgrgrsn](https://github.com/sgrgrsn)
 
 ## Mentions
 
@@ -47,6 +47,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing Combine](#introducing-combine)
 1. [Introducing ARKit 3](#introducing-arkit-3)
 1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
+1. [Introducing the Indoor Maps Program](#introducing-the-indoor-maps-program)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits](#great-developer-habits)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -84,7 +85,7 @@ This repo has been already mentioned in the following places:
 1. [Debugging in Xcode 11](#debugging-in-xcode-11)
 1. [Accessibility in SwiftUI](#accessibility-in-swiftui)
 1. [Designing Great ML Experiences](#designing-great-ml-experiences)
-1. [Introducing the Indoor Maps Program](#introducing-the-indoor-maps-program)
+1. [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -100,7 +101,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
 1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
-1. **(ToDo)** [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
 1. **(ToDo)** [Data Flow Through SwiftUI](#data-flow-through-swiftui-1)
 1. **(ToDo)** [Designing for Privacy](#designing-for-privacy)
 1. **(ToDo)** [Drawing Classification and One\-Shot Object Detection in Turi Create](#drawing-classification-and-one-shot-object-detection-in-turi-create)
@@ -715,6 +715,33 @@ https://developer.apple.com/wwdc19/603
   - Pre-Visualization (with or without AR)
   - Simple Interactions (add behavior)
   - Separate app, highly integrated with Xcode: Swift-file auto-generated for Reality File
+
+## Introducing the Indoor Maps Program
+
+https://developer.apple.com/wwdc19/245
+
+- Enables public places to use indoor maps
+- Uses a format called “Indoor Mapping Data Format” (IMDF) which is represented as a set of GeoJSON files.
+- IMDF conforms to RFC 7959.
+- The building owner has to join the “[Indoor Maps Program](http://register.apple.com/indoor)” and produce the IMDF.
+- The IMDF map has to be created with a professional GIS or BIM tool.
+- Anyone can create an IMDF map and display it an app or website using MapKit or MapKit JS.
+- The Indoor Maps Program and indoor positioning is only available for large properties with more than 5 million annual visitors.
+- Public building owners can choose to publish their indoor maps to the official Apple Maps.
+- Apple provides an IMDF sandbox where IMDF maps can be validated and tested in a browser based interface. This sandbox is available for all Apple Developers and not only members of the Indoor Maps Program. See the demo of the sandbox at 15:29.
+- Indoor positioning:
+  - Uses WiFi fingerprinting
+  - Expected accuracy: 3-5 meters 
+  - The indoor location on the indoor map can be obtained via CoreLocation.
+  - To set up indoor positioning an indoor survey needs to be done. This is done by using the “Indoor Survey App” to collect WiFi info in the building, which is then uploaded for analysis and activation. The app is also used for testing the accuracy of the indoor positioning. See the demo of the app at 22:32.
+- The content of an IMDF map:
+  - Building Footprint
+  - Levels
+  - Units (room, walkaway, elevator etc.)
+  - Openings (doors)
+  - Kiosks (typically in the walkaway)
+  - Labels and icons
+  - Sections (highlights areas on the map eg. a food court in a mall)
 
 ## Advances in Foundation
 
@@ -1783,32 +1810,23 @@ https://developer.apple.com/wwdc19/803
     - **Correction:** Fix mistake model has made on known task
       - Corrections while typing with regards to suggestions
 
-## Introducing the Indoor Maps Program
+## Creating an Accessible Reading Experience
 
-https://developer.apple.com/wwdc19/245
+https://developer.apple.com/wwdc19/248
 
-- Enables public places to use indoor maps
-- Uses a format called “Indoor Mapping Data Format” (IMDF) which is represented as a set of GeoJSON files.
-- IMDF conforms to RFC 7959.
-- The building owner has to join the “[Indoor Maps Program](http://register.apple.com/indoor)” and produce the IMDF.
-- The IMDF map has to be created with a professional GIS or BIM tool.
-- Anyone can create an IMDF map and display it an app or website using MapKit or MapKit JS.
-- The Indoor Maps Program and indoor positioning is only available for large properties with more than 5 million annual visitors.
-- Public building owners can choose to publish their indoor maps to the official Apple Maps.
-- Apple provides an IMDF sandbox where IMDF maps can be validated and tested in a browser based interface. This sandbox is available for all Apple Developers and not only members of the Indoor Maps Program. See the demo of the sandbox at 15:29.
-- Indoor positioning:
-  - Uses WiFi fingerprinting
-  - Expected accuracy: 3-5 meters 
-  - The indoor location on the indoor map can be obtained via CoreLocation.
-  - To set up indoor positioning an indoor survey needs to be done. This is done by using the “Indoor Survey App” to collect WiFi info in the building, which is then uploaded for analysis and activation. The app is also used for testing the accuracy of the indoor positioning. See the demo of the app at 22:32.
-- The content of an IMDF map:
-  - Building Footprint
-  - Levels
-  - Units (room, walkaway, elevator etc.)
-  - Openings (doors)
-  - Kiosks (typically in the walkaway)
-  - Labels and icons
-  - Sections (highlights areas on the map eg. a food court in a mall)
+- For custom views set `isAccessibilityElement = true`
+- **Enable Accessible Text Content** by adopting `UIAccessibilityReadingContent`
+  - In `accessibilityLineNumber(for point: CGPoint) -> Int` use hit testing to identify subviews
+  - In `accessibilityContent(forLineNumber: Int) -> String?` return the `accessibilityLabel` for the subview matching line number
+  - In `accessibilityFrame(forLineNumber: Int) -> CGRect` return the `accessibilityFrame` for the subview matching line number
+  - In `accessibilityPageContent() -> String?` return the concatenated accessibility labels for all subviews
+- Enable **Automatic Page Turn** by
+  - setting `view.accessibilityTraits = UIAccessibilityTraits.causePageTurn` on your page view
+  - implementing `accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool` (lets voice over turn pages)
+- **Customizing Speech** by adopting the protocol `UIAccessibilityReadingContent`
+  - customize language by setting `NSAttributedString.Key.accessibilitySpeechLanguage`
+  - customize pitch by setting `NSAttributedString.Key.accessibilitySpeechPitch`
+  - ...
 
 ## Designing iPad Apps for Mac
 
@@ -1869,10 +1887,6 @@ https://developer.apple.com/wwdc19/228
 ## Creating Independent Watch Apps
 
 https://developer.apple.com/wwdc19/208
-
-## Creating an Accessible Reading Experience
-
-https://developer.apple.com/wwdc19/248
 
 ## Data Flow Through SwiftUI
 
