@@ -49,6 +49,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
 1. [Introducing the Indoor Maps Program](#introducing-the-indoor-maps-program)
 1. [Introducing Accelerate for Swift](#introducing-accelerate-for-swift)
+1. [Introducing Desktop\-class Browsing on iPad](#introducing-desktop-class-browsing-on-ipad)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits](#great-developer-habits)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -111,7 +112,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
 1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
-1. **(ToDo)** [Introducing Desktop\-class Browsing on iPad](#introducing-desktop-class-browsing-on-ipad)
 1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
 1. **(ToDo)** [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
 1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
@@ -774,6 +774,47 @@ https://developer.apple.com/wwdc19/718
   - measuring peformance in GFLOPS on iPhone XS: 1.8 without vs. 44.75 with Accelerate
   - comparing Eigen to Accelerate using SGEMM on iPhone XS: 51 vs. 122
 - Use Acelerate since it is tuned to the platform
+
+## Introducing Desktop-class Browsing on iPad
+
+https://developer.apple.com/wwdc19/203
+
+- New Features: **Download Manager**, **Keyboard Shortcuts**, **Full Page Zoom**, ...
+- Websites designed to show lots of information, e.g. GitHub, are **zoomed** to make use of iPad's full width
+- Hovering with the mouse on desktop now feels natural on an iPad
+- Speaker covers the topics `Link following`, `Web Browser`, `Hybrid Apps` and `Authentication` for WKWebView apps
+- Prevent horizontal scrolling in WKWebView: Compile with iOS 13 SDK and set `webViewConfiguration.applicationNameForUserAgent = "Version/1.0 MyBrowser/1.0"` (user agent auto-completed by Web Kit)
+- Set `preferredContentMode = WKWebpagePreferences.ContentMode.[recommended, mobile, desktop]` 
+- Demo: "Shiny Browser" iPad App
+  - it is now easier to implement toggles between mobile/desktop websites by leveraging WKWebViewDelegate
+- Optimization potential for **web developers**
+  - **Pointer Events**
+    - Adopt by `if (window.PointerEvent) element.addEventListener("pointermove", updateInteraction); else element.addEventListener("mousemove", updateInteraction);`
+    - Cancel default web browser behavior by `event.preventDefault();` and additional the CSS variant `touch-action: none;` (more granualar on disabling events)
+  - **Hover**
+    - Provide alternative way to access hover content
+    - Avoid two tap for common interactions
+    - Keep hover snappy
+  - **Accelerated Scrolling**
+    - works on all frames, not only the main frame
+    - Frameworks don't need workarounds to simulate acceleration of sub frames anymore
+  - **View Port and Text Sizing**
+    - Some webpages are build in fixed width, wider than an iPad
+    - Now on iPadOS the paremeter `width=device-width` is ignored for websites laying out wider than iPad width. The site is zoomed to max iPad width.
+    - Add content parameter `shrink-to-fit=no` to the viewport meta tag to prevent auto shrinking
+    - Implement proper responsive websites to get around the new iPadOS auto adjustments
+  - **Visual Viewport API**
+    - Visual VP is the area of your webpage visible to the user, e.g. between top and top of the iPadOS keyboard
+    - react to changes, e.g. keyboard will show, by `visualViewport.addEventListener("resize", visualSizeChanged);`
+  - **Streaming Video**
+    - Media Source Extensions now available on iPad
+- **Best Practices**
+  - Build one responsive website instead of two for mobile/desktop
+  - Use feature detection instead of switching on user agent
+  - Don't use Flash - support will be dropped in Safari on all platforms
+  - Let users decide if they want audio
+  - Remember that some desktop browsers don't have mice
+  - Use built-in APIs
 
 ## Advances in Foundation
 
@@ -1955,10 +1996,6 @@ https://developer.apple.com/wwdc19/227
 ## Integrating SwiftUI
 
 https://developer.apple.com/wwdc19/231
-
-## Introducing Desktop-class Browsing on iPad
-
-https://developer.apple.com/wwdc19/203
 
 ## Introducing Multiple Windows on iPad
 
