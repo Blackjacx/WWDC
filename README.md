@@ -48,6 +48,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing ARKit 3](#introducing-arkit-3)
 1. [Introducing RealityKit and Reality Composer](#introducing-realitykit-and-reality-composer)
 1. [Introducing the Indoor Maps Program](#introducing-the-indoor-maps-program)
+1. [Introducing Accelerate for Swift](#introducing-accelerate-for-swift)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits](#great-developer-habits)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -110,7 +111,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
 1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
-1. **(ToDo)** [Introducing Accelerate for Swift](#introducing-accelerate-for-swift)
 1. **(ToDo)** [Introducing Desktop\-class Browsing on iPad](#introducing-desktop-class-browsing-on-ipad)
 1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
 1. **(ToDo)** [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
@@ -742,6 +742,38 @@ https://developer.apple.com/wwdc19/245
   - Kiosks (typically in the walkaway)
   - Labels and icons
   - Sections (highlights areas on the map eg. a food court in a mall)
+
+## Introducing Accelerate for Swift
+
+https://developer.apple.com/wwdc19/718
+
+- **Accelerate** provides thousands of low-level math primitives running on CPU to support image/signal processing, vector arithmetic, linear algebra and machine learning
+- provides excellent performance combined with energy savings on all platforms
+- **vDSP:** Digital signal processing functions 
+  - **Vector and matrix arithmetic**, e.g. 4D-Vector multiplication
+  - **Type conversion**, e.g. converting floting point to integer values
+  - **Fourier transforms**, e.g. forward and reverse transforms very simplified and convenient
+  - **Biquadratic filtering** reduces the necessary code from ~50 to some ~5 lines of code. Appllying the filter is now a single function call.
+  - **Convolution and correlation**
+- **vForce:** arithmetic and transcendental functions
+  - **Arithmetic functions**: floor, ceil, abs, remainder, ...
+  - **Exponential and logarithmic functions**: exp, log, ...
+  - **Trigonometric functions**: sin, cos, tan, ...
+  - **Hyperbolic functions**: sinh, asinh, ...
+  - Example: calculate sqrt for each element of large array - up to 10x faster in contrast to for loop
+- **Quadrature (area under a curve):** Numerical integration functions
+- **vImage:** Image-processing functions
+  - Core Graphics / Video interoperability
+  - Capable of `alpha blending`, `format conversions`, `histogram operations`, `convolution`, `geometry`, `morphology`
+  - Flags are now Swift `OptionSet`
+  - Throws proper Swift errors
+  - Enums for pixel formats and buffer types
+  - Hides requirements for unmanaged types and mutable buffers
+  - Moves free functions to properties on buffers and formats
+- **LINPACK Benchmark (built on top of BLAS)**
+  - measuring peformance in GFLOPS on iPhone XS: 1.8 without vs. 44.75 with Accelerate
+  - comparing Eigen to Accelerate using SGEMM on iPhone XS: 51 vs. 122
+- Use Acelerate since it is tuned to the platform
 
 ## Advances in Foundation
 
@@ -1923,10 +1955,6 @@ https://developer.apple.com/wwdc19/227
 ## Integrating SwiftUI
 
 https://developer.apple.com/wwdc19/231
-
-## Introducing Accelerate for Swift
-
-https://developer.apple.com/wwdc19/718
 
 ## Introducing Desktop-class Browsing on iPad
 
