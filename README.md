@@ -88,6 +88,7 @@ This repo has been already mentioned in the following places:
 1. [Accessibility in SwiftUI](#accessibility-in-swiftui)
 1. [Designing Great ML Experiences](#designing-great-ml-experiences)
 1. [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
+1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -100,7 +101,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
 1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
 1. **(ToDo)** [Combine in Practice](#combine-in-practice)
-1. **(ToDo)** [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
 1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
 1. **(ToDo)** [Data Flow Through SwiftUI](#data-flow-through-swiftui-1)
@@ -1901,6 +1901,44 @@ https://developer.apple.com/wwdc19/248
   - customize pitch by setting `NSAttributedString.Key.accessibilitySpeechPitch`
   - ...
 
+## Create ML for Object Detection and Sound Classification
+
+https://developer.apple.com/wwdc19/406
+
+(Alex Brown, Dan Klingler)
+
+- **Object detection** 
+  - Download existing object detectors for broad categories, but train your own models for specific subtle differences
+  - **Image classification** describes the complete image, but **Object detection** can identify and locate multiple objects
+  - For training object detection we need to annotate labeled regions (label, center (x,y), width, height) and store that as JSON file in the same folder as the images. 
+  - Demo: use **Create ML** to build a model for recognizing the numbers on the top of (multiple) dice
+    - Drag folder to training data and Create ML will do some basic checking/validation
+    - Training object detection takes much longer than image classification
+    - Visualizing training and results
+    - Test with new images directly in Create ML (use Continuity to access the iPhone camera)
+    - Export mlmodel-file to use in your app
+  - Considerations:
+    - Balanced number of images in each class
+    - 30+ images per class
+    - Real-world data: multiple angles, backgrounds, lighting conditions, different _other_ objects
+    - A single class can be enough (model learns to locate this class in images)
+  - Use **Vision** framework to integrate into app
+- Training **Sound Classification** Models in Create ML
+  - Identify the source of the sound (e.g. guitar vs. drums or nature vs. city) or identify properties (laugh vs. cry)
+  - Demo: use **Create ML** to build a model for classifying musical instruments from sound
+    - Sound files from different instruments in different folders
+    - Drag into Create ML, automatically separated into Training and Validation
+    - Test the model in Create ML on files or live on microphone
+    - Export mlmodel-file to use in your app
+  - Considerations
+    - Add background noise as a separate category
+    - One class per file (split if necessary)
+    - Real-world audio environments
+    - **AVAudioSessonMode** selection
+  - Integration
+    - New framework: **Sound Analysis** for automatic channel mapping, sample rate conversion and audio buffering before applying the model
+    - Results are in block size (e.g. one second) overlapping by 50% (default)
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -1948,10 +1986,6 @@ https://developer.apple.com/wwdc19/237
 ## Combine in Practice
 
 https://developer.apple.com/wwdc19/721
-
-## Create ML for Object Detection and Sound Classification
-
-https://developer.apple.com/wwdc19/406
 
 ## Creating Great Apps Using Core ML and ARKit
 
