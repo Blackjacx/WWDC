@@ -1934,7 +1934,7 @@ https://developer.apple.com/wwdc19/406
     - Add background noise as a separate category
     - One class per file (split if necessary)
     - Real-world audio environments
-    - **AVAudioSessonMode** selection
+    - **AVAudioSessionMode** selection
   - Integration
     - New framework: **Sound Analysis** for automatic channel mapping, sample rate conversion and audio buffering before applying the model
     - Results are in block size (e.g. one second) overlapping by 50% (default)
