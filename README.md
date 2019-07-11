@@ -50,6 +50,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing the Indoor Maps Program](#introducing-the-indoor-maps-program)
 1. [Introducing Accelerate for Swift](#introducing-accelerate-for-swift)
 1. [Introducing Desktop\-class Browsing on iPad](#introducing-desktop-class-browsing-on-ipad)
+1. [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits](#great-developer-habits)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -116,7 +117,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
 1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
 1. **(ToDo)** [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
-1. **(ToDo)** [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
 1. **(ToDo)** [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. **(ToDo)** [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
@@ -815,6 +815,38 @@ https://developer.apple.com/wwdc19/203
   - Let users decide if they want audio
   - Remember that some desktop browsers don't have mice
   - Use built-in APIs
+
+## Introducing SwiftUI: Building Your First App
+
+https://developer.apple.com/wwdc19/204
+
+- **SwiftUI merges the benefits** of Storyboards (new preview canvas) and code
+- **Drag and Drop** of UI elements in the canvas also updates your code
+- **⌘ + Click On UI Element in Canvas** lets you edit properties of that element whihc will be reflected in code.
+- **Modifiers** are the functions that modify an UI element: `.font()`, `.foregroundColor()`
+- **Conform to `Identifiable`** to make a struct usable as element in `List`
+- **Objects Conforming to `PreviewProvider`** are a way to display test data in the preview canvas
+- **NavigationView** is the replacement for `UINavigationController` and shows a navigation bar
+- **Wrap List Content in `NavigationButton`** to make cells selectable.
+  - Provide the new view hierarchy as destination in `NavigationButton(destination:)`
+- **Delete Cells** by appending a `.onDelete(perform: action)` at the end of your List views
+- **Move Cells** by addpending a `.onMove(perform: action)` at the end of your List views
+- **Use `ExtractView`** on a selected code block to automatically create a new view struct and make your code modular
+- **Achieve Small Navigation Bar Titles** by `.navigationBarTitle(Text("..."), displayMode: .inline)`
+- Views are structs that conform to `View` protocol
+- **@State variables** are used to make your views react on changes by re-execute the view's body function
+  - SwiftUI observes when @State variables are read/written
+  - Are sometimes referenced to as `Source of Truth` - while other variables are just called `Derived variables`
+  - Further described in [Data Flow Through SwiftUI](https://developer.apple.com/wwdc19/226)
+- SwiftUI eleminating UI inconsistencies (interesting description at [24:45](https://developer.apple.com/videos/play/wwdc2019/204/?time=1482))
+- **Animations** are added by e.g. `.tapAction { withAnimation { self.zoomed.toggle } }` to toggle between zoomed in/oput state
+  - Animations are interactive and interruptible
+- **Use flexible frames** to get screen-filling Image view with image appearing centered in the middle of the screen: `Image().resizable().aspectRatio(.fit).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)`
+- **Use Combine** to make your data dynamic, e.g. create your own object and let SwiftUI listen for changes to it (see little example at [38:26](https://developer.apple.com/videos/play/wwdc2019/204/?time=2304))
+- **Preview Environmental Changes** like Dynamic Font by appending `.environment(\.sizeCategory, .extraExtraExtraLarge)` to your preview UI element. 
+  - Change color scheme `.environment(\.colorScheme, .dark)`
+  - Change layout direction `.environment(\.layoutDirection, .rightToLeft)` and `\.locale`
+  - Change locale `.environment(\.locale, Locale(identifier: "ar"))`
 
 ## Advances in Foundation
 
@@ -2046,10 +2078,6 @@ https://developer.apple.com/wwdc19/221
 ## Introducing SiriKit Media Intents
 
 https://developer.apple.com/wwdc19/207
-
-## Introducing SwiftUI: Building Your First App
-
-https://developer.apple.com/wwdc19/204
 
 ## Introducing iPad Apps for Mac
 
