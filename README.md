@@ -92,6 +92,7 @@ This repo has been already mentioned in the following places:
 1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
 1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
+1. [Combine in Practice](#combine-in-practice)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -102,7 +103,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Architecting Your App for Multiple Windows](#architecting-your-app-for-multiple-windows)
 1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
 1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
-1. **(ToDo)** [Combine in Practice](#combine-in-practice)
 1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
 1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
 1. **(ToDo)** [Data Flow Through SwiftUI](#data-flow-through-swiftui-1)
@@ -2003,6 +2003,85 @@ https://developer.apple.com/wwdc19/262
   - Build the `LPLinkMetadata` object yourself if you have all data at hand
   - Return cached or self-made `LPLinkMetadata` object in `func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata?`
 
+## Combine in Practice
+
+https://developer.apple.com/wwdc19/721
+
+*Michael LeHew, Ben D. Jones*
+
+- Introduction
+    - **Combine** defines unified abstraction that describes API that can process values over time.
+- Publishers
+    - value publishers conforming to Publisher protocol
+    - two associated types: **Output** (kind of published values) and **Failure** which is constrained to Error protocol
+- NotificationCenter
+    - NotificationCenter now exposes its notifications with Publishers (`NotificationCenter.default.publisher(for:)`)
+    - Notifications can never fail (**Never**)
+- Operators
+    - Calling functions like `map` or `flatMap` returns new **Publishers’** operators
+    - Dedicated operator used for decoding (`decode(Foo.self, JSONDecoder()`)
+- Error Handling
+    - Every **Publisher** describes how they can fail
+    - Operators can help recovering from errors and dealing with them
+    - `assertNoFailure()` - asserts that failure can never happen.
+        - when error arrives program will trap because error type is Never
+    - `catch` - useful for recovering from an error
+        - provides a closure
+        - catch lets us replace the current Publisher with a new one, using `Just` for example to publish just one value
+        - error type is Never
+    - Other failure handling operators:
+        - `retry`
+        - `mapError` - receives and can return different type of error
+        - `setFailureType` - used for matching error type with subscriber
+- FlatMap
+    - Transforms all elements from an upstream publisher into a new or existing publisher.
+    - Lets you perform multiple operations like returning value, decoding it and catching error
+    - Handles the details of subscribing to the nested **Publisher** while offering its values downstream
+- Scheduled Operators
+    - Describe when and where a particular event is delivered
+    - Supported by **RunLoop** and **DispatchQueue**
+    - Examples:
+        - `delay` - Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler.
+        - `debounce` - Publishes elements only after a specified time interval elapses between events.
+        - `throttle` - Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
+        - `receive(on:)` - Specifies the scheduler on which to receive elements from the publisher.
+        - `subscribe(on:)` - Specifies the scheduler on which to perform subscribe, cancel, and request operations.
+- Subscribers
+    - Other side of publish values - receiving them
+    - Two associated types: **Input** and **Failure**
+    - `receive(subscription:)` - called exactly once
+    - Publisher provides zero or more values to Subscriber
+    - Publisher sends exactly one completion with two possible outcomes:
+        - Publisher has finished
+        - Failure has arisen
+        - No further values can be emitted after completion signal
+    - `assign(to:on:)` - assigns emitted values to the specified key paths on the instance of an object
+    - `sink` - closure which gets called when new value is received
+- AnyCancellable
+    - Combine allows terminating subscription to free up resources associated with it
+    - `cancel()` - cancels the activity
+- Subjects
+    - Behave like both **Publisher** and **Subscriber**
+    - `send(_:)` - sends a value to the subscriber
+    - Two useful types:
+        - **PassthroughSubject** - stores no values, you will receive values emitted after subscribing
+        - **CurrentValueSubject** - maintains a history of the last value it received
+- SwiftUI BindableObject
+    - **SwiftUI** owns the **Subscriber**
+    - BindableObject has a single associated type which is constrained to Publisher protocol with Failure equal to Never
+    - `didChange` property notified when your type has changed
+    - Further described in [Data Flow Through SwiftUI](#data-flow-through-swiftui)
+- Integrating Combine
+    - By adding `@Published` (**property wrapper**) we can add a Publisher to any property, for example: `@Published var password: String = “”`
+    - Using `targetAction` you can assign new values to the `@Published` value: `password = sender.text ?? “”`
+    - **CombineLatest** -  combines the most recently emitted values
+        - using `map` you can modify received values and change Publisher's type
+    - `eraseToAnyPublisher()` - returns an **AnyPublisher** of the given type and error
+    - `debounce(for:scheduler:)` - lets you specify a window by which you’d like to receive values and not receive them faster than that. It is useful to reduce number of requests when filtering data using text fields
+    - `removeDuplicates()` - Publishes only elements that don’t match the previous element
+- **Future** - initialized with closure that takes a promise (closure that accepts either success or failure)
+
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2042,10 +2121,6 @@ https://developer.apple.com/wwdc19/426
 ## Building Custom Views with SwiftUI
 
 https://developer.apple.com/wwdc19/237
-
-## Combine in Practice
-
-https://developer.apple.com/wwdc19/721
 
 ## Creating Great Apps Using Core ML and ARKit
 
