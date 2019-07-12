@@ -91,6 +91,7 @@ This repo has been already mentioned in the following places:
 1. [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
 1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
+1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -107,7 +108,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Data Flow Through SwiftUI](#data-flow-through-swiftui-1)
 1. **(ToDo)** [Designing for Privacy](#designing-for-privacy)
 1. **(ToDo)** [Drawing Classification and One\-Shot Object Detection in Turi Create](#drawing-classification-and-one-shot-object-detection-in-turi-create)
-1. **(ToDo)** [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
 1. **(ToDo)** [Exploring New Data Representations in HealthKit](#exploring-new-data-representations-in-healthkit)
 1. **(ToDo)** [Exploring Tinted Graphic Complications](#exploring-tinted-graphic-complications)
 1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
@@ -628,7 +628,7 @@ https://developer.apple.com/wwdc19/722
 
 https://developer.apple.com/wwdc19/604
 
-(Andreas Moeller, Thomas Berton)
+*Andreas Moeller, Thomas Berton*
 
 - Review of modern ARKit apps
 - Three pillars of ARKit
@@ -687,7 +687,7 @@ https://developer.apple.com/wwdc19/604
 
 https://developer.apple.com/wwdc19/603
 
-(Cody White, Tyler Casella)
+*Cody White, Tyler Casella*
 
 - **RealityKit**  is a new AR-first Swift framework for realistic rendering and simulation (iOS and macOS) 
 - **Reality Composer** is a macOS and iOS tool for simple AR-based content creation
@@ -1538,7 +1538,7 @@ https://developer.apple.com/wwdc19/220
 
 https://developer.apple.com/videos/play/wwdc2019/226/
 
-(Luca Bernardy, Raj Ramamurthy)
+*Luca Bernardy, Raj Ramamurthy*
 
 - **Main principles**
   - Data access is a dependency
@@ -1564,7 +1564,7 @@ https://developer.apple.com/videos/play/wwdc2019/226/
 
 https://developer.apple.com/videos/play/wwdc2019/416/
 
-(Harlan Haskins, Jordan Rose)
+*Harlan Haskins, Jordan Rose*
 
 - **Two main ways to distribute 3rd-party code**
   - for shipping the source code - Swift Packages
@@ -1731,7 +1731,7 @@ https://developer.apple.com/wwdc19/219
 
 https://developer.apple.com/wwdc19/704
 
-(Michael Brennan, Anil Katti, Aseem Wadhwa and Allen Lin)
+*Michael Brennan, Anil Katti, Aseem Wadhwa and Allen Lin*
 
 - **New: Create ML-App** to create models (beside tools for importing from different sources)
 - How can we **personalize** to each user without going back to the cloud (so that data stays private, we have no server costs and no connectivity needs)? Models are usually immutable on-device.
@@ -1937,7 +1937,7 @@ https://developer.apple.com/wwdc19/248
 
 https://developer.apple.com/wwdc19/406
 
-(Alex Brown, Dan Klingler)
+*Alex Brown, Dan Klingler*
 
 - **Object detection** 
   - Download existing object detectors for broad categories, but train your own models for specific subtle differences
@@ -1982,6 +1982,26 @@ https://developer.apple.com/wwdc19/514
 - Audit results stay visible across page reloads and cleared when Web Inspector is closed
 - Results can be im-/exported from/to JSON
 - Write custom Audits in JSON format - makes them easily sharable
+
+## Embedding and Sharing Visually Rich Links
+
+https://developer.apple.com/wwdc19/262
+
+*Tim Horton*
+
+- Present rich links in 3rd party apps via the `LinkPresentation.framework`
+- **Retrieve Metadata**
+  - `URL` > `LPMetadataProvider` > `LPLinkMetadata`
+  - `metadataProvider.startFetchingMetadata(for: url)`
+  - `LPLinkMetadata` is serializable and can be used for local file URLs too
+  - `LPLinkMetadata` should be cached locally to not always hit the internet for a request
+- **Presenting Links**
+  - Use `LPLinkView` to present the meta data in a way well known to the user
+  - Alternatively use `LPLinkMetadata` properties to create a custom view
+- **Accelerating the share sheet**
+  - Provide cached metadata to UIActivityViewController via UIActivityItemSource
+  - Build the `LPLinkMetadata` object yourself if you have all data at hand
+  - Return cached or self-made `LPLinkMetadata` object in `func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata?`
 
 ## Designing iPad Apps for Mac
 
@@ -2046,10 +2066,6 @@ https://developer.apple.com/wwdc19/708
 ## Drawing Classification and One-Shot Object Detection in Turi Create
 
 https://developer.apple.com/wwdc19/420
-
-## Embedding and Sharing Visually Rich Links
-
-https://developer.apple.com/wwdc19/262
 
 ## Exploring New Data Representations in HealthKit
 
