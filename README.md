@@ -90,6 +90,7 @@ This repo has been already mentioned in the following places:
 1. [Designing Great ML Experiences](#designing-great-ml-experiences)
 1. [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
 1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
+1. [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -98,7 +99,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Advances in macOS Security](#advances-in-macos-security)
 1. **(ToDo)** [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
 1. **(ToDo)** [Architecting Your App for Multiple Windows](#architecting-your-app-for-multiple-windows)
-1. **(ToDo)** [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
 1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
 1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
 1. **(ToDo)** [Combine in Practice](#combine-in-practice)
@@ -1971,6 +1971,18 @@ https://developer.apple.com/wwdc19/406
     - New framework: **Sound Analysis** for automatic channel mapping, sample rate conversion and audio buffering before applying the model
     - Results are in block size (e.g. one second) overlapping by 50% (default)
 
+## Auditing Web Content with Web Inspector
+
+https://developer.apple.com/wwdc19/514
+
+- Web Inspector includes built in audit system which can catch code changes and inconsistencies in webpage content
+- Enable Safari Develop menu from `Preferences > Advanced > Show Develop menu in menu bar`
+- Use **⌘ + ⌥ + I** to open Web Inspector
+- Audits consist of TestGroups and Tests
+- Audit results stay visible across page reloads and cleared when Web Inspector is closed
+- Results can be im-/exported from/to JSON
+- Write custom Audits in JSON format - makes them easily sharable
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2002,10 +2014,6 @@ https://developer.apple.com/wwdc19/304
 ## Architecting Your App for Multiple Windows
 
 https://developer.apple.com/wwdc19/258
-
-## Auditing Web Content with Web Inspector
-
-https://developer.apple.com/wwdc19/514
 
 ## Building Activity Classification Models in Create ML
 
