@@ -117,7 +117,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
 1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
 1. **(ToDo)** [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
-1. **(ToDo)** [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. **(ToDo)** [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
@@ -2168,10 +2167,6 @@ https://developer.apple.com/wwdc19/221
 ## Introducing SiriKit Media Intents
 
 https://developer.apple.com/wwdc19/207
-
-## Introducing iPad Apps for Mac
-
-https://developer.apple.com/wwdc19/205
 
 ## Introducing the Create ML App
 
