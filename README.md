@@ -869,19 +869,18 @@ https://developer.apple.com/wwdc19/723
 
 https://developer.apple.com/wwdc19/239
 
-- **Use groups** for project organization
+- **Use functional groups** for project organization. Group related information.
 - **Mirror** project and file structure
 - **Large Storyboards** should be splitted
-- **Update Project Settings** asap whenever Xcode prompts you
+- **Update Project Settings** as soon as possible whenever Xcode prompts you
 - **New Build System** should be used asap
-- **Unused code** should be deleted, not commented out - we all have source control, right?
-- **Warnings** resolve them immediately. Never check in code with warnings. Treat them as errors.
-- **Commit small changes** a Git commit should contain only small code changes
-- **Write useful commit messages** that have a short title and a descriptive body
-- **Use branches** to isolate changes that belong to a certain feature
+- **Unused code** should be deleted, not commented out. We all use source control, right?
+- **Warnings** should be resolved immediately. Never check in code with warnings. Treat them as errors.
+- **Commit small changes** often with a short title and a descriptive body.
+- **Use branches** to isolate changes that belong to a certain feature.
 - **Write documentation** about WHY the code has been written and WHAT it is doing
 - **Use descriptive variable names** instead of `id`, `state`, etc.
-- **Write Unit Tests** to avoid regressions and run them before each commit
+- **Write Unit Tests** to avoid regressions and run them before each commit. Keep tests running swiftly so you can execute them often.
 - **Use diagnostics tools** that can be enabled in the scheme settings (Main Thread Checker, Address Sanitizer, Thread Sanitizer, Undefined Behavior Sanitizer)
 - **Gauges** are very useful to see if you have problems with network, memory, disk and CPU usage
 - **Network Link Conditioner** helps tracking down bugs on low connectivity
@@ -894,7 +893,7 @@ https://developer.apple.com/wwdc19/239
   - ensure consistency in codebase
 - **Decouple your code** by creating packages and shared frameworks to reduce code size and share code between multiple app targets
 - **Dependencies** should be used responsibly
-  - Understand how a dependency works thoroughly
+  - Understand how a dependency works
   - Read carefully the changes when it is updated
   - Have a plan when a dependency goes away or is not maintained anymore
   - Ensure privacy
