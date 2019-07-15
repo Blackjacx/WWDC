@@ -97,6 +97,7 @@ This repo has been already mentioned in the following places:
 1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
 1. [Combine in Practice ★](#combine-in-practice-)
 1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
+1. [Creating Swift Packages](#creating-swift-packages)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -2166,6 +2167,10 @@ https://developer.apple.com/wwdc19/408
   - You can only have one version of a package in a workspace
   - Examine your package `A` sub-dependency `B` requirements if creating a direct dependency to it produces a resolution error
   - Upgrade `A` to a higher version when it supports the desired version of sub dependency `B`
+
+## Creating Swift Packages
+
+https://developer.apple.com/wwdc19/410
 
 ## Designing iPad Apps for Mac
 
