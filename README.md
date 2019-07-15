@@ -106,7 +106,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Combine in Practice](#combine-in-practice)
 1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
 1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
-1. **(ToDo)** [Data Flow Through SwiftUI](#data-flow-through-swiftui-1)
 1. **(ToDo)** [Designing for Privacy](#designing-for-privacy)
 1. **(ToDo)** [Drawing Classification and One\-Shot Object Detection in Turi Create](#drawing-classification-and-one-shot-object-detection-in-turi-create)
 1. **(ToDo)** [Exploring New Data Representations in HealthKit](#exploring-new-data-representations-in-healthkit)
@@ -837,7 +836,7 @@ https://developer.apple.com/wwdc19/204
 - **@State variables** are used to make your views react on changes by re-execute the view's body function
   - SwiftUI observes when @State variables are read/written
   - Are sometimes referenced to as `Source of Truth` - while other variables are just called `Derived variables`
-  - Further described in [Data Flow Through SwiftUI](https://developer.apple.com/wwdc19/226)
+  - Further described in [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 - SwiftUI eleminating UI inconsistencies (interesting description at [24:45](https://developer.apple.com/videos/play/wwdc2019/204/?time=1482))
 - **Animations** are added by e.g. `.tapAction { withAnimation { self.zoomed.toggle } }` to toggle between zoomed in/oput state
   - Animations are interactive and interruptible
@@ -2110,10 +2109,6 @@ https://developer.apple.com/wwdc19/228
 ## Creating Independent Watch Apps
 
 https://developer.apple.com/wwdc19/208
-
-## Data Flow Through SwiftUI
-
-https://developer.apple.com/wwdc19/226
 
 ## Designing for Privacy
 
