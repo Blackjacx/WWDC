@@ -51,6 +51,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing Accelerate for Swift](#introducing-accelerate-for-swift)
 1. [Introducing Desktop\-class Browsing on iPad](#introducing-desktop-class-browsing-on-ipad)
 1. [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
+1. [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits](#great-developer-habits)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -846,6 +847,69 @@ https://developer.apple.com/wwdc19/204
   - Change color scheme `.environment(\.colorScheme, .dark)`
   - Change layout direction `.environment(\.layoutDirection, .rightToLeft)` and `\.locale`
   - Change locale `.environment(\.locale, Locale(identifier: "ar"))`
+
+## Introducing iPad Apps for Mac
+
+- **When to consider iPad app for Mac**
+  - Make iPad app available on the Mac
+  - Bring older Mac app to feature parity with iPad app
+  - Replace Mac app built on non-native technology
+- **Not all apps are candidates**
+  - iPhone only app
+  - Apps that are built around mobile features (e.g. ARKit)
+- **Goals**
+  - Easy to get started
+  - One project, one source base, one target
+  - iPad app on the inside
+  - Mac app on the outside
+- **Things you get for free**
+  - Default menu bar
+  - Window management (resize, full screen, split view and Sidecar support)
+  - Dark mode
+  - Scroll bars
+  - Settings
+  - Touch bar (basic layout)
+  - Open and Save panels
+  - Text sizes (iOS 13 pt, mac 17 pt) scaled
+  - Copy and past
+  - Drag and drop
+  - Printing
+  - Multiple windows
+  - Application lifecycle
+- **Features to adopt**
+  - Mac icon
+  - Custom menus
+  - Toolbars
+  - Touch bar (if you want to add custom layout and icons)
+  - Hover events
+  - Help
+- **Deprecated frameworks**
+  - AddressBook -> Contact
+  - AddressBookUI -> ContactsUI
+  - AssetsLibrary -> Photos
+  - OpenGLES -> Metal
+  - GLKit -> MetalKit
+- **iOS Specific Frameworks**
+  - ClassKit
+  - HealthKit
+  - HomeKit
+- **Hardware Specific frameworks**
+  - ARKit
+  - CarPlay
+  - VisionKit
+- **Framework Differences**
+  - Core Location
+  - Core Motion
+  - Core Telephony
+  - Core NFC
+  - Core Bluetooth
+  - AVFoundation
+- **API Availability**
+  - Annotations are used to indicate availability for every platform
+- **Conditionalizing code**
+  - Use `#if targetEnvironment()` to conditionalize code
+- **Bundle Format**
+  - As bundle format are not the same on iOS and MacOS don’t hardcode bundle path, use NSBundle to handle the work automatically
 
 ## Advances in Foundation
 
@@ -2000,72 +2064,6 @@ https://developer.apple.com/wwdc19/262
   - Provide cached metadata to UIActivityViewController via UIActivityItemSource
   - Build the `LPLinkMetadata` object yourself if you have all data at hand
   - Return cached or self-made `LPLinkMetadata` object in `func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata?`
-
-## Introducing iPad Apps for mac
-
-- **When to consider iPad app for mac**
-  - Make iPad app available on the mac
-  - Bring older Mac app to feature parity with iPad app
-  - Replace Mac app built on non-native technology
-- **Not all apps are candidates**
-  - iPhone only app
-  - Apps that are built around mobile features (e.g. ARKit)
-- **Goals**
-  - Easy to get started
-  - One project, one source base, one target
-  - iPad app on the inside
-  - Mac app on the outside
-- **Things you get for free**
-  - Default menu bar
-  - Window management (resize, full screen, split view and Sidecar support)
-  - Dark mode
-  - Scroll bars
-  - Settings
-  - Touch bar (basic layout)
-  - Open and Save panels
-  - Text sizes (iOS 13 pt, mac 17 pt) scaled
-  - Copy and past
-  - Drag and drop
-  - Printing
-  - Multiple windows
-  - Application lifecycle
-- **Features to adopt**
-  - Mac icon
-  - Custom menus
-  - Toolbars
-  - Touch bar (if you want to add custom layout and icons)
-  - Hover events
-  - Help
-- **Deprecated frameworks**
-  - AddressBook -> Contact
-  - AddressBookUI -> ContactsUI
-  - AssetsLibrary -> Photos
-  - OpenGLES -> Metal
-  - GLKit -> MetalKit
-- **iOS Specific Frameworks**
-  - ClassKit
-  - HealthKit
-  - HomeKit
-- **Hardware Specific frameworks**
-  - ARKit
-  - CarPlay
-  - VisionKit
-- **Framework Differences**
-  - Core Location
-  - Core Motion
-  - Core Telephony
-  - Core NFC
-  - Core Bluetooth
-  - AVFoundation
-- **API Availability**
-  - Annotations are used to indicate availability for every platform
-- **Conditionalizing code**
-  - Use `#if targetEnvironment()` to conditionalize code
-- **Bundle Format**
-  - As bundle format are not the same on iOS and MacOS don’t hardcode bundle path, use NSBundle to handle the work automatically
-
-
-
 
 ## Designing iPad Apps for Mac
 
