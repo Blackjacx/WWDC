@@ -96,6 +96,7 @@ This repo has been already mentioned in the following places:
 1. [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
 1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
 1. [Combine in Practice ★](#combine-in-practice-)
+1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -2136,6 +2137,35 @@ https://developer.apple.com/wwdc19/721
     - `removeDuplicates()` - Publishes only elements that don’t match the previous element
 - **Future**
 	- initialized with closure that takes a promise (closure that accepts either success or failure)
+
+## Adopting Swift Packages in Xcode
+
+https://developer.apple.com/wwdc19/408
+
+- **Swift Packages**
+  - Manage dependencies with [semantic versioning](https://semver.org/)
+  - Are suitable for private coorporate or public open source framworks of any size
+  - Are used to share code among multiple apps
+  - Can be created directly via the UI of Xcode 11
+- **Using an Open Source Package**
+  - Add via `File > Swift Packages > Add Package Dependency...`
+  - If GitHub account added to Xcode the dialog shows all of your and all starred repos plus you can enter an URL
+  - After that Xcode shows the dependency in the Project Navigator on the left and it can be imported via `import <Framework>`
+  - Xcode creates a new subdirectory `<project_workspace>/xcshareddata/swiftlpm`, with a `Package.resolved` file, which contains the version information of your dependencies
+  - `Package.resolved` should be comitted so team members use the same versions
+- **A Closer Look at Packages**
+  - Contains the files/directories `Package.swift` (Swift package manifest), `Sources` and `Tests`
+  - The manifest file describes the framework name, (test-) targets and dependencies
+  - Specify compatible language versions using `swiftLanguageVerisons = [.v4, .v4_2, .v5]`
+  - See [Package Manager Docs](https://swift.org/package-manager/#example-usage) for an example manifest file
+- **Package Resolution in more Detail**
+  - Specify version `2.0.0 - up to next major` to let Xcode update the highest version available up to but excluding `3.0.0`
+  - Always create a direct dependency to a sub dependency `B` of a framework `A -> B` when you want to use functionality from `B`
+  - Update packages via `File > Swift Packages > Update To Latest Package Versions`
+- **Resolving Package Conflicts**
+  - You can only have one version of a package in a workspace
+  - Examine your package `A` sub-dependency `B` requirements if creating a direct dependency to it produces a resolution error
+  - Upgrade `A` to a higher version when it supports the desired version of sub dependency `B`
 
 ## Designing iPad Apps for Mac
 
