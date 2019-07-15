@@ -2,7 +2,7 @@
 
 Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
-Sessions that are exceptionally mentionable are highlighted using a ⭐️.
+Sessions that are exceptionally mentionable are highlighted using a ★.
 
 > This is work in progress since it is a lot of effort to watch all the videos by myself. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
@@ -32,8 +32,8 @@ This repo has been already mentioned in the following places:
 
 ## Video ToC
 
-1. [Platforms State of the Union ⭐️](#platforms-state-of-the-union)
-1. [What's New in Swift ⭐️](#whats-new-in-swift)
+1. [Platforms State of the Union ★](#platforms-state-of-the-union-)
+1. [What's New in Swift ★](#whats-new-in-swift-)
 1. [What's New In App Store Connect](#whats-new-in-app-store-connect)
 1. [What's New in Xcode 11](#whats-new-in-xcode-11)
 1. [What's New in Authentication](#whats-new-in-authentication)
@@ -55,18 +55,18 @@ This repo has been already mentioned in the following places:
 1. [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
 1. [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. [Advances in Foundation](#advances-in-foundation)
-1. [Great Developer Habits ⭐️](#great-developer-habits)
+1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
 1. [Building Great Shortcuts](#building-great-shortcuts)
 1. [Designing Great Shortcuts](#designing-great-shortcuts)
 1. [Integrating with Siri Event Suggestions](#integrating-with-siri-event-suggestions)
 1. [Modern Swift API Design](#modern-swift-api-design)
 1. [Core NFC Enhancements](#core-nfc-enhancements)
-1. [Testing in Xcode ⭐️](#testing-in-xcode)
+1. [Testing in Xcode ★](#testing-in-xcode-)
 1. [Advances in Networking, Part 1](#advances-in-networking-part-1)
 1. [Advances in Networking, Part 2](#advances-in-networking-part-2)
 1. [Getting Started with Xcode](#getting-started-with-xcode)
-1. [Modernizing Your UI for iOS 13 ⭐️](#modernizing-your-ui-for-ios-13)
+1. [Modernizing Your UI for iOS 13 ★](#modernizing-your-ui-for-ios-13-)
 1. [Designing Audio\-Haptic Experiences](#designing-audio-haptic-experiences)
 1. [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
 1. [Cryptography and Your Apps](#cryptography-and-your-apps)
@@ -95,7 +95,7 @@ This repo has been already mentioned in the following places:
 1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
 1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
-1. [Combine in Practice ⭐️](#combine-in-practice)
+1. [Combine in Practice ★](#combine-in-practice-)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -164,7 +164,7 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Working with USD](#working-with-usd)
 1. **(ToDo)** [Advances in Camera Capture &amp; Photo Segmentation](#advances-in-camera-capture--photo-segmentation)
 
-## Platforms State of the Union ⭐️
+## Platforms State of the Union ★
 
 https://developer.apple.com/wwdc19/103
 
@@ -291,7 +291,7 @@ https://developer.apple.com/wwdc19/103
   - Amazing Metal-based, animated Raytracing demo with computationally expensive multi-reflections and more
   - "Built for Pros" 😅
 
-## What's New in Swift ⭐️
+## What's New in Swift ★
 
 https://developer.apple.com/wwdc19/402
 
@@ -929,7 +929,7 @@ https://developer.apple.com/wwdc19/723
 - **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
 - Use `DataProtocol` instead of `UInt8`
 
-## Great Developer Habits ⭐️
+## Great Developer Habits ★
 
 https://developer.apple.com/wwdc19/239
 
@@ -1082,7 +1082,7 @@ https://developer.apple.com/wwdc19/715
 - **Native Tag Reading** supports also MIFARE, ISO15693, FeliCa (from Sony - heavily used by transit and payment systems in Japan)
 - Watch technical session video for implementation details to all supported **Native Tag Reading**
 
-## Testing in Xcode ⭐️
+## Testing in Xcode ★
 
 https://developer.apple.com/wwdc19/413
 
@@ -1192,7 +1192,7 @@ https://developer.apple.com/wwdc19/404
   - and many more...
 - It is perfectly suited for new developers that have never worked with Xcode, but also for experienced ones to get to know the new UI of Xcode 11
 
-## Modernizing Your UI for iOS 13 ⭐️
+## Modernizing Your UI for iOS 13 ★
 
 https://developer.apple.com/wwdc19/224
 
@@ -2060,7 +2060,7 @@ https://developer.apple.com/wwdc19/262
   - Build the `LPLinkMetadata` object yourself if you have all data at hand
   - Return cached or self-made `LPLinkMetadata` object in `func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata?`
 
-## Combine in Practice ⭐️
+## Combine in Practice ★
 
 https://developer.apple.com/wwdc19/721
 
