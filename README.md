@@ -727,12 +727,12 @@ https://developer.apple.com/wwdc19/245
 - Anyone can create an IMDF map and display it an app or website using MapKit or MapKit JS.
 - The Indoor Maps Program and indoor positioning is only available for large properties with more than 5 million annual visitors.
 - Public building owners can choose to publish their indoor maps to the official Apple Maps.
-- Apple provides an IMDF sandbox where IMDF maps can be validated and tested in a browser based interface. This sandbox is available for all Apple Developers and not only members of the Indoor Maps Program. See the demo of the sandbox at [15:30](https://developer.apple.com/videos/play/wwdc2019/245/?time=930).
+- Apple provides an IMDF sandbox where IMDF maps can be validated and tested in a browser based interface. This sandbox is available for all Apple Developers and not only members of the Indoor Maps Program. See the demo of the sandbox at [15:30](https://developer.apple.com/wwdc19/245/?time=930).
 - Indoor positioning:
   - Uses WiFi fingerprinting
   - Expected accuracy: 3-5 meters 
   - The indoor location on the indoor map can be obtained via CoreLocation.
-  - To set up indoor positioning an indoor survey needs to be done. This is done by using the “Indoor Survey App” to collect WiFi info in the building, which is then uploaded for analysis and activation. The app is also used for testing the accuracy of the indoor positioning. See the demo of the app at [22:32](https://developer.apple.com/videos/play/wwdc2019/245/?time=1337).
+  - To set up indoor positioning an indoor survey needs to be done. This is done by using the “Indoor Survey App” to collect WiFi info in the building, which is then uploaded for analysis and activation. The app is also used for testing the accuracy of the indoor positioning. See the demo of the app at [22:32](https://developer.apple.com/wwdc19/245/?time=1337).
 - The content of an IMDF map:
   - Building Footprint
   - Levels
@@ -837,11 +837,11 @@ https://developer.apple.com/wwdc19/204
   - SwiftUI observes when @State variables are read/written
   - Are sometimes referenced to as `Source of Truth` - while other variables are just called `Derived variables`
   - Further described in [Data Flow Through SwiftUI](#data-flow-through-swiftui)
-- SwiftUI eleminating UI inconsistencies (interesting description at [24:45](https://developer.apple.com/videos/play/wwdc2019/204/?time=1482))
+- SwiftUI eleminating UI inconsistencies (interesting description at [24:45](https://developer.apple.com/wwdc19/204/?time=1482))
 - **Animations** are added by e.g. `.tapAction { withAnimation { self.zoomed.toggle } }` to toggle between zoomed in/oput state
   - Animations are interactive and interruptible
 - **Use flexible frames** to get screen-filling Image view with image appearing centered in the middle of the screen: `Image().resizable().aspectRatio(.fit).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)`
-- **Use Combine** to make your data dynamic, e.g. create your own object and let SwiftUI listen for changes to it (see little example at [38:26](https://developer.apple.com/videos/play/wwdc2019/204/?time=2304))
+- **Use Combine** to make your data dynamic, e.g. create your own object and let SwiftUI listen for changes to it (see little example at [38:26](https://developer.apple.com/wwdc19/204/?time=2304))
 - **Preview Environmental Changes** like Dynamic Font by appending `.environment(\.sizeCategory, .extraExtraExtraLarge)` to your preview UI element. 
   - Change color scheme `.environment(\.colorScheme, .dark)`
   - Change layout direction `.environment(\.layoutDirection, .rightToLeft)` and `\.locale`
@@ -1125,13 +1125,13 @@ https://developer.apple.com/wwdc19/712
   - get rid of capturing self in completion handlers
   - avoid duplicate network code like checking for status code
   - achieve retry operation in just one line - since network operations are expensive: low retry count 
-  - Pretty nice example of generic `low-data-mode` `adaptivePublisher` at minute [26:07](https://developer.apple.com/videos/play/wwdc2019/712/?time=1534)
+  - Pretty nice example of generic `low-data-mode` `adaptivePublisher` at minute [26:07](https://developer.apple.com/wwdc19/712/?time=1534)
 - **WebSocket**
   - **Advantages**
     - bi-directional connection over TLS/TCP connection
     - works with firewalls / CDNs
     - proxy support
-  - **URLSessionWebSocketTask** is exciting simple! Example at [30:00](https://developer.apple.com/videos/play/wwdc2019/712/?time=1803)
+  - **URLSessionWebSocketTask** is exciting simple! Example at [30:00](https://developer.apple.com/wwdc19/712/?time=1803)
     - NWConnection / NWListener offers client/server support for partial or complete WebSocket messages
 - **Mobility Improvements** never turn off Wi-Fi anymore when walking off home with slowly fading connection
   - Improved **Wi-Fi Assit**: Cross-Layer Mobility Detection from all Frameworks `(Network.framework, URLSession, Wi-Fi, Cellular)`
@@ -1255,7 +1255,7 @@ https://developer.apple.com/wwdc19/810
 https://developer.apple.com/wwdc19/223
 
 - This is basically a merge of sessions [Designing Audio-Haptic Experiences](https://developer.apple.com/wwdc19/810) and [Introducing Core Haptics](https://developer.apple.com/wwdc19/520)
-- For an in-depth example scroll the video to [40:10](https://developer.apple.com/videos/play/wwdc2019/223/?time=2413)
+- For an in-depth example scroll the video to [40:10](https://developer.apple.com/wwdc19/223/?time=2413)
 
 ## Cryptography and Your Apps
 
@@ -1309,14 +1309,14 @@ https://developer.apple.com/wwdc19/703
     - configurable via entitlements
     - Adopt via `codesign --sign "Developer ID" --timestamp --options runtime My.app`
     - Verify via `codesign --display --verbose=2 My.app` and make sure `runtime` is printed next to `flags`
-    - Look into [12:04](https://developer.apple.com/videos/play/wwdc2019/703/?time=725) for detailed description
-    - Look into [12:22](https://developer.apple.com/videos/play/wwdc2019/703/?time=742) if your app crashes because you use JIT
-    - Look into [13:54](https://developer.apple.com/videos/play/wwdc2019/703/?time=831) if  your app crashes because you patch system frameworks - **don't do this**
+    - Look into [12:04](https://developer.apple.com/wwdc19/703/?time=725) for detailed description
+    - Look into [12:22](https://developer.apple.com/wwdc19/703/?time=742) if your app crashes because you use JIT
+    - Look into [13:54](https://developer.apple.com/wwdc19/703/?time=831) if  your app crashes because you patch system frameworks - **don't do this**
     - If your app crashes on auto-update: create a new file when you update a signed file
   - **Library Validation** 
     - protects your app from code injection and dylibs hijacking
     - prevents loading unsigned or adhoc-signed code
-    - Detailed solutions for common issues can be fount at [16:00](https://developer.apple.com/videos/play/wwdc2019/703/?time=957), e.g. `App loads plugins from other devs in-process`, 
+    - Detailed solutions for common issues can be fount at [16:00](https://developer.apple.com/wwdc19/703/?time=957), e.g. `App loads plugins from other devs in-process`, 
   - **DYLD Variable Environment Protection**
     - can inject libs and modify framework and lib search path - useful for testing
     - Blocks `DYLD_LIBRARY_PATH`, `DYLD_INSERT_LIBRARIES`, `DYLD_FRAMEWORK_PATH` by default
@@ -1327,7 +1327,7 @@ https://developer.apple.com/wwdc19/703
     - You can use `com.apple.security.get-task-allow` entitlement during debug build to get around this - Xcode does it automatically
   - **Protected Resource Access**
     - App needs to declare its intent to access protected resources, e.g. location, photos, contacts, ...
-    - settable via entitlements - see [20:46](https://developer.apple.com/videos/play/wwdc2019/703/?time=1225)
+    - settable via entitlements - see [20:46](https://developer.apple.com/wwdc19/703/?time=1225)
   - Use only entitlements really needed
   - Set those entitlements only for processes that need them
   - Set resource-access entitlements only on main bundle; get inherited by other bundles
@@ -1591,7 +1591,7 @@ https://developer.apple.com/wwdc19/220
 
 ## Data Flow Through SwiftUI
 
-https://developer.apple.com/videos/play/wwdc2019/226/
+https://developer.apple.com/wwdc19/226
 
 *Luca Bernardy, Raj Ramamurthy*
 
@@ -1617,7 +1617,7 @@ https://developer.apple.com/videos/play/wwdc2019/226/
 
 ## Binary Frameworks in Swift
 
-https://developer.apple.com/videos/play/wwdc2019/416/
+https://developer.apple.com/wwdc19/416/
 
 *Harlan Haskins, Jordan Rose*
 
@@ -1704,7 +1704,7 @@ https://developer.apple.com/wwdc19/418
   - **Activate Slow Animations** to debug animations by `Debug > Slow Animations` (__⌘__ + __T__)
   - **Siri** supported on all Simulators
   - **Control tvOS** with software remote, hardware remote (after paired), game controllers, bluetooth keyboard
-  - **Using Xcode 10 with iOS 13 Simulators** is possible by this weird combination of actions (look at [12:32](https://developer.apple.com/videos/play/wwdc2019/418/?time=749))
+  - **Using Xcode 10 with iOS 13 Simulators** is possible by this weird combination of actions (look at [12:32](https://developer.apple.com/wwdc19/418/?time=749))
   - **Drag&Drop** App bundles, locations, images, videos, URLs
   - **Share via Share Sheet** to multiple simulators at the same time
   - **Simulate Custom Location** via `Debug > Location > Custom Location...`
@@ -1736,7 +1736,7 @@ https://developer.apple.com/wwdc19/418
   - All Apple frameworks use Metal as well
   - Metal takes advantage of GPU of the underlying Mac system
   - Texture storage modes are different on macOS/iOS
-  - Always test performance on actual devices! (For additional infos [37:50](https://developer.apple.com/videos/play/wwdc2019/418/?time=2267)) 
+  - Always test performance on actual devices! (For additional infos [37:50](https://developer.apple.com/wwdc19/418/?time=2267)) 
 
 ## SwiftUI on watchOS
 
@@ -1827,7 +1827,7 @@ https://developer.apple.com/wwdc19/412
 - **Environment Overrides**
   - Light/Dark Mode, Dynamic Type & Many other Accessibility Settings (`INcrease Contrast`, `Bold Text`, `Reduce Transparency`, etc.)
   - Easily settable while debugging in the debug bar and live-previewable in the new canvas view
-  - Shows example code of an `AdaptingStack` which automatically updates stack axis when not enough space for UI element ([11:58](https://developer.apple.com/videos/play/wwdc2019/412/?time=717))
+  - Shows example code of an `AdaptingStack` which automatically updates stack axis when not enough space for UI element ([11:58](https://developer.apple.com/wwdc19/412/?time=717))
 - **SwiftUI Runtime Issues**
   - found when process is running
   - process continues executing
