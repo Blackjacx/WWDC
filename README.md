@@ -117,7 +117,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
 1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
 1. **(ToDo)** [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
-1. **(ToDo)** [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. **(ToDo)** [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
@@ -2002,6 +2001,72 @@ https://developer.apple.com/wwdc19/262
   - Build the `LPLinkMetadata` object yourself if you have all data at hand
   - Return cached or self-made `LPLinkMetadata` object in `func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata?`
 
+## Introducing iPad Apps for mac
+
+- **When to consider iPad app for mac**
+  - Make iPad app available on the mac
+  - Bring older Mac app to feature parity with iPad app
+  - Replace Mac app built on non-native technology
+- **Not all apps are candidates**
+  - iPhone only app
+  - Apps that are built around mobile features (e.g. ARKit)
+- **Goals**
+  - Easy to get started
+  - One project, one source base, one target
+  - iPad app on the inside
+  - Mac app on the outside
+- **Things you get for free**
+  - Default menu bar
+  - Window management (resize, full screen, split view and Sidecar support)
+  - Dark mode
+  - Scroll bars
+  - Settings
+  - Touch bar (basic layout)
+  - Open and Save panels
+  - Text sizes (iOS 13 pt, mac 17 pt) scaled
+  - Copy and past
+  - Drag and drop
+  - Printing
+  - Multiple windows
+  - Application lifecycle
+- **Features to adopt**
+  - Mac icon
+  - Custom menus
+  - Toolbars
+  - Touch bar (if you want to add custom layout and icons)
+  - Hover events
+  - Help
+- **Deprecated frameworks**
+  - AddressBook -> Contact
+  - AddressBookUI -> ContactsUI
+  - AssetsLibrary -> Photos
+  - OpenGLES -> Metal
+  - GLKit -> MetalKit
+- **iOS Specific Frameworks**
+  - ClassKit
+  - HealthKit
+  - HomeKit
+- **Hardware Specific frameworks**
+  - ARKit
+  - CarPlay
+  - VisionKit
+- **Framework Differences**
+  - Core Location
+  - Core Motion
+  - Core Telephony
+  - Core NFC
+  - Core Bluetooth
+  - AVFoundation
+- **API Availability**
+  - Annotations are used to indicate availability for every platform
+- **Conditionalizing code**
+  - Use `#if targetEnvironment()` to conditionalize code
+- **Bundle Format**
+  - As bundle format are not the same on iOS and MacOS don’t hardcode bundle path, use NSBundle to handle the work automatically
+
+
+
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2101,10 +2166,6 @@ https://developer.apple.com/wwdc19/221
 ## Introducing SiriKit Media Intents
 
 https://developer.apple.com/wwdc19/207
-
-## Introducing iPad Apps for Mac
-
-https://developer.apple.com/wwdc19/205
 
 ## Introducing the Create ML App
 
