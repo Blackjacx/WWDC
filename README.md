@@ -1366,23 +1366,17 @@ https://developer.apple.com/wwdc19/214
 
 https://developer.apple.com/wwdc19/256
 
-* **Support for macOS** with 50+ languages which requires privacy approval from the user and Siri to be enabled.
-
-* **On-device speech recognition**, speech is private, stays on-device, network connection not required and no cellular data consumed. To utillise on-device learning set `requiresOnDeviceRecognition` on `SFSpeechRecognitionRequest` to `true`.
-
-* **On-device limitations** with lower accuracy than the server and reduced set of available languages (English, Spanish, Italian, Brazilian Portuguese, Russian, Turkish and Chinese).
-
-* **On-device support** includes devices with an A9 chip and above and all mac devices.
-
-* **Server accuracy is higher** in comparison to on-device recognition but is limited to 1 minute max audio duration with a limited number of requests per day.
-
-* **Results from Transcription** include alternative interpretations, confidence level and timing information. New parameters include speaking rate, average pause duration and voice analytics.
-
-* **Voice Analytics Features** include:
-	* Jitter – Measures variation in pitch
-	* Shimmer – Measures variations in amplitude
-	* Pitch – Measures frequency characteristics of voice
-	* Voicing – Identifies voiced regions in speech
+- **Support for macOS** with 50+ languages which requires privacy approval from the user and Siri to be enabled.
+- **On-device speech recognition**, speech is private, stays on-device, network connection not required and no cellular data consumed. To utillise on-device learning set `requiresOnDeviceRecognition` on `SFSpeechRecognitionRequest` to `true`.
+- **On-device limitations** with lower accuracy than the server and reduced set of available languages (English, Spanish, Italian, Brazilian Portuguese, Russian, Turkish and Chinese).
+- **On-device support** includes devices with an A9 chip and above and all mac devices.
+- **Server accuracy is higher** in comparison to on-device recognition but is limited to 1 minute max audio duration with a limited number of requests per day.
+- **Results from Transcription** include alternative interpretations, confidence level and timing information. New parameters include speaking rate, average pause duration and voice analytics.
+- **Voice Analytics Features** include:
+	- Jitter – Measures variation in pitch
+	- Shimmer – Measures variations in amplitude
+	- Pitch – Measures frequency characteristics of voice
+	- Voicing – Identifies voiced regions in speech
 
 ## Optimizing App Launch
 
