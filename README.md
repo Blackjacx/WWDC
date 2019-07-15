@@ -2,6 +2,8 @@
 
 Usually it is much faster to read through some bullet points instead of watching a 50 min session video. Then if you find something interesting you can still watch it.
 
+Sessions that are exceptionally mentionable are highlighted using a ★.
+
 > This is work in progress since it is a lot of effort to watch all the videos by myself. So either please be patient or just [open up an issue](https://github.com/Blackjacx/WWDC/issues/new) to make a suggestion which session notes you like to see here asap :)
 
 ## Contribution
@@ -10,7 +12,7 @@ Feel free to submit a `PR` if I got something wrong or you have an improvement s
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
-[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703), [@speedoholic](https://github.com/speedoholic), [h0shy](https://github.com/h0shy), [@sidharthshah](https://github.com/sidharthshah), [@sgrgrsn](https://github.com/sgrgrsn)
+[@matthew_spear](https://twitter.com/matthew_spear), [@rukano](https://github.com/rukano), [@Borzoo](https://github.com/Borzoo), [@viktorasl](https://github.com/viktorasl), [@ezefranca](https://github.com/ezefranca), [@0xflotus](https://github.com/0xflotus), [@lachlanjc](https://github.com/lachlanjc), [@Sherlouk](https://github.com/Sherlouk), [@serralvo](https://github.com/serralvo), [@Gerriet](https://github.com/gerriet), [@soucolline](https://github.com/soucolline), [@DmIvanov](https://github.com/DmIvanov), [@tommy60703](https://github.com/tommy60703), [@speedoholic](https://github.com/speedoholic), [h0shy](https://github.com/h0shy), [@sidharthshah](https://github.com/sidharthshah), [@sgrgrsn](https://github.com/sgrgrsn), [@mcichecki](https://github.com/mcichecki)
 
 ## Mentions
 
@@ -30,8 +32,8 @@ This repo has been already mentioned in the following places:
 
 ## Video ToC
 
-1. [Platforms State of the Union](#platforms-state-of-the-union)
-1. [What's New in Swift](#whats-new-in-swift)
+1. [Platforms State of the Union ★](#platforms-state-of-the-union-)
+1. [What's New in Swift ★](#whats-new-in-swift-)
 1. [What's New In App Store Connect](#whats-new-in-app-store-connect)
 1. [What's New in Xcode 11](#whats-new-in-xcode-11)
 1. [What's New in Authentication](#whats-new-in-authentication)
@@ -53,18 +55,18 @@ This repo has been already mentioned in the following places:
 1. [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
 1. [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. [Advances in Foundation](#advances-in-foundation)
-1. [Great Developer Habits](#great-developer-habits)
+1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
 1. [Building Great Shortcuts](#building-great-shortcuts)
 1. [Designing Great Shortcuts](#designing-great-shortcuts)
 1. [Integrating with Siri Event Suggestions](#integrating-with-siri-event-suggestions)
 1. [Modern Swift API Design](#modern-swift-api-design)
 1. [Core NFC Enhancements](#core-nfc-enhancements)
-1. [Testing in Xcode](#testing-in-xcode)
+1. [Testing in Xcode ★](#testing-in-xcode-)
 1. [Advances in Networking, Part 1](#advances-in-networking-part-1)
 1. [Advances in Networking, Part 2](#advances-in-networking-part-2)
 1. [Getting Started with Xcode](#getting-started-with-xcode)
-1. [Modernizing Your UI for iOS 13](#modernizing-your-ui-for-ios-13)
+1. [Modernizing Your UI for iOS 13 ★](#modernizing-your-ui-for-ios-13-)
 1. [Designing Audio\-Haptic Experiences](#designing-audio-haptic-experiences)
 1. [Expanding the Sensory Experience with Core Haptics](#expanding-the-sensory-experience-with-core-haptics)
 1. [Cryptography and Your Apps](#cryptography-and-your-apps)
@@ -93,6 +95,7 @@ This repo has been already mentioned in the following places:
 1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
 1. [Auditing Web Content with Web Inspector](#auditing-web-content-with-web-inspector)
 1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
+1. [Combine in Practice ★](#combine-in-practice-)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -103,7 +106,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Architecting Your App for Multiple Windows](#architecting-your-app-for-multiple-windows)
 1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
 1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
-1. **(ToDo)** [Combine in Practice](#combine-in-practice)
 1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
 1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
 1. **(ToDo)** [Designing for Privacy](#designing-for-privacy)
@@ -162,7 +164,7 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Working with USD](#working-with-usd)
 1. **(ToDo)** [Advances in Camera Capture &amp; Photo Segmentation](#advances-in-camera-capture--photo-segmentation)
 
-## Platforms State of the Union
+## Platforms State of the Union ★
 
 https://developer.apple.com/wwdc19/103
 
@@ -289,7 +291,7 @@ https://developer.apple.com/wwdc19/103
   - Amazing Metal-based, animated Raytracing demo with computationally expensive multi-reflections and more
   - "Built for Pros" 😅
 
-## What's New in Swift
+## What's New in Swift ★
 
 https://developer.apple.com/wwdc19/402
 
@@ -927,7 +929,7 @@ https://developer.apple.com/wwdc19/723
 - **Scanner** lets you split string files in one line now: `scanner.scanUpToCharacters(CharacterSet)`
 - Use `DataProtocol` instead of `UInt8`
 
-## Great Developer Habits
+## Great Developer Habits ★
 
 https://developer.apple.com/wwdc19/239
 
@@ -1080,7 +1082,7 @@ https://developer.apple.com/wwdc19/715
 - **Native Tag Reading** supports also MIFARE, ISO15693, FeliCa (from Sony - heavily used by transit and payment systems in Japan)
 - Watch technical session video for implementation details to all supported **Native Tag Reading**
 
-## Testing in Xcode
+## Testing in Xcode ★
 
 https://developer.apple.com/wwdc19/413
 
@@ -1190,7 +1192,7 @@ https://developer.apple.com/wwdc19/404
   - and many more...
 - It is perfectly suited for new developers that have never worked with Xcode, but also for experienced ones to get to know the new UI of Xcode 11
 
-## Modernizing Your UI for iOS 13
+## Modernizing Your UI for iOS 13 ★
 
 https://developer.apple.com/wwdc19/224
 
@@ -2058,6 +2060,83 @@ https://developer.apple.com/wwdc19/262
   - Build the `LPLinkMetadata` object yourself if you have all data at hand
   - Return cached or self-made `LPLinkMetadata` object in `func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata?`
 
+## Combine in Practice ★
+
+https://developer.apple.com/wwdc19/721
+
+*Michael LeHew, Ben D. Jones*
+
+- **Combine** defines unified abstraction that describes API that can process values over time.
+- **Publishers**
+    - Conform to `Publisher` protocol
+    - Associated types: `Output` (kind of published values) and `Failure` (constrained to Swift.Error)
+- **NotificationCenter**
+    - `NotificationCenter` now exposes its notifications with Publishers (`NotificationCenter.default.publisher(for:)`)
+    - Notifications can never fail (**Never**)
+- **Operators**
+    - Calling functions like `map` or `flatMap` returns new **Publishers** operators
+    - Dedicated operator for decoding `decode(Foo.self, JSONDecoder()`
+- **Error Handling**
+    - Every Publisher describes how they can fail
+    - `Operators` can help recovering from errors and dealing with them
+    - `assertNoFailure()` asserts that failure can never happen. When error arrives, program will trap because error type is `Never`.
+    - `catch` is useful for recovering from an error
+        - Provides a closure
+        - Catch lets us replace the current Publisher with a new one, e.g. using `Just` to publish just one value
+        - Error type is `Never`
+    - Other failure handling operators:
+        - `retry`
+        - `mapError` - receives and can return different type of error
+        - `setFailureType` - used for matching error type with subscriber
+- **FlatMap**
+    - Transforms all elements from an upstream publisher into a new or existing publisher
+    - Lets you perform multiple operations like returning value, decoding it and catching error
+    - Handles the details of subscribing to the nested Publisher while offering its values downstream
+- **Scheduled Operators**
+    - Describe when and where a particular event is delivered
+    - Supported by **RunLoop** and **DispatchQueue**
+    - Examples:
+        - `delay` - Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler.
+        - `debounce` - Publishes elements only after a specified time interval elapses between events.
+        - `throttle` - Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
+        - `receive(on:)` - Specifies the scheduler on which to receive elements from the publisher.
+        - `subscribe(on:)` - Specifies the scheduler on which to perform subscribe, cancel, and request operations.
+- **Subscribers**
+    - Receive published values
+    - Two associated types: `Input` and `Failure`
+    - `receive(subscription:)` - called exactly once
+    - Publisher provides zero or more values to Subscriber
+    - Publisher sends exactly one completion with two possible outcomes:
+        - Publisher has finished
+        - Failure has arisen
+        - No further values can be emitted after completion signal
+    - `assign(to:on:)` - assigns emitted values to the specified key paths on the instance of an object
+    - `sink` - closure which gets called when new value is received
+- **AnyCancellable**
+    - Combine allows terminating subscription to free up resources associated with it
+    - `cancel()` - cancels the activity
+- **Subjects**
+    - Behave like both **Publisher** and **Subscriber**
+    - `send(_:)` - sends a value to the subscriber
+    - Two useful types:
+        - **PassthroughSubject** - stores no values, you will receive values emitted after subscribing
+        - **CurrentValueSubject** - maintains a history of the last value it received
+- **SwiftUI BindableObject**
+    - **SwiftUI** owns the **Subscriber**
+    - BindableObject has a single associated type which is constrained to Publisher protocol with Failure equal to Never
+    - `didChange` property notified when your type has changed
+    - Further described in [Data Flow Through SwiftUI](#data-flow-through-swiftui)
+- **Integrating Combine**
+    - By adding `@Published` (**property wrapper**) we can add a Publisher to any property, for example: `@Published var password: String = ""`
+    - Using `targetAction` you can assign new values to the `@Published` value: `password = sender.text ?? ""`
+    - **CombineLatest** -  combines the most recently emitted values
+        - using `map` you can modify received values and change Publisher's type
+    - `eraseToAnyPublisher()` - returns an **AnyPublisher** of the given type and error
+    - `debounce(for:scheduler:)` - lets you specify a window by which you’d like to receive values and not receive them faster than that. It is useful to reduce number of requests when filtering data using text fields
+    - `removeDuplicates()` - Publishes only elements that don’t match the previous element
+- **Future**
+	- initialized with closure that takes a promise (closure that accepts either success or failure)
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2097,10 +2176,6 @@ https://developer.apple.com/wwdc19/426
 ## Building Custom Views with SwiftUI
 
 https://developer.apple.com/wwdc19/237
-
-## Combine in Practice
-
-https://developer.apple.com/wwdc19/721
 
 ## Creating Great Apps Using Core ML and ARKit
 
