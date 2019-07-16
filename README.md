@@ -97,7 +97,7 @@ This repo has been already mentioned in the following places:
 1. [Embedding and Sharing Visually Rich Links](#embedding-and-sharing-visually-rich-links)
 1. [Combine in Practice ★](#combine-in-practice-)
 1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
-1. **(ToDo)** [Creating Swift Packages](#creating-swift-packages)
+1. [Creating Swift Packages](#creating-swift-packages)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -2144,7 +2144,7 @@ https://developer.apple.com/wwdc19/721
 https://developer.apple.com/wwdc19/408
 
 - **Swift Packages**
-  - Manage dependencies with [semantic versioning](https://semver.org/)
+  - Manage dependencies with [Semantic Versioning](https://semver.org/)
   - Are suitable for private coorporate or public open source framworks of any size
   - Are used to share code among multiple apps
   - Can be created directly via the UI of Xcode 11
@@ -2171,6 +2171,48 @@ https://developer.apple.com/wwdc19/408
 ## Creating Swift Packages
 
 https://developer.apple.com/wwdc19/410
+
+- **Creating Local Packages**
+  - Think of them as sub-project in workspace
+  - Platform independent by nature
+  - Great for collecting reusable code
+  - Not versioned - but can be published/versioned in just a feww steps
+  - `File > New > Swift Package` and add the package to your project and a root group
+  - Link with your app by adding the package product to `Project > App Target > General > Frameworks, Libraries and Embedded Content`
+- **Publishing Packages**
+  - First [Semantic Versioning](https://semver.org/) is explained
+  - During testing apps a pre-release ID (`5.0.0.-beta.1`) can be added to your version and should be removed once done with testing
+  - Provide a thoughtful README.md
+  - Make sure your tests are green
+  - Create a local Git repository via `Source Control > Create Git Repositories...`
+  - Publish your repository remote by `SCM Navigator > ⌥ + Click Your Project > Create <project_name> Remote...`
+  - Select `Private` if you want to share the package only within your team
+  - Publish your first version by `SCM Navigator > ⌥ + Click Your Project > Tag <branch>...`. Provide verison and message. After that push your tag to your remote.
+  - Read [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode) for how to integrate remote packages
+- **Package Manifest API**
+  - Build via Swift language 
+  - Documentation can be found when ⌘ + clicking the `PackageDescription` of each Package.swift
+  - `swift-tools-version:5.1` specifies the `Minimum Compiler Version`, `Manifest API Version` and is used for `Dependency Resolution`
+  - `Package(name: "")` describes the package name
+  - `Package(targets: [.target(""), .testTarget(name: "", dependencies: [])])` describes the targets of your package including test targets and the targets each test target is testing (dependencies)
+  - `Package(products: [.library(name: "", targets: [])])` describes the outcome of your package, in this case a library
+  - `Package(platforms: [.iOS(.v13)])` describes the minimum deployment version for your package
+  - Describe package dependencies using an `url` and a `version` parameter
+  - For `version` use `.from: "2.0.0"`, `.upToNextMajor: "2.0.0"`, `.upToNextMinor: "2.0.0"`, `.exact: "2.0.0"`, `.branch: "master"`, `.revision: "85cfe06"`
+  - Adopting SMP for existing frameworks by just adding and configuring a `Package.swift` file
+  - Include `path` in `.target(...)` if your source is not located under the standard `sources` directory
+- **Editing Packages**
+  - Package dependencies are locked for editing since they're managed by Xcode
+  - Checkout package as standalone project and drag & drop it to project. This automatically replaces remote package dependency and makes the package editable (see local package above).
+  - This mechanism can also be used to edit packages you don't own
+- **SPM Open Source Project**
+  - SPM is platform independent
+  - Use `swift package` to perform various non-build operations on a package
+  - Use `xcodebuild` to build packages on command line and CI
+  - SPM is build on top of `libSwiftPM`
+  - [SPM Website](https://swift.org/package-manager)
+  - [Getting Help](https://forums.swift.org)
+  - [Submitting Issues](https://bugs.swift.org)
 
 ## Designing iPad Apps for Mac
 
