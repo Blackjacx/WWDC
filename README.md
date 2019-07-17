@@ -825,7 +825,7 @@ https://developer.apple.com/wwdc19/204
 
 - **SwiftUI merges the benefits** of Storyboards (new preview canvas) and code
 - **Drag and Drop** of UI elements in the canvas also updates your code
-- **⌘ + Click On UI Element in Canvas** lets you edit properties of that element whihc will be reflected in code.
+- **⌘ + Click On UI Element in Canvas** lets you edit properties of that element which will be reflected in code.
 - **Modifiers** are the functions that modify an UI element: `.font()`, `.foregroundColor()`
 - **Conform to `Identifiable`** to make a struct usable as element in `List`
 - **Objects Conforming to `PreviewProvider`** are a way to display test data in the preview canvas
