@@ -2432,12 +2432,11 @@ https://developer.apple.com/wwdc19/236
 
 - New ground-up rebuilt basemap, data from 4 million miles of road (car fleet/planes)
 - Improved address detail, more accurate search and directions
-- Supports dark mode & web
 - New map availble in US end of 2019, additional countries 2020
 - Automatically replaces old Map in your app once released
-- Better support for Decoding and presenting GeoJSON using MKGeoJSONDecoder and MKGeoJSONObject
+- Better support for decoding and presenting GeoJSON using MKGeoJSONDecoder and MKGeoJSONObject
 - Everything mentioned below is also supported in some way in MapKit JS
-- **Snapshots MapKit JS support**
+- **Snapshots**
     - Snapshots (non-interactive images of map for native apps) can now be done on web
     - Example: snapshot.apple-mapkit.com/api/v1/snapshot?center=37.78,-122.42&size=640x300
     - Add param "&colorScheme=dark" for darkmode snapshot
