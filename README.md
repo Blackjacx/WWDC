@@ -151,7 +151,7 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [What’s New in ClassKit](#whats-new-in-classkit)
 1. **(ToDo)** [What’s New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
 1. **(ToDo)** [What’s New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
-1. **(ToDo)** [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
+1. [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
 1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Advances in AR Quick Look](#advances-in-ar-quick-look)
 1. **(ToDo)** [Bringing OpenGL Apps to Metal](#bringing-opengl-apps-to-metal)
