@@ -1733,6 +1733,7 @@ https://developer.apple.com/wwdc19/418
   - `xcrun simctl install <device> <example.app>` to install an app.
   - `xcrun simctl io <device> screenshot <output.png>` to take a screenshot.
   - `xcrun simctl clone <device> clone name` to clone the simulator instance by taking advantage of the APFS file sytem. Needs to be shutdown before cloning.
+  - `xcrun simctl status_bar <device> override --time "11:00" --batteryState charge` to override displayed statusbar values
 - **Metal in Simulator**
   - Simulator is much faster and is fully GPU accelerated
   - Metal hardware-accelerated renderings are now possible the first time
