@@ -98,13 +98,13 @@ This repo has been already mentioned in the following places:
 1. [Combine in Practice ★](#combine-in-practice-)
 1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
 1. [Creating Swift Packages](#creating-swift-packages)
+1. [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
 1. **(ToDo)** [Advances in Collection View Layout](#advances-in-collection-view-layout)
 1. **(ToDo)** [Advances in Natural Language Framework](#advances-in-natural-language-framework)
 1. **(ToDo)** [Advances in macOS Security](#advances-in-macos-security)
-1. **(ToDo)** [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
 1. **(ToDo)** [Architecting Your App for Multiple Windows](#architecting-your-app-for-multiple-windows)
 1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
 1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
@@ -2215,6 +2215,74 @@ https://developer.apple.com/wwdc19/410
   - [Getting Help](https://forums.swift.org)
   - [Submitting Issues](https://bugs.swift.org)
 
+## App Distribution – From Ad-hoc to Enterprise
+
+https://developer.apple.com/wwdc19/304
+
+- **Distribution methods**
+  - Ad Hoc
+  - App Store
+  - In-House
+  - Custom apps
+- **Personal Team**
+  - Intended for students, teachers and getting started
+  - Apps will be deployed to devices you own
+  - Intended for a few apps and a few devices
+  - Certain capabilities are not available with free accounts (ex: CloudKit, Siri)
+  - Apps cannot be distributed on the App Store
+- **Ad Hoc Distribution**
+  - Distribute your app to testers on registered devices
+  - 100 devices, per product family, per year can be registered
+  - Meant for testing apps on registered devices
+  - Short term distribution solution
+  - Apps expire and will eventually stop working
+  - Device limits reset once per year 
+- **TestFlight**
+  - 25 internal testers
+  - 10k testers via email or a public link
+  - Builds are active for 90 days
+  - Builds for external testers go through beta app review
+  - Available to members of the Apple Developer Program only
+- **App Store**
+  - Individuals or organizations can sign up
+  - Apps are available to the general public
+  - Apps are hosted on the App Store
+  - Apps are reviewed by Apple
+  - Know and follow the App Store Review Guidelines
+  - Keep the app current
+  - Make sure the app is appropriate for the general public
+- **In-House**
+  - Proprietary apps build by internal developers for their employees
+  - Organization owns and maintains the source code
+  - Distribution is outside of the store
+  - Organization distributes the app, usually via MDM
+  - Users must be employees
+  - Distribution certificates should be protected
+  - Certificates lifecycle needs to be managed
+  - DIY Beta Testing and Hosting
+  - Apps require periodic access to the internet
+- **Custom App**
+  - Part of the Apple Developer Program
+  - Privately offer customized apps to customers you identify for yourself
+  - Apps for partners, clients, franchisees, internal employees and affiliates
+  - Distribute licenses via MDM or Redemption codes
+- **Benefits of Custom Apps**
+  - One program to manage all of your apps (internal and external)
+  - Apps don’t expire
+  - Apps are managed individually
+  - Apps can be distributed to much larger audiences
+  - Easier to work with third-party software vendors
+  - Additional App Store features
+  - TestFlight and App Store Connect tools
+- **Custom Apps Expectations**
+  - Customer is required to have Apple Business Manager
+  - Apps have to support the countries they will be distributed in
+  - Redemption codes will not be made publicly available
+  - Reviewers need to access the full functionality of the app
+  - Once submitted, apps can’t be moved between public and private availability
+
+
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2239,9 +2307,6 @@ https://developer.apple.com/wwdc19/232
 
 https://developer.apple.com/wwdc19/701
 
-## App Distribution – From Ad-hoc to Enterprise
-
-https://developer.apple.com/wwdc19/304
 
 ## Architecting Your App for Multiple Windows
 
