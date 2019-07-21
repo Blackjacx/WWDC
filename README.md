@@ -151,7 +151,7 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [What’s New in ClassKit](#whats-new-in-classkit)
 1. **(ToDo)** [What’s New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
 1. **(ToDo)** [What’s New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
-1. **(ToDo)** [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
+1. [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
 1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Advances in AR Quick Look](#advances-in-ar-quick-look)
 1. **(ToDo)** [Bringing OpenGL Apps to Metal](#bringing-opengl-apps-to-metal)
@@ -2431,6 +2431,43 @@ https://developer.apple.com/wwdc19/303
 
 https://developer.apple.com/wwdc19/236
 
+- New ground-up rebuilt basemap, data from 4 million miles of road (car fleet/planes)
+- Improved address detail, more accurate search and directions
+- New map availble in US end of 2019, additional countries 2020
+- Automatically replaces old Map in your app once released
+- Better support for decoding and presenting GeoJSON using MKGeoJSONDecoder and MKGeoJSONObject
+- Everything mentioned below is also supported in some way in MapKit JS
+- **Snapshots**
+    - Snapshots (non-interactive images of map for native apps) can now be done on web
+    - Example: snapshot.apple-mapkit.com/api/v1/snapshot?center=37.78,-122.42&size=640x300
+    - Add param "&colorScheme=dark" for darkmode snapshot
+    - Snapshot urls require param "&signature=<yourSignatureHere>", signature obtained from MapKit JS API
+    - Can request 25,000 snapshots per day
+    - Snapshot helper tool availble at developer.apple.com/mapkitjs
+- **Dark Mode**
+    - MapView in your app will automatically adapt to dark mode from view hierarchy trait
+    - MKMapSnapshotter for non-interactive maps in your app, is not aware of view hierarchy so you must pass the view's traitCollection with:
+    - `let options = MKMapSnapshotter.Options()`
+    - `options.traitCollection = myView.traitCollection`
+- **Filtering points of interest in map views**
+    - Previously you had to remove all points of interest if any were conflicting with your annotations, now you can filter out/in specific MKPointOfInterestCategory, such as .restaurant or .hotel
+    - example: `mapView.pointOfInterestFilter = MKPointOfInterestFilter(excluding: [ .hotel ])`
+- **Filtering search and autocompletion results**
+    - MKLocalSearchCompleter feeds your search bar autocomplete and auto-suggestions with results show on map using MKLocalSearch
+    - Now you can apply MKPointOfInterestFilter to both MKLocalSearchCompleter and MKLocalSearch
+    - MKLocalSearchCompleter now also has ResultType, which can be .address, .pointOfInterest (Disneyland), .queries (coffee)
+    - MKLocalSearch handles ResultType as well, but not .queries type
+    - MKMapItem now has a pointOfInterestCategory property
+- **Improving overlay performance**
+    - MKMultiPolygon and MKMultiPolyline for adding large groups of same-style shapes and lines to map overlay for performance efficiency
+    - Use MKMultiPolygonRenderer or MKMultiPolyLineRenderer to add fill, stroke, lineWidth in mapView:rendererFor delegate method
+    - MapKit now renders these as vector graphics, rather than bitmaps (can be turned off)
+- **Taking control of the map view camera**
+    - Add MKMapView.CameraBoundary to constrain the map view's center point and restrict panning
+    - Boundary strictly enforced, even setting region programmatically will not move the camera outside of the bounds
+    - Center Coordinate Distance of camera is the "distance up" above the map, should not be treated as altitude, as the camera can change it's pitch and the distance is the same but the altitude is different
+    - MKMapView.CameraZoomRange can constrain zoom distance
+	
 ## Window Management in Your Multitasking App
 
 https://developer.apple.com/wwdc19/246
