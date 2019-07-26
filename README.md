@@ -55,6 +55,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing SwiftUI: Building Your First App](#introducing-swiftui-building-your-first-app)
 1. [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
+1. [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -121,7 +122,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
 1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
 1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
-1. **(ToDo)** [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
 1. **(ToDo)** [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
@@ -949,6 +949,56 @@ https://developer.apple.com/wwdc19/213
 - **Outputs**
   - Specify your own type that contains the properties you want to pass on to other actions 
   - Define a new property of your output type and designate it to be an output
+
+## Introducing SiriKit Media Intents
+
+https://developer.apple.com/wwdc19/207
+
+- **Possible Phrases For 3rd Party Apps**
+  - "Tell <MyApp> that I love pop music"
+  - "Play Khalid on <MyApp>" 
+  - "I don't like this song"
+  - "Add this to my library"
+- **Intents**
+  - `INPlayMediaIntent` to allow playing audio
+  - `INAddMediaIntent` to add media items to playlists and libraries
+  - `INUpdateMediaAffinitiyIntent` to express affinity to media items
+  - `INSearchForMediaIntent` to search for specific media in your app
+  - Support for playback controls let users say "Play Billie Eilish `shuffled` in <`MyApp`>"
+  - Supported audio types: `Music`, `Podcasts`, `Audiobooks`, `Radio`
+  - Even search for unsupported media ypes possible - caveat: search queries will be untyped
+- **Handling SiriKit Media Requests**
+  - Handling requests through Siri app extension
+  - Don't forget to add the Siri capability to your app
+  - Request processing involves `Resolve` > `Confirm` > `Handle`
+  - See [10:15](https://developer.apple.com/videos/play/wwdc2019/207/?time=610) or an extensive example about `Adding intents to your app`, `Specify supported intents and media types`, `Implement resolve, handle for INPlayMediaIntent and INAddMediaIntent`
+- **Best Practices**
+  - If Siri support already added:
+    - The new API uses existing code for handling background app launch
+    - You need to add resolve methods
+    - You need to update intents extension with supported media types
+  - Apple Watch
+    - Foreground app launch via `INPLayMediaIntentResponseCode.continueInApp`
+    - Intent is handled by your `WKExtensionDelegate`
+    - Prefer on-device cache in your resolve method - only use network if absoloutey necessary
+  - Process results in resolve method `case insesnitive` becaue Siri might give you upper case results
+  - `Write an effective search method - be flexible` since 
+    - Siri might understand certain media types, e.g. `video` if `video` is part of what the user searches
+    - Siri might understand `sun` or `son` 
+  - Always populate `title`, `artist` and `type`in the returned `INMediaItem` since they all influence Siri's output 
+  - Handle error cases gracefully
+    - Most common error is not found: `INPlayMediaMediaItemResolutionResult(InMediaItemResolutionResult.unsupported())`
+    - List of possible errors in `INPlayMediaMediaItemUnsupportedReason`
+  - When you support playback controls in your app also support them in Siri
+    - `Play <Song> on repeat in <MyApp>`
+    - `Play <Playlist> on shuffle in <MyApp>`
+    - `Resume <Podcast> at double speed in <MyApp>`
+    - `Play <Artist> in <MyApp> next|later`
+  - User says `Play <MyApp>`
+    - Don't ask what to play!
+    - Choose something interesting automatically or resume the queue
+  - User vocabulary helps Siri recognize important named entities
+  - Global vocabulary is appropriate for global app terms
 
 ## Advances in Foundation
 
@@ -2437,10 +2487,6 @@ https://developer.apple.com/wwdc19/212
 ## Introducing PencilKit
 
 https://developer.apple.com/wwdc19/221
-
-## Introducing SiriKit Media Intents
-
-https://developer.apple.com/wwdc19/207
 
 ## Introducing the Create ML App
 
