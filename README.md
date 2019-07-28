@@ -56,6 +56,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing iPad Apps for Mac](#introducing-ipad-apps-for-mac)
 1. [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
 1. [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
+1. [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -122,7 +123,7 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
 1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
 1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
-1. **(ToDo)** [Introducing the Create ML App](#introducing-the-create-ml-app)
+1. **(ToDo)** [Introducing Low\-Latency HLS](#introducing-low-latency-hls)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
 1. **(ToDo)** [Making Apps with Core Data](#making-apps-with-core-data)
@@ -999,6 +1000,49 @@ https://developer.apple.com/wwdc19/207
     - Choose something interesting automatically or resume the queue
   - User vocabulary helps Siri recognize important named entities
   - Global vocabulary is appropriate for global app terms
+
+## Introducing the Create ML App
+
+https://developer.apple.com/wwdc19/430
+
+- **Data Input Types** `Image`, `Text`, `Tabular` extended by `Sound` & `Activity`
+- **Choose your Type** on app start
+- **3 App Phases** Input, Training, Output
+- Visialize progress, interactive training, many filter options
+- **Testing your model** is as simple as dragging/dropping your data
+- **Preview** trained models - you can see how your model will predict without adding to your app
+  - custom build for each input template
+- Create ML makes it easy to import existing models, improve them and reintegrate them into your app
+- **9 Different Possible Models**
+  - **Image Classifier** to classify images based on their contents
+    - Leverages core Apple technology already in the OS (reduced model size & faster trainings)
+    - Augmentation makes models robust against unseen input
+  - **Object Detector** to identify multiple objects in an image
+    - Localizes and recognizes content in an image
+    - Deep-learning based model
+    - Build-in augmentation
+    - Runs entirely on the Mac's GPU
+  - **Sound Classifier** to identify the most dominant sound within an audio stream
+    - Leverages transfer learning
+    - Hardware acceleration by running on Neural Engine makes those models lightweight and real-time capable
+  - **Activity Classifier** to categorize contents of motion
+    - Deep-learning based
+    - Small model size
+  - **Text Classifier** to label text based on their content
+    - For sentences, paragraphs or articles
+    - Variety of algorithms + Transfer Learning option
+  - **Word Tagger** to label tokens of interest in text
+    - For sentences or word sequences
+  - **Tabular Classifier** to categorize samples by features of interest
+    - Identifies best of multiple classifiers
+  - **Tabular Regressor** to predict a numeric value
+    - Quantifies samples by features of interest
+    - Identifies the best of multiple regressors
+    - E.g. predicting the price of a house based on its location, number of bathrooms, etc.
+  - **Recommender** to recommend content based on user behaviour
+    - Can be trained on user-item interactions
+    - Can be deployed on device
+    - No need to setup a server
 
 ## Advances in Foundation
 
@@ -2488,9 +2532,9 @@ https://developer.apple.com/wwdc19/212
 
 https://developer.apple.com/wwdc19/221
 
-## Introducing the Create ML App
+## Introducing Low-Latency HLS
 
-https://developer.apple.com/wwdc19/430
+https://developer.apple.com/wwdc19/502
 
 ## Large Content Viewer- Ensuring Readability for Everyone
 
