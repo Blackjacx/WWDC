@@ -57,6 +57,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing Parameters for Shortcuts](#introducing-parameters-for-shortcuts)
 1. [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
 1. [Introducing the Create ML App](#introducing-the-create-ml-app)
+1. [Introducing PencilKit](#introducing-pencilkit)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -122,7 +123,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
 1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
-1. **(ToDo)** [Introducing PencilKit](#introducing-pencilkit)
 1. **(ToDo)** [Introducing Low\-Latency HLS](#introducing-low-latency-hls)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
@@ -1043,6 +1043,70 @@ https://developer.apple.com/wwdc19/430
     - Can be trained on user-item interactions
     - Can be deployed on device
     - No need to setup a server
+
+## Introducing PencilKit
+
+https://developer.apple.com/wwdc19/221
+
+*Will Thimbleby, Jenny Chen*
+
+- **New in iOS 13**
+  - Lower latency
+  - New tool palette
+  - **PencilKit** enables you to add pencil features to your app
+  - **Markup everywhere** enables users to annotate content even if your app doesn't do anything with Pencil
+- **Great Pencil Experiences**
+  - **Precision** enables new user experiences
+  - **Force, azimuth and altitude** allow expressive marks
+  - **Pencil Taps** to switch modes
+  - **Important to know to build a great experience**
+    - Azimuth/altitude may be estimated
+    - Azimuth is imprecise when pencil is perpendicular
+    - Force data is delayed
+  - Back-fill azimuth and altitude
+  - Handle force updated after touches ended
+  - Latency is critical
+    - Render with Metal
+    - Use newly introduced Predicted Touches
+    - Avoid performance hungry transparent Metal layers and overlay effects
+  - Support Pencil taps via `func pencilInteractionDidTap(_ interaction: UIPencilInteraction)`
+- **PencilKit (PK)**
+  - Add basic PK support in just THREE lines of code
+  - New ToolBar can be dragged to each screen edge or docked to the bottom
+  - Double tap to switch to the eraser now works in each app
+  - `PKCanvasView` defines the drawable region
+    - `UIScrollView` for panning/zoming
+    - Access data model via `.drawing`
+    - Change Interaction mode via `.tool`
+    - Delegate methods inform about changes
+    - Allow fingers drawing
+      -  `.allowsFingerDrawing = true` (1 finger draw / 2 fingers scroll)
+      -  `.allowsFingerDrawing = false` (Pencil draw / 1 finger scroll)
+    - **Dark Mode Opt-Out** via `.overrideUserInterfaceStyle = .light`
+  - `PKDrawing` holds the data model
+    - Serializable data
+    - Generates images
+    - Can be appended or transformed
+    - Available on macOS
+  - `PKToolPicker` provides the toolbar UI
+    - Similar to the keyboard
+      -  `PKToolPicker.shared(for: window)`
+      - `toolPicker.addObserver(canvasView)`
+      - `toolPicker.setVisible(true, forFirstResponder: canvasView)`
+      - `canvasView.becomeFirstResponder()`
+    -  Palette floats over everything
+    - Visibility based on first responders
+    -  Set the curent tool via `canvasView.tool = PKInkingTool(.pen, color: .blue, width: 10)` 
+    -  Activate the new ruler via `canvasView.rulerActive = true`
+    - The ruler is transformable and can be used to mask parts of the canvas
+    - Compact Size Class Considerations
+      - Make sure to listen to tool picker frame changes to update your UI accordingly and have everything visible (especially on iPhone devices)
+      - Show your own undo/redo buttons in compact size class since there they are not shown automatically
+  - `PKTools` provides tools like pen, eraser, ...
+- **Markup everywhere: Screenshots**
+  - Take a screenshot by a new Pencil tap gesture
+  - New **Full Page** feature lets you screenshot e.g. a full webpage, the whole page in your app if you have a long tabel view, app content without irrelevant information 
+  - Adopt via `view.window.windowScene.screenshotService.delegate = self` 
 
 ## Advances in Foundation
 
@@ -2527,10 +2591,6 @@ https://developer.apple.com/wwdc19/231
 ## Introducing Multiple Windows on iPad
 
 https://developer.apple.com/wwdc19/212
-
-## Introducing PencilKit
-
-https://developer.apple.com/wwdc19/221
 
 ## Introducing Low-Latency HLS
 
