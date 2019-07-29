@@ -58,6 +58,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing SiriKit Media Intents](#introducing-sirikit-media-intents)
 1. [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. [Introducing PencilKit](#introducing-pencilkit)
+1. [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -122,7 +123,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
 1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
-1. **(ToDo)** [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
 1. **(ToDo)** [Introducing Low\-Latency HLS](#introducing-low-latency-hls)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
@@ -1107,6 +1107,54 @@ https://developer.apple.com/wwdc19/221
   - Take a screenshot by a new Pencil tap gesture
   - New **Full Page** feature lets you screenshot e.g. a full webpage, the whole page in your app if you have a long tabel view, app content without irrelevant information 
   - Adopt via `view.window.windowScene.screenshotService.delegate = self` 
+
+## Introducing Multiple Windows on iPad
+
+https://developer.apple.com/wwdc19/212
+
+*Ken Ferry (iOS System UI), Steve Holt (UIKit), James Savage (Safari)*
+
+- **Where should I add scenes to my app?**
+  - Users should be able to do everything from just one window
+  - First window the user creates has to be able to do everything the app is capable of
+  - [See explanations for why multi-window makes sense for several Apple stock apps](https://developer.apple.com/videos/play/wwdc2019-212/?time=133)
+    - They talk about Safari, Notes, Maps, Mail, Messages, Calendar and explain reasons why multi-window adds value for each
+    - This helps making a decision for your own app if and how to support multi window
+    - In the end he says that without this API you cannot really port your iPad app to the Mac 😜
+- **What interactions should create scenes?**
+  - The `+` button in the in-app exposé on the upper right
+  - In a master-detail controller when the user drage a master cell to the right
+  - Open links in new window
+- **Adopting the UIScene Lifecycle**
+  - `UIApplication` processes state
+  - `UIApplicationDelegate` processes events and lifecycle
+  - `UIWindowScene` 
+    - Holds UI state
+    - Created by system on demand
+    - Destroyed by system when unused
+  - `UIWindowSceneDelegate` UIEvents and Lifecycle
+  - `UISceneSession`
+    - Persisted interface state
+    - Have defined system rolw
+    - Created for new application representations
+    - Scenes connect/disconnect from sessions
+  - **Migrate code** by moving code from `application*` functions in `UIApplicationDelegate` to `scene*` functions in `UIWindowSceneDelegate` (see [19:00](https://developer.apple.com/videos/play/wwdc2019/212/?time=1140) for example)
+  - **State Restauration**
+    - Works via `NSUserActivity` now
+    - Requested by `UISceneDelegate`
+    - Always accessible via `UISceneSession.stateRestorationActivity`
+  - Opt in to multi-window via `Target Settings > General > Supports multiple windows` which adds scene manifest definition to your Info.plist
+- **Other Related Topics**
+  - **Debugging Tips**
+    - Test, test and test more, ideally automatic
+    - Focus on multiple scenes
+    - Deeply think about data sharing, especially if it is worth to use a singleton
+  - Clean up obsolete (user activity) data (from in data bases, file system, …) in `application(_ application:didDiscardSceneSessions sceneSessions:)`
+  - Listen to `UserDefault` changes elegantly via KVO
+    - By passing the option `.initial` you closure will be called immediately after creation which prevents code duplication in e.g. `viewDidLoad` > one source of truth
+  - **UIApplication Deprecations**
+    - `statusBarStyle`, `statusBarHidden`, `statusBarOrientation`, `open(_:options:completionHandler:)`, `keyWindow`
+    - Replaced by pendants on `UIWindowScene`: `statusBarManager`, `interfaceOrientation`, `open(_:options:completionHandler:)`, Windows have to be tracked manually
 
 ## Advances in Foundation
 
@@ -2587,10 +2635,6 @@ https://developer.apple.com/wwdc19/227
 ## Integrating SwiftUI
 
 https://developer.apple.com/wwdc19/231
-
-## Introducing Multiple Windows on iPad
-
-https://developer.apple.com/wwdc19/212
 
 ## Introducing Low-Latency HLS
 
