@@ -59,6 +59,7 @@ This repo has been already mentioned in the following places:
 1. [Introducing the Create ML App](#introducing-the-create-ml-app)
 1. [Introducing PencilKit](#introducing-pencilkit)
 1. [Introducing Multiple Windows on iPad](#introducing-multiple-windows-on-ipad)
+1. [Introducing Low\-Latency HLS](#introducing-low-latency-hls)
 1. [Advances in Foundation](#advances-in-foundation)
 1. [Great Developer Habits ★](#great-developer-habits-)
 1. [Writing Great Accessibility Labels](#writing-great-accessibility-labels)
@@ -123,7 +124,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
 1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
 1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
-1. **(ToDo)** [Introducing Low\-Latency HLS](#introducing-low-latency-hls)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
 1. **(ToDo)** [Making Apps with Core Data](#making-apps-with-core-data)
@@ -1155,6 +1155,12 @@ https://developer.apple.com/wwdc19/212
   - **UIApplication Deprecations**
     - `statusBarStyle`, `statusBarHidden`, `statusBarOrientation`, `open(_:options:completionHandler:)`, `keyWindow`
     - Replaced by pendants on `UIWindowScene`: `statusBarManager`, `interfaceOrientation`, `open(_:options:completionHandler:)`, Windows have to be tracked manually
+
+## Introducing Low-Latency HLS
+
+https://developer.apple.com/wwdc19/502
+
+- 
 
 ## Advances in Foundation
 
@@ -2635,10 +2641,6 @@ https://developer.apple.com/wwdc19/227
 ## Integrating SwiftUI
 
 https://developer.apple.com/wwdc19/231
-
-## Introducing Low-Latency HLS
-
-https://developer.apple.com/wwdc19/502
 
 ## Large Content Viewer- Ensuring Readability for Everyone
 
