@@ -1940,7 +1940,7 @@ https://developer.apple.com/wwdc19/226
 - **@Binding** property wrapper
   - doesn't create a new state (another source of truth), just a reference to an existing state
 - **SwiftUI as a remedy** for Massive View Controller
-- Standart components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
+- Standard components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
 - **Adding reaction** to external actions - via Combine's publishers
 - **BindableObject protocol** to conform when creating bindable data models
 - **@ObjectBinding** property wrapper 
