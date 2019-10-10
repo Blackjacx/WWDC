@@ -240,7 +240,7 @@ https://developer.apple.com/wwdc19/103
   - Voice Over can display a grid for better selectability. You can show accessibility labels and much much more. It's an incredible feature!
   - Showing accessibility labels via Voice Over completely changes how we can test them. They are now just displayed on screen!
 - **Privacy**
-  - **Good Practice:** Process user data on device whenever you can & Ask for permission when processing useer data & Encrypt user data
+  - **Good Practice:** Process user data on device whenever you can & Ask for permission when processing user data & Encrypt user data
   - **Allow once** is a new option when requesting location permission
   - **Apps location usage** shown on a map by apple from time to time
   - **Sign in with Apple** provides fast, easy sign in without tracking by tapping a `Sign in with Apple Button` and a quick FaceID
