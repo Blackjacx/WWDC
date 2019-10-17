@@ -2048,8 +2048,7 @@ https://developer.apple.com/wwdc19/418
   - More Available Features: External Displays, Dark Mode Toggle, Setting Alternate Backgrounds, Dictation, Alternate Software Keyboards, Quick Path (Swipe-To-Type)
 - **simctl**
   - `xcrun simctl help` to show all the commands of the simctl command. See some examples below.
-  - `xcrun simctl list devices` to list all devices.
-  - `xcrun simctl --json` outputs JSON for automation purposes.
+  - `xcrun simctl list devices` to list all devices. Use `-j` or `--json` flag to output JSON.
   - `xcrun simctl create` to create new simulators. Outputs the device id.
   - `xcrun simctl spawn <device> <command> <argument>` spawn command in simulator, e.g. change application user defaults.
   - `xcrun simctl diagnose` collect logs on disk, dumps sytsem state, etc. Great for test failures in automated systems. Use `-l` flag to skip privacy hint. Attach when filing feedback!
