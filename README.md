@@ -372,7 +372,7 @@ https://developer.apple.com/wwdc19/516
   - lets users choose which information is delivered
   - creates random email and forwards it directly to your AppleID to disguise your original email 
 - **Password Auto-Fill** for iPad apps on the Mac
-- **Weak Password Assistant** detects weak passwords and offers you to change it
+- **Weak Password Assistant** detects weak passwords and offers you to change them
 - **ASWebAuthenticationSession** provides easy OAuth workflow and deprecates SFAuthenticationSession
 
 ## What's New in Safari
