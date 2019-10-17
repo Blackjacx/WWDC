@@ -1789,7 +1789,7 @@ https://developer.apple.com/wwdc19/507
   - full range of variants for each codec
   - 10% partial encryption
   - provide compatible format: HDR content with only HDR formats, WebVTT for subtitles, use recommended MIME types
-- **Cahnges to Validation**
+- **Changes to Validation**
   - HLS validation by `mediastreamvalidator` & `hlsreport.py`
   - always use both validation tools
   - HLSReport now checks all rule-sets by default
