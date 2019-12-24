@@ -2285,10 +2285,12 @@ https://developer.apple.com/wwdc19/412
     - Subscribe to notification `ProcessInfo.thermalStateDidChangeNotification` to react to changes
     - reduce resource-intensive operations when runninng on `serious` or `critical`
   - Network Connection Quality (`Network Link Conditioner`) is now simulatable via Xcode
+
 - **Environment Overrides**
   - Light/Dark Mode, Dynamic Type & Many other Accessibility Settings (`INcrease Contrast`, `Bold Text`, `Reduce Transparency`, etc.)
   - Easily settable while debugging in the debug bar and live-previewable in the new canvas view
   - Shows example code of an `AdaptingStack` which automatically updates stack axis when not enough space for UI element ([11:58](https://developer.apple.com/wwdc19/412/?time=717))
+
 - **SwiftUI Runtime Issues**
   - found when process is running
   - process continues executing
@@ -2296,6 +2298,7 @@ https://developer.apple.com/wwdc19/412
   - supported for all platforms and run destinations
   - new kind of breakpoint which get hit only on runtime issues
   - start/stop debug session from play/stop button in canvas
+
 - **Debugging SwiftUI View Hierarchies**
   - SwiftUI is interoperable with UIKit
   - Debug session is tied to lifetime of the Preview Canvas (make sure you don't close it)
@@ -2329,6 +2332,7 @@ https://developer.apple.com/wwdc19/238
       - Question to ask: Will a custom action simplify the interaction?
     - Navigable: Ordering and Grouping
       - Question to ask: Can you speed up navigation?
+
 - **Automatic Accessibility with SwiftUI**
   - **SwiftUI generates accessibility elements automatically for all standard controls**
     - SwiftUI Text autogenerates Accessibility Label "Text of Label" and Trait/Role "Static Text"
@@ -2352,12 +2356,14 @@ https://developer.apple.com/wwdc19/238
   - The same can be done with values: `.accessibility(value: Text("\(value)"))` - more descriptive text could be add here to explain the value
   - You can also add custom actions with `.accessibilityAction(named: Text))`
   - Add any kind of hints that might useful to understand the App State better
+
 - **Accessibility Tree**
   - **Use hierarchies**
     - To reduce the amount of elements, combine them in a meaningful way and label them specifically
     - `.accessibilityElement(children: .combine)` on an HStack with a Text and two buttons will merge all provided accessibility into one accessibility elements, using the label-text as element-label and the two buttons as automatically converted custom actions
   - **The default ordering might not always be ideal**
     - Use `.accessibility(sortPriority: 1)` to make Voice Over start with this element
+
 - **Evaluating Accessibility**
   - Most importantly, use your app with VoiceOver, Full Keyboard, and Voice Control
   - In addition, use Accessibility Inspector (extra session)
@@ -2371,10 +2377,12 @@ https://developer.apple.com/wwdc19/803
   - **FaceID**: Fast and secure authentication for iOS devices
   - **Improve Typing experience**: Increase/decrease of tap area based on inputs
   - **Photos**: Create albums and memories. ML is used to regonize entities within pictures, e.g. searching for dogs by typing
+
 - Design more than just the interface
   - ML for Photos, e.g. diffentiate between dog breeds as a category
   - ML model is trained as a function, e.g. Siri is a model that does voice to text translation
   - Design how it works and how it looks and feels (Model & Interface)
+
 - **Model: Data** 
   - Needs a lot of diverse data for categories people want to search for
   - Support for 1000s of categories
@@ -2386,6 +2394,7 @@ https://developer.apple.com/wwdc19/803
   - Collect data intentionally, i.e. with special care to inclusiveness and avoid bias
   - Optimize for customers you want
   - Update data as products change
+
 - **Model: Metrics**
   - Evaluate model by testing it, e.g. 75% of accuracy
   - Design metrics how model will work and thus the experience
@@ -2398,6 +2407,7 @@ https://developer.apple.com/wwdc19/803
   - AppStore example
     - Recommendation for new apps based on what you've downloaded
     - Diversity is important, recommendations are balanced by editorial content
+
 - **Interface**
   - Mapping between `Input` and `Output`
   - Human Inteface guidelines which has more details
@@ -2436,18 +2446,20 @@ https://developer.apple.com/wwdc19/803
 https://developer.apple.com/wwdc19/248
 
 - For custom views set `isAccessibilityElement = true`
+
 - **Enable Accessible Text Content** by adopting `UIAccessibilityReadingContent`
   - In `accessibilityLineNumber(for point: CGPoint) -> Int` use hit testing to identify subviews
   - In `accessibilityContent(forLineNumber: Int) -> String?` return the `accessibilityLabel` for the subview matching line number
   - In `accessibilityFrame(forLineNumber: Int) -> CGRect` return the `accessibilityFrame` for the subview matching line number
   - In `accessibilityPageContent() -> String?` return the concatenated accessibility labels for all subviews
+
 - Enable **Automatic Page Turn** by
   - setting `view.accessibilityTraits = UIAccessibilityTraits.causePageTurn` on your page view
   - implementing `accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool` (lets voice over turn pages)
+
 - **Customizing Speech** by adopting the protocol `UIAccessibilityReadingContent`
   - customize language by setting `NSAttributedString.Key.accessibilitySpeechLanguage`
   - customize pitch by setting `NSAttributedString.Key.accessibilitySpeechPitch`
-  - ...
 
 ## Create ML for Object Detection and Sound Classification
 
@@ -2471,7 +2483,8 @@ https://developer.apple.com/wwdc19/406
     - Real-world data: multiple angles, backgrounds, lighting conditions, different _other_ objects
     - A single class can be enough (model learns to locate this class in images)
   - Use **Vision** framework to integrate into app
-- Training **Sound Classification** Models in Create ML
+
+- **Sound Classification** model training in Create ML
   - Identify the source of the sound (e.g. guitar vs. drums or nature vs. city) or identify properties (laugh vs. cry)
   - Demo: use **Create ML** to build a model for classifying musical instruments from sound
     - Sound files from different instruments in different folders
@@ -2506,14 +2519,17 @@ https://developer.apple.com/wwdc19/262
 *Tim Horton*
 
 - Present rich links in 3rd party apps via the `LinkPresentation.framework`
+
 - **Retrieve Metadata**
   - `URL` > `LPMetadataProvider` > `LPLinkMetadata`
   - `metadataProvider.startFetchingMetadata(for: url)`
   - `LPLinkMetadata` is serializable and can be used for local file URLs too
   - `LPLinkMetadata` should be cached locally to not always hit the internet for a request
+
 - **Presenting Links**
   - Use `LPLinkView` to present the meta data in a way well known to the user
   - Alternatively use `LPLinkMetadata` properties to create a custom view
+
 - **Accelerating the share sheet**
   - Provide cached metadata to UIActivityViewController via UIActivityItemSource
   - Build the `LPLinkMetadata` object yourself if you have all data at hand
@@ -2525,16 +2541,21 @@ https://developer.apple.com/wwdc19/721
 
 *Michael LeHew, Ben D. Jones*
 
-- **Combine** defines unified abstraction that describes API that can process values over time.
+- **Combine** 
+  - Defines unified abstraction that describes API that can process values over time.
+
 - **Publishers**
     - Conform to `Publisher` protocol
     - Associated types: `Output` (kind of published values) and `Failure` (constrained to Swift.Error)
+
 - **NotificationCenter**
     - `NotificationCenter` now exposes its notifications with Publishers (`NotificationCenter.default.publisher(for:)`)
     - Notifications can never fail (**Never**)
+
 - **Operators**
     - Calling functions like `map` or `flatMap` returns new **Publishers** operators
     - Dedicated operator for decoding `decode(Foo.self, JSONDecoder()`
+
 - **Error Handling**
     - Every Publisher describes how they can fail
     - `Operators` can help recovering from errors and dealing with them
@@ -2547,10 +2568,12 @@ https://developer.apple.com/wwdc19/721
         - `retry`
         - `mapError` - receives and can return different type of error
         - `setFailureType` - used for matching error type with subscriber
+
 - **FlatMap**
     - Transforms all elements from an upstream publisher into a new or existing publisher
     - Lets you perform multiple operations like returning value, decoding it and catching error
     - Handles the details of subscribing to the nested Publisher while offering its values downstream
+
 - **Scheduled Operators**
     - Describe when and where a particular event is delivered
     - Supported by **RunLoop** and **DispatchQueue**
@@ -2560,6 +2583,7 @@ https://developer.apple.com/wwdc19/721
         - `throttle` - Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
         - `receive(on:)` - Specifies the scheduler on which to receive elements from the publisher.
         - `subscribe(on:)` - Specifies the scheduler on which to perform subscribe, cancel, and request operations.
+
 - **Subscribers**
     - Receive published values
     - Two associated types: `Input` and `Failure`
@@ -2571,20 +2595,24 @@ https://developer.apple.com/wwdc19/721
         - No further values can be emitted after completion signal
     - `assign(to:on:)` - assigns emitted values to the specified key paths on the instance of an object
     - `sink` - closure which gets called when new value is received
+
 - **AnyCancellable**
     - Combine allows terminating subscription to free up resources associated with it
     - `cancel()` - cancels the activity
+
 - **Subjects**
     - Behave like both **Publisher** and **Subscriber**
     - `send(_:)` - sends a value to the subscriber
     - Two useful types:
         - **PassthroughSubject** - stores no values, you will receive values emitted after subscribing
         - **CurrentValueSubject** - maintains a history of the last value it received
+
 - **SwiftUI BindableObject**
     - **SwiftUI** owns the **Subscriber**
     - BindableObject has a single associated type which is constrained to Publisher protocol with Failure equal to Never
     - `didChange` property notified when your type has changed
     - Further described in [Data Flow Through SwiftUI](#data-flow-through-swiftui)
+
 - **Integrating Combine**
     - By adding `@Published` (**property wrapper**) we can add a Publisher to any property, for example: `@Published var password: String = ""`
     - Using `targetAction` you can assign new values to the `@Published` value: `password = sender.text ?? ""`
@@ -2593,6 +2621,7 @@ https://developer.apple.com/wwdc19/721
     - `eraseToAnyPublisher()` - returns an **AnyPublisher** of the given type and error
     - `debounce(for:scheduler:)` - lets you specify a window by which you’d like to receive values and not receive them faster than that. It is useful to reduce number of requests when filtering data using text fields
     - `removeDuplicates()` - Publishes only elements that don’t match the previous element
+
 - **Future**
   - initialized with closure that takes a promise (closure that accepts either success or failure)
 
@@ -2605,21 +2634,25 @@ https://developer.apple.com/wwdc19/408
   - Are suitable for private coorporate or public open source framworks of any size
   - Are used to share code among multiple apps
   - Can be created directly via the UI of Xcode 11
+
 - **Using an Open Source Package**
   - Add via `File > Swift Packages > Add Package Dependency...`
   - If GitHub account added to Xcode the dialog shows all of your and all starred repos plus you can enter an URL
   - After that Xcode shows the dependency in the Project Navigator on the left and it can be imported via `import <Framework>`
   - Xcode creates a new subdirectory `<project_workspace>/xcshareddata/swiftlpm`, with a `Package.resolved` file, which contains the version information of your dependencies
   - `Package.resolved` should be comitted so team members use the same versions
+
 - **A Closer Look at Packages**
   - Contains the files/directories `Package.swift` (Swift package manifest), `Sources` and `Tests`
   - The manifest file describes the framework name, (test-) targets and dependencies
   - Specify compatible language versions using `swiftLanguageVerisons = [.v4, .v4_2, .v5]`
   - See [Package Manager Docs](https://swift.org/package-manager/#example-usage) for an example manifest file
+
 - **Package Resolution in more Detail**
   - Specify version `2.0.0 - up to next major` to let Xcode update the highest version available up to but excluding `3.0.0`
   - Always create a direct dependency to a sub dependency `B` of a framework `A -> B` when you want to use functionality from `B`
   - Update packages via `File > Swift Packages > Update To Latest Package Versions`
+
 - **Resolving Package Conflicts**
   - You can only have one version of a package in a workspace
   - Examine your package `A` sub-dependency `B` requirements if creating a direct dependency to it produces a resolution error
@@ -2636,6 +2669,7 @@ https://developer.apple.com/wwdc19/410
   - Not versioned - but can be published/versioned in just a feww steps
   - `File > New > Swift Package` and add the package to your project and a root group
   - Link with your app by adding the package product to `Project > App Target > General > Frameworks, Libraries and Embedded Content`
+
 - **Publishing Packages**
   - First [Semantic Versioning](https://semver.org/) is explained
   - During testing apps a pre-release ID (`5.0.0.-beta.1`) can be added to your version and should be removed once done with testing
@@ -2646,6 +2680,7 @@ https://developer.apple.com/wwdc19/410
   - Select `Private` if you want to share the package only within your team
   - Publish your first version by `SCM Navigator > ⌥ + Click Your Project > Tag <branch>...`. Provide verison and message. After that push your tag to your remote.
   - Read [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode) for how to integrate remote packages
+
 - **Package Manifest API**
   - Build via Swift language 
   - Documentation can be found when ⌘ + clicking the `PackageDescription` of each Package.swift
@@ -2658,10 +2693,12 @@ https://developer.apple.com/wwdc19/410
   - For `version` use `.from: "2.0.0"`, `.upToNextMajor: "2.0.0"`, `.upToNextMinor: "2.0.0"`, `.exact: "2.0.0"`, `.branch: "master"`, `.revision: "85cfe06"`
   - Adopting SMP for existing frameworks by just adding and configuring a `Package.swift` file
   - Include `path` in `.target(...)` if your source is not located under the standard `sources` directory
+
 - **Editing Packages**
   - Package dependencies are locked for editing since they're managed by Xcode
   - Checkout package as standalone project and drag & drop it to project. This automatically replaces remote package dependency and makes the package editable (see local package above).
   - This mechanism can also be used to edit packages you don't own
+
 - **SPM Open Source Project**
   - SPM is platform independent
   - Use `swift package` to perform various non-build operations on a package
@@ -2783,6 +2820,7 @@ https://developer.apple.com/wwdc19/240
   - The most critical action of your app should be available within 2-3 taps
   - `.digitalCrownRotation` API to control crown rotation and haptics
   - Use `ScrollView`, `List`, `HStack`, `VStack` to group and layout your app
+  - Use `.listStyle(.carousel)` when you have a few cell count or cells with interactive controls
 
 ## Designing iPad Apps for Mac
 
