@@ -112,6 +112,7 @@ This repo has been already mentioned in the following places:
 1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
 1. [Creating Swift Packages](#creating-swift-packages)
 1. [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
+1. [SwiftUI On All Devices](#swiftui-on-all-devices)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -141,7 +142,6 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Supporting Dark Mode in Your Web Content](#supporting-dark-mode-in-your-web-content)
 1. **(ToDo)** [Supporting New Game Controllers](#supporting-new-game-controllers)
 1. **(ToDo)** [SwiftUI Essentials](#swiftui-essentials)
-1. **(ToDo)** [SwiftUI On All Devices](#swiftui-on-all-devices)
 1. **(ToDo)** [System Extensions and DriverKit](#system-extensions-and-driverkit)
 1. **(ToDo)** [Taking iPad Apps for Mac to the Next Level](#taking-ipad-apps-for-mac-to-the-next-level)
 1. **(ToDo)** [Targeting Content with Multiple Windows](#targeting-content-with-multiple-windows)
@@ -2744,6 +2744,46 @@ https://developer.apple.com/wwdc19/304
   - Reviewers need to access the full functionality of the app
   - Once submitted, apps can’t be moved between public and private availability
 
+## SwiftUI On All Devices
+
+https://developer.apple.com/wwdc19/240
+
+*Jeff Nadeau (macOS Frameworks), Ada Turner (tvOS Frameworks), Meghna Sapre (watchOS Frameworks)*
+
+- SwiftUI is a common toolkit to learn once and use on all platforms (macOS, iOS / iPadOS, tvOS, watchOS)
+- Cross-platform common elements like the `Toggle Cnotrol`, `Picker Control` and the whole `Layout System`
+
+- **One size doesn't fit all devices**
+  - But: "Learn once, apply anywhere" - base principle of SwiftUI
+  - Use appropriate design patterns for each screen size (e.g. `List` on iPhone `UICollectionView` on iPad)
+  - We still have to build 4 apps - for each platform
+
+- **SwiftUI on Apple TV**
+  - Carefully cosider what's appropriate to show on a big screen in the living room
+  - Entire interface must support the tvOS feature `focus` which is supported by many SwiftUI elements, e.g. List
+  - Elements have commands like `.focusable { isFocused in /* focus changed */ }`, `.onPlayPauseCommand { /* play/pause button pressed */ }`, `.onExitCommand { /* menu button pressed */ }`
+  - iOS > tvOS adoption Demo at [15:20](https://developer.apple.com/wwdc19/240/?time=920)
+
+- **SwiftUI on Mac**
+  - Great device to provide more information (e.g. text)
+  - SwiftUI auto-adapts spacing and padding
+  - Access small- and mini-size controls using `.controlSize()` modifier
+  - Consider proper support of multiple windows if users of your app may want to:
+    - Compare content across windows side-by-side
+    - Focus on a single item in its own window
+    - Spatially organize windows around Desktop and Spaces
+  - Support keyboard shortcuts - learn more about this topic in [Integrating SwiftUI](#integrating-swiftui)
+
+  - **Touch Bar**
+    - SwiftUI makes it easier than ever to support this element
+    - Just call the `.touchbar()` modifier of a view with a `TouchBar {}` parameter and fill the closure with one or multiple `Button` controls
+
+- **SwiftUI on Apple Watch**
+  - The watch is all about showing the right information at the right time
+  - The most critical action of your app should be available within 2-3 taps
+  - `.digitalCrownRotation` API to control crown rotation and haptics
+  - Use `ScrollView`, `List`, `HStack`, `VStack` to group and layout your app
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2860,10 +2900,6 @@ https://developer.apple.com/wwdc19/616
 ## SwiftUI Essentials
 
 https://developer.apple.com/wwdc19/216
-
-## SwiftUI On All Devices
-
-https://developer.apple.com/wwdc19/240
 
 ## System Extensions and DriverKit
 
