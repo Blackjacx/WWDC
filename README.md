@@ -95,14 +95,11 @@ This repo has been already mentioned in the following places:
 1. [Text Recognition in Vision Framework](#text-recognition-in-vision-framework)
 1. [Understanding Images in Vision](#understanding-images-in-vision)
 1. [Advances in UI Data Sources](#advances-in-ui-data-sources)
-1. [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 1. [Binary Frameworks in Swift](#binary-frameworks-in-swift)
 1. [Creating Great Localized Experiences with Xcode 11](#creating-great-localized-experiences-with-xcode-11)
 1. [Getting the Most Out of Simulator](#getting-the-most-out-of-simulator)
-1. [SwiftUI on watchOS](#swiftui-on-watchos)
 1. [Core ML 3 Framework](#core-ml-3-framework)
 1. [Debugging in Xcode 11](#debugging-in-xcode-11)
-1. [Accessibility in SwiftUI](#accessibility-in-swiftui)
 1. [Designing Great ML Experiences](#designing-great-ml-experiences)
 1. [Creating an Accessible Reading Experience](#creating-an-accessible-reading-experience)
 1. [Create ML for Object Detection and Sound Classification](#create-ml-for-object-detection-and-sound-classification)
@@ -112,7 +109,10 @@ This repo has been already mentioned in the following places:
 1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
 1. [Creating Swift Packages](#creating-swift-packages)
 1. [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
+1. [Accessibility in SwiftUI](#accessibility-in-swiftui)
 1. [SwiftUI On All Devices](#swiftui-on-all-devices)
+1. [SwiftUI on watchOS](#swiftui-on-watchos)
+1. [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -2050,32 +2050,6 @@ https://developer.apple.com/wwdc19/220
   - Automates animation
   - Easy, fast and robust
 
-## Data Flow Through SwiftUI
-
-https://developer.apple.com/wwdc19/226
-
-*Luca Bernardy, Raj Ramamurthy*
-
-- **Main principles**
-  - Data access is a dependency
-  - Every UI piece of data has its source of truth (have a single one)
-- **@State** property wrapper
-  - framework allocates the storage and initiate redraw when it's changed
-  - it is a source of truth
-- **@Binding** property wrapper
-  - doesn't create a new state (another source of truth), just a reference to an existing state
-- **SwiftUI as a remedy** for Massive View Controller
-- Standard components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
-- **Adding reaction** to external actions - via Combine's publishers
-- **BindableObject protocol** to conform when creating bindable data models
-- **@ObjectBinding** property wrapper 
-  - the same as @Binding but for reference-type objects
-- **Using Environment** object for indirect dependencies
-- **Prefer immutable access** (Swift properties, Environment) over the mutable one (Binding) wherever possible
-- **Use state effectively**
-  - limit the usage, use bindings instead
-  - when using consider the context of it
-
 ## Binary Frameworks in Swift
 
 https://developer.apple.com/wwdc19/416/
@@ -2198,50 +2172,6 @@ https://developer.apple.com/wwdc19/418
   - Metal takes advantage of GPU of the underlying Mac system
   - Texture storage modes are different on macOS/iOS
   - Always test performance on actual devices! (For additional infos [37:50](https://developer.apple.com/wwdc19/418/?time=2267)) 
-
-## SwiftUI on watchOS
-
-https://developer.apple.com/wwdc19/219
-
-- **watchOS 6**
-  - Independent watchOS apps (decoupled from iOS apps)
-  - Extended run-time sessions
-  - Building experiences: Complications, Notifications, Siri, etc.
-  - Prioritize quick interactions
-- **Full Power of SwiftUI**
-  - **Declarative syntax** Whole new UI framework, new fetures and APIs
-  - **Integration** Watchkit controllers with SwiftUI Views 
-    - `InterfaceController` inherits `WKHostingController`
-  - **Lists** WatchOS flash cards app
-  - Keep model and List in sync using @ObjectBinding
-  - Use `Command + Click` to bring up the inspector and use different contextual options while coding
-  - Use `.listStyle(.carousel)` to get the carousel effect while scrolling the list
-  - Swipe to delete, drag to reorder
-  - Use `.onMove` and `.onDelete` blocks to manage the movement and deletion of items in the list
-  - **Interactive Notifications** Timely and contextual info
-    - Short look (Info from payload + App icon) Immediately upon wrist raise
-  - Long look (Scrolling interface with custom body and action buttons)
-  - `NotificationController` inherits `WKUserNotificationHostingController`
-    - `didReceive` method allows us to extract info from notification
-    - `body` property is re-evaluated after `didReceive` is called
-  - **Digital Crown** Series 4 watch can make use of haptic crown (e.g. workout app, custom timer)
-    - Building following custom interfaces requires `.digitalCrowRotation` and `.focusable` modifier
-    - Free scrolling interface (no concrete spots between elements)
-    - binding (source of truth)
-    - from
-    - through
-  - Picking between discrete elements
-    - binding (source of truth)
-    - from
-    - through
-    - by (stride along which haptic feedback is provided)
-  - Moving around circles (not limited to either end of the sequence) 
-    - binding (source of truth)
-    - from
-    - through
-    - by (stride along which haptic feedback is provided)
-    - sensitivity (how much rotation need to be applied to move from one element to the next)
-    - isContinuous (don't stop at either limit of sequence)
     
 ## Core ML 3 Framework
 
@@ -2312,61 +2242,6 @@ https://developer.apple.com/wwdc19/412
   - View properties automatically inspected and shown in Inspector on the right
   - Custom Inspector properties by adopting `CustomReflectable`
   - Using live Preview Canvas and the Inspectors you almost don't need to compile the whole project anymore
-
-## Accessibility in SwiftUI
-
-https://developer.apple.com/wwdc19/238
-
-- **Introduction to Accessibility**
-  - **Three Examples**
-    - VoiceOver - Screen Reader, reads UI Elements and Gestures
-    - New: Voice Control - Control interfaces by speech
-    - New: Full Keyboard Access (also general productivity improvement)
-  - **Accessibility User Interface**
-    - Consists of accessibility elements
-    - An element consists of a labels, trait/roles and action
-  - **Key Principles**
-    - Understandable: element labels should be descriptive
-      - Question to ask: Do the displayed strings provide enough information?
-    - Interactable: elements should have clear actions
-      - Question to ask: Will a custom action simplify the interaction?
-    - Navigable: Ordering and Grouping
-      - Question to ask: Can you speed up navigation?
-
-- **Automatic Accessibility with SwiftUI**
-  - **SwiftUI generates accessibility elements automatically for all standard controls**
-    - SwiftUI Text autogenerates Accessibility Label "Text of Label" and Trait/Role "Static Text"
-    - SwiftUI Button autogenerates Accessibility Label "Text of Button", Trait/Role "Button", and default action "Press/Tap"
-  - **Accessibility Notifications**
-    - Tell Voice Over if content of UI Elements changes so it re-reads the element
-    - Since SwiftUI is state-driven, so all accessibility notifications are build in - even for custom controls
-  - **Custom Controls**
-    - You can easily create custom buttons with colors that make them more visible
-    - Image accessibility: You can label images with using `label:` on an image
-    - You can exclude images form Voice Over by using `decorative:` in the constructor, this will prevent the creation of its accessibility element
-  - **Control Labels**
-    - Some controls, like Picker, don't have a label by default and the visible value doesn't always give enough context
-    - SwiftUI Picker has a build in label which can be used to explain its purpose
-    - Many SwiftUI controls have this label already, the rest will follow in the future
-    - In a future seed, controls will also have optional visible labels, which Voice Over will automatically use as an accessibility element label
-  - **SwiftUI Accessibility API**
-  - If the autogenerated label is not precise enough, the `.accessibility(label:)` modifier can be used on controls
-  - Accessibility traits can be added: For example, the modifier `.accessibility(addTraits: selected ? .isSelected : [])` will add
-  the selection state after reading the label and the button type
-  - The same can be done with values: `.accessibility(value: Text("\(value)"))` - more descriptive text could be add here to explain the value
-  - You can also add custom actions with `.accessibilityAction(named: Text))`
-  - Add any kind of hints that might useful to understand the App State better
-
-- **Accessibility Tree**
-  - **Use hierarchies**
-    - To reduce the amount of elements, combine them in a meaningful way and label them specifically
-    - `.accessibilityElement(children: .combine)` on an HStack with a Text and two buttons will merge all provided accessibility into one accessibility elements, using the label-text as element-label and the two buttons as automatically converted custom actions
-  - **The default ordering might not always be ideal**
-    - Use `.accessibility(sortPriority: 1)` to make Voice Over start with this element
-
-- **Evaluating Accessibility**
-  - Most importantly, use your app with VoiceOver, Full Keyboard, and Voice Control
-  - In addition, use Accessibility Inspector (extra session)
 
 ## Designing Great ML Experiences
 
@@ -2781,6 +2656,63 @@ https://developer.apple.com/wwdc19/304
   - Reviewers need to access the full functionality of the app
   - Once submitted, apps can’t be moved between public and private availability
 
+## Accessibility in SwiftUI
+
+https://developer.apple.com/wwdc19/238
+
+*John Nefulda, Michael Gorbach*
+
+- **Introduction to Accessibility**
+  - **Three Examples**
+    - VoiceOver - Screen Reader, reads UI Elements and Gestures
+    - New: Voice Control - Control interfaces by speech
+    - New: Full Keyboard Access (also general productivity improvement)
+  - **Accessibility User Interface**
+    - Consists of accessibility elements
+    - An element consists of a labels, trait/roles and action
+  - **Key Principles**
+    - Understandable: element labels should be descriptive
+      - Question to ask: Do the displayed strings provide enough information?
+    - Interactable: elements should have clear actions
+      - Question to ask: Will a custom action simplify the interaction?
+    - Navigable: Ordering and Grouping
+      - Question to ask: Can you speed up navigation?
+
+- **Automatic Accessibility with SwiftUI**
+  - **SwiftUI generates accessibility elements automatically for all standard controls**
+    - SwiftUI Text autogenerates Accessibility Label "Text of Label" and Trait/Role "Static Text"
+    - SwiftUI Button autogenerates Accessibility Label "Text of Button", Trait/Role "Button", and default action "Press/Tap"
+  - **Accessibility Notifications**
+    - Tell Voice Over if content of UI Elements changes so it re-reads the element
+    - Since SwiftUI is state-driven, so all accessibility notifications are build in - even for custom controls
+  - **Custom Controls**
+    - You can easily create custom buttons with colors that make them more visible
+    - Image accessibility: You can label images with using `label:` on an image
+    - You can exclude images form Voice Over by using `decorative:` in the constructor, this will prevent the creation of its accessibility element
+  - **Control Labels**
+    - Some controls, like Picker, don't have a label by default and the visible value doesn't always give enough context
+    - SwiftUI Picker has a build in label which can be used to explain its purpose
+    - Many SwiftUI controls have this label already, the rest will follow in the future
+    - In a future seed, controls will also have optional visible labels, which Voice Over will automatically use as an accessibility element label
+  - **SwiftUI Accessibility API**
+  - If the autogenerated label is not precise enough, the `.accessibility(label:)` modifier can be used on controls
+  - Accessibility traits can be added: For example, the modifier `.accessibility(addTraits: selected ? .isSelected : [])` will add
+  the selection state after reading the label and the button type
+  - The same can be done with values: `.accessibility(value: Text("\(value)"))` - more descriptive text could be add here to explain the value
+  - You can also add custom actions with `.accessibilityAction(named: Text))`
+  - Add any kind of hints that might useful to understand the App State better
+
+- **Accessibility Tree**
+  - **Use hierarchies**
+    - To reduce the amount of elements, combine them in a meaningful way and label them specifically
+    - `.accessibilityElement(children: .combine)` on an HStack with a Text and two buttons will merge all provided accessibility into one accessibility elements, using the label-text as element-label and the two buttons as automatically converted custom actions
+  - **The default ordering might not always be ideal**
+    - Use `.accessibility(sortPriority: 1)` to make Voice Over start with this element
+
+- **Evaluating Accessibility**
+  - Most importantly, use your app with VoiceOver, Full Keyboard, and Voice Control
+  - In addition, use Accessibility Inspector (extra session)
+
 ## SwiftUI On All Devices
 
 https://developer.apple.com/wwdc19/240
@@ -2822,6 +2754,75 @@ https://developer.apple.com/wwdc19/240
   - Use `ScrollView`, `List`, `HStack`, `VStack` to group and layout your app
   - Use `.listStyle(.carousel)` when you have a few cell count or cells with interactive controls
 
+## SwiftUI on watchOS
+
+https://developer.apple.com/wwdc19/219
+
+- **watchOS 6**
+  - Independent watchOS apps (decoupled from iOS apps)
+  - Extended run-time sessions
+  - Building experiences: Complications, Notifications, Siri, etc.
+  - Prioritize quick interactions
+- **Full Power of SwiftUI**
+  - **Declarative syntax** Whole new UI framework, new fetures and APIs
+  - **Integration** Watchkit controllers with SwiftUI Views 
+    - `InterfaceController` inherits `WKHostingController`
+  - **Lists** WatchOS flash cards app
+  - Keep model and List in sync using @ObjectBinding
+  - Use `Command + Click` to bring up the inspector and use different contextual options while coding
+  - Use `.listStyle(.carousel)` to get the carousel effect while scrolling the list
+  - Swipe to delete, drag to reorder
+  - Use `.onMove` and `.onDelete` blocks to manage the movement and deletion of items in the list
+  - **Interactive Notifications** Timely and contextual info
+    - Short look (Info from payload + App icon) Immediately upon wrist raise
+  - Long look (Scrolling interface with custom body and action buttons)
+  - `NotificationController` inherits `WKUserNotificationHostingController`
+    - `didReceive` method allows us to extract info from notification
+    - `body` property is re-evaluated after `didReceive` is called
+  - **Digital Crown** Series 4 watch can make use of haptic crown (e.g. workout app, custom timer)
+    - Building following custom interfaces requires `.digitalCrowRotation` and `.focusable` modifier
+    - Free scrolling interface (no concrete spots between elements)
+    - binding (source of truth)
+    - from
+    - through
+  - Picking between discrete elements
+    - binding (source of truth)
+    - from
+    - through
+    - by (stride along which haptic feedback is provided)
+  - Moving around circles (not limited to either end of the sequence) 
+    - binding (source of truth)
+    - from
+    - through
+    - by (stride along which haptic feedback is provided)
+    - sensitivity (how much rotation need to be applied to move from one element to the next)
+    - isContinuous (don't stop at either limit of sequence)
+
+## Data Flow Through SwiftUI
+
+https://developer.apple.com/wwdc19/226
+
+*Luca Bernardy, Raj Ramamurthy*
+
+- **Main principles**
+  - Data access is a dependency
+  - Every UI piece of data has its source of truth (have a single one)
+- **@State** property wrapper
+  - framework allocates the storage and initiate redraw when it's changed
+  - it is a source of truth
+- **@Binding** property wrapper
+  - doesn't create a new state (another source of truth), just a reference to an existing state
+- **SwiftUI as a remedy** for Massive View Controller
+- Standard components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
+- **Adding reaction** to external actions - via Combine's publishers
+- **BindableObject protocol** to conform when creating bindable data models
+- **@ObjectBinding** property wrapper 
+  - the same as @Binding but for reference-type objects
+- **Using Environment** object for indirect dependencies
+- **Prefer immutable access** (Swift properties, Environment) over the mutable one (Binding) wherever possible
+- **Use state effectively**
+  - limit the usage, use bindings instead
+  - when using consider the context of it
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
