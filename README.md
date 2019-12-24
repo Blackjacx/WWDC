@@ -46,6 +46,9 @@ This repo has been already mentioned in the following places:
 1. [What's New in Universal Links](#whats-new-in-universal-links)
 1. [What's new in Machine Learning](#whats-new-in-machine-learning)
 1. [What's New for Web Developers](#whats-new-for-web-developers)
+1. [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
+1. [What's New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
+1. [What's New in Apple File Systems](#whats-new-in-apple-file-systems)
 1. [Introducing SF Symbols](#introducing-sf-symbols)
 1. [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
 1. [Introducing Core Haptics](#introducing-core-haptics)
@@ -108,7 +111,6 @@ This repo has been already mentioned in the following places:
 1. [Combine in Practice ★](#combine-in-practice-)
 1. [Adopting Swift Packages in Xcode](#adopting-swift-packages-in-xcode)
 1. [Creating Swift Packages](#creating-swift-packages)
-1. [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
 1. [App Distribution – From Ad\-hoc to Enterprise](#app-distribution--from-ad-hoc-to-enterprise)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
@@ -149,12 +151,10 @@ This repo has been already mentioned in the following places:
 1. **(ToDo)** [Training Text Classifiers in Create ML](#training-text-classifiers-in-create-ml)
 1. **(ToDo)** [Understanding CPU Usage with Web Inspector](#understanding-cpu-usage-with-web-inspector)
 1. **(ToDo)** [Using Core Data With CloudKit](#using-core-data-with-cloudkit)
-1. **(ToDo)** [What's New in Apple File Systems](#whats-new-in-apple-file-systems)
 1. **(ToDo)** [What's New in Core Bluetooth](#whats-new-in-core-bluetooth)
 1. **(ToDo)** [What's New in Core Location](#whats-new-in-core-location)
 1. **(ToDo)** [What's New in AppKit for macOS](#whats-new-in-appkit-for-macos)
 1. **(ToDo)** [What's New in ClassKit](#whats-new-in-classkit)
-1. **(ToDo)** [What's New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
 1. **(ToDo)** [What's New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
 1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Advances in AR Quick Look](#advances-in-ar-quick-look)
@@ -520,6 +520,131 @@ https://developer.apple.com/wwdc19/518
     - Restrictions are reset during navigation
   - `canMakePayments` must be called before showing an Apple Pay button or doing anything using Apple Pay
   - Prefer WebKit APIs instead of using JS when possible
+
+## What’s New in MapKit and MapKit JS
+
+https://developer.apple.com/wwdc19/236
+
+- New ground-up rebuilt basemap, data from 4 million miles of road (car fleet/planes)
+- Improved address detail, more accurate search and directions
+- New map available in US end of 2019, additional countries 2020
+- Automatically replaces old Map in your app once released
+- Better support for decoding and presenting GeoJSON using MKGeoJSONDecoder and MKGeoJSONObject
+- Everything mentioned below is also supported in some way in MapKit JS
+- **Snapshots**
+    - Snapshots (non-interactive images of map for native apps) can now be done on web
+    - Example: snapshot.apple-mapkit.com/api/v1/snapshot?center=37.78,-122.42&size=640x300
+    - Add param "&colorScheme=dark" for darkmode snapshot
+    - Snapshot urls require param "&signature=<yourSignatureHere>", signature obtained from MapKit JS API
+    - Can request 25,000 snapshots per day
+    - Snapshot helper tool availble at developer.apple.com/mapkitjs
+- **Dark Mode**
+    - MapView in your app will automatically adapt to dark mode from view hierarchy trait
+    - MKMapSnapshotter for non-interactive maps in your app, is not aware of view hierarchy so you must pass the view's traitCollection with:
+    - `let options = MKMapSnapshotter.Options()`
+    - `options.traitCollection = myView.traitCollection`
+- **Filtering points of interest in map views**
+    - Previously you had to remove all points of interest if any were conflicting with your annotations, now you can filter out/in specific MKPointOfInterestCategory, such as .restaurant or .hotel
+    - example: `mapView.pointOfInterestFilter = MKPointOfInterestFilter(excluding: [ .hotel ])`
+- **Filtering search and autocompletion results**
+    - MKLocalSearchCompleter feeds your search bar autocomplete and auto-suggestions with results show on map using MKLocalSearch
+    - Now you can apply MKPointOfInterestFilter to both MKLocalSearchCompleter and MKLocalSearch
+    - MKLocalSearchCompleter now also has ResultType, which can be .address, .pointOfInterest (Disneyland), .queries (coffee)
+    - MKLocalSearch handles ResultType as well, but not .queries type
+    - MKMapItem now has a pointOfInterestCategory property
+- **Improving overlay performance**
+    - MKMultiPolygon and MKMultiPolyline for adding large groups of same-style shapes and lines to map overlay for performance efficiency
+    - Use MKMultiPolygonRenderer or MKMultiPolyLineRenderer to add fill, stroke, lineWidth in mapView:rendererFor delegate method
+    - MapKit now renders these as vector graphics, rather than bitmaps (can be turned off)
+- **Taking control of the map view camera**
+    - Add MKMapView.CameraBoundary to constrain the map view's center point and restrict panning
+    - Boundary strictly enforced, even setting region programmatically will not move the camera outside of the bounds
+    - Center Coordinate Distance of camera is the "distance up" above the map, should not be treated as altitude, as the camera can change it's pitch and the distance is the same but the altitude is different
+    - MKMapView.CameraZoomRange can constrain zoom distance
+
+## What's New in File Management and Quick Look
+
+https://developer.apple.com/wwdc19/719
+
+- **Accessing a Directory on iOS**
+  - Present a picker and let the user select an entire folder via your app
+  - The app then gets recursive permissions and can batch-process the folders content
+  - Use `UIDocumentPickerViewController(documentTypes:)` to pick a folder and `NSFileCoordinator` to read its contents
+  - Persist folder access accross launches using `folderURL.bookmarkData(...)`
+- **Support USB and SMB in iOS**
+  - USB-support for for APFS, HFS+, FAT, ExFAT
+  - Automatic support in `UIDocumentBrowserViewController` & `UIDocumentPickerViewController`
+  - **Things to have in mind:**
+    - Multiple volumes
+      - For atomic saves always use `.itemReplacementDirectory` instead of `.temporaryDirectory`
+    - Volumes can disappear suddenly
+    - Slower file system operations
+      - Always perform file operations on a background queue
+      - Display progress
+      - Allow cancellation
+    - File systems with varying capabilities
+      - Check the capabilities of the file system before doing any operations
+    - Always test using external USD drive or SMB server
+- **UIDocumentBrowserViewController iOS 13 Updates**
+  - Can always show file extensions `browser.shouldShowFileExtensions`
+  - Customize the "Create Document" button (default text & aspect ratio)
+- **Fetching File Thumbnails**
+  - Quick Look Thumbnailing Framework
+  - Supports PDF, Text, Video, ...
+  - New on iOS
+  - Replaces `QLThumbnail on macOS`
+  - Replaces `NSURLThumbnailDictionaryKey`
+  - Asynchronous
+  - Supports cancellation
+  - Pass `QLThumbnailGenerator.Request` to a `QLThumbnailGenerator.shared.generateBestRepresentation(for:)`
+  - Different representations queryable -> different performance costs
+  - Specify a completion handler or listen to incremental updates
+- **News for QLPreviewController**
+  - Used to preview files
+  - You can now markup images and PDFs
+  - Support for trimming and rotation videos
+- **Quick Look Extension APIs on macOS**
+  - Provide rich Finder representations for your own document types
+  - Named `Thumbnail Extension` in Xcode's `New Project` dialog
+  - Subclass `QLThumbnailProvider`, override `provideThumbnail(for:handler:)` and call the handler with a `QLThumbnailReply`
+- **Preview Extensions for Files**
+  - `QLPreviewView` uses a UIView provided by your extension which brings greater control
+  - Quick Look generators will be deprecated soon -> migrate
+  - Declare supported URI's in `Info.plist -> QLSupportedContentTypes`
+- **Support for iPad Apps on Mac**
+  - `UIDocumentBrowserViewController` & `UIDocumentPickerViewController` provide completely native experience
+  - Minor runtime differences
+  - `QLPreviewController` uses the macOS QLPreviewPanel but won't support live previews
+
+## What's New in Apple File Systems
+
+https://developer.apple.com/wwdc19/710
+
+- **Protecting System Software**
+  - System integrity protection to prevent file system (FS) modification by malicious software
+  - System FS will now be read-only
+  - Connection between read-only and read-write FS by **Firmlinks**
+  - **Firmlinks**
+    - Consistent forward and backward traversal of the file name space
+    - For directories only
+    - Created on the system volume on installation time
+    - Neither expected to be noticed by any user nor application
+  - Read-only state can be disabled temporarily until after a reboot
+- **Apple Software Restore (ASR), Volume Replication and Snapshots**
+  - Intention is to copy whole volume content including metadata which is superior to file-only copy
+  - Usable by Enterprise/Education, IT to setup labs and/or backup utilities
+  - New: APFS volume replication with ASR
+    - Decryption / Encryption is no part of generation / restore process (on-the-fly defragmentation)
+    - Restore and erase target volume: `sudo asr restore --source file.dmg --target /Volumes/Volume2 --erase`
+    - Restore to newly created target volume: `sudo asr restore --source file.dmg --target /dev/disk1`
+    - Restore with snapshots: `sudo asr restore --source file.dmg --target /Volumes/Target --toSnapshot Snap1`
+    - Retsore snapshot delta: `sudo asr restore --source file.dmg --target /Volumes/Target --fromSnapshot Snap1 --toSnapshot Snap2`
+- **External File Access on iOS**
+  - Access files from network (SMB 3.0) and USB (unencrypted APFS, unencrypted HFS Plus, FAT, ExFAT) sources
+  - For security reasons all FS manipulations happen in dedicate process space, not in kernel
+  - Pay attention to volume capabilities (case sensitivity, ...)
+  - File movement may take time now
+  - External devices can disappear
 
 ## Introducing SF Symbols
 
@@ -1708,10 +1833,10 @@ https://developer.apple.com/wwdc19/256
 - **Server accuracy is higher** in comparison to on-device recognition but is limited to 1 minute max audio duration with a limited number of requests per day.
 - **Results from Transcription** include alternative interpretations, confidence level and timing information. New parameters include speaking rate, average pause duration and voice analytics.
 - **Voice Analytics Features** include:
-	- Jitter – Measures variation in pitch
-	- Shimmer – Measures variations in amplitude
-	- Pitch – Measures frequency characteristics of voice
-	- Voicing – Identifies voiced regions in speech
+  - Jitter – Measures variation in pitch
+  - Shimmer – Measures variations in amplitude
+  - Pitch – Measures frequency characteristics of voice
+  - Voicing – Identifies voiced regions in speech
 
 ## Optimizing App Launch
 
@@ -1876,7 +2001,7 @@ https://developer.apple.com/wwdc19/222
   - human detector (upper body) - bounding box
   - animal detector(cats + dogs) - bounding box + label
   - Tracking improved for occlusion, efficient in background, ML-based `VNSequenceRequestHandler`
-  - Integration with CoreML now also for multi image inputs	
+  - Integration with CoreML now also for multi image inputs 
 
 ## Advances in UI Data Sources
 
@@ -2086,38 +2211,38 @@ https://developer.apple.com/wwdc19/219
 - **Full Power of SwiftUI**
   - **Declarative syntax** Whole new UI framework, new fetures and APIs
   - **Integration** Watchkit controllers with SwiftUI Views 
-  	- `InterfaceController` inherits `WKHostingController`
+    - `InterfaceController` inherits `WKHostingController`
   - **Lists** WatchOS flash cards app
-	- Keep model and List in sync using @ObjectBinding
-	- Use `Command + Click` to bring up the inspector and use different contextual options while coding
-	- Use `.listStyle(.carousel)` to get the carousel effect while scrolling the list
-	- Swipe to delete, drag to reorder
-	- Use `.onMove` and `.onDelete` blocks to manage the movement and deletion of items in the list
+  - Keep model and List in sync using @ObjectBinding
+  - Use `Command + Click` to bring up the inspector and use different contextual options while coding
+  - Use `.listStyle(.carousel)` to get the carousel effect while scrolling the list
+  - Swipe to delete, drag to reorder
+  - Use `.onMove` and `.onDelete` blocks to manage the movement and deletion of items in the list
   - **Interactive Notifications** Timely and contextual info
-  	- Short look (Info from payload + App icon) Immediately upon wrist raise
-	- Long look (Scrolling interface with custom body and action buttons)
-	- `NotificationController` inherits `WKUserNotificationHostingController`
-		- `didReceive` method allows us to extract info from notification
-		- `body` property is re-evaluated after `didReceive` is called
+    - Short look (Info from payload + App icon) Immediately upon wrist raise
+  - Long look (Scrolling interface with custom body and action buttons)
+  - `NotificationController` inherits `WKUserNotificationHostingController`
+    - `didReceive` method allows us to extract info from notification
+    - `body` property is re-evaluated after `didReceive` is called
   - **Digital Crown** Series 4 watch can make use of haptic crown (e.g. workout app, custom timer)
-  	- Building following custom interfaces requires `.digitalCrowRotation` and `.focusable` modifier
-  	- Free scrolling interface (no concrete spots between elements)
-		- binding (source of truth)
-		- from
-		- through
-	- Picking between discrete elements
-		- binding (source of truth)
-		- from
-		- through
-		- by (stride along which haptic feedback is provided)
-	- Moving around circles (not limited to either end of the sequence) 
-		- binding (source of truth)
-		- from
-		- through
-		- by (stride along which haptic feedback is provided)
-		- sensitivity (how much rotation need to be applied to move from one element to the next)
-		- isContinuous (don't stop at either limit of sequence)
-		
+    - Building following custom interfaces requires `.digitalCrowRotation` and `.focusable` modifier
+    - Free scrolling interface (no concrete spots between elements)
+    - binding (source of truth)
+    - from
+    - through
+  - Picking between discrete elements
+    - binding (source of truth)
+    - from
+    - through
+    - by (stride along which haptic feedback is provided)
+  - Moving around circles (not limited to either end of the sequence) 
+    - binding (source of truth)
+    - from
+    - through
+    - by (stride along which haptic feedback is provided)
+    - sensitivity (how much rotation need to be applied to move from one element to the next)
+    - isContinuous (don't stop at either limit of sequence)
+    
 ## Core ML 3 Framework
 
 https://developer.apple.com/wwdc19/704
@@ -2469,7 +2594,7 @@ https://developer.apple.com/wwdc19/721
     - `debounce(for:scheduler:)` - lets you specify a window by which you’d like to receive values and not receive them faster than that. It is useful to reduce number of requests when filtering data using text fields
     - `removeDuplicates()` - Publishes only elements that don’t match the previous element
 - **Future**
-	- initialized with closure that takes a promise (closure that accepts either success or failure)
+  - initialized with closure that takes a promise (closure that accepts either success or failure)
 
 ## Adopting Swift Packages in Xcode
 
@@ -2545,47 +2670,6 @@ https://developer.apple.com/wwdc19/410
   - [SPM Website](https://swift.org/package-manager)
   - [Getting Help](https://forums.swift.org)
   - [Submitting Issues](https://bugs.swift.org)
-
-## What’s New in MapKit and MapKit JS
-
-https://developer.apple.com/wwdc19/236
-
-- New ground-up rebuilt basemap, data from 4 million miles of road (car fleet/planes)
-- Improved address detail, more accurate search and directions
-- New map available in US end of 2019, additional countries 2020
-- Automatically replaces old Map in your app once released
-- Better support for decoding and presenting GeoJSON using MKGeoJSONDecoder and MKGeoJSONObject
-- Everything mentioned below is also supported in some way in MapKit JS
-- **Snapshots**
-    - Snapshots (non-interactive images of map for native apps) can now be done on web
-    - Example: snapshot.apple-mapkit.com/api/v1/snapshot?center=37.78,-122.42&size=640x300
-    - Add param "&colorScheme=dark" for darkmode snapshot
-    - Snapshot urls require param "&signature=<yourSignatureHere>", signature obtained from MapKit JS API
-    - Can request 25,000 snapshots per day
-    - Snapshot helper tool availble at developer.apple.com/mapkitjs
-- **Dark Mode**
-    - MapView in your app will automatically adapt to dark mode from view hierarchy trait
-    - MKMapSnapshotter for non-interactive maps in your app, is not aware of view hierarchy so you must pass the view's traitCollection with:
-    - `let options = MKMapSnapshotter.Options()`
-    - `options.traitCollection = myView.traitCollection`
-- **Filtering points of interest in map views**
-    - Previously you had to remove all points of interest if any were conflicting with your annotations, now you can filter out/in specific MKPointOfInterestCategory, such as .restaurant or .hotel
-    - example: `mapView.pointOfInterestFilter = MKPointOfInterestFilter(excluding: [ .hotel ])`
-- **Filtering search and autocompletion results**
-    - MKLocalSearchCompleter feeds your search bar autocomplete and auto-suggestions with results show on map using MKLocalSearch
-    - Now you can apply MKPointOfInterestFilter to both MKLocalSearchCompleter and MKLocalSearch
-    - MKLocalSearchCompleter now also has ResultType, which can be .address, .pointOfInterest (Disneyland), .queries (coffee)
-    - MKLocalSearch handles ResultType as well, but not .queries type
-    - MKMapItem now has a pointOfInterestCategory property
-- **Improving overlay performance**
-    - MKMultiPolygon and MKMultiPolyline for adding large groups of same-style shapes and lines to map overlay for performance efficiency
-    - Use MKMultiPolygonRenderer or MKMultiPolyLineRenderer to add fill, stroke, lineWidth in mapView:rendererFor delegate method
-    - MapKit now renders these as vector graphics, rather than bitmaps (can be turned off)
-- **Taking control of the map view camera**
-    - Add MKMapView.CameraBoundary to constrain the map view's center point and restrict panning
-    - Boundary strictly enforced, even setting region programmatically will not move the camera outside of the bounds
-    - Center Coordinate Distance of camera is the "distance up" above the map, should not be treated as altitude, as the camera can change it's pitch and the distance is the same but the altitude is different
-    - MKMapView.CameraZoomRange can constrain zoom distance
 
 ## App Distribution – From Ad-hoc to Enterprise
 
@@ -2809,10 +2893,6 @@ https://developer.apple.com/wwdc19/513
 
 https://developer.apple.com/wwdc19/202
 
-## What's New in Apple File Systems
-
-https://developer.apple.com/wwdc19/710
-
 ## What's New in Core Bluetooth
 
 https://developer.apple.com/wwdc19/901
@@ -2829,15 +2909,11 @@ https://developer.apple.com/wwdc19/210
 
 https://developer.apple.com/wwdc19/247
 
-## What's New in File Management and Quick Look
-
-https://developer.apple.com/wwdc19/719
-
 ## What's New in Managing Apple Devices
 
 https://developer.apple.com/wwdc19/303
 
-	
+  
 ## Window Management in Your Multitasking App
 
 https://developer.apple.com/wwdc19/246
