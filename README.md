@@ -2680,12 +2680,14 @@ https://developer.apple.com/wwdc19/304
   - App Store
   - In-House
   - Custom apps
+
 - **Personal Team**
   - Intended for students, teachers and getting started
   - Apps will be deployed to devices you own
   - Intended for a few apps and a few devices
   - Certain capabilities are not available with free accounts (ex: CloudKit, Siri)
   - Apps cannot be distributed on the App Store
+
 - **Ad Hoc Distribution**
   - Distribute your app to testers on registered devices
   - 100 devices, per product family, per year can be registered
@@ -2693,12 +2695,14 @@ https://developer.apple.com/wwdc19/304
   - Short term distribution solution
   - Apps expire and will eventually stop working
   - Device limits reset once per year 
+
 - **TestFlight**
   - 25 internal testers
   - 10k testers via email or a public link
   - Builds are active for 90 days
   - Builds for external testers go through beta app review
   - Available to members of the Apple Developer Program only
+
 - **App Store**
   - Individuals or organizations can sign up
   - Apps are available to the general public
@@ -2707,6 +2711,7 @@ https://developer.apple.com/wwdc19/304
   - Know and follow the App Store Review Guidelines
   - Keep the app current
   - Make sure the app is appropriate for the general public
+
 - **In-House**
   - Proprietary apps build by internal developers for their employees
   - Organization owns and maintains the source code
@@ -2717,11 +2722,13 @@ https://developer.apple.com/wwdc19/304
   - Certificates lifecycle needs to be managed
   - DIY Beta Testing and Hosting
   - Apps require periodic access to the internet
+
 - **Custom App**
   - Part of the Apple Developer Program
   - Privately offer customized apps to customers you identify for yourself
   - Apps for partners, clients, franchisees, internal employees and affiliates
   - Distribute licenses via MDM or Redemption codes
+
 - **Benefits of Custom Apps**
   - One program to manage all of your apps (internal and external)
   - Apps don’t expire
@@ -2729,6 +2736,7 @@ https://developer.apple.com/wwdc19/304
   - Apps can be distributed to much larger audiences
   - Easier to work with third-party software vendors
   - Additional App Store features, TestFlight and App Store Connect tools
+
 - **Custom Apps Expectations**
   - Customer is required to have Apple Business Manager
   - Apps have to support the countries they will be distributed in
