@@ -11,7 +11,7 @@ Sessions that are exceptionally mentionable are highlighted using a ★.
 
 ## Contribution
 
-Feel free to submit a `PR` if I got something wrong or you have an improvement suggestion. Also have a quick look in [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
+Feel free to submit a `PR` if I got something wrong or you have a suggestion for improvement. Please also have a look in [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
 
 Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
 
@@ -19,7 +19,7 @@ Thanks so much to EVERYBODY who contributed and improved the overall quality of 
 
 ## Mentions
 
-This repo has been already mentioned in the following places:
+As far as I know this repo has already been mentioned in the following places:
 
 - [iOS Dev Weekly Issue 409](https://iosdevweekly.com/issues/409)
 - [iOS Goodies Issue 287](https://ios-goodies.com/post/185729205551/week-287)
@@ -752,11 +752,14 @@ https://developer.apple.com/wwdc19/249
 
 https://developer.apple.com/wwdc19/722
 
+*Tony Parker*
+
 - **Combine is a unified, declarative API for processing values over time**
   - Generic
   - Type safe
   - Composition safe
   - Request driven
+
 - **Key concepts**
   - Publisher
     - Defines how values and errors are produced
@@ -771,6 +774,7 @@ https://developer.apple.com/wwdc19/722
     - Subscribes to a `Publisher` (“upstream”)
     - Sends result to a `Subscriber` (“downstream”)
     - Value type
+
 - **Relations**
   - `Subscriber` is attached to `Publisher`  
   - `Publisher` sends a `Subscription`  
@@ -778,18 +782,22 @@ https://developer.apple.com/wwdc19/722
   - `Publisher` sends N values or less  
   - `Publisher` sends completion
   - The value sent from the `Publisher` should be the same type as the one expected from the `Subscriber`. In case of a mismatch you need to create an `Operator` to transform the value.
+
 - **Combining Publishers**
   - Zip
   - CombineLatest
+
 - **Zip**
   - Converts several inputs into a single tuple
   - A "when/and" operation
   - Requires input from all to proceed
+
 - **Combine Latest**
   - Converts several inputs into a single value
   - A "when/or" operation
   - Requires input from any to proceed
   - Stores last value
+
 - **Examples of usage**
   - Process a `NotificationCenter` post with `filter`
   - Await completion of two network requests with `zip`
@@ -1021,18 +1029,23 @@ https://developer.apple.com/wwdc19/204
 
 ## Introducing iPad Apps for Mac
 
+*Ali Ozer, Jake Petroules, Jason Beaver*
+
 - **When to consider iPad app for Mac**
   - Make iPad app available on the Mac
   - Bring older Mac app to feature parity with iPad app
   - Replace Mac app built on non-native technology
+
 - **Not all apps are candidates**
   - iPhone only app
   - Apps that are built around mobile features (e.g. ARKit)
+
 - **Goals**
   - Easy to get started
   - One project, one source base, one target
   - iPad app on the inside
   - Mac app on the outside
+
 - **Things you get for free**
   - Default menu bar
   - Window management (resize, full screen, split view and Sidecar support)
@@ -1047,6 +1060,7 @@ https://developer.apple.com/wwdc19/204
   - Printing
   - Multiple windows
   - Application lifecycle
+
 - **Features to adopt**
   - Mac icon
   - Custom menus
@@ -1054,20 +1068,24 @@ https://developer.apple.com/wwdc19/204
   - Touch bar (if you want to add custom layout and icons)
   - Hover events
   - Help
+
 - **Deprecated frameworks**
   - AddressBook -> Contact
   - AddressBookUI -> ContactsUI
   - AssetsLibrary -> Photos
   - OpenGLES -> Metal
   - GLKit -> MetalKit
+
 - **iOS Specific Frameworks**
   - ClassKit
   - HealthKit
   - HomeKit
+
 - **Hardware Specific frameworks**
   - ARKit
   - CarPlay
   - VisionKit
+
 - **Framework Differences**
   - Core Location
   - Core Motion
@@ -1075,10 +1093,13 @@ https://developer.apple.com/wwdc19/204
   - Core NFC
   - Core Bluetooth
   - AVFoundation
+
 - **API Availability**
   - Annotations are used to indicate availability for every platform
+
 - **Conditionalizing code**
   - Use `#if targetEnvironment()` to conditionalize code
+
 - **Bundle Format**
   - As bundle format are not the same on iOS and MacOS don’t hardcode bundle path, use NSBundle to handle the work automatically
 
@@ -2758,11 +2779,14 @@ https://developer.apple.com/wwdc19/240
 
 https://developer.apple.com/wwdc19/219
 
+*Matthew Koonce, Josh Weinberg*
+
 - **watchOS 6**
   - Independent watchOS apps (decoupled from iOS apps)
   - Extended run-time sessions
   - Building experiences: Complications, Notifications, Siri, etc.
   - Prioritize quick interactions
+
 - **Full Power of SwiftUI**
   - **Declarative syntax** Whole new UI framework, new fetures and APIs
   - **Integration** Watchkit controllers with SwiftUI Views 
