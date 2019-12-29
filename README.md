@@ -2208,9 +2208,9 @@ https://developer.apple.com/wwdc19/704
 - **Demo:** Personalized Grading App
   - Learn how own sketches map to emoji - only some samples to learn
 - Three steps for updating
-  1. Get the bundle
-  2. Prepare the training data
-  3. Create an `MLUpdateTask`
+  - Get the bundle
+  - Prepare the training data
+  - Create an `MLUpdateTask`
 - More complex: updatable Neural Networks
   - configure some layers as updatable  (convolutional and fully connected)
   - works with different loss types and optimizers
