@@ -113,6 +113,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [SwiftUI On All Devices](#swiftui-on-all-devices)
 1. [SwiftUI on watchOS](#swiftui-on-watchos)
 1. [Data Flow Through SwiftUI](#data-flow-through-swiftui)
+1. [SwiftUI Essentials](#swiftui-essentials)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -141,7 +142,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [Streaming Audio on watchOS 6](#streaming-audio-on-watchos-6)
 1. **(ToDo)** [Supporting Dark Mode in Your Web Content](#supporting-dark-mode-in-your-web-content)
 1. **(ToDo)** [Supporting New Game Controllers](#supporting-new-game-controllers)
-1. **(ToDo)** [SwiftUI Essentials](#swiftui-essentials)
 1. **(ToDo)** [System Extensions and DriverKit](#system-extensions-and-driverkit)
 1. **(ToDo)** [Taking iPad Apps for Mac to the Next Level](#taking-ipad-apps-for-mac-to-the-next-level)
 1. **(ToDo)** [Targeting Content with Multiple Windows](#targeting-content-with-multiple-windows)
@@ -2847,6 +2847,49 @@ https://developer.apple.com/wwdc19/226
 - **Use state effectively**
   - limit the usage, use bindings instead
   - when using consider the context of it
+
+## SwiftUI Essentials
+
+https://developer.apple.com/wwdc19/216
+
+*Matt Ricketson, Taylor Kelly*
+
+- **Views and Modifiers**
+  - **View Builder** are used to compose view hierarchies in a declarative way using a complete, enclosed structure - no more `addSubviews`
+  - **Bindings** are used to configure views
+  - Bindings are managed references that cause SwiftUI to redraw the view hierarchy when its value is changed (see [Data Flow Through SwiftUI](#data-flow-through-swiftui) for details)
+  - **Modifiers** are methods that create new, altered views from existing views
+  - Modifiers provide a deterministic ordering of effects on a view - means their order is important!
+  - SwiftUI prefers smaller, single-purpose views
+  - SwiftUI aims building larger views using compilation
+
+- **Building Custom Views**
+  - Views are structs that conform to the `View` protocol
+  - Each concrete type of `View` is a compilation of other kinds of views which represent its content in the `body` property plus all inputs required for creation represented by its properties
+  - SwiftUI views are build from view primitives like `Text`, `Color`, `Shape`, `Image`, `Spacer`, ...
+  - `body` property is re-executed if these inputs are changed and this the UI is refreshed automatically
+  - `body` property can contain `if` syntax to conditionally show subviews
+  - `List` automatically performs diffing of its changed data source and chooses appropriate animations to reflect this in the UI
+  - By default SwiftUI crossfades views on addition/removal
+  - Refactor code into smaller views is really easy and stays performant since SwiftUI collapses all down behind the scenes
+  - `ForEach` can be used to generate a collection of views
+  - DarkMode, Dynamic Type and Accessibility is added for free when using default SwiftUI building blocks
+
+- **Composing Controls**
+  - Use `Form` instead of VStack to achieve a standardized grouped list style with different sections
+  - Forms adapt to the native style on each platform
+  - **Context menus** or the **Touch Bar** can be configured exactly the same ceclarative way you build up a custom view
+  - Apply common modifiers to a higher-hierarchy view instead of applying it to all of its subviews
+  - **Environment** contains all the global properties the app is making use of (Dark Mode, Dynamic Type, ...) 
+  - It is modifyable by views and these modifications are inherited from the views parent
+
+- **Navigation Your App**
+  - Use `TabbedView` to create a tabbar used to switch between different views
+  - Use `NavigationView` to display a navigation bar and by default create a SplitView in regular width size class (iPad landscape, macOS, etc.)
+  - Use `navigationBarTitle` modifier t provide a title in the navigation bar
+  - Use `navigationBarItems` modifier to provide navigation bar controls like buttons
+  
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2959,10 +3002,6 @@ https://developer.apple.com/wwdc19/511
 ## Supporting New Game Controllers
 
 https://developer.apple.com/wwdc19/616
-
-## SwiftUI Essentials
-
-https://developer.apple.com/wwdc19/216
 
 ## System Extensions and DriverKit
 
