@@ -114,6 +114,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [SwiftUI on watchOS](#swiftui-on-watchos)
 1. [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 1. [SwiftUI Essentials](#swiftui-essentials)
+1. [Integrating SwiftUI](#integrating-swiftui)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -131,7 +132,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [Exploring Tinted Graphic Complications](#exploring-tinted-graphic-complications)
 1. **(ToDo)** [Extended Runtime for watchOS Apps](#extended-runtime-for-watchos-apps)
 1. **(ToDo)** [Font Management and Text Scaling](#font-management-and-text-scaling)
-1. **(ToDo)** [Integrating SwiftUI](#integrating-swiftui)
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
 1. **(ToDo)** [Making Apps with Core Data](#making-apps-with-core-data)
@@ -2888,7 +2888,43 @@ https://developer.apple.com/wwdc19/216
   - Use `NavigationView` to display a navigation bar and by default create a SplitView in regular width size class (iPad landscape, macOS, etc.)
   - Use `navigationBarTitle` modifier t provide a title in the navigation bar
   - Use `navigationBarItems` modifier to provide navigation bar controls like buttons
-  
+
+## Integrating SwiftUI
+
+https://developer.apple.com/wwdc19/231
+
+*Tanu Singhal, Raleigh Ledet*
+
+- **Hosting SwiftUI views in your app**
+  - Do it using `UIHostingController`, `NSHostingController`, `WKHostingController`
+  - Each hosting controller is initilized using a SwiftUI view and can be presented like any UIViewController
+  - In WatchKit use `setNeedsBodyUpdate()` and `updateBodyIfNeeded()` functions to update the UI
+
+- **Embedding existing views in SwiftUI**
+  - Do it using the protocols `UIViewRepresentable`/`UIViewControllerRepresentable`, `NSViewRepresentable`/`NSViewControllerRepresentable`, `WKInterfaceObjectRepresentable`
+  - These Representable protocols wrap UIKit/AppKit/WatchKit view content into SwiftUI
+  - Protocol consists functionality to `Make View`/`Make ViewController`, `Update View`/`Update ViewController`, `Dismantle View`/`Dismantle ViewController`
+
+- **Advanced integration of views**
+  - Use `UIViewRepresentableContext`/`UIViewControllerRepresentableContext`, `NSViewRepresentableContext`/`NSViewControllerRepresentableContext`, `WKInterfaceObjectRepresentableContext`
+  - Consists of **Coordinator** which helps implementing common patterns like target/action, **Environment** which enables access to SwiftUI environment and **Transaction** to control/inspect animations
+  - Use the coordinator to e.g. communicate changed values of controls back to SwiftUI (for details see [session demo](https://developer.apple.com/wwdc19/231/?time=980))
+
+- **Integrating your Data Model**
+  - Conform your data model to `BindableObject` to make it a **Publisher**
+  - Apply the property wrapper `@ObjectBinding` to the property of your data model to subscribe to published changes
+  - Use the binding in SwiftUI by prefixing the data model property with `$`
+  - Whenever changes are made to the data model the UI is updated automatically
+  - Multiple publishers offered through Combine: **KVO**, **Notifications**, **URLSession**, **Operators**, ... (learn more by listening to [Combine in Practice ★](#combine-in-practice-))
+  - Use the `PassthroughSubject<Void, Never>()` publisher to inform subscribers about any changes in your data model
+  - See [Data Flow Through SwiftUI](#data-flow-through-swiftui) to learn about different methods of passing data around in SwiftUI
+
+- **Integrating with the System**
+  - `NSItemProvider` is used to interact with the system by cross or inter-process data passing (e.g. **Drag & Drop** (`.onDrag`, `.onDrop` modifiers))    
+  - Integrate with the **Pastepoard** using `.onPaste` modifier
+  - Integrate with the **Focus System** using `.focusable` modifier
+  - Implement Commands from menus or target/actions using `.onCommand` modifier
+  - **Redo/Undo** management, e.g. access undo manager using `@Environment(\.undoManager) var undoManager`
 
 ## Designing iPad Apps for Mac
 
@@ -2958,10 +2994,6 @@ https://developer.apple.com/wwdc19/251
 ## Font Management and Text Scaling
 
 https://developer.apple.com/wwdc19/227
-
-## Integrating SwiftUI
-
-https://developer.apple.com/wwdc19/231
 
 ## Large Content Viewer- Ensuring Readability for Everyone
 
