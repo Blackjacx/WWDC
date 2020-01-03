@@ -115,6 +115,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 1. [SwiftUI Essentials](#swiftui-essentials)
 1. [Integrating SwiftUI](#integrating-swiftui)
+1. [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -123,7 +124,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [Advances in macOS Security](#advances-in-macos-security)
 1. **(ToDo)** [Architecting Your App for Multiple Windows](#architecting-your-app-for-multiple-windows)
 1. **(ToDo)** [Building Activity Classification Models in Create ML](#building-activity-classification-models-in-create-ml)
-1. **(ToDo)** [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
 1. **(ToDo)** [Creating Great Apps Using Core ML and ARKit](#creating-great-apps-using-core-ml-and-arkit)
 1. **(ToDo)** [Creating Independent Watch Apps](#creating-independent-watch-apps)
 1. **(ToDo)** [Designing for Privacy](#designing-for-privacy)
@@ -2926,6 +2926,48 @@ https://developer.apple.com/wwdc19/231
   - Implement Commands from menus or target/actions using `.onCommand` modifier
   - **Redo/Undo** management, e.g. access undo manager using `@Environment(\.undoManager) var undoManager`
 
+## Building Custom Views with SwiftUI
+
+https://developer.apple.com/wwdc19/237
+
+*Dave Abrahams, John Harper*
+
+- **Everything is treates as a view** - even `Color`, `Frame`, etc.
+
+- **Layout Basics**
+  - Safe area is respected by default - opt out by using the modifier `.edgesIgnoringSafeArea(.all)`
+  - **Layout Procedure**
+    - Parent proposes a size for the child
+    - Child chooses its own size, i.e. sizing is encapsulated in the view's definition
+    - Parent places child in parent's space
+    - SwiftUI rounds view's corners to the nearest pixel - no antialiasing anymore
+  - Use `.backgroundColor(.red)` to quickly observe a view's bounds
+  - Use `.badding(Directional Edge Insets)` to add padding to a view
+  - Stacks automatically add spacing based in Apple's Human Interface Guidelines - it can be changed by e.g. `VStack(spacing: 4)`
+  - Layout adaption from LTR to RTL languages happens automatically
+  - Interesting explanation about how stacks and layout priorities work [see 13:35](https://developer.apple.com/wwdc19/237/?time=815)
+  - Use `HStack(alignment: .lastTextBaseLine)` to align multiple items in an HStack to the bottom most base line, e.g. an image
+  - To define a custom alignment to and use it for views in multiple adjacent view hierarchies [see 20:54](https://developer.apple.com/wwdc19/237/?time=1254)
+
+- **Graphics in SwiftUI**
+  - Use shapes (`Circle`, `Capsule`, `Ellipse`, etc.) to compose new views from primitives
+  - Use styles to fill shapes:
+    - Colors and tiles images
+    - `Gradient(colors: [.red, .green, ...])` for a linear gradient
+    - `AngualarGradient(gradient: Gradient, center: UnitPoint, angle: Angle)` for a radial gradient
+    - [See 27:39](https://developer.apple.com/wwdc19/237/?time=1659) for an example on how to generate an RGB circle using shapes and gradients
+  - Custom shapes are as easy as creating a struct, conforming to `Shape` and overriding `path(CGRect)`
+  - Custom view modifiers are as simple as creating a struct, conform to `ViewModifier` and override `body(content: Content)`
+  - We can wrap a complex view hierarchy in a `.drawingGroup()` so everything is drawn in a single CALayer using Metal which is very performant
+  - Some interesting graphics modifiers:
+    - Opacity
+    - Geometry (scales, rotations, etc.)
+    - Color effects (contrast, brightness, hue rotate, monochrome, etc.)
+    - Blur effect
+    - Drop shadow
+    - Clipping, masking
+    - Composing, groups, blend mode
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -2958,10 +3000,6 @@ https://developer.apple.com/wwdc19/258
 ## Building Activity Classification Models in Create ML
 
 https://developer.apple.com/wwdc19/426
-
-## Building Custom Views with SwiftUI
-
-https://developer.apple.com/wwdc19/237
 
 ## Creating Great Apps Using Core ML and ARKit
 
