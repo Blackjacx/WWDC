@@ -566,6 +566,8 @@ https://developer.apple.com/wwdc19/236
 
 https://developer.apple.com/wwdc19/719
 
+*Brendon Tennant, Lyn Fong*
+
 - **Accessing a Directory on iOS**
   - Present a picker and let the user select an entire folder via your app
   - The app then gets recursive permissions and can batch-process the folders content
@@ -683,6 +685,7 @@ https://developer.apple.com/wwdc19/247
 
   - Avoid creating duplicated contexts by calling `CLSDataStore.shared.contexts(matchingIdentifierPath: [String]) { contexts, error in }` and making sure the returned `contexts` array is empty
   - Create contexts in `CLSDataStoreDelegate.createContext(forIdentifier identifier: String, parentContext: CLSContext, parentIdentifierPath: [String]) -> CLSContext?` which is only called if context not yet created
+
 
 ## Introducing SF Symbols
 
