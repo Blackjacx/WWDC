@@ -49,6 +49,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [What’s New in MapKit and MapKit JS](#whats-new-in-mapkit-and-mapkit-js)
 1. [What's New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
 1. [What's New in Apple File Systems](#whats-new-in-apple-file-systems)
+1. [What's New in ClassKit](#whats-new-in-classkit)
 1. [Introducing SF Symbols](#introducing-sf-symbols)
 1. [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
 1. [Introducing Core Haptics](#introducing-core-haptics)
@@ -154,7 +155,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [What's New in Core Bluetooth](#whats-new-in-core-bluetooth)
 1. **(ToDo)** [What's New in Core Location](#whats-new-in-core-location)
 1. **(ToDo)** [What's New in AppKit for macOS](#whats-new-in-appkit-for-macos)
-1. **(ToDo)** [What's New in ClassKit](#whats-new-in-classkit)
 1. **(ToDo)** [What's New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
 1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Advances in AR Quick Look](#advances-in-ar-quick-look)
@@ -645,6 +645,44 @@ https://developer.apple.com/wwdc19/710
   - Pay attention to volume capabilities (case sensitivity, ...)
   - File movement may take time now
   - External devices can disappear
+
+## What's New in ClassKit
+
+https://developer.apple.com/wwdc19/247
+
+*John Calhoun*
+
+- **ClassKit Introduction**
+  - Part of Apple's education system since iOS 11.3
+  - Intended for sharing students progress with teachers in a secure way
+  - ClassKit uses a user role system to ensure the students privacy
+  - In the iOS Settings under Developer you can emulate teacher and student roles
+  - Teachers can create **Handouts** which can be solved by students which in turn can be progress-tracked by teachers
+  - `CLSContext` represents a specific lesson in your app, e.g. a learning a song in a guitar learning app
+  - An app consits of a context tree hierarchy with the `CLSDatasStore.shared.mainAppContext` on top
+  - Each `CLSContext` has an unique identifier (internal) and a title (visible to teacher and student)
+  - Each context can be referenced in the tree hierarchy by its identifier path - an array of context identifiers
+  - **Schoolwork** - a free app by Apple is free on iPad, used by schools worldwide and is able to display ClassKit progress
+    - It allows adding handouts from different sources, e.g. installed apps that make use of ClassKit
+
+- **New Features**
+  - **Context Provider Extension**
+    - Used to advertise the apps acttivities even if the app hasn't been launched before
+    - Registered att app download time
+    - Override just a single function: `updateDescendants(of: CLSContext, completion: Error? -> Void)` that is called at the right times to create child contexts for the context passed in
+    - Code in this function should be as performant as possible
+  
+  - **Mark Activity as Complete**
+    - Can now be implemented in the app - marking an activity as complete in Schoolwork is not necessary anymore
+    - Use `CLSDataStore.shared.completeAllAssignedActivities(matching contextPath: [String])`
+
+  - **Correct/Incorrect Type**
+    - Activities are represented as `CLSActivity` which can have any number of `CLSActivityItem`
+    - Latter is parent to number of subclasses: `CLSBinaryItem`, `CLSQuantityItem`, `CLSScoreItem`
+    - CLSBinaryItem can represent: `.true`/`false`, `.pass`/`.fail`, `.yes`/`.no` and from now on also `.correct`/`.incorrect`
+
+  - Avoid creating duplicated contexts by calling `CLSDataStore.shared.contexts(matchingIdentifierPath: [String]) { contexts, error in }` and making sure the returned `contexts` array is empty
+  - Create contexts in `CLSDataStoreDelegate.createContext(forIdentifier identifier: String, parentContext: CLSContext, parentIdentifierPath: [String]) -> CLSContext?` which is only called if context not yet created
 
 ## Introducing SF Symbols
 
@@ -2992,7 +3030,6 @@ https://developer.apple.com/wwdc19/232
 
 https://developer.apple.com/wwdc19/701
 
-
 ## Architecting Your App for Multiple Windows
 
 https://developer.apple.com/wwdc19/258
@@ -3120,10 +3157,6 @@ https://developer.apple.com/wwdc19/705
 ## What's New in AppKit for macOS
 
 https://developer.apple.com/wwdc19/210
-
-## What's New in ClassKit
-
-https://developer.apple.com/wwdc19/247
 
 ## What's New in Managing Apple Devices
 
