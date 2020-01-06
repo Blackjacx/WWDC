@@ -118,6 +118,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [SwiftUI Essentials](#swiftui-essentials)
 1. [Integrating SwiftUI](#integrating-swiftui)
 1. [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
+1. [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
 1. **(ToDo)** [Advances in CarPlay Systems](#advances-in-carplay-systems)
@@ -156,7 +157,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [What's New in Core Bluetooth](#whats-new-in-core-bluetooth)
 1. **(ToDo)** [What's New in AppKit for macOS](#whats-new-in-appkit-for-macos)
 1. **(ToDo)** [What's New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
-1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Advances in AR Quick Look](#advances-in-ar-quick-look)
 1. **(ToDo)** [Bringing OpenGL Apps to Metal](#bringing-opengl-apps-to-metal)
 1. **(ToDo)** [Bringing People into AR](#bringing-people-into-ar)
@@ -3050,6 +3050,33 @@ https://developer.apple.com/wwdc19/237
     - Clipping, masking
     - Composing, groups, blend mode
 
+## Window Management in Your Multitasking App
+
+https://developer.apple.com/wwdc19/246
+
+*Giovanni Tarducci*
+
+- Programmatic session management: **Activate**, **Refresh**, **Destroy**
+
+- **Activate**
+  - Call `UIApplication.shared.requestSceneSessionActivation()`
+  - System will call `application(_: UIApplication, configurationForConnecting: UISceneSession, options: UIScene.ConnectionOptions)` where you need to return a `UISceneConfiguration`
+  - Configure your view hierarchy in your SceneDelegate in `scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)`
+  - Perform activation only in response to direct and local user interaction
+
+- **Refresh**
+  - Perform refresh when shared data of your app has been updated and multiple windows work on that data
+  - Call `requestSceneSessionRefresh(_ sceneSession: UISceneSession)` on UIApplication
+  - You can refresh the state resoration user activity, activation conditions or the session UI / switcher snapshot
+  - Optimize your layout time
+  - System might perform request at later point in time
+
+- **Destroy**
+  - Do so only in response to direct user interaction
+  - Call `requestSceneSessionDestruction(_ sceneSession: UISceneSession, options: UIScene.DestructionRequestOptions?, errorHandler: ((Error) -> Void)? = nil)` on UIApplication
+  - Destroy session dedicated to user-deleted items
+  - Pick the animation type to acknowledge the user's intent
+
 ## Designing iPad Apps for Mac
 
 https://developer.apple.com/wwdc19/809
@@ -3201,11 +3228,6 @@ https://developer.apple.com/wwdc19/210
 ## What's New in Managing Apple Devices
 
 https://developer.apple.com/wwdc19/303
-
-  
-## Window Management in Your Multitasking App
-
-https://developer.apple.com/wwdc19/246
 
 ## Advances in AR Quick Look
 
