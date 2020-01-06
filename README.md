@@ -50,6 +50,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [What's New in File Management and Quick Look](#whats-new-in-file-management-and-quick-look)
 1. [What's New in Apple File Systems](#whats-new-in-apple-file-systems)
 1. [What's New in ClassKit](#whats-new-in-classkit)
+1. [What's New in Core Location](#whats-new-in-core-location)
 1. [Introducing SF Symbols](#introducing-sf-symbols)
 1. [Introducing Sign In with Apple](#introducing-sign-in-with-apple)
 1. [Introducing Core Haptics](#introducing-core-haptics)
@@ -153,7 +154,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [Understanding CPU Usage with Web Inspector](#understanding-cpu-usage-with-web-inspector)
 1. **(ToDo)** [Using Core Data With CloudKit](#using-core-data-with-cloudkit)
 1. **(ToDo)** [What's New in Core Bluetooth](#whats-new-in-core-bluetooth)
-1. **(ToDo)** [What's New in Core Location](#whats-new-in-core-location)
 1. **(ToDo)** [What's New in AppKit for macOS](#whats-new-in-appkit-for-macos)
 1. **(ToDo)** [What's New in Managing Apple Devices](#whats-new-in-managing-apple-devices)
 1. **(ToDo)** [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
@@ -685,6 +685,47 @@ https://developer.apple.com/wwdc19/247
 
   - Avoid creating duplicated contexts by calling `CLSDataStore.shared.contexts(matchingIdentifierPath: [String]) { contexts, error in }` and making sure the returned `contexts` array is empty
   - Create contexts in `CLSDataStoreDelegate.createContext(forIdentifier identifier: String, parentContext: CLSContext, parentIdentifierPath: [String]) -> CLSContext?` which is only called if context not yet created
+
+## What's New in Core Location
+
+https://developer.apple.com/wwdc19/705
+
+*Adam Driscoll, Andrea Guzzo*
+
+- Request location permission at the time you actually need it to make users understand why you're going to need it
+- Request location permission using one of the following 2 methods:
+  - `CLLocationManager().requestWhenInUseAuthorization()` 
+    - Will present a dialog letting the user choose between **Allow While in Use**, **Allow Once** (new) and **Don't Allow**
+  - `CLLocationManager().requestAlwaysAuthorization()`
+    - Will present the same dialog as above - without the option **always**
+    - System remembers the users choice when selected **Allow While in Use** and enters the **Provisional Always Authorization**
+
+- **Provisional Always Authorization**
+  - App requests **Always**
+  - User selects the closest option displayed **Allow While in Use** which is also reflected in the Settings app
+  - CLLocationManager reports the authorization state **Always** to the app and even your delegate will receive **Always**
+  - User/App will start using always powers -> After location event is triggered user will be asked by the system to **Change to Always Allow** or **Keep Only While using**
+  - Can be requested from the beginning or as upgrade from **When in Use Authorization**
+  - App has only one shot
+  - **tvOS** does not support Always Authorization
+  - **watchOS** doesn't need Always Authorization
+  - **macOS** doesn't support Always/WhenInUse Authorization
+  - **iPad Apps for Mac** can make use of either Always or WhenInUse Authorization
+
+- **WhenInUse Authorization: Empowered**
+  - An app is in use:
+    - From entering foreground to a view seconds after entering background
+    - When setting `allowsBackgroundLocationUpdates = true` with enabled **Background Mode: Location Updates** the app is in use also when entering background
+    - On **watchOS** always for complications
+  - In iOS 13 when your app is in use you will receive updates for **All** location updates, including **Significant Location Updates**, **Visit Updates**, **Region Updates**
+
+- **Temporary Authorization**
+  - Grants WhenInUse authorization which returns to `.notDetermined` after the app is NOT in use anymore (see above when app is in use)
+  - Next time app needs location updates it can request location access again
+
+- **Beacon Ranging**
+  - Available since iOS 7 as part of the region monitoring API
+  - New is the `CLBeaconIdentityConstraint` which represents a tupel of (`uuid`, `major`, `minor`) used to identify/monitor single beacons or beacon groups
 
 
 ## Introducing SF Symbols
@@ -3152,10 +3193,6 @@ https://developer.apple.com/wwdc19/202
 ## What's New in Core Bluetooth
 
 https://developer.apple.com/wwdc19/901
-
-## What's New in Core Location
-
-https://developer.apple.com/wwdc19/705
 
 ## What's New in AppKit for macOS
 
