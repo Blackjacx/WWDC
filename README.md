@@ -118,6 +118,7 @@ As far as I know this repo has already been mentioned in the following places:
 1. [SwiftUI Essentials](#swiftui-essentials)
 1. [Integrating SwiftUI](#integrating-swiftui)
 1. [Building Custom Views with SwiftUI](#building-custom-views-with-swiftui)
+1. [Mastering Xcode Previews](#mastering-xcode-previews)
 1. [Window Management in Your Multitasking App](#window-management-in-your-multitasking-app)
 1. **(ToDo)** [Designing iPad Apps for Mac](#designing-ipad-apps-for-mac)
 1. **(ToDo)** [Adding Indoor Maps to your App and Website](#adding-indoor-maps-to-your-app-and-website)
@@ -138,7 +139,6 @@ As far as I know this repo has already been mentioned in the following places:
 1. **(ToDo)** [Large Content Viewer\- Ensuring Readability for Everyone](#large-content-viewer--ensuring-readability-for-everyone)
 1. **(ToDo)** [Making Apps More Accessible With Custom Actions](#making-apps-more-accessible-with-custom-actions)
 1. **(ToDo)** [Making Apps with Core Data](#making-apps-with-core-data)
-1. **(ToDo)** [Mastering Xcode Previews](#mastering-xcode-previews)
 1. **(ToDo)** [Metal for Machine Learning](#metal-for-machine-learning)
 1. **(ToDo)** [Network Extensions for the Modern Mac](#network-extensions-for-the-modern-mac)
 1. **(ToDo)** [ResearchKit and CareKit Reimagined](#researchkit-and-carekit-reimagined)
@@ -3050,6 +3050,40 @@ https://developer.apple.com/wwdc19/237
     - Clipping, masking
     - Composing, groups, blend mode
 
+## Mastering Xcode Previews
+
+https://developer.apple.com/wwdc19/233
+
+*Anton Vladimirov, Nate Chandler*
+
+- Previews let you view your app in different configurations and on different devices
+- Enable Previews by conforming your view to the protocol `PreviewProvider` which required one property `static var previews: some View`
+- Place the protocol conformance in an `#if DEBUG [...] #endif` block to only execute it for debug builds
+- Previews live in your codebase so team members benefit from it and it is compiled when you compile the app
+
+- **Configuration**
+  - Add the modifier `.previewDevice("iPhone SE")` to a preview view to render it on a specific device
+  - Wrap your preview views in a `Group` to apply different modifiers to different views
+  - Use the view modifier `.previewLayout(.device | .sizeThatFits | .fixed(width: Length, height: Length))` to preview specific sizes
+  - Use the view modifier `.environment(\.sizeCategory, .extraLarge)` to render your preview for a specific size category
+  - Use `ForEach(ContentSizeCategory.allCases()) { item in YourView().environment(\.sizeCategory, item) }` to preview your view in ALL size categories
+  - Code is updated automatically if you change, e.g. the font size of a label in the preview
+  - Use the view modifier `.previewDisplayName("\(ContentSizeCategory.extraLarge))` to identifiy views in the preview canvas more easily
+
+- **Demo**
+  - Use `App Target -> General -> Development Assets` to specify assets for your preview
+  - To provide sample data for e.g. a list of data you could load a JSON file containing your data and ecode it to the objects you want to display
+  - Pin a preview by clicking the little pin button on the bottom left corner of the preview canvas so you can navigate between your files make changes and see the effect in your pinned preview
+  - Make your preview interactable by clicking the play button in the canvas
+  - See how it is possible to modify private @State variables in a preview at [26:40](https://developer.apple.com/wwdc19/233/?time=1600)
+  - Conform your preview to `UIViewControllerRepresentble` / `UIViewRepresentable` to preview UIKit views and view controllers ([30:55](https://developer.apple.com/wwdc19/233/?time=1855))
+  - Previews even work for view controllers and views written in Objective-C
+  - Use view models as much as possible for configuring your views. They should contain exactly the information you wanna show to your users.
+
+- **Tips & Tricks**
+  - Create your view hierarchy in your scene delegate instead of your app delegate (`appDidFinishLaunching`) since latter is called when launching previews and you fon't want to perform too much work there.
+  
+
 ## Window Management in Your Multitasking App
 
 https://developer.apple.com/wwdc19/246
@@ -3152,10 +3186,6 @@ https://developer.apple.com/wwdc19/250
 ## Making Apps with Core Data
 
 https://developer.apple.com/wwdc19/230
-
-## Mastering Xcode Previews
-
-https://developer.apple.com/wwdc19/233
 
 ## Metal for Machine Learning
 
