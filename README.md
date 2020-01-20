@@ -2617,7 +2617,7 @@ https://developer.apple.com/wwdc19/408
   - Add via `File > Swift Packages > Add Package Dependency...`
   - If GitHub account added to Xcode the dialog shows all of your and all starred repos plus you can enter an URL
   - After that Xcode shows the dependency in the Project Navigator on the left and it can be imported via `import <Framework>`
-  - Xcode creates a new subdirectory `<project_workspace>/xcshareddata/swiftlpm`, with a `Package.resolved` file, which contains the version information of your dependencies
+  - Xcode creates a new subdirectory `<project_workspace>/xcshareddata/swiftpm`, with a `Package.resolved` file, which contains the version information of your dependencies
   - `Package.resolved` should be comitted so team members use the same versions
 
 - **A Closer Look at Packages**
