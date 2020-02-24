@@ -185,7 +185,7 @@ https://developer.apple.com/wwdc19/103
   - Automatic `Spacing & Insets`, `Localizability`, `Right-To-Left`, `Dynamic Type`, `Dark Mode`, ...
   - Animations are Repsonsive, Interruptable, Automatic with minimum amount of code
   - Build powerful layouts through composition leveraging `VStack` and `HStack`
-  - Adopt `BindableObject` for model objects that can change
+  - Adopt `ObservableObject` for model objects that can change
   - Live Development Experience
   - Adopt `PreviewProvider` for views/view controllers (surrounded by `#if DEBUG`) to live-preview in canvas
   - Multiple previews with different configurations displayable on one canvas
@@ -2071,9 +2071,9 @@ https://developer.apple.com/wwdc19/234
   - Manage progress of request using `progressHandler` / `cancel()`
   
 ## Understanding Images in Vision
- 
+
 https://developer.apple.com/wwdc19/222
- 
+
 - New: **Image Saliency**: attention and objectness based (presented by Brittany Weinert)
   - attention based saliency
     - heat map - where do humans look (e.g. faces)
@@ -2585,9 +2585,9 @@ https://developer.apple.com/wwdc19/721
         - **PassthroughSubject** - stores no values, you will receive values emitted after subscribing
         - **CurrentValueSubject** - maintains a history of the last value it received
 
-- **SwiftUI BindableObject**
+- **SwiftUI ObservableObject**
     - **SwiftUI** owns the **Subscriber**
-    - BindableObject has a single associated type which is constrained to Publisher protocol with Failure equal to Never
+    - ObservableObject has a single associated type which is constrained to Publisher protocol with Failure equal to Never
     - `didChange` property notified when your type has changed
     - Further described in [Data Flow Through SwiftUI](#data-flow-through-swiftui)
 
@@ -2874,7 +2874,7 @@ https://developer.apple.com/wwdc19/219
   - **Integration** Watchkit controllers with SwiftUI Views 
     - `InterfaceController` inherits `WKHostingController`
   - **Lists** WatchOS flash cards app
-  - Keep model and List in sync using @ObjectBinding
+  - Keep model and List in sync using @ObservedObject
   - Use `Command + Click` to bring up the inspector and use different contextual options while coding
   - Use `.listStyle(.carousel)` to get the carousel effect while scrolling the list
   - Swipe to delete, drag to reorder
@@ -2921,8 +2921,8 @@ https://developer.apple.com/wwdc19/226
 - **SwiftUI as a remedy** for Massive View Controller
 - Standard components (Slider, Toggle, TextField) expect some bindings (so they don't retain the state)
 - **Adding reaction** to external actions - via Combine's publishers
-- **BindableObject protocol** to conform when creating bindable data models
-- **@ObjectBinding** property wrapper 
+- **ObservableObject protocol** to conform when creating bindable data models
+- **@ObservedObject** property wrapper 
   - the same as @Binding but for reference-type objects
 - **Using Environment** object for indirect dependencies
 - **Prefer immutable access** (Swift properties, Environment) over the mutable one (Binding) wherever possible
@@ -2993,8 +2993,8 @@ https://developer.apple.com/wwdc19/231
   - Use the coordinator to e.g. communicate changed values of controls back to SwiftUI (for details see [session demo](https://developer.apple.com/wwdc19/231/?time=980))
 
 - **Integrating your Data Model**
-  - Conform your data model to `BindableObject` to make it a **Publisher**
-  - Apply the property wrapper `@ObjectBinding` to the property of your data model to subscribe to published changes
+  - Conform your data model to `ObservableObject` to make it a **Publisher**
+  - Apply the property wrapper `@ObservedObject` to the property of your data model to subscribe to published changes
   - Use the binding in SwiftUI by prefixing the data model property with `$`
   - Whenever changes are made to the data model the UI is updated automatically
   - Multiple publishers offered through Combine: **KVO**, **Notifications**, **URLSession**, **Operators**, ... (learn more by listening to [Combine in Practice ★](#combine-in-practice-))
