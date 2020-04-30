@@ -199,7 +199,7 @@ https://developer.apple.com/wwdc19/103
   - Use related content (Live View, Assistants, ...) in any editor of your workspace. They disappear automatically when there is no content.
   - Minimap enables straigt-forward code navigation. Highlights MARK declarations, Issues, Test Failures, ...
   - `Add Documentation` feature auto-adds missing function parameters
-  - Refactoring also changes documenatation parameters
+  - Refactoring also changes documentation parameters
   - Source-control history moves to the Inspector pane on the right side. Can now always be open.
   - Editor displays inline code-change comparison
   - TestPlans enable the developer to create many different test combinations (localizations, environment settings, sanitizers, devices). Works with Xcode Server!
