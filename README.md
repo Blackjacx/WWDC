@@ -640,7 +640,7 @@ https://developer.apple.com/wwdc19/710
     - Restore and erase target volume: `sudo asr restore --source file.dmg --target /Volumes/Volume2 --erase`
     - Restore to newly created target volume: `sudo asr restore --source file.dmg --target /dev/disk1`
     - Restore with snapshots: `sudo asr restore --source file.dmg --target /Volumes/Target --toSnapshot Snap1`
-    - Retsore snapshot delta: `sudo asr restore --source file.dmg --target /Volumes/Target --fromSnapshot Snap1 --toSnapshot Snap2`
+    - Restore snapshot delta: `sudo asr restore --source file.dmg --target /Volumes/Target --fromSnapshot Snap1 --toSnapshot Snap2`
 - **External File Access on iOS**
   - Access files from network (SMB 3.0) and USB (unencrypted APFS, unencrypted HFS Plus, FAT, ExFAT) sources
   - For security reasons all FS manipulations happen in dedicate process space, not in kernel
@@ -813,7 +813,7 @@ https://developer.apple.com/wwdc19/249
   - connecting one camera to multiple video data outouts is not possible
   - no presets supported on session since different cams might run with different qualities
   - multi-cam session has `hardwareCost` reporting. Session runnable when `0 <= cost <= 1` 
-  - lower cost by `lower resolution`, `choose binned format`, `deviceInput.videoMinFrameDurationOverride = CMTimeMake(1, 30) to set max framrate override /* 30 FPS */`
+  - lower cost by `lower resolution`, `choose binned format`, `deviceInput.videoMinFrameDurationOverride = CMTimeMake(1, 30) to set max framerate override /* 30 FPS */`
   - lower system pressure like `temperature, power demands, infrared projector temperature` by 
     - lowering frame rates, throttle GPU/CPU processing code, disable one camera
   - run indefinitely with `multiSession.systemPressureCost < 1.0`; device shutdown with `cost > 3.0`
@@ -1110,6 +1110,8 @@ https://developer.apple.com/wwdc19/204
   - Change locale `.environment(\.locale, Locale(identifier: "ar"))`
 
 ## Introducing iPad Apps for Mac
+
+https://developer.apple.com/videos/play/wwdc2019/205
 
 *Ali Ozer, Jake Petroules, Jason Beaver*
 
