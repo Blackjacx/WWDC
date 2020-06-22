@@ -28,6 +28,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 - [iOS Dev Weekly Issue 409](https://iosdevweekly.com/issues/409)
 - [iOS Goodies Issue 287](https://ios-goodies.com/post/185729205551/week-287)
 - [Swift Developments Issue 189](https://andybargh.com/swiftdevelopments-189/)
+- [WWDCNotes](https://www.wwdcnotes.com/)
 
 ## Interesting WWDC-Related Links
 
@@ -70,7 +71,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
   - Maps offers **Guides** that help you discover great new places
   - Brand new **cycling** option to reduce your carbon footprint
   - **EV-Routing** option to optimize your route for electric cars - e.g. by selecting routes with charging station on your way
-- *CarPlay**
+- **CarPlay**
   - Add custom wallpapers
   - Car Key API - first supported by BMW - enable open/close/start your car
 - **App Clips** as small, fast parts of an app, designed for speed
