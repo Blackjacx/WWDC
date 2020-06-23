@@ -42,7 +42,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Keynote ★
 
-<!-- https://developer.apple.com/wwdc19/103 -->
+https://developer.apple.com/wwdc20/101/
 
 - **App Library**
   - Automatically created at the end of your app pages on the Home Screen
