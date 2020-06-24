@@ -42,6 +42,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [Platform State of the Union ★](#platform-state-of-the-union-)
 1. [Explore ARKit 4](#explore-arkit-4)
 1. [What's new in Swift](#whats-new-in-swift)
+1. [What's new in SwiftUI](#whats-new-in-swiftui)
 
 ## Keynote ★
 
@@ -282,7 +283,7 @@ _Quinton Petty, Praveen Gowda_
 
 ## What's new in Swift
 
-https://developer.apple.com/videos/play/wwdc2020/10170/
+https://developer.apple.com/wwdc20/10170
 
 _Ted Kremenek, Kyle Macomber_
 
@@ -371,3 +372,53 @@ _Ted Kremenek, Kyle Macomber_
     - [Swift ArgumentParser](https://github.com/apple/swift-argument-parser)
     - [Swift Standard Libray Preview](https://github.com/apple/swift-standard-library-preview)
       - Includes features that have not been included in the release yet
+
+## What's new in SwiftUI
+
+https://developer.apple.com/wwdc20/10041
+
+_Matt Ricketson, Taylor Kelly_
+
+- **Apps**
+  - Bild your whole app using SwiftUI: `struct BookClubApp: App`
+  - Apps can declare data dependencies
+  - Use `WindowGroup` to manage windows platform independent. Supports multiple windows on macOS and iPadOS out of the bos
+  - Use `Settings` to get a preference pane for free • available on macOS
+  - Use `DocumentGroup` scene type to automatically handle opening, saving and editing documents • macOS, iOS, iPadOS
+  - Use `CommandMenu` command to add additional menus to the menu bar including keyboard shortcuts 
+  - New multi-platform templates specifically for SwiftUI apps
+  - `LaunchScreen` Info.plist key to configure your launch screen • simple alternative to the storyboard
+- **Widgets**
+  - iOS, iPadOS, macOS exclusively built using SwiftUI
+  - Declared by `struct YourWidget: Widget` and `var body: some WidgetConfiguration`
+  - Use SwiftUI to build custom complications for watchOS
+- **Lists and Collections**
+  - List now receive outlines to quickly access the lists content • recuces the need for push/pop navigation pattens
+  - Lazy loading grid layouts (`Lazy[V|H]Stack`) to reduce memory footprint and preserve smooth scrolling for large amounts of data
+  - View Builder for switch statements to show e.g. different image styles in a list of images
+- **Toolbars and Controls**
+  - `.toolbar` modifier for unified display of toolbars
+  - Use `ToolbarItem(placement: .principal)` to make an item prominent
+  - Use `ToolbarItem(placement: .bottomBar)` to place an item in the bottom bar
+  - When using `Label("Title", systemImage: "sf.symbol.name")` SwiftUI automatically display icon and/or text depending on where the label is displayed: toolbar, list, ...
+  - `.keyboardShortcut` modifier can now be used for additional controls like `Button`
+  - New default focus support in tvOS
+  - New controls: 
+    - `ProgressView("Downloading", value: progress)` - horizontal bar
+    - `ProgressView("Downloading", value: progress).progressViewStyle(CircularViewStyle())` - circular progress indicator
+    - `ProgressView()` - spinner
+    - `Gauge` to indicate the level of value • can contain value labels and min/max value labels
+- **New effects and styling**
+  - New control center UI with beautiful transitions
+  - `.matchedGeometryEffect` to provide smooth animations inside of a grid of UI elements
+  - `.clipShape(ContainerRelativeShape())` to automatically apply a super views shape to the subview
+  - custom fonts automatically scaled with dynamic type changes
+  - Custom accent color directly form the AssetCatalog on all platforms
+  - Many controls can now be tinted
+- **System integration**
+   - New `Link` control to display URLs in link style and open them with the default browser • also supports url schemes to open other apps
+   - `@Environment(\.openURL) private var openURL` to programattically open urls via `openURL(url)` in your views
+   - `onDrag {}` and `onDrop {}` to support drag & drop
+   - `UniformTypeIdentifers` framework for e.g. introspection of file types
+   - `Sign in with Apple` as first class component in SwiftUI • available on every platform
+   - Other Frameworks: **AuthenticationServices**, **AVKit**, **MapKit**, **SceneKit**, **SpriteKit**
