@@ -422,3 +422,51 @@ _Matt Ricketson, Taylor Kelly_
    - `UniformTypeIdentifers` framework for e.g. introspection of file types
    - `Sign in with Apple` as first class component in SwiftUI • available on every platform
    - Other Frameworks: **AuthenticationServices**, **AVKit**, **MapKit**, **SceneKit**, **SpriteKit**
+
+   ## Configure and link your app clips
+
+   https://developer.apple.com/videos/play/wwdc2020/10146/
+
+   _Ada Chan, Luming Yin_
+
+   Duration: 22:56
+
+   - **Intro**
+     - App clips provide entry points to your users to experience your app with minimal friction.
+     - Use deep-linked navigation to present the app clip
+   - **User Quest**
+     - User is in a smoothie shop. They see an NFC tag and tap it using the phone.
+     - An app clip shows up on the phone's lockscreen with summarized detail about that smoothie.
+     - User taps "open" and a single screen of your app shows up.
+     - User can then proceed to the payment via Apple Pay.
+   - **Activation**
+     - Tapping NFC tags or scanning QR codes - they're just deep links after all (a URL)
+     - Maps and Siri Nearby Suggestions (for registered businesses)
+     - Smart app banner in your website (shown in Safari and Messages)
+     - Apple App Clip codes will be introduced later this year (it's a prettified QR code)
+     - If the user already has the your app installed, following an app clip link will open the full app instead.
+   - **Setup**
+     - Configure web server and app clip for link handling
+       - Web Server: Update the apple-app-site-association file
+       - App Clip: Add associated domains entitlement and handle NSUserActivity
+     - Configure app clip default and advanced experiences on App Store Connect
+       - Layout requirements:
+          - Title: 18 chars limit
+          - Subtitle: 43 chars limit
+          - Image:
+            - Size: 3000 x 2000px
+            - Aspect Ratio: 3:2
+            - Format: png/jpg
+            - Transparency: No
+        - **Best Practices**
+          - URL mapping is based on **most specific** prefix match against registered App Clip experience URLs
+          - Your App Clip must be able to launch using an exact registered URL. For example:
+            - App registers https://bikesrental.com/rent instead of https://website.com/rent?bikeID=2
+            - When receiving https://website.com/rent?bikeID=2, it should be able to deliver the https://website.com/rent App Clip
+            - App is responsible for parsing the remaining arguments and presenting the specific bike with ID 2
+            - You can also register a more specific URL if you want to provide a different and more specific App Clip experience for it
+     - Configure the Smart App Banner to open app clip (add this if the content of your web page can be delivered as a better and more streamlined app experience)
+       - Add/update your website's HTML to add the Smart App Banner meta tag
+   - **Test**
+     - Specify an app clip URL under the `_XCAppClipURL` environment variable to launch app clip from Xcode
+     - TestFlight - new App Clips section in App Store Connect
