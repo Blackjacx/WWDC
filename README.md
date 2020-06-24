@@ -423,7 +423,7 @@ _Matt Ricketson, Taylor Kelly_
    - `Sign in with Apple` as first class component in SwiftUI • available on every platform
    - Other Frameworks: **AuthenticationServices**, **AVKit**, **MapKit**, **SceneKit**, **SpriteKit**
 
-   ## Configure and link your app clips
+   ## Configure and link your App Clips
 
    https://developer.apple.com/videos/play/wwdc2020/10146/
 
@@ -432,8 +432,8 @@ _Matt Ricketson, Taylor Kelly_
    Duration: 22:56
 
    - **Intro**
-     - App clips provide entry points to your users to experience your app with minimal friction.
-     - Use deep-linked navigation to present the app clip
+     - App Clips provide entry points to your users to experience your app with minimal friction.
+     - Use deep-linked navigation to present the App Clip
    - **User Quest**
      - User is in a smoothie shop. They see an NFC tag and tap it using the phone.
      - An app clip shows up on the phone's lockscreen with summarized detail about that smoothie.
@@ -444,12 +444,12 @@ _Matt Ricketson, Taylor Kelly_
      - Maps and Siri Nearby Suggestions (for registered businesses)
      - Smart app banner in your website (shown in Safari and Messages)
      - Apple App Clip codes will be introduced later this year (it's a prettified QR code)
-     - If the user already has the your app installed, following an app clip link will open the full app instead.
+     - If the user already has the your app installed, following an App Clip link will open the full app instead.
    - **Setup**
-     - Configure web server and app clip for link handling
+     - Configure web server and App Clip for link handling
        - Web Server: Update the apple-app-site-association file
        - App Clip: Add associated domains entitlement and handle NSUserActivity
-     - Configure app clip default and advanced experiences on App Store Connect
+     - Configure App Clip default and advanced experiences on App Store Connect
        - Layout requirements:
           - Title: 18 chars limit
           - Subtitle: 43 chars limit
@@ -465,8 +465,8 @@ _Matt Ricketson, Taylor Kelly_
             - When receiving https://website.com/rent?bikeID=2, it should be able to deliver the https://website.com/rent App Clip
             - App is responsible for parsing the remaining arguments and presenting the specific bike with ID 2
             - You can also register a more specific URL if you want to provide a different and more specific App Clip experience for it
-     - Configure the Smart App Banner to open app clip (add this if the content of your web page can be delivered as a better and more streamlined app experience)
+     - Configure the Smart App Banner to open App Clip (add this if the content of your web page can be delivered as a better and more streamlined app experience)
        - Add/update your website's HTML to add the Smart App Banner meta tag
    - **Test**
-     - Specify an app clip URL under the `_XCAppClipURL` environment variable to launch app clip from Xcode
+     - Specify an App Clip URL under the `_XCAppClipURL` environment variable to launch App Clip from Xcode
      - TestFlight - new App Clips section in App Store Connect
