@@ -228,53 +228,53 @@ https://developer.apple.com/wwdc20/10611
 
 _Quinton Petty, Praveen Gowda_
 
-* **Location Anchors**
-	* Geo-referenced AR Content
-	* Uses "visual localisation" from Maps
-		* No processing in the cloud
-		* No images sent back to Apple
-	* Pinned to a geo-location
-	* 3 main parts
-		* [`ARGeoTrackingConfiguration`](https://developer.apple.com/documentation/arkit/argeotrackingconfiguration)
-		* [`ARGeoAnchor`](https://developer.apple.com/documentation/arkit/argeoanchor)
-		* [`ARGeotrackingStatus`](https://developer.apple.com/documentation/arkit/argeotrackingstatus)
-	* Device support A12 Bionic or later + GPS support
-	* Requires availablity checks for both device and location
-	* [`ARGeotrackingStatus`](https://developer.apple.com/documentation/arkit/argeotrackingstatus)
-		* [`State`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/3580876-state)
-		* [`StateReason`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/statereason)
-		* [`accuracy`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/3580875-accuracy): low, medium, high
-	* Methods for converting between local and latitude / longitude positions via `getGeoLocation(forPoint:)`
-	* Recommended to point towards buildings / static objects
-	* May struggle in wide open spaces (e.g a field)
-	* [Locations currently available](https://developer.apple.com/documentation/arkit/argeotrackingconfiguration/3571351-checkavailability): San Francisco Bay Area, Los Angeles, New York, Chicago and Miami
-	* Sample: [Tracking Geographic Locations in AR](https://developer.apple.com/documentation/arkit/tracking_geographic_locations_in_ar)
-* **Scene Geometry**
-	* Topological map of environment
-	* Semantic classification
-	* Allowing for:
-		* Occlusion
-		* Physics
-		* Virtual lighting
-	* Based upon the Depth API
-* **Depth API**
-	* Provides a dense depth image
-	* Use [`sceneDepth`](https://developer.apple.com/documentation/arkit/arframe/3566299-scenedepth) under frame semantics
-	* Provides dense depth image
-	* Runs at 60Hz, on every ARFrame
-	* [`depthMap`](https://developer.apple.com/documentation/arkit/ardepthdata/3566296-depthmap) and [`confidenceMap`](https://developer.apple.com/documentation/arkit/ardepthdata/3566295-confidencemap) provided
-	* Depth map provided as `CVPixelBuffer`
-	* [`ARConfidenceLevel`](https://developer.apple.com/documentation/arkit/arconfidencelevel): high, medium or low
-	* Available on LiDAR devices
-* **Object Placement**
-	* Improvements in Raycasting
-	* Quicker placement with LiDAR sensor
-	* Allows for placing on a white wall
-	* Raycasting is recommend over hit-testing
-	* 2 types of query:
-		* Raycast
-		* Tracked Raycasts
-* **Face Tracking**
-	* Support added for non-TrueDepth iPhones
-	* Requires A12 processor or later
-	* iPhone SE (2020)
+- **Location Anchors**
+	- Geo-referenced AR Content
+	- Uses "visual localisation" from Maps
+		- No processing in the cloud
+		- No images sent back to Apple
+	- Pinned to a geo-location
+	- 3 main parts
+		- [`ARGeoTrackingConfiguration`](https://developer.apple.com/documentation/arkit/argeotrackingconfiguration)
+		- [`ARGeoAnchor`](https://developer.apple.com/documentation/arkit/argeoanchor)
+		- [`ARGeotrackingStatus`](https://developer.apple.com/documentation/arkit/argeotrackingstatus)
+	- Device support A12 Bionic or later + GPS support
+	- Requires availablity checks for both device and location
+	- [`ARGeotrackingStatus`](https://developer.apple.com/documentation/arkit/argeotrackingstatus)
+		- [`State`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/3580876-state)
+		- [`StateReason`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/statereason)
+		- [`accuracy`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/3580875-accuracy): low, medium, high
+	- Methods for converting between local and latitude / longitude positions via `getGeoLocation(forPoint:)`
+	- Recommended to point towards buildings / static objects
+	- May struggle in wide open spaces (e.g a field)
+	- [Locations currently available](https://developer.apple.com/documentation/arkit/argeotrackingconfiguration/3571351-checkavailability): San Francisco Bay Area, Los Angeles, New York, Chicago and Miami
+	- Sample: [Tracking Geographic Locations in AR](https://developer.apple.com/documentation/arkit/tracking_geographic_locations_in_ar)
+- **Scene Geometry**
+	- Topological map of environment
+	- Semantic classification
+	- Allowing for:
+		- Occlusion
+		- Physics
+		- Virtual lighting
+	- Based upon the Depth API
+- **Depth API**
+	- Provides a dense depth image
+	- Use [`sceneDepth`](https://developer.apple.com/documentation/arkit/arframe/3566299-scenedepth) under frame semantics
+	- Provides dense depth image
+	- Runs at 60Hz, on every ARFrame
+	- [`depthMap`](https://developer.apple.com/documentation/arkit/ardepthdata/3566296-depthmap) and [`confidenceMap`](https://developer.apple.com/documentation/arkit/ardepthdata/3566295-confidencemap) provided
+	- Depth map provided as `CVPixelBuffer`
+	- [`ARConfidenceLevel`](https://developer.apple.com/documentation/arkit/arconfidencelevel): high, medium or low
+	- Available on LiDAR devices
+- **Object Placement**
+	- Improvements in Raycasting
+	- Quicker placement with LiDAR sensor
+	- Allows for placing on a white wall
+	- Raycasting is recommend over hit-testing
+	- 2 types of query:
+		- Raycast
+		- Tracked Raycasts
+- **Face Tracking**
+	- Support added for non-TrueDepth iPhones
+	- Requires A12 processor or later
+	- iPhone SE (2020)
