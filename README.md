@@ -209,7 +209,7 @@ https://developer.apple.com/wwdc20/102/
   - **watchOS 7**
     - Xcode is now able to preview watchOS complications
     - SwiftUI complications
-    - **Watch-face sharing** via any sharing capabilities, e.g iMessage, social media, etc
+    - **Watch-face sharing** via any sharing capabilities, e.g Messages, social media, etc
   - **Xcode 12**
     - Cleaner, more expressive UI
     - Navigators realized using the new Side Bar
