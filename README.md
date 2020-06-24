@@ -100,7 +100,7 @@ https://developer.apple.com/wwdc20/101/
   - **Sleep Tracking** is a new app that helps you to get to bed at time using `Wind Down` which dims all distractions (also available in iPhone)
   - **Handwashing detection** to make sure you wash as long as you're supposed to
 - **Privacy Improvements**
-  - **Location** only share rouch location
+  - **Location** only share rough location
   - **Camera** ...
   - **Tracking Control** require apps to ask befoe tracking
   - **App Privacy** makes data tracked by developers visible to the users before they download the app
