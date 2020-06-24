@@ -43,6 +43,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [Explore ARKit 4](#explore-arkit-4)
 1. [What's new in Swift](#whats-new-in-swift)
 1. [What's new in SwiftUI](#whats-new-in-swiftui)
+1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
 
 ## Keynote ★
 
