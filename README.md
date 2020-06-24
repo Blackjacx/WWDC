@@ -19,8 +19,7 @@ Sessions that are exceptionally mentionable are highlighted using a ★.
 
 Feel free to submit a `PR` if I got something wrong or you have a suggestion for improvement. Please also have a look in [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
 
-Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list:
-[@mcichecki](https://github.com/mcichecki)
+Thanks so much to EVERYBODY who contributed and improved the overall quality of the notes and those who added complete notes to the list.
 
 ## Mentions
 
@@ -293,7 +292,7 @@ _Ted Kremenek, Kyle Macomber_
 
 - **Runtime Performance**
   - Code Size
-    - Code size is the part of the app that represnts the machine code representation of the app's logic
+    - Code size is the part of the app that represents the machine code representation of the app's logic
     - Swift 5.3 is below 1.5 times the code size of Objective-C version (based on app that ships with iOS)
     - Size difference is inevitable because of Swift safety features
     - SwiftUI app binary code size can be reduced by 40% (based on MoviesSwiftUI app)
@@ -312,7 +311,7 @@ _Ted Kremenek, Kyle Macomber_
 
 - **Code completion**
   - Much better code completion thanks to improvements in SourceKit
-  - Code completion for dictionary literals, ternarry expressions and more dynamic features like keypaths
+  - Code completion for dictionary literals, ternary expressions and more dynamic features like key paths
   - Code completion in Xcode 12.0 is 15x faster compared to Xcode 11.5
 
 - **Code Indentation**
