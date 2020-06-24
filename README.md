@@ -38,11 +38,9 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-1. [Keynote ★](#keynote-)
-1. [Platform State of the Union ★](#platform-state-of-the-union-)
-1. [Explore ARKit 4](#explore-arkit-4)
-1. [What's new in Swift](#whats-new-in-swift)
-1. [What's new in SwiftUI](#whats-new-in-swiftui)
+### Monday
+
+<details><summary><b>1. Keynote ★</b></summary>
 
 ## Keynote ★
 
@@ -114,7 +112,7 @@ https://developer.apple.com/wwdc20/101/
   - **Camera** content can be displayed on TV via your Apple TV
   - **Apple TV**
     - Picture in Picture
-    - Better Airplay in full 4K 
+    - Better Airplay in full 4K
     - Apple TV+ already on over 1 billion devices
     - **Foundation** as newest production only available on Apple TV+
 - **macOS Big Sur**
@@ -131,9 +129,11 @@ https://developer.apple.com/wwdc20/101/
 - **Mac**
   - Processor-transition to **Apple Silicon** - Apple's own processor line - bye bye Intel 👋
   - **Universal 2** is the new universal binary type that contains binaries compiled for both architectures
-  - **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time 
+  - **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time
     - Supports iPhone and iPad apps **directly**
-    
+</details>
+<details><summary><b>2. Platform State of the Union ★</b></summary>
+
 ## Platform State of the Union ★
 
 https://developer.apple.com/wwdc20/102/
@@ -154,7 +154,7 @@ https://developer.apple.com/wwdc20/102/
   - First Macs will appear by end of the year
 - **Universal 2** create universal apps that run on both Apple Silicon and older architectures
 - Porting to Apple Silicon takes only a few days, even for grown projects. As a result, all Apple system apps are already converted in macOS Big Sur
-- **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time 
+- **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time
   - Supports iPhone and iPad apps **directly**
 - iOS/iPad Apps natively on Mac
   - Apps will run natively on the Mac
@@ -223,6 +223,11 @@ https://developer.apple.com/wwdc20/102/
     - All SwiftUI apps will continue to compile without additional changes (Apple added no breaking changes - just extensions)
     - **Lazy** statement makes large collections of views way less memory hungry and makes scolling snappy again
     - Now contains app-structure APIs for all Apple platforms, e.g. `@main`, `@SceneBuilder`, `Settings`, ...
+</details>
+
+### Tuesday
+
+<details><summary><b>3. Explore ARKit 4 ★</b></summary>
 
 ## Explore ARKit 4
 
@@ -280,6 +285,10 @@ _Quinton Petty, Praveen Gowda_
 	- Support added for non-TrueDepth iPhones
 	- Requires A12 processor or later
 	- iPhone SE (2020)
+
+</details>
+
+<details><summary><b>4. What's new in Swift</b></summary>
 
 ## What's new in Swift
 
@@ -372,6 +381,9 @@ _Ted Kremenek, Kyle Macomber_
     - [Swift ArgumentParser](https://github.com/apple/swift-argument-parser)
     - [Swift Standard Libray Preview](https://github.com/apple/swift-standard-library-preview)
       - Includes features that have not been included in the release yet
+</details>
+
+<details><summary><b>5. What's new in SwiftUI</b></summary>
 
 ## What's new in SwiftUI
 
@@ -385,7 +397,7 @@ _Matt Ricketson, Taylor Kelly_
   - Use `WindowGroup` to manage windows platform independent. Supports multiple windows on macOS and iPadOS out of the bos
   - Use `Settings` to get a preference pane for free • available on macOS
   - Use `DocumentGroup` scene type to automatically handle opening, saving and editing documents • macOS, iOS, iPadOS
-  - Use `CommandMenu` command to add additional menus to the menu bar including keyboard shortcuts 
+  - Use `CommandMenu` command to add additional menus to the menu bar including keyboard shortcuts
   - New multi-platform templates specifically for SwiftUI apps
   - `LaunchScreen` Info.plist key to configure your launch screen • simple alternative to the storyboard
 - **Widgets**
@@ -403,7 +415,7 @@ _Matt Ricketson, Taylor Kelly_
   - When using `Label("Title", systemImage: "sf.symbol.name")` SwiftUI automatically display icon and/or text depending on where the label is displayed: toolbar, list, ...
   - `.keyboardShortcut` modifier can now be used for additional controls like `Button`
   - New default focus support in tvOS
-  - New controls: 
+  - New controls:
     - `ProgressView("Downloading", value: progress)` - horizontal bar
     - `ProgressView("Downloading", value: progress).progressViewStyle(CircularViewStyle())` - circular progress indicator
     - `ProgressView()` - spinner
@@ -422,3 +434,4 @@ _Matt Ricketson, Taylor Kelly_
    - `UniformTypeIdentifers` framework for e.g. introspection of file types
    - `Sign in with Apple` as first class component in SwiftUI • available on every platform
    - Other Frameworks: **AuthenticationServices**, **AVKit**, **MapKit**, **SceneKit**, **SpriteKit**
+</details>
