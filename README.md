@@ -155,7 +155,7 @@ https://developer.apple.com/wwdc20/102/
 - Porting to Apple Silicon takes only a few days, even for grown projects. As a result, all Apple system apps are already converted in macOS Big Sur
 - **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time 
   - Supports iPhone and iPad apps **directly**
-- iOS/iPad Apps native ly on Mac
+- iOS/iPad Apps natively on Mac
   - Apps will run natively on the Mac
   - Apps will automatically support features like resizing, Dark Mode, scrolling, multi-window, native share sheets, ...
   - Apple plans to make iOS/iPadOS apps available on the App Store for macs running with Apple Silicon
@@ -176,8 +176,8 @@ https://developer.apple.com/wwdc20/102/
   - New sidebars can now expand from two-column layout to three-column layout - even available in portait mode
   - Recommended to use side bars instead of tab bars
   - New inline emoji picker - also for custom apps
-  - New color picker UI - easily to adopt
-  - New Depth API's gives you access to precise distance info captured by the lidar scanner on iPad
+  - New color picker UI - easy to adopt
+  - New Depth APIs give you access to precise distance info captured by the lidar scanner on iPad
   - Dramatic improvement of people inclusion and motion detection - objects can be placed in front or behind real objects in the world
   - **Apple Pencil**
     - New **handwriting** improvements will work in your apps without any additional work
@@ -190,14 +190,14 @@ https://developer.apple.com/wwdc20/102/
       - New widgets take UX to a whole new level
       - Users can move them to the home screen
       - Widgets are packed as SwiftUI archives which are optimized for performance
-      - Are rendered by the system at the right time, the user needs them
+      - Are rendered by the system at the right time, when the user needs them
       - Can be smartly stacked to consume less space and let the user flip through them
       - Stack automatically moves the right widget to the op at just the right time
       - Configurable in the Widget Gallery
     - **App Clips**
-      - Small part of the app which is light/fast and easily to discover
+      - Small part of the app which is light/fast and easy to discover
       - Can use Apple Pay and Sign in With Apple to provide a seamless UX
-      - Easily discoverable in a variety of ways, like other apps  or places in the real world via new Apple-designed (QR like) codes which are basically NFC tags
+      - Easily discoverable in a variety of ways, like other apps or places in the real world via new Apple-designed (QR-like) codes which are basically NFC tags
       - Introduce users to what your app offers
     - **Misc. New Features**
       - Cycling directions, Guides and EV routing in Maps
@@ -209,13 +209,13 @@ https://developer.apple.com/wwdc20/102/
   - **watchOS 7**
     - Xcode is now able to preview watchOS complications
     - SwiftUI complications
-    - **Watch-face sharing** via default sharing capabilities, e.g Messages
+    - **Watch-face sharing** via any sharing capabilities, e.g iMessage, social media, etc
   - **Xcode 12**
     - Cleaner, more expressive UI
     - Navigators realized using the new Side Bar
     - Any kind of content is now openable in document tab
     - Navigate through nested calls in compiler failure messages
-    - StoreKit tests lets you unit test In-App Purchase and Subscriptions
+    - StoreKit test environment lets you unit test In-App Purchase and Subscriptions
     - New StoreKit transaction manager shows details during debugging
     - Faster code completion with simplified presentation
   - **SwiftUI**
