@@ -471,10 +471,39 @@ _Daniel Miao_
     - Associate build with version
     - Submit app for review
   - Add `Power and Performance Metrics and Diagnostics API`
-  
 
+## Accelerate your app with CarPlay
 
+https://developer.apple.com/wwdc20/10635 
 
+_Jonathan Hersh, Allen Langmaier_
+
+- **New CarPlay Templates***
+  - EV charging
+  - Parking
+  - Quick food ordering
+- **Audio Apps**
+  - Playable Content Template will be deprecated
+  - New Audio Template
+- **New Templates**
+  - Communication Apps
+    - `CPMessageListItem`
+    - Contact Template
+  - List Template
+  - Tab Bar Template
+  - Now playing template
+  - Point of Interest Template
+  - Information Template
+- **CarPlay Design Priciples**
+  - Design for the Driver
+  - Streamline interactions
+  - Reuse app configuration
+  - Launch first in CarPlay
+  - CarPlay Apps must adapt UI Scene
+- **Updates to development**
+  - Dynamic updates to list elements
+  - `CPListItem`
+  - `CPListImageRowItem`
 
 
 
