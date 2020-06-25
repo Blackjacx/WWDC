@@ -81,7 +81,7 @@ https://developer.apple.com/wwdc20/101/
 - **App Clips** as small, fast parts of an app, designed for speed
   - a way to discover what the App Store has to offer
   - launchable from the web, by NFC tags, QR codes or the brand new Apple designed tags
-  - need to be less thatn 10 MB
+  - need to be less than 10 MB
   - Use Sign in with Apple to provide the most seamless app experience
   - Option to downlod the full app
 - **iPadOS**
