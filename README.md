@@ -45,6 +45,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [What's new in SwiftUI](#whats-new-in-swiftui)
 1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
+1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
 
 ## Keynote ★
 
@@ -78,7 +79,8 @@ https://developer.apple.com/wwdc20/101/
   - Brand new **cycling** option to reduce your carbon footprint
   - **EV-Routing** option to optimize your route for electric cars - e.g. by selecting routes with charging station on your way
 - **CarPlay**
-  - Add custom wallpapers
+  - New wallpaper option
+  - New categories for CarPlay apps: Parking, EV-Charging, and Quick-Food ordering
   - Car Key API - first supported by BMW - enable open/close/start your car
 - **App Clips** as small, fast parts of an app, designed for speed
   - A way to discover what the App Store has to offer
@@ -517,3 +519,36 @@ _Daniel Miao_
     - Associate build with version
     - Submit app for review
   - Add `Power and Performance Metrics and Diagnostics API`
+
+## Accelerate your app with CarPlay
+
+https://developer.apple.com/wwdc20/10635 
+
+_Jonathan Hersh, Allen Langmaier_
+
+- **New CarPlay App Possibilites***
+  - EV charging
+  - Parking
+  - Quick food ordering
+- **Audio Apps**
+  - Playable content template will be deprecated
+  - New audio template
+- **New Templates**
+  - Communication Apps
+    - `CPMessageListItem`
+    - Contact template
+  - List template
+  - Tab bar template
+  - Now playing template
+  - Point of interest template
+  - Information template
+- **CarPlay Design Principles**
+  - Design for the driver
+  - Streamline interactions
+  - Reuse app configuration
+  - Launch first in CarPlay
+  - CarPlay apps must adapt `UIScene`
+- **Updates to development**
+  - Dynamic updates to list elements
+  - `CPListItem`
+  - `CPListImageRowItem`
