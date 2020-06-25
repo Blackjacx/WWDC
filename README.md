@@ -43,6 +43,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [Explore ARKit 4](#explore-arkit-4)
 1. [What's new in Swift](#whats-new-in-swift)
 1. [What's new in SwiftUI](#whats-new-in-swiftui)
+1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
 
@@ -427,6 +428,52 @@ _Matt Ricketson, Taylor Kelly_
    - `Sign in with Apple` as first class component in SwiftUI • available on every platform
    - Other Frameworks: **AuthenticationServices**, **AVKit**, **MapKit**, **SceneKit**, **SpriteKit**
 
+## Configure and link your App Clips
+
+https://developer.apple.com/wwdc20/10146/
+
+_Ada Chan, Luming Yin_
+
+- **Intro**
+  - App Clips provide entry points to your users to experience your app with minimal friction.
+  - Use deep-linked navigation to present the App Clip
+- **User Quest**
+  - User is in a smoothie shop. They see an NFC tag and tap it using the phone.
+  - An app clip shows up on the phone's lockscreen with summarized detail about that smoothie.
+  - User taps "open" and a single screen of your app shows up.
+  - User can then proceed to the payment via Apple Pay.
+- **Activation**
+  - Tapping NFC tags or scanning QR codes - they're just deep links after all (a URL)
+  - Maps and Siri Nearby Suggestions (for registered businesses)
+  - Smart app banner in your website (shown in Safari and Messages)
+  - Apple App Clip codes will be introduced later this year (it's a prettified QR code)
+  - If the user already has the your app installed, following an App Clip link will open the full app instead.
+- **Setup**
+  - Configure web server and App Clip for link handling
+    - Web Server: Update the apple-app-site-association file
+    - App Clip: Add associated domains entitlement and handle NSUserActivity
+  - Configure App Clip default and advanced experiences on App Store Connect
+    - Layout requirements:
+      - Title: 18 chars limit
+      - Subtitle: 43 chars limit
+      - Image:
+        - Size: 3000 x 2000px
+        - Aspect Ratio: 3:2
+        - Format: png/jpg
+        - Transparency: No
+    - **Best Practices**
+      - URL mapping is based on **most specific** prefix match against registered App Clip experience URLs
+      - Your App Clip must be able to launch using an exact registered URL. For example:
+        - App registers https://bikesrental.com/rent instead of https://website.com/rent?bikeID=2
+        - When receiving https://website.com/rent?bikeID=2, it should be able to deliver the https://website.com/rent App Clip
+        - App is responsible for parsing the remaining arguments and presenting the specific bike with ID 2
+        - You can also register a more specific URL if you want to provide a different and more specific App Clip experience for it
+  - Configure the Smart App Banner to open App Clip (add this if the content of your web page can be delivered as a better and more streamlined app experience)
+    - Add/update your website's HTML to add the Smart App Banner meta tag
+- **Test**
+  - Specify an App Clip URL under the `_XCAppClipURL` environment variable to launch App Clip from Xcode
+  - TestFlight - new App Clips section in App Store Connect
+
 ## What's new in App Store Connect
 
 https://developer.apple.com/wwdc20/10651
@@ -434,21 +481,21 @@ https://developer.apple.com/wwdc20/10651
 _Daniel Miao_
 
 - **App Clips**
-  - **Beta testing**
+  - **Beta Testing**
     - Safari App Clip banner appears when a website is associated with an App Clip. Tapping brings up the `App Clip Card`. Tapping the card opens the app itself.
     - App Clips can be invoked from Safari, Messages, Maps, NFC Tags, QR Code or Location
     - Invocation URL from the website is used what to show on the App Clip Card and is passed to it upon tap of the banner
     - App Clip is packaged with the app and delivered to ASC
-    - In the new `App Clip Invoication` Section on ASC you can provide titles and along with invocation URLs used in the App Clip
-    - Title-URL combinations are selectable in TestFlight and take you directly to the App Clib by passing the invocation URL (without showing the App Clip Card)
+    - In the new `App Clip Invocation` Section on ASC you can provide titles and along with invocation URLs used in the App Clip
+    - Title-URL combinations are selectable in TestFlight and take you directly to the App Clip by passing the invocation URL (without showing the App Clip Card)
   - **App Clip Card Meta Data**
     - Header image, App Clip title, App Clip subtitle, call to action button
     - Enter the default meta data on the apps version page on ASC
     - Associate your website with the App Clip by including the meta-data tag `<meta name="apple-itunes-app", content:"app-id=123456", app-clip-bundle-id:=org.appname.clip>`
     - Use **Advanced App Clip Experiences** to get customized meta data and association with e.g. location in Maps
-      - Advanced assitant on your app's version page on ASC to setup advanced experience
+      - Advanced assistant on your app's version page on ASC to setup advanced experience
       - You can select to promote `Your own business` or `Other Businesses` (e.g. Yelp)
-    - You have to specify an Apple App Site Association file (liek with universal links) that has to match the Associated Domains Entitlement in your app
+    - You have to specify an Apple App Site Association file (like with universal links) that has to match the Associated Domains Entitlement in your app
     - Manage / Debug your website association on ASC
 - **Game Center**
   - **Challenges** other players to get achievement
@@ -465,7 +512,7 @@ _Daniel Miao_
   - **Once turned on it cannot be tuned off again**
 - **App Store Connect API**
   - Over 200 new endpoints will be added
-  - Add `App Meta Data API` 
+  - Add `App Meta Data API`
     - Create new version
     - Set app pricing
     - Edit app and version metadata
@@ -505,11 +552,3 @@ _Jonathan Hersh, Allen Langmaier_
   - Dynamic updates to list elements
   - `CPListItem`
   - `CPListImageRowItem`
-
-
-
-
-
-
-
-
