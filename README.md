@@ -484,23 +484,23 @@ _Jonathan Hersh, Allen Langmaier_
   - Parking
   - Quick food ordering
 - **Audio Apps**
-  - Playable Content Template will be deprecated
-  - New Audio Template
+  - Playable content template will be deprecated
+  - New audio template
 - **New Templates**
   - Communication Apps
     - `CPMessageListItem`
-    - Contact Template
-  - List Template
-  - Tab Bar Template
+    - Contact template
+  - List template
+  - Tab bar template
   - Now playing template
-  - Point of Interest Template
-  - Information Template
+  - Point of interest template
+  - Information template
 - **CarPlay Design Principles**
-  - Design for the Driver
+  - Design for the driver
   - Streamline interactions
   - Reuse app configuration
   - Launch first in CarPlay
-  - CarPlay Apps must adapt UI Scene
+  - CarPlay apps must adapt `UIScene`
 - **Updates to development**
   - Dynamic updates to list elements
   - `CPListItem`
