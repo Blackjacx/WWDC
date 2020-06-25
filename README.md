@@ -43,6 +43,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [Explore ARKit 4](#explore-arkit-4)
 1. [What's new in Swift](#whats-new-in-swift)
 1. [What's new in SwiftUI](#whats-new-in-swiftui)
+1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 
 ## Keynote ★
 
@@ -423,3 +424,62 @@ _Matt Ricketson, Taylor Kelly_
    - `UniformTypeIdentifers` framework for e.g. introspection of file types
    - `Sign in with Apple` as first class component in SwiftUI • available on every platform
    - Other Frameworks: **AuthenticationServices**, **AVKit**, **MapKit**, **SceneKit**, **SpriteKit**
+
+## What's new in App Store Connect
+
+https://developer.apple.com/wwdc20/10651
+
+_Daniel Miao_
+
+- **App Clips**
+  - **Beta testing**
+    - Safari App Clip banner appears when a website is associated with an App Clip. Tapping brings up the `App Clip Card`. Tapping the card opens the app itself.
+    - App Clips can be invoked from Safari, Messages, Maps, NFC Tags, QR Code or Location
+    - Invocation URL from the website is used what to show on the App Clip Card and is passed to it upon tap of the banner
+    - App Clip is packaged with the app and delivered to ASC
+    - In the new `App Clip Invoication` Section on ASC you can provide titles and along with invocation URLs used in the App Clip
+    - Title-URL combinations are selectable in TestFlight and take you directly to the App Clib by passing the invocation URL (without showing the App Clip Card)
+  - **App Clip Card Meta Data**
+    - Header image, App Clip title, App Clip subtitle, call to action button
+    - Enter the default meta data on the apps version page on ASC
+    - Associate your website with the App Clip by including the meta-data tag `<meta name="apple-itunes-app", content:"app-id=123456", app-clip-bundle-id:=org.appname.clip>`
+    - Use **Advanced App Clip Experiences** to get customized meta data and association with e.g. location in Maps
+      - Advanced assitant on your app's version page on ASC to setup advanced experience
+      - You can select to promote `Your own business` or `Other Businesses` (e.g. Yelp)
+    - You have to specify an Apple App Site Association file (liek with universal links) that has to match the Associated Domains Entitlement in your app
+    - Manage / Debug your website association on ASC
+- **Game Center**
+  - **Challenges** other players to get achievement
+  - **Recurring Leaderboards** to collect scores for a certain period of time
+    - Reset after that time
+    - Configurable on ASC
+- **Family Sharing for Subscriptions**
+  - Subscriptions can be shared among the family form fall 2020
+  - Auto-renewable subscriptions
+  - Non-consumables
+  - Automatic sharing for new customers
+  - Existing subscribers can opt-in
+  - Family-shared in-app purchase can be enabled on the ASC-In-App-Purchase section of your app
+  - **Once turned on it cannot be tuned off again**
+- **App Store Connect API**
+  - Over 200 new endpoints will be added
+  - Add `App Meta Data API` 
+    - Create new version
+    - Set app pricing
+    - Edit app and version metadata
+    - Associate build with version
+    - Submit app for review
+  - Add `Power and Performance Metrics and Diagnostics API`
+  
+
+
+
+
+
+
+
+
+
+
+
+
