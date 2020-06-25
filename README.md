@@ -77,7 +77,8 @@ https://developer.apple.com/wwdc20/101/
   - Brand new **cycling** option to reduce your carbon footprint
   - **EV-Routing** option to optimize your route for electric cars - e.g. by selecting routes with charging station on your way
 - **CarPlay**
-  - Add custom wallpapers
+  - New wallpaper option
+  - New Categories for CarPlay Apps: Parking, EV-Charging, and Quick-Food ordering
   - Car Key API - first supported by BMW - enable open/close/start your car
 - **App Clips** as small, fast parts of an app, designed for speed
   - A way to discover what the App Store has to offer
