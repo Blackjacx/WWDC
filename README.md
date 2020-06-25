@@ -179,7 +179,7 @@ https://developer.apple.com/wwdc20/102/
   - Recommended to use side bars instead of tab bars
   - New inline emoji picker - also for custom apps
   - New color picker UI - easy to adopt
-  - New Depth APIs give you access to precise distance info captured by the ([lidar scanner on iPad] (https://www.apple.com/newsroom/2020/03/apple-unveils-new-ipad-pro-with-lidar-scanner-and-trackpad-support-in-ipados/))
+  - New Depth APIs give you access to precise distance info captured by the ([lidar scanner on iPad](https://www.apple.com/newsroom/2020/03/apple-unveils-new-ipad-pro-with-lidar-scanner-and-trackpad-support-in-ipados/))
   - Dramatic improvement of people inclusion and motion detection - objects can be placed in front or behind real objects in the world
   - **Apple Pencil**
     - New **handwriting** improvements will work in your apps without any additional work
