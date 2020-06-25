@@ -8,15 +8,31 @@ I watch sessions in 1.5 speed using the awesome player from wwdc.io. This is the
 
 ## Submitting changes
 
-First of all the list is not sorted. If you want to add a new session, please just put it at the bottom. Don't forget to add an entry to the `table of contents` and your name to `Contributors` 🤝
+First of all the list is not sorted. If you want to add a new session, please just put it at the bottom. Don't forget to add an entry to the `table of contents`.
 
 Please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with some notes of what you have done (read more about [pull requests](http://help.github.com/pull-requests/)).
 
-Try to write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
+## Commit Messages
 
-    $ git commit -m "A brief summary of the commit
-    > 
-    > A paragraph describing what changed and its impact."
+### Submit a Session
+
+It will be enough to have a one-line commit message that contains the title of the session, like:
+
+```
+Add Session \"Platform State of the Union\"
+```
+
+### Submit a Fix
+
+Here it's enough to quickly mention what you did, like:
+
+```
+Fixed typo
+```
+
+```
+Added Description if Feature xyz
+```
 
 Thanks so much for your contribution,
 Stefan
