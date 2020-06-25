@@ -495,7 +495,7 @@ _Jonathan Hersh, Allen Langmaier_
   - Now playing template
   - Point of Interest Template
   - Information Template
-- **CarPlay Design Priciples**
+- **CarPlay Design Principles**
   - Design for the Driver
   - Streamline interactions
   - Reuse app configuration
