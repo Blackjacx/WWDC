@@ -305,7 +305,7 @@ _Ted Kremenek, Kyle Macomber_
     - Swift's use of value types avoid the need to access values via pointers (UUID and Strings)
     - Significant memory benefit because it is allocated directly within array storage (contiguous block of memory)
     - Heap memory use comparison: 20kB in Swift 5.1 vs 35kB in Obj-C (400 models in array)
-    - Swift's Standard Library now is below Foundation in the Stack
+    - Swift's Standard Library now is below Foundation in the stack which means it can be used to develop low-level frameworks for Objective-C frameworks where previously C has to be used!
 
 - **Diagnostics**
   - New diagnostics in the Swift compiler result in more precise and actionable errors
