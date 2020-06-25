@@ -479,7 +479,7 @@ https://developer.apple.com/wwdc20/10635
 
 _Jonathan Hersh, Allen Langmaier_
 
-- **New CarPlay Templates***
+- **New CarPlay App Possibilites***
   - EV charging
   - Parking
   - Quick food ordering
