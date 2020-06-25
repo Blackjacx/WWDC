@@ -83,6 +83,7 @@ https://developer.apple.com/wwdc20/101/
   - launchable from the web, by NFC tags, QR codes or the brand new Apple designed tags
   - need to be less than 10 MB
   - Use Sign in with Apple to provide the most seamless app experience
+  - Use Apply Pay to allow quick payments
   - Option to downlod the full app
 - **iPadOS**
   - Photos app gets an all new side bar - new way to navigate and organize your photos
@@ -98,9 +99,9 @@ https://developer.apple.com/wwdc20/101/
 - **watchOS 7**
   - Configure your own watch faces styled by your current living style
   - Watch faces can now be shared on Websites or via the usual sharing features of watchOS
-  - Workout app adds dance, cooldown, functional training and more workouts plus it is renamed to **Firness**
+  - Workout app adds dance, cooldown, functional training and more workouts plus it is renamed to **Fitness**
   - **Sleep Tracking** is a new app that helps you to get to bed at time using `Wind Down` which dims all distractions (also available in iPhone)
-  - **Handwashing detection** to make sure you wash as long as you're supposed to
+  - **Handwashing detection** to make sure you wash as long as you're supposed to (20 seconds shown in demo)
 - **Privacy Improvements**
   - **Location** only share rough location
   - **Camera** ...
