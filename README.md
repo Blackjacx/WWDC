@@ -83,6 +83,7 @@ https://developer.apple.com/wwdc20/101/
   - Launchable from the web, by NFC tags, QR codes or the brand new Apple designed tags
   - Needs to be smaller than 10 MB
   - Use Sign in With Apple to provide the most seamless app experience
+  - Use Apply Pay to allow quick payments
   - Option to download the full app
 - **iPadOS**
   - Photos app gets an all new side bar - new way to navigate and organize your photos
@@ -100,7 +101,7 @@ https://developer.apple.com/wwdc20/101/
   - Watch faces can now be shared on Websites or via the usual sharing features of watchOS
   - Workout app adds dance, cooldown, functional training and more workouts plus it is renamed to **Fitness**
   - **Sleep Tracking** is a new app that helps you to get to bed at time using `Wind Down` which dims all distractions (also available in iPhone)
-  - **Handwashing detection** to make sure you wash as long as you're supposed to
+  - **Handwashing detection** to make sure you wash as long as you're supposed to (20 seconds shown in demo)
 - **Privacy Improvements**
   - **Location** only share rough location
   - **Camera** ...
@@ -140,7 +141,7 @@ https://developer.apple.com/wwdc20/102/
 
 - Some new features: **AirPods Motion API**, **SwiftPM resources**, **New Catalyst Controls**, **ARKit 4**, **Widgets in SwiftUI**, **Depth API**, **TestFlight 100 Testers**, **SwiftUI Lifecycle**, **Catalyst Native Screen Resolution**, **Complications in SwiftUI**, **Xcode StoreKit Testing**, **HomePod Music Services**, **App Clips**, **New SwiftUI Controls**, **Xcode Tabs**, ...
 - Users can make your app the default app used for email and set a default web browser
-- Developers can bring existing web browser extensions to Safari using a new command line tool
+- Developers can bring existing web-browser extensions to Safari using a new command line tool
 - **FindMy** can now leverage **all** iPhones out there to locate your devices, even if they are not connected to the internet ([applicable to all kinds of objects](developer.apple.com/find-my))
 - Mac transition to **Apple Silicon** - Apple's own processor line - brings more security, better performance, longer battery life and amazing graphics
   - **Advantages**
@@ -178,7 +179,7 @@ https://developer.apple.com/wwdc20/102/
   - Recommended to use side bars instead of tab bars
   - New inline emoji picker - also for custom apps
   - New color picker UI - easy to adopt
-  - New Depth APIs give you access to precise distance info captured by the LiDAR Scanner on iPad
+  - New Depth APIs give you access to precise distance info captured by the [LiDAR scanner on iPad](https://www.apple.com/newsroom/2020/03/apple-unveils-new-ipad-pro-with-lidar-scanner-and-trackpad-support-in-ipados/)
   - Dramatic improvement of people inclusion and motion detection - objects can be placed in front or behind real objects in the world
   - **Apple Pencil**
     - New **handwriting** improvements will work in your apps without any additional work
@@ -193,7 +194,7 @@ https://developer.apple.com/wwdc20/102/
       - Widgets are packed as SwiftUI archives which are optimized for performance
       - Are rendered by the system at the right time, when the user needs them
       - Can be smartly stacked to consume less space and let the user flip through them
-      - Stack automatically moves the right widget to the op at just the right time
+      - Stack automatically moves the right widget to the top at just the right time
       - Configurable in the Widget Gallery
     - **App Clips**
       - Small part of the app which is light/fast and easy to discover
