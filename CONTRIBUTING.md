@@ -8,9 +8,15 @@ I watch sessions in 1.5 speed using the awesome player from wwdc.io. This is the
 
 ## Submitting changes
 
-First of all the list is not sorted. If you want to add a new session, please just put it at the bottom. Don't forget to add an entry to the `table of contents`.
+Please try to follow the following rules to have a consistent look and feel:
+- First of all the list is not sorted. If you want to add a new session, please just put it at the bottom.
+- Don't forget to add an entry to the `table of contents`.
+- Put a link to the session just below its title. Please use the short version of the url: `https://developer.apple.com/wwdc20/<session_number>`.
+- Mention the authors below the session link in the format `_Author_1, Author_2_`. The underscores at the end make text italian. You'll find the authors at the beginning of each video.
+- The video duration is not needed here since you can see it when you click the link.
+- For the session please do not add **code samples**, except one-liners and no **images**. I plan to have all session notes skimmable as easy as possible. But you can link to the relevant position in the video by using a short link in like this `[22:32](https://developer.apple.com/wwdc19/245/?time=1337)`. Just put the seconds at the end where the interesting part starts in the video.
 
-Please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with some notes of what you have done (read more about [pull requests](http://help.github.com/pull-requests/)).
+When you are finished please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with some notes of what you have done (read more about [pull requests](http://help.github.com/pull-requests/)).
 
 ## Commit Messages
 

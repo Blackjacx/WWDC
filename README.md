@@ -44,6 +44,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [What's new in Swift](#whats-new-in-swift)
 1. [What's new in SwiftUI](#whats-new-in-swiftui)
 1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
+1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 
 ## Keynote ★
 
@@ -57,7 +58,7 @@ https://developer.apple.com/wwdc20/101/
   - Different sizes to choose one that best fits your needs
   - Droppable on the home screen
   - Widget gallery to explore all widgets
-  - **SmartStack** as intelligent assistent which enables you to scroll through your widgets
+  - **SmartStack** as intelligent assistant which enables you to scroll through your widgets
 - **Picture in Picture** on iPhone
   - Swipe to the side, out of the screen, and audio keeps playing
   - Video keeps playing when switching apps
@@ -68,7 +69,7 @@ https://developer.apple.com/wwdc20/101/
   - Conversation mode when switching to landscape mode in the app
 - **Messages**
   - Pinning messages to the top of the screen
-  - Memoji gets hundrets of new options to customize your avatar, including masts, fist-pumps and more
+  - Memoji gets hundreds of new options to customize your avatar, including masts, fist-pumps and more
   - Group conversations got some ❤️ by adding inline replies and most-active member widget
 - **Maps**
   - More countries like UK, Ireland and Canada
@@ -80,42 +81,43 @@ https://developer.apple.com/wwdc20/101/
   - Add custom wallpapers
   - Car Key API - first supported by BMW - enable open/close/start your car
 - **App Clips** as small, fast parts of an app, designed for speed
-  - a way to discover what the App Store has to offer
-  - launchable from the web, by NFC tags, QR codes or the brand new Apple designed tags
-  - need to be less thatn 10 MB
-  - Use Sign in with Apple to provide the most seamless app experience
-  - Option to downlod the full app
+  - A way to discover what the App Store has to offer
+  - Launchable from the web, by NFC tags, QR codes or the brand new Apple designed tags
+  - Needs to be smaller than 10 MB
+  - Use Sign in With Apple to provide the most seamless app experience
+  - Use Apply Pay to allow quick payments
+  - Option to download the full app
 - **iPadOS**
   - Photos app gets an all new side bar - new way to navigate and organize your photos
-  - Incoming calls become unobstrusive using notification style UI (available for all apps: Whatsapp, Skype, ...) • available for iOS too
+  - Incoming calls become unobtrusive using notification style UI (available for all apps: WhatsApp, Skype, ...) • available for iOS too
   - New searching experience
 - **Apple Pencil**
   - **Scribble** lets you hand-write in any text field. iOS converts your writing then to text
   - **Smart Selection** lets you select single words / characters you've written using your pencil using iOS text recognition features
-  - DataDetectors are used to automatically detect e.g. phone numbers, email addreses
+  - DataDetectors are used to automatically detect e.g. phone numbers, email addresses
 - **AirPods**
   - are now able to automatically switch to new incoming audio sources
   - **Spacial Audio** for AirPods Pro (AirPods Motion API) to emulate movie theatre experience • use AirPods gyroscope to sync the sound to your head position/orientation
 - **watchOS 7**
   - Configure your own watch faces styled by your current living style
   - Watch faces can now be shared on Websites or via the usual sharing features of watchOS
-  - Workout app adds dance, cooldown, functional training and more workouts plus it is renamed to **Firness**
+  - Workout app adds dance, cooldown, functional training and more workouts plus it is renamed to **Fitness**
   - **Sleep Tracking** is a new app that helps you to get to bed at time using `Wind Down` which dims all distractions (also available in iPhone)
-  - **Handwashing detection** to make sure you wash as long as you're supposed to
+  - **Handwashing detection** to make sure you wash as long as you're supposed to (20 seconds shown in demo)
 - **Privacy Improvements**
   - **Location** only share rough location
   - **Camera** ...
-  - **Tracking Control** require apps to ask befoe tracking
+  - **Tracking Control** require apps to ask before tracking
   - **App Privacy** makes data tracked by developers visible to the users before they download the app
 - **Home**
   - Alliance among different manufacturers to make smart home devices even better
-  - **Adaptive lighting** to auto-adjust color temperature throughot the day
+  - **Adaptive lighting** to auto-adjust color temperature throughout the day
   - **Cameras** get activity zones, richer notifications
   - **Face recognition** extends to Home Pod
   - **Camera** content can be displayed on TV via your Apple TV
   - **Apple TV**
     - Picture in Picture
-    - Better Airplay in full 4K 
+    - Better Airplay in full 4K
     - Apple TV+ already on over 1 billion devices
     - **Foundation** as newest production only available on Apple TV+
 - **macOS Big Sur**
@@ -132,16 +134,16 @@ https://developer.apple.com/wwdc20/101/
 - **Mac**
   - Processor-transition to **Apple Silicon** - Apple's own processor line - bye bye Intel 👋
   - **Universal 2** is the new universal binary type that contains binaries compiled for both architectures
-  - **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time 
+  - **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time
     - Supports iPhone and iPad apps **directly**
-    
+
 ## Platform State of the Union ★
 
 https://developer.apple.com/wwdc20/102/
 
 - Some new features: **AirPods Motion API**, **SwiftPM resources**, **New Catalyst Controls**, **ARKit 4**, **Widgets in SwiftUI**, **Depth API**, **TestFlight 100 Testers**, **SwiftUI Lifecycle**, **Catalyst Native Screen Resolution**, **Complications in SwiftUI**, **Xcode StoreKit Testing**, **HomePod Music Services**, **App Clips**, **New SwiftUI Controls**, **Xcode Tabs**, ...
 - Users can make your app the default app used for email and set a default web browser
-- Developers can bring existing webbroser extensions to Safari using a new command line tool
+- Developers can bring existing web-browser extensions to Safari using a new command line tool
 - **FindMy** can now leverage **all** iPhones out there to locate your devices, even if they are not connected to the internet ([applicable to all kinds of objects](developer.apple.com/find-my))
 - Mac transition to **Apple Silicon** - Apple's own processor line - brings more security, better performance, longer battery life and amazing graphics
   - **Advantages**
@@ -155,7 +157,7 @@ https://developer.apple.com/wwdc20/102/
   - First Macs will appear by end of the year
 - **Universal 2** create universal apps that run on both Apple Silicon and older architectures
 - Porting to Apple Silicon takes only a few days, even for grown projects. As a result, all Apple system apps are already converted in macOS Big Sur
-- **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time 
+- **Rosetta 2** lets existing app run on new architectures from day one by making them compatible at installation time
   - Supports iPhone and iPad apps **directly**
 - iOS/iPad Apps natively on Mac
   - Apps will run natively on the Mac
@@ -163,7 +165,7 @@ https://developer.apple.com/wwdc20/102/
   - Apple plans to make iOS/iPadOS apps available on the App Store for macs running with Apple Silicon
 - **macOS Big Sur - macOS 11**
   - Rounded dock 🎉
-  - Control center for mac
+  - Control Center for mac
   - New translucent look for notification center
   - Refined layout for menus of the menu bar
   - New sheet presentation - parent window is dimmed
@@ -171,21 +173,21 @@ https://developer.apple.com/wwdc20/102/
   - App-specific accent color
   - **macOS Catalyst**
     - macOS-specific implementation of iOS API's
-    - native reolution support
+    - Native resolution support
     - Messages re-written in Catalyst
     - SwiftPlaygrounds will support multiple windows
 - **iPadOS**
-  - New sidebars can now expand from two-column layout to three-column layout - even available in portait mode
+  - New sidebars can now expand from two-column layout to three-column layout - even available in portrait mode
   - Recommended to use side bars instead of tab bars
   - New inline emoji picker - also for custom apps
   - New color picker UI - easy to adopt
-  - New Depth APIs give you access to precise distance info captured by the lidar scanner on iPad
+  - New Depth APIs give you access to precise distance info captured by the [LiDAR scanner on iPad](https://www.apple.com/newsroom/2020/03/apple-unveils-new-ipad-pro-with-lidar-scanner-and-trackpad-support-in-ipados/)
   - Dramatic improvement of people inclusion and motion detection - objects can be placed in front or behind real objects in the world
   - **Apple Pencil**
     - New **handwriting** improvements will work in your apps without any additional work
     - Hand-writing for any UITextField
     - Automatic support for **Scribble** which converts any hand-written text to typed text
-    - Stroke API gives acces to the strokes as the user draws
+    - Stroke API gives access to the strokes as the user draws
     - **Smart Selection** lets you select single words / characters you've written using your pencil and iOS text recognition features
   - **iOS 14**
     - **Widgets**
@@ -194,7 +196,7 @@ https://developer.apple.com/wwdc20/102/
       - Widgets are packed as SwiftUI archives which are optimized for performance
       - Are rendered by the system at the right time, when the user needs them
       - Can be smartly stacked to consume less space and let the user flip through them
-      - Stack automatically moves the right widget to the op at just the right time
+      - Stack automatically moves the right widget to the top at just the right time
       - Configurable in the Widget Gallery
     - **App Clips**
       - Small part of the app which is light/fast and easy to discover
@@ -222,7 +224,7 @@ https://developer.apple.com/wwdc20/102/
     - Faster code completion with simplified presentation
   - **SwiftUI**
     - All SwiftUI apps will continue to compile without additional changes (Apple added no breaking changes - just extensions)
-    - **Lazy** statement makes large collections of views way less memory hungry and makes scolling snappy again
+    - **Lazy** statement makes large collections of views way less memory hungry and makes scrolling snappy again
     - Now contains app-structure APIs for all Apple platforms, e.g. `@main`, `@SceneBuilder`, `Settings`, ...
 
 ## Explore ARKit 4
@@ -242,7 +244,7 @@ _Quinton Petty, Praveen Gowda_
 		- [`ARGeoAnchor`](https://developer.apple.com/documentation/arkit/argeoanchor)
 		- [`ARGeotrackingStatus`](https://developer.apple.com/documentation/arkit/argeotrackingstatus)
 	- Device support A12 Bionic or later + GPS support
-	- Requires availablity checks for both device and location
+	- Requires availability checks for both device and location
 	- [`ARGeotrackingStatus`](https://developer.apple.com/documentation/arkit/argeotrackingstatus)
 		- [`State`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/3580876-state)
 		- [`StateReason`](https://developer.apple.com/documentation/arkit/argeotrackingstatus/statereason)
@@ -300,11 +302,11 @@ _Ted Kremenek, Kyle Macomber_
     - SwiftUI app binary code size can be reduced by 40% (based on MoviesSwiftUI app)
   - Memory Layout
     - Comparing models with three properties in Obj-C (`NSUUID`, `NSString` and `float`) and Swift (`UUID`, `String`, `Float`)
-    - In Obj-C object variables are just pointers which then hold pointer to ther properties
+    - In Obj-C, object variables are just pointers which then hold a pointer to their properties
     - Swift's use of value types avoid the need to access values via pointers (UUID and Strings)
     - Significant memory benefit because it is allocated directly within array storage (contiguous block of memory)
     - Heap memory use comparison: 20kB in Swift 5.1 vs 35kB in Obj-C (400 models in array)
-    - Swift's Standard Library now is below Foundation in the Stack
+    - Swift's Standard Library now is below Foundation in the stack which means it can be used to develop low-level frameworks for Objective-C frameworks where previously C has to be used!
 
 - **Diagnostics**
   - New diagnostics in the Swift compiler result in more precise and actionable errors
@@ -317,7 +319,7 @@ _Ted Kremenek, Kyle Macomber_
   - Code completion in Xcode 12.0 is 15x faster compared to Xcode 11.5
 
 - **Code Indentation**
-  - Improved indentation formating in chained methods calls, tuples, multiline `if` and `guards`
+  - Improved indentation formatting in chained methods calls, tuples, multiline `if` and `guards`
   - Improved indentation in SwiftUI as well
 
 - **Debugging**
@@ -339,13 +341,13 @@ _Ted Kremenek, Kyle Macomber_
     - It's important to set the correct base name of the method that will indicate the first trailing closure that its label will be dropped
   - Key Path Expressions as Functions [SE-0249](https://github.com/apple/swift-evolution/blob/master/proposals/0249-key-path-literal-function-expressions.md)
   - `@main`: Type-Based Program Entry Points [SE-0281](https://github.com/apple/swift-evolution/blob/master/proposals/0281-main-attribute.md)
-    - The standarized way to delegate a program's entry point
+    - The standardized way to delegate a program's entry point
   - Increased availability of implicit self in @escaping closures when reference cycles are unlikely to occur [SE-0269](https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md)
     - Now it's possible to add `self` to the capture list
     - In Swift 5.3, if self is a structure it can be omitted entirely from the closure
   - Multi-Pattern Catch Clauses [SE-0276](https://github.com/apple/swift-evolution/blob/master/proposals/0276-multi-pattern-catch-clauses.md)
   - Enum Enhancements
-    - `Comparable` conformance is now synthsized automatically [SE-0266](https://github.com/apple/swift-evolution/blob/master/proposals/0266-synthesized-comparable-for-enumerations.md)
+    - `Comparable` conformance is now synthesized automatically [SE-0266](https://github.com/apple/swift-evolution/blob/master/proposals/0266-synthesized-comparable-for-enumerations.md)
     - Enum cases as protocol witnesses [SE-0280](https://github.com/apple/swift-evolution/blob/master/proposals/0280-enum-cases-as-protocol-witnesses.md)
   - Embedded DSL Enhancements
     - Builder closures
@@ -366,12 +368,12 @@ _Ted Kremenek, Kyle Macomber_
     - Wraps Darwin APIs
   - OSLog
     - Unified logging API
-    - Faster and more expressive (formating options)
+    - Faster and more expressive (formatting options)
   - Packages
     - [Swift Numerics](https://github.com/apple/swift-numerics)
       - Support for complex numbers and basic math functions
     - [Swift ArgumentParser](https://github.com/apple/swift-argument-parser)
-    - [Swift Standard Libray Preview](https://github.com/apple/swift-standard-library-preview)
+    - [Swift Standard Library Preview](https://github.com/apple/swift-standard-library-preview)
       - Includes features that have not been included in the release yet
 
 ## What's new in SwiftUI
@@ -386,7 +388,7 @@ _Matt Ricketson, Taylor Kelly_
   - Use `WindowGroup` to manage windows platform independent. Supports multiple windows on macOS and iPadOS out of the bos
   - Use `Settings` to get a preference pane for free • available on macOS
   - Use `DocumentGroup` scene type to automatically handle opening, saving and editing documents • macOS, iOS, iPadOS
-  - Use `CommandMenu` command to add additional menus to the menu bar including keyboard shortcuts 
+  - Use `CommandMenu` command to add additional menus to the menu bar including keyboard shortcuts
   - New multi-platform templates specifically for SwiftUI apps
   - `LaunchScreen` Info.plist key to configure your launch screen • simple alternative to the storyboard
 - **Widgets**
@@ -394,7 +396,7 @@ _Matt Ricketson, Taylor Kelly_
   - Declared by `struct YourWidget: Widget` and `var body: some WidgetConfiguration`
   - Use SwiftUI to build custom complications for watchOS
 - **Lists and Collections**
-  - List now receive outlines to quickly access the lists content • recuces the need for push/pop navigation pattens
+  - List now receive outlines to quickly access the lists content • reduces the need for push/pop navigation patterns
   - Lazy loading grid layouts (`Lazy[V|H]Stack`) to reduce memory footprint and preserve smooth scrolling for large amounts of data
   - View Builder for switch statements to show e.g. different image styles in a list of images
 - **Toolbars and Controls**
@@ -404,7 +406,7 @@ _Matt Ricketson, Taylor Kelly_
   - When using `Label("Title", systemImage: "sf.symbol.name")` SwiftUI automatically display icon and/or text depending on where the label is displayed: toolbar, list, ...
   - `.keyboardShortcut` modifier can now be used for additional controls like `Button`
   - New default focus support in tvOS
-  - New controls: 
+  - New controls:
     - `ProgressView("Downloading", value: progress)` - horizontal bar
     - `ProgressView("Downloading", value: progress).progressViewStyle(CircularViewStyle())` - circular progress indicator
     - `ProgressView()` - spinner
@@ -418,7 +420,7 @@ _Matt Ricketson, Taylor Kelly_
   - Many controls can now be tinted
 - **System integration**
    - New `Link` control to display URLs in link style and open them with the default browser • also supports url schemes to open other apps
-   - `@Environment(\.openURL) private var openURL` to programattically open urls via `openURL(url)` in your views
+   - `@Environment(\.openURL) private var openURL` to programmatically open urls via `openURL(url)` in your views
    - `onDrag {}` and `onDrop {}` to support drag & drop
    - `UniformTypeIdentifers` framework for e.g. introspection of file types
    - `Sign in with Apple` as first class component in SwiftUI • available on every platform
@@ -426,11 +428,9 @@ _Matt Ricketson, Taylor Kelly_
 
 ## Configure and link your App Clips
 
-https://developer.apple.com/videos/play/wwdc2020/10146/
+https://developer.apple.com/wwdc20/10146/
 
 _Ada Chan, Luming Yin_
-
-Duration: 22:56
 
 - **Intro**
   - App Clips provide entry points to your users to experience your app with minimal friction.
@@ -471,3 +471,49 @@ Duration: 22:56
 - **Test**
   - Specify an App Clip URL under the `_XCAppClipURL` environment variable to launch App Clip from Xcode
   - TestFlight - new App Clips section in App Store Connect
+
+## What's new in App Store Connect
+
+https://developer.apple.com/wwdc20/10651
+
+_Daniel Miao_
+
+- **App Clips**
+  - **Beta Testing**
+    - Safari App Clip banner appears when a website is associated with an App Clip. Tapping brings up the `App Clip Card`. Tapping the card opens the app itself.
+    - App Clips can be invoked from Safari, Messages, Maps, NFC Tags, QR Code or Location
+    - Invocation URL from the website is used what to show on the App Clip Card and is passed to it upon tap of the banner
+    - App Clip is packaged with the app and delivered to ASC
+    - In the new `App Clip Invocation` Section on ASC you can provide titles and along with invocation URLs used in the App Clip
+    - Title-URL combinations are selectable in TestFlight and take you directly to the App Clip by passing the invocation URL (without showing the App Clip Card)
+  - **App Clip Card Meta Data**
+    - Header image, App Clip title, App Clip subtitle, call to action button
+    - Enter the default meta data on the apps version page on ASC
+    - Associate your website with the App Clip by including the meta-data tag `<meta name="apple-itunes-app", content:"app-id=123456", app-clip-bundle-id:=org.appname.clip>`
+    - Use **Advanced App Clip Experiences** to get customized meta data and association with e.g. location in Maps
+      - Advanced assistant on your app's version page on ASC to setup advanced experience
+      - You can select to promote `Your own business` or `Other Businesses` (e.g. Yelp)
+    - You have to specify an Apple App Site Association file (like with universal links) that has to match the Associated Domains Entitlement in your app
+    - Manage / Debug your website association on ASC
+- **Game Center**
+  - **Challenges** other players to get achievement
+  - **Recurring Leaderboards** to collect scores for a certain period of time
+    - Reset after that time
+    - Configurable on ASC
+- **Family Sharing for Subscriptions**
+  - Subscriptions can be shared among the family form fall 2020
+  - Auto-renewable subscriptions
+  - Non-consumables
+  - Automatic sharing for new customers
+  - Existing subscribers can opt-in
+  - Family-shared in-app purchase can be enabled on the ASC-In-App-Purchase section of your app
+  - **Once turned on it cannot be tuned off again**
+- **App Store Connect API**
+  - Over 200 new endpoints will be added
+  - Add `App Meta Data API`
+    - Create new version
+    - Set app pricing
+    - Edit app and version metadata
+    - Associate build with version
+    - Submit app for review
+  - Add `Power and Performance Metrics and Diagnostics API`
