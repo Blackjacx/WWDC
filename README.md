@@ -79,7 +79,7 @@ https://developer.apple.com/wwdc20/101/
   - **EV-Routing** option to optimize your route for electric cars - e.g. by selecting routes with charging station on your way
 - **CarPlay**
   - New wallpaper option
-  - New Categories for CarPlay Apps: Parking, EV-Charging, and Quick-Food ordering
+  - New categories for CarPlay apps: Parking, EV-Charging, and Quick-Food ordering
   - Car Key API - first supported by BMW - enable open/close/start your car
 - **App Clips** as small, fast parts of an app, designed for speed
   - A way to discover what the App Store has to offer
@@ -505,7 +505,6 @@ _Jonathan Hersh, Allen Langmaier_
   - Dynamic updates to list elements
   - `CPListItem`
   - `CPListImageRowItem`
-
 
 
 
