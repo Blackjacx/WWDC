@@ -44,6 +44,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [What's new in Swift](#whats-new-in-swift)
 1. [What's new in SwiftUI](#whats-new-in-swiftui)
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
+1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
 
 ## Keynote ★
 
