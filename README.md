@@ -40,15 +40,6 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 1. [Keynote ★](#keynote-)
 1. [Platform State of the Union ★](#platform-state-of-the-union-)
-1. [Explore ARKit 4](#explore-arkit-4)
-1. [What's new in Swift](#whats-new-in-swift)
-1. [What's new in SwiftUI](#whats-new-in-swiftui)
-1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
-1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
-1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
-
-1. [Keynote ★](#keynote-)
-1. [Platform State of the Union ★](#platform-state-of-the-union-)
 1. (TO-DO) [Adopt the new look of macOS](#adopt-the-new-look-of-macos)
 1. (TO-DO) [Advances in UICollectionView](#advances-in-uicollectionview)
 1. (TO-DO) [Advances in diffable data sources](#advances-in-diffable-data-sources)
