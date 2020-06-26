@@ -422,7 +422,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Adopt the new look of macOS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -431,7 +431,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Advances in UICollectionView
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -440,7 +440,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Advances in diffable data sources
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -449,7 +449,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build Metal-based Core Image kernels with Xcode
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -458,7 +458,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build SwiftUI apps for tvOS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -467,7 +467,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build an Action Classifier with Create ML
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -476,7 +476,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build complications in SwiftUI
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -485,7 +485,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build trust through better privacy
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -540,7 +540,7 @@ Presenters: _Ada Chan, Luming Yin_
 
 ## Create great enterprise apps: A chat with Box's Aaron Levie
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -549,7 +549,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for iPad
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -558,7 +558,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Detect Body and Hand Pose with Vision
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -567,7 +567,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Distribute binary frameworks as Swift packages
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -633,7 +633,7 @@ Presenters: _Quinton Petty, Praveen Gowda_
 
 ## Explore app clips
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -642,7 +642,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Inspect, modify, and construct PencilKit drawings
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -651,7 +651,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Introducing StoreKit Testing in Xcode
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -660,7 +660,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Introduction to SwiftUI
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -669,7 +669,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Lists in UICollectionView
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -678,7 +678,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Make your app visually accessible
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -687,7 +687,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet Nearby Interaction
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -696,7 +696,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet Safari Web Extensions
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -705,7 +705,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet Scribble for iPad
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -714,7 +714,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet WidgetKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -723,7 +723,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Modern cell configuration
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -732,7 +732,7 @@ Presenters: _Example Guy, Another Person_
 
 ## One-tap account security upgrades
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -741,7 +741,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Optimize the Core Image pipeline for your video app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -750,7 +750,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Port your Mac app to Apple Silicon
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -759,7 +759,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Record stereo audio with AVAudioSession
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -768,7 +768,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Support multiple users in your tvOS app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -777,7 +777,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Swan's Quest, Chapter 1: Voices in the dark
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -786,7 +786,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Swift packages: Resources and localization
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -795,7 +795,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Use model deployment and security with Core ML
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -850,7 +850,7 @@ Presenter: _Daniel Miao_
 
 ## What's new in HealthKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -859,7 +859,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Low-Latency HLS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -868,7 +868,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Mac Catalyst
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -877,7 +877,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in PencilKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -886,7 +886,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in RealityKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -895,7 +895,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in SiriKit and Shortcuts
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1046,7 +1046,7 @@ Presenters: _Matt Ricketson, Taylor Kelly_
 
 ## What's new in education
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1055,7 +1055,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in location
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1064,7 +1064,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in managing Apple devices
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1073,7 +1073,7 @@ Presenters: _Example Guy, Another Person_
 
 ## iPad and iPhone apps on Apple Silicon Macs
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1115,7 +1115,7 @@ Presenters: _Jonathan Hersh, Allen Langmaier_
 
 ## Add custom views and modifiers to the Xcode Library
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1124,7 +1124,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Advancements in Game Controllers
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1133,7 +1133,7 @@ Presenters: _Example Guy, Another Person_
 
 ## App essentials in SwiftUI
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1142,7 +1142,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Bring your Metal app to Apple Silicon Macs
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1151,7 +1151,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Broaden your reach with Siri Event Suggestions
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1160,7 +1160,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build GPU binaries with Metal
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1169,7 +1169,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build an Endpoint Security app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1178,7 +1178,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build for iPad
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1187,7 +1187,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build for the iPadOS pointer
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1196,7 +1196,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build with iOS pickers, menus and actions
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1205,7 +1205,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Create a seamless speech experience in your apps
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1214,7 +1214,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Create app clips for other businesses
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1223,7 +1223,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Create complications for Apple Watch
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1232,7 +1232,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Custom app distribution with Apple Business Manager
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1241,7 +1241,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for Game Center
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1250,7 +1250,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for intelligence: Apps, evolved
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1259,7 +1259,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for intelligence: Discover new opportunities
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1268,7 +1268,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for intelligence: Make friends with "The System"
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1277,7 +1277,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for intelligence: Meet people where they are
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1286,7 +1286,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design great app clips
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1295,7 +1295,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design with iOS pickers, menus and actions
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1304,7 +1304,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover Core Image debugging techniques
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1313,7 +1313,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover HLS Blocking Preload Hints
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1322,7 +1322,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Edit and play back HDR video with AVFoundation
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1331,7 +1331,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Enable encrypted DNS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1340,7 +1340,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Evaluate and optimize voice interaction for your app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1349,7 +1349,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Explore Computer Vision APIs
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1358,7 +1358,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Explore Packages and Projects with Xcode Playgrounds
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1367,7 +1367,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Explore logging in Swift
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1376,7 +1376,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Explore the new system architecture of Apple Silicon Macs
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1385,7 +1385,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Export HDR media in your app with AVFoundation
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1394,7 +1394,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Get your test results faster
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1403,7 +1403,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Handle interruptions and alerts in UI tests
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1412,7 +1412,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Handle the Limited Photos Library in your app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1421,7 +1421,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Handle trackpad and mouse input
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1430,7 +1430,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Harness Apple GPUs with Metal
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1439,7 +1439,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Introducing Car Keys
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1448,7 +1448,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Leverage enterprise identity and authentication
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1457,7 +1457,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Master Picture in Picture on tvOS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1466,7 +1466,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet Face ID and Touch ID for the web
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1475,7 +1475,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet the new Photos picker
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1484,7 +1484,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Modernize PCI and SCSI drivers with DriverKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1493,7 +1493,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Optimize Metal Performance for Apple Silicon Macs
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1502,7 +1502,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Optimize live streams with HLS Playlist Delta Updates
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1511,7 +1511,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Secure your app: threat modeling and anti-patterns
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1520,7 +1520,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Streamline your app clip
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1529,7 +1529,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Support hardware keyboards in your app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1538,7 +1538,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Support local network privacy in your app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1547,7 +1547,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Swan's Quest, Chapter 2: A time for tones
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1556,7 +1556,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Tap into Game Center: Dashboard, Access Point, and Profile
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1565,7 +1565,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Tap into Game Center: Leaderboards, Achievements, and Multiplayer
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1574,7 +1574,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Visually edit SwiftUI views
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1583,7 +1583,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new for web developers
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1592,7 +1592,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in CareKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1601,7 +1601,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Wallet and Apple Pay
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1610,7 +1610,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in assessment
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1619,7 +1619,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in watchOS design
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1628,7 +1628,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What’s new with in-app purchase
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1637,7 +1637,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Widgets Code-along, part 1: The adventure begins
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1646,7 +1646,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Widgets Code-along, part 2: Alternate timelines
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1655,7 +1655,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Widgets Code-along, part 3: Advancing timelines
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1664,7 +1664,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Adapt ad insertion to Low-Latency HLS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1673,7 +1673,7 @@ Presenters: _Example Guy, Another Person_
 
 ## App accessibility for Switch Control
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1682,7 +1682,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Architecting for subscriptions
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1691,7 +1691,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Author fragmented MPEG-4 content with AVAssetWriter
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1700,7 +1700,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Bring keyboard and mouse gaming to iPad
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1709,7 +1709,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build Image and Video Style Transfer models in Create ML
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1718,7 +1718,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build a SwiftUI view in Swift Playgrounds
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1727,7 +1727,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build document-based apps in SwiftUI
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1736,7 +1736,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build local push connectivity for restricted networks
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1745,7 +1745,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build location-aware enterprise apps
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1754,7 +1754,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Create Swift Playgrounds content for iPad and Mac
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1763,7 +1763,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Debug GPU-side errors in Metal
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1772,7 +1772,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Decode ProRes with AVFoundation and VideoToolbox
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1781,7 +1781,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Deploy Apple devices using zero-touch
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1790,7 +1790,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for the iPadOS pointer
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1799,7 +1799,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design high quality Siri media interactions
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1808,7 +1808,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover AppleSeed for IT and Managed Software Updates
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1817,7 +1817,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover WKWebView enhancements
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1826,7 +1826,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Embrace Swift type inference
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1835,7 +1835,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Expand your SiriKit Media Intents to more platforms
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1844,7 +1844,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Expanding automation with the App Store Connect API
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1853,7 +1853,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Explore numerical computing in Swift
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1862,7 +1862,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Explore the Action & Vision app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1871,7 +1871,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Gain insights into your Metal app with Xcode 12
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1880,7 +1880,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Get the most out of Sign in with Apple
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1889,7 +1889,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Getting started with HealthKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1898,7 +1898,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Improve stream authoring with HLS Tools
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1907,7 +1907,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Keep your complications up to date
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1916,7 +1916,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Make apps smarter with Natural Language
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1925,7 +1925,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet Audio Workgroups
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1934,7 +1934,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Optimize Metal apps and games with GPU counters
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1943,7 +1943,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Optimize the interface of your Mac Catalyst app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1952,7 +1952,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Reduce Latency with HLS Blocking Playlist Reload
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1961,7 +1961,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Stacks, Grids, and Outlines in SwiftUI
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1970,7 +1970,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Support performance-intensive apps and games
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1979,7 +1979,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Swan's Quest, Chapter 3: The notable scroll
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1988,7 +1988,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Sync a Core Data store with the CloudKit public database
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -1997,7 +1997,7 @@ Presenters: _Example Guy, Another Person_
 
 ## The Push Notifications primer
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2006,7 +2006,7 @@ Presenters: _Example Guy, Another Person_
 
 ## The artist’s AR toolkit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2015,7 +2015,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Triage test failures with XCTIssue
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2024,7 +2024,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Unsafe Swift
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2033,7 +2033,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in ClassKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2042,7 +2042,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Core NFC
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2051,7 +2051,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in ResearchKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2060,7 +2060,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in USD
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2069,7 +2069,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in streaming audio for Apple Watch
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2078,7 +2078,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Write tests to fail
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2087,7 +2087,7 @@ Presenters: _Example Guy, Another Person_
 
 ## XCTSkip your tests
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2096,7 +2096,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Accessibility design for Mac Catalyst
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2105,7 +2105,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Add configuration and intelligence to your widgets
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2114,7 +2114,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Advancements in the Objective-C runtime
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2123,7 +2123,7 @@ Presenters: _Example Guy, Another Person_
 
 ## AutoFill everywhere
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2132,7 +2132,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Background execution demystified
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2141,7 +2141,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Become a Simulator expert
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2150,7 +2150,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Beyond counting steps
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2159,7 +2159,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Boost performance and security with modern networking
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2168,7 +2168,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build SwiftUI views for widgets
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2177,7 +2177,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build customized ML models with the Metal Performance Shaders Graph
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2186,7 +2186,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build localization-friendly layouts using Xcode
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2195,7 +2195,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Build scalable enterprise app suites
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2204,7 +2204,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Capture and stream apps on the Mac with ReplayKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2213,7 +2213,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Control training in Create ML with Swift
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2222,7 +2222,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Core Data: Sundries and maxims
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2231,7 +2231,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Create custom apps for employees
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2240,7 +2240,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Create quick interactions with Shortcuts on watchOS
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2249,7 +2249,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Data Essentials in SwiftUI
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2258,7 +2258,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Decipher and deal with common Siri errors
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2267,7 +2267,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Deliver a better HLS audio experience
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2276,7 +2276,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design for location privacy
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2285,7 +2285,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Design great widgets
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2294,7 +2294,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Diagnose performance issues with the Xcode Organizer
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2303,7 +2303,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover how to download and play HLS offline
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2312,7 +2312,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover ray tracing with Metal
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2321,7 +2321,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Discover search suggestions for Apple TV
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2330,7 +2330,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Eliminate animation hitches with XCTest
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2339,7 +2339,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Empower your intents
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2348,7 +2348,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Feature your actions in the Shortcuts app
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2357,7 +2357,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Formatters: Make data human-friendly
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2366,7 +2366,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Get models on device using Core ML Converters
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2375,7 +2375,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Get to Know Metal Function Pointers
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2384,7 +2384,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Handling FHIR without getting burned
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2393,7 +2393,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Identify trends with the Power and Performance API
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2402,7 +2402,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Integrate your app with Wind Down
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2411,7 +2411,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet Watch Face Sharing
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2420,7 +2420,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Refine Objective-C frameworks for Swift
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2429,7 +2429,7 @@ Presenters: _Example Guy, Another Person_
 
 ## SF Symbols 2
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2438,7 +2438,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Safely manage pointers in Swift
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2447,7 +2447,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Shop online with AR Quick Look
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2456,7 +2456,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Structure your app for SwiftUI previews
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2465,7 +2465,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Swan's Quest, Chapter 4: The sequence completes
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2474,7 +2474,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Synchronize health data with HealthKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2483,7 +2483,7 @@ Presenters: _Example Guy, Another Person_
 
 ## The details of UI typography
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2492,7 +2492,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Use Swift on AWS Lambda with Xcode
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2501,7 +2501,7 @@ Presenters: _Example Guy, Another Person_
 
 ## VoiceOver efficiency with custom rotors
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2510,7 +2510,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in MetricKit
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2519,7 +2519,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Universal Links
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2528,7 +2528,7 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Web Inspector
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
@@ -2537,7 +2537,7 @@ Presenters: _Example Guy, Another Person_
 
 ## Why is my app getting killed?
 
-https://developer.apple.com/wwdc20/<insert-session-number-here>
+https://developer.apple.com/wwdc20/`insert-session-number-here`
 
 Presenters: _Example Guy, Another Person_
 
