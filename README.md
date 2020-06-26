@@ -55,6 +55,12 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Why is my app getting killed?
 
+##  Design for intelligence: Make friends with "The System"
+
+##  What’s new with in-app purchase
+
+##  Explore the Action & Vision app
+
 ## Keynote ★
 
 https://developer.apple.com/wwdc20/101/
