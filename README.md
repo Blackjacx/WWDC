@@ -523,7 +523,7 @@ _Daniel Miao_
 
 ## Accelerate your app with CarPlay
 
-https://developer.apple.com/wwdc20/10635 
+https://developer.apple.com/wwdc20/10635
 
 _Jonathan Hersh, Allen Langmaier_
 
