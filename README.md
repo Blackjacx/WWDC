@@ -47,6 +47,8 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
 1. [Explore App Clips](#explore-app-clips)
+1. [Meet the new Photos Picker](#meet-the-new-photos-picker)
+
 
 ## Keynote ★
 
@@ -618,3 +620,45 @@ _James Savage, Luming Yin_
     - SwiftUI
     - `SKOverlay` / AppStoreOverlayModifier (Refer to what’s new in In-app purchase session)
     - `ASAuthorizationController` for sign in or sign up
+
+
+## Meet the new Photos Picker
+
+https://developer.apple.com/videos/play/wwdc2020/10652/
+
+_Tobias Conradi, Justin Jia_
+
+- **PHPicker** 
+  - Direct access to user’s photo gallery
+	- Supports zoom in, multi-select, review
+	- Types are filterable
+	- Privacy built in by default
+	- It won’t prompt the user for access
+	- It runs out of the app’s process
+		- Separate process rendered on top of the app
+		- Only what user selects is passed back to the app
+- **Implementation**
+  - `PHPickerConfiguration` which can include type filters is passed to `PHPickerViewController` which has delegates to handle responses
+  - `PHPickerConfiguration`
+	  - Selection limit
+	  - Image / Video type
+  - Initialize `PHPickerViewController` by using the configuration
+	- Set delegate and implement protocol functions
+	  - `didFinishPicking`
+		- `NSItemProvider` - representation of the item, async, requires error handling
+- **Demo**
+  - Photo preview app
+	- `UIImageView` with placeholder image
+	- Plus button for image selection
+		- Present the new picker
+    - Create `PHPickerConfiguration` with images filter and selection limit (set to zero for unlimited selection)
+		- Initialize the `PHPickerViewController` with this configuration
+		- Present the new controller after setting delegate and following the protocol
+	  - Implement `didFinishPicking`
+			- Dismiss the picker first
+			- Retrieve the image via item provider and use main queue to update your UI
+	  - Use `IndexingIterator<[NSItemProvider]>` to save array of item providers
+	  - Add touch event to iterate through the array of picked images
+- **Note**
+  - `AssetsLibrary` will go away; switch to `PhotoKit`
+  - `UIImagePickerController` is to be deprecated and replaced with `PHPickerViewController`
