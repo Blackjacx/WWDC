@@ -46,6 +46,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
+1. [Streamline your app clip](#streamline-your-app-clip)
 
 ## Keynote ★
 
@@ -552,3 +553,47 @@ _Jonathan Hersh, Allen Langmaier_
   - Dynamic updates to list elements
   - `CPListItem`
   - `CPListImageRowItem`
+
+## Streamline your app clip
+
+https://developer.apple.com/wwdc20/10120/
+
+_Yongjun Zhang, Luming Yin_
+
+- **Best practices**
+  - Focus on essential tasks
+  - Limit the features. Reserve complex features for your app
+  - Require all assets for initial experience
+  - Do not include splash screens
+  - Avoid requiring people to sign up _before_ finishing their task
+  - Only ask for location and notification permissions if needed (more on this below)
+  - Make sure your App Clip has the same name and icon as your app
+  - Put shared assets in a shared asset catalog
+  - Authentication
+    - Support sign in with apple
+    - Use `ASWebAuthenticationSession` for other federated login
+    - Offer username and password login for existing users
+    - Offer "Sign In With Apple" upgrade in the app
+  - For privacy reasons, and because App Clips are ephemeral, some contents are not available to App Clips, such as HealthKit info
+  - App Clips can request permission to use Bluetooth, the camera, and microphone
+- **Streamlining Transactions**
+  - 2 new types of ephemeral permissions: Location and Notification
+    - Allows App Clips to check if the user is within a region, **without prompting for location permission**
+      - Add `NSAppClipRequestLocationConfirmation` with value `true` in your `Info.plist` to enable this
+      - Supports checking a region with a radius of up to 500 meters
+    - Allows App Clips to send notifications for up to 8 hours after each launch, **without prompting for notification permission**.
+      - Add `NSAppClipRequestEphemeralUserNotification` with value `true` in your Info.plist to enable this
+      - Check the authorization status in the `NotificationSettings`, under the new `.ephemeral` status
+    - Users can explicitly disable these permissions via App Clip settings panel
+    - App Clips can prompt the user for full Location and Notifications access, although discouraged
+  - Strongly suggest using ApplePay
+  - Strongly suggest using "Sign In With Apple"
+  - Use `AuthenticationServices` API to sign your users in without showing a login screen (assuming they have already previously signed up in your website for instance)
+- **Transition users to your app**
+  - iOS suggests downloading your app from App Clip experiences, banners and App Clip settings
+  - You can embed `StoreKit` `SKOverlay` in a view
+    - Suggestion: display this overlay only after the user finishes their task. E.g. after payment
+  - **Transfer data on device with a secure App Group**
+    - Only accessible between your App Clip and your app
+    - Once user downloads the app, the App Group will be transferred to the app after the App Clip is deleted
+    - Migrate your "Sign In With Apple" session from your App Clip by persisting the user ID in the secure App Group. Use `ASAuthorizationAppleIDProvider` to verify the user's session without prompting UI
