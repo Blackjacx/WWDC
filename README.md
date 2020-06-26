@@ -47,6 +47,14 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
 
+
+
+## Core Data: Sundries and maxims
+
+## Swan's Quest, Chapter 4: The sequence completes
+
+## Why is my app getting killed?
+
 ## Keynote ★
 
 https://developer.apple.com/wwdc20/101/
