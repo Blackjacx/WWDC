@@ -46,6 +46,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. [Configure and link your App Clips](#configure-and-link-your-app-clips)
 1. [What's new in App Store Connect](#whats-new-in-app-store-connect)
 1. [Accelerate your app with CarPlay](#accelerate-your-app-with-carplay)
+1. [Explore App Clips](#explore-app-clips)
 
 ## Keynote ★
 
@@ -552,3 +553,68 @@ _Jonathan Hersh, Allen Langmaier_
   - Dynamic updates to list elements
   - `CPListItem`
   - `CPListImageRowItem`
+
+
+## Explore App Clips
+
+https://developer.apple.com/wwdc20/10174
+
+_James Savage, Luming Yin_
+
+- **What is an App Clip?**
+    - App Clip Experience URL is required to run App Clips which are parts of your App
+    - On-demand app experiences
+- **App Clip Experiences**
+    - App Clip URLs are similar to Universal Links
+    - Registered using App Store connect
+    - Surfaced through user actions via NFC / QR codes / Links in safari or other apps / Apple App Clip codes combine the ease of NFC and visual codes so they can be tapped or scanned
+- **New App Clip Target in Xcode**
+    - Contains all assets
+    - Needs to be submitted along with the app for review
+    - It gets downloaded separately if the app is not installed on user’s device
+    - Should be as small as possible for quick downloads (less than 10MB but with enough assets to load UI quickly)
+    - Focused user flows - one at a time
+- **Demo**
+    - Ordering smoothies
+    - New App Clip target embedded in the application
+        - Name and bundle ID for app clip added
+        - It can build and run with boilerplate code right away
+    - Add code and resources
+        - `NutritionFacts` dependency added
+        - Create new Assets Catalog as shared assets
+            - Drag App Icon, Colors and other image assets required for app clip into the shared assets catalog
+        - Add the required model and view files to App Clip target
+            - Let go of unwanted swift files like navigation
+        - Conditionally compile out the references to files not added to App Clip
+            - Build Settings > Swift Compiler custom flags > Active Compilation Conditions > Add APPCLIP condition for required schemes.
+            - Use #if !APPCLIP to compile out unwanted references in swift code
+    - Write code for AppClip
+        - Add required models and views to the new AppClip
+        - Include existing views in the AppClip’s content view
+- **Technology Overview**
+    - AppClips are built using same UI components as an App
+    - When launched, it receives `NSUserActivity`
+        - Use the URL to identify the type of experience to be handled
+    - Unlike extensions, AppClip can make use of all iOS SDK APIs
+        - Note: Access to sensitive data is limited
+        - Always check if data is available
+    - New location confirmation API helps get the location quickly without requesting full access
+    - New API for migrating data from AppClip to main app using shared data container once installed
+    - AppClip and it’s local storage will be deleted after period of inactivity
+        - Not included in backups
+    - Can not be launched via Universal links or custom URL schemes
+    - Can not include bundle extensions like content blockers
+- **Device states and transitions**
+    - User scans QR code
+    - iOS locates, downloads and runs the app clip
+    - If the app clip is not revisited for a while, the app clip and it’s data gets deleted
+        - Treat app clip data as cache; which can be deleted
+    - If the app clip is visited frequently, the app clip lifetime will be extended and data may never be cleared
+        - When user downloads your app, iOS will automatically migrate the data container and the user permissions granted by user already
+        - iOS still deletes the app clip and it’s container after copying the data container to the app
+- **Other technologies**
+    - Apple Pay
+    - Notifications
+    - SwiftUI
+    - `SKOverlay` / AppStoreOverlayModifier (Refer to what’s new in In-app purchase session)
+    - `ASAuthorizationController` for sign in or sign up
