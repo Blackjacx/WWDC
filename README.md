@@ -579,7 +579,7 @@ _James Savage, Luming Yin_
 - **Demo**
     - Ordering smoothies
     - New App Clip target embedded in the application
-        - Name and bundle ID for app clip added
+        - Name and bundle ID for App Clip added
         - It can build and run with boilerplate code right away
     - Add code and resources
         - `NutritionFacts` dependency added
