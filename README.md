@@ -564,7 +564,7 @@ https://developer.apple.com/wwdc20/10174
 _James Savage, Luming Yin_
 
 - **What is an App Clip?**
-    - App Clip Experience URL is required to run App Clips which are parts of your App
+    - App Clip Experience URL is required to run App Clips which are parts of your app
     - On-demand app experiences
 - **App Clip Experiences**
     - App Clip URLs are similar to Universal Links
