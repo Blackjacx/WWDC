@@ -142,7 +142,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Visually edit SwiftUI views](#visually-edit-swiftui-views)
 1. **(TO-DO)** [What's new for web developers](#whats-new-for-web-developers)
 1. **(TO-DO)** [What's new in CareKit](#whats-new-in-carekit)
-1. **(TO-DO)** [What's new in Wallet and Apple Pay](#whats-new-in-wallet-and-apple-pay)
+1. [What's new in Wallet and Apple Pay](#whats-new-in-wallet-and-apple-pay)
 1. **(TO-DO)** [What's new in assessment](#whats-new-in-assessment)
 1. **(TO-DO)** [What's new in watchOS design](#whats-new-in-watchos-design)
 1. **(TO-DO)** [What’s new with in-app purchase](#whats-new-with-in-app-purchase)
@@ -332,8 +332,6 @@ https://developer.apple.com/wwdc20/101/
 ## Platform State of the Union ★
 
 https://developer.apple.com/wwdc20/102/
-
-Presenters: _Example Guy, Another Person_
 
 - Some new features: **AirPods Motion API**, **SwiftPM resources**, **New Catalyst Controls**, **ARKit 4**, **Widgets in SwiftUI**, **Depth API**, **TestFlight 100 Testers**, **SwiftUI Lifecycle**, **Catalyst Native Screen Resolution**, **Complications in SwiftUI**, **Xcode StoreKit Testing**, **HomePod Music Services**, **App Clips**, **New SwiftUI Controls**, **Xcode Tabs**, ...
 - Users can make your app the default app used for email and set a default web browser
@@ -637,7 +635,7 @@ Presenters: _Quinton Petty, Praveen Gowda_
 
 https://developer.apple.com/wwdc20/10120/
 
-_Yongjun Zhang, Luming Yin_
+Presenters: _Yongjun Zhang, Luming Yin_
 
 - **Best practices**
   - Focus on essential tasks
@@ -1735,12 +1733,45 @@ Presenters: _Example Guy, Another Person_
 
 ## What's new in Wallet and Apple Pay
 
-https://developer.apple.com/wwdc20/`insert-session-number-here`
+https://developer.apple.com/wwdc20/10662
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Stacey Abrams_
 
-// TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
+- Use Apple Pay to get into public transit and acadamic buildings
+- **API Enhancements**
+  - PKSecureElementPass replaces PKPaymentPass fom now
+  - New Apple Pay Button types: `.reload`  , `.addMoney`, `.topUp`, `.order`, `.rent`, `.support`, `.contribute`, `.tip`
+  - See how to declare a Apple Pay Button on a website at [2:16](https://developer.apple.com/wwdc20/10662?time=136)
+  - PKPaymentButton style `.automatic` automatically switches between light and dark mode
+- **Apple Pay in App Clips**
+  - Could revolutionize everydays payment experience when you can e.g. just tap an NFC tag on a gas station to pay your gas
+  - Guest checkouts using Apple Pay do not require to setup an account anymore and if it is necessary seamless Sign in with Apple is used.
+- **Enhancing Apple Pay experience across platforms**
+  - Merchants can receive redacted billing address
+    - Lower risk of chargebacks for merchnts
+    - Price transparency leads to higher conversion rates
+  - **Apple Pay for Catalyst**
+    - Brings great payment experiences to more mac apps
+    - Brings the newly announced APIs, including the Apple Pay button, to the mac
+  - Improvements in WKWebView will allow more pages to allow Apple Pay transactions now
+- **Contacts Formatting Improvements** to prevent invalid shipping addresses
+  - Street and city fields contain vaild characters only
+  - State is a two letter code
+  - US: Zip code is 5 or 9 digit code
+  - ISO country code is upper case two letter code
+  - Improved experience when correcting information
+    - Raise formatting errors earlier in the payment flow
+    - Users can correct information prior to authentication
+  - Error APIs improved and aligned to new formatting options
+  - Only rolles out in some Australia, Canada, UK, US for now
+- **Adding cards to Apple Pay**
+  - **Issuer Extensions** to improve discoverability from within the Wallet app - needs installatioon of an **Issuer** app
+  - App requires non-UI extension
+    - Extension principal object must subclass `PKIssuerProvisioningExtensionHandler`
+    - Requires non-UI extension entitlement
+  - Added support for a UI extension
+    - Needs to handle re-authentications if required by conforming principal object to `PKIssuerProvisioningExtensionAuthorizationProviding`
+    - Requires UI extension entitlement
 
 ## What's new in assessment
 
