@@ -589,7 +589,7 @@ _James Savage, Luming Yin_
             - Let go of unwanted swift files like navigation
         - Conditionally compile out the references to files not added to App Clip
             - Build Settings > Swift Compiler custom flags > Active Compilation Conditions > Add APPCLIP condition for required schemes.
-            - Use #if !APPCLIP to compile out unwanted references in swift code
+            - Use #if !APPCLIP to compile out unwanted references in Swift code
     - Write code for AppClip
         - Add required models and views to the new AppClip
         - Include existing views in the AppClip’s content view
