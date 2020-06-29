@@ -618,7 +618,7 @@ _James Savage, Luming Yin_
     - Apple Pay
     - Notifications
     - SwiftUI
-    - `SKOverlay` / AppStoreOverlayModifier (Refer to what’s new in In-app purchase session)
+    - `SKOverlay` / `AppStoreOverlayModifier` (refer to [What’s new with in-app purchase](https://developer.apple.com/wwdc20/10661/) session)
     - `ASAuthorizationController` for sign in or sign up
 
 
