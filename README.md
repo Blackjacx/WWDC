@@ -622,7 +622,7 @@ _James Savage, Luming Yin_
     - `ASAuthorizationController` for sign in or sign up
 
 
-## Meet the new Photos Picker
+## Meet the new Photos picker
 
 https://developer.apple.com/wwdc20/10652/
 
