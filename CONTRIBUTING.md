@@ -4,6 +4,8 @@ I'm really glad you're reading this and are willing to help. Watching all the se
 
 ## Recommendations
 
+You should have a look at the [open PR's](https://github.com/Blackjacx/WWDC/pulls) before you start watching a session. There is a chance that a session has already been processed so you can focus on another video.
+
 I watch sessions in 1.5 speed using the awesome player from wwdc.io. This is the only way for me to watch so many sessions. You can try it and if it feels too fast, just reduce the speed to 1.25 which should be fine for most of the people.
 
 Write in a text editor that offers spell check. You'll be surprised by the amount of typos and small mistakes we make by typing while paying attention to the session :)
