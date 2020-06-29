@@ -624,7 +624,7 @@ _James Savage, Luming Yin_
 
 ## Meet the new Photos Picker
 
-https://developer.apple.com/videos/play/wwdc2020/10652/
+https://developer.apple.com/wwdc20/10652/
 
 _Tobias Conradi, Justin Jia_
 
