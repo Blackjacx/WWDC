@@ -10,7 +10,7 @@ I watch sessions in 1.5 speed using the awesome player from wwdc.io. This is the
 
 Write in a text editor that offers spell check. You'll be surprised by the amount of typos and small mistakes we make by typing while paying attention to the session :)
 
-## Submitting changes
+## Submitting Changes
 
 Please try to follow the following rules to have a consistent look and feel:
 - First of all the list is not sorted. If you want to add a new session, please just put it at the bottom.
@@ -20,7 +20,7 @@ Please try to follow the following rules to have a consistent look and feel:
 - The video duration is not needed here since you can see it when you click the link.
 - For the session please do not add **code samples**, except one-liners and no **images**. I plan to have all session notes skimmable as easy as possible. But you can link to the relevant position in the video by using a short link in like this: [22:32](https://developer.apple.com/wwdc19/245/?time=1337). Just put the seconds at the end where the interesting part starts in the video.
 - Writing while watching the session can be challenging and you'll often make typos or innocent grammar mistakes. Please review what you're submitting before opening a PR, as this will make your notes available to others faster, and with higher quality.
-- `objc` != `Obj-C` != `objective-C` != `Objective-C`. `IOS` is not an operating system and neither `XCode` is an IDE. Double check your spelling and make sure it's consistent.
+- `objc` != `Obj-C` != `objective-C` != `Objective-C`. `IOS` is not an operating system and neither `XCode` is an IDE (`iOS` and `Xcode` would be correct). Please double check your spelling and make sure it's consistent.
 
 When you are finished please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with some notes of what you have done (read more about [pull requests](http://help.github.com/pull-requests/)).
 
