@@ -586,7 +586,7 @@ _James Savage, Luming Yin_
         - Create new Assets Catalog as shared assets
             - Drag App Icon, Colors and other image assets required for app clip into the shared assets catalog
         - Add the required model and view files to App Clip target
-            - Let go of unwanted swift files like navigation
+            - Let go of unwanted Swift files like navigation
         - Conditionally compile out the references to files not added to App Clip
             - Build Settings > Swift Compiler custom flags > Active Compilation Conditions > Add APPCLIP condition for required schemes.
             - Use #if !APPCLIP to compile out unwanted references in Swift code
