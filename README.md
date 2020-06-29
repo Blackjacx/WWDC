@@ -633,12 +633,67 @@ Presenters: _Quinton Petty, Praveen Gowda_
 
 ## Explore app clips
 
-https://developer.apple.com/wwdc20/`insert-session-number-here`
+https://developer.apple.com/wwdc20/10174
 
-Presenters: _Example Guy, Another Person_
+Presenters: _James Savage, Luming Yin_
 
-// TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
+- **What is an App Clip?**
+    - App Clip Experience URL is required to run App Clips which are parts of your app
+    - On-demand app experiences
+- **App Clip Experiences**
+    - App Clip URLs are similar to Universal Links
+    - Registered using App Store Connect
+    - Surfaced through user actions via NFC / QR codes / links in Safari or other apps / Apple App Clip codes combine the ease of NFC and visual codes so they can be tapped or scanned
+- **New App Clip Target in Xcode**
+    - Contains all assets
+    - Needs to be submitted along with the app for review
+    - It gets downloaded separately if the app is not installed on user’s device
+    - Should be as small as possible for quick downloads (less than 10MB but with enough assets to load UI quickly)
+    - Focused user flows - one at a time
+- **Demo**
+    - Ordering smoothies
+    - New App Clip target embedded in the application
+        - Name and bundle ID for App Clip added
+        - It can build and run with boilerplate code right away
+    - Add code and resources
+        - `NutritionFacts` dependency added
+        - Create new Assets Catalog as shared assets
+            - Drag App Icon, Colors and other image assets required for app clip into the shared assets catalog
+        - Add the required model and view files to App Clip target
+            - Let go of unwanted Swift files like navigation
+        - Conditionally compile out the references to files not added to App Clip
+            - Build Settings > Swift Compiler custom flags > Active Compilation Conditions > Add APPCLIP condition for required schemes.
+            - Use #if !APPCLIP to compile out unwanted references in Swift code
+    - Write code for App Clip
+        - Add required models and views to the new AppClip
+        - Include existing views in the App Clip’s content view
+- **Technology Overview**
+    - App Clips are built using same UI components as an app
+    - When launched, it receives `NSUserActivity`
+        - Use the URL to identify the type of experience to be handled
+    - Unlike extensions, App Clip can make use of all iOS SDK APIs
+        - Note: Access to sensitive data is limited
+        - Always check if data is available
+    - New location confirmation API helps get the location quickly without requesting full access
+    - New API for migrating data from App Clip to main app using shared data container once installed
+    - App Clip and its local storage will be deleted after period of inactivity
+        - Not included in backups
+    - Can not be launched via Universal Links or custom URL schemes
+    - Can not include bundle extensions like content blockers
+- **Device states and transitions**
+    - User scans QR code
+    - iOS locates, downloads and runs the App Clip
+    - If the App Clip is not revisited for a while, the App Clip and its data gets deleted
+        - Treat App Clip data as cache; which can be deleted
+    - If the App Clip is visited frequently, its lifespan will be extended and data may never be cleared
+        - When user downloads your app, iOS will automatically migrate the data container and the permissions that were already granted by the user
+        - iOS still deletes the App Clip and its container after copying the data container to the app
+- **Other technologies**
+    - Apple Pay
+    - Notifications
+    - SwiftUI
+    - `SKOverlay` / `AppStoreOverlayModifier` (refer to [What’s new with in-app purchase](https://developer.apple.com/wwdc20/10661/) session)
+    - `ASAuthorizationController` for sign in or sign up
 
 ## Inspect, modify, and construct PencilKit drawings
 
@@ -1475,12 +1530,44 @@ Presenters: _Example Guy, Another Person_
 
 ## Meet the new Photos picker
 
-https://developer.apple.com/wwdc20/`insert-session-number-here`
+https://developer.apple.com/wwdc20/10652/
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Tobias Conradi, Justin Jia_
 
-// TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
+- **PHPicker**
+  - Direct access to user’s photo gallery
+	- Supports zoom in, multi-select, review
+	- Types are filterable
+	- Privacy built in by default
+	- It won’t prompt the user for access
+	- It runs out of the app’s process
+		- Separate process rendered on top of the app
+		- Only what user selects is passed back to the app
+- **Implementation**
+  - `PHPickerConfiguration` (which can include type filters) is passed to `PHPickerViewController`, which has delegates to handle responses
+  - `PHPickerConfiguration`
+	  - Selection limit
+	  - Image / Video type
+  - Initialize `PHPickerViewController` by using the configuration
+	- Set delegate and implement protocol functions
+	  - `didFinishPicking`
+		- `NSItemProvider` - representation of the item, async, requires error handling
+- **Demo**
+  - Photo preview app
+	- `UIImageView` with placeholder image
+	- Plus button for image selection
+		- Present the new picker
+    - Create `PHPickerConfiguration` with images filter and selection limit (set to zero for unlimited selection)
+		- Initialize the `PHPickerViewController` with this configuration
+		- Present the new controller after setting delegate and following the protocol
+	  - Implement `didFinishPicking`
+			- Dismiss the picker first
+			- Retrieve the image via item provider and use main queue to update your UI
+	  - Use `IndexingIterator<[NSItemProvider]>` to save array of item providers
+	  - Add touch event to iterate through the array of picked images
+- **Note**
+  - `AssetsLibrary` will go away; switch to `PhotoKit`
+  - `UIImagePickerController` is to be deprecated and replaced with `PHPickerViewController`
 
 ## Modernize PCI and SCSI drivers with DriverKit
 
