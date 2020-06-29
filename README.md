@@ -594,7 +594,7 @@ _James Savage, Luming Yin_
         - Add required models and views to the new AppClip
         - Include existing views in the App Clip’s content view
 - **Technology Overview**
-    - AppClips are built using same UI components as an App
+    - App Clips are built using same UI components as an app
     - When launched, it receives `NSUserActivity`
         - Use the URL to identify the type of experience to be handled
     - Unlike extensions, AppClip can make use of all iOS SDK APIs
