@@ -612,7 +612,7 @@ _James Savage, Luming Yin_
     - If the App Clip is not revisited for a while, the App Clip and its data gets deleted
         - Treat App Clip data as cache; which can be deleted
     - If the App Clip is visited frequently, its lifespan will be extended and data may never be cleared
-        - When user downloads your app, iOS will automatically migrate the data container and the user permissions granted by user already
+        - When user downloads your app, iOS will automatically migrate the data container and the permissions that were already granted by the user
         - iOS still deletes the app clip and it’s container after copying the data container to the app
 - **Other technologies**
     - Apple Pay
