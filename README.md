@@ -638,7 +638,7 @@ _Tobias Conradi, Justin Jia_
 		- Separate process rendered on top of the app
 		- Only what user selects is passed back to the app
 - **Implementation**
-  - `PHPickerConfiguration` which can include type filters is passed to `PHPickerViewController` which has delegates to handle responses
+  - `PHPickerConfiguration` (which can include type filters) is passed to `PHPickerViewController`, which has delegates to handle responses
   - `PHPickerConfiguration`
 	  - Selection limit
 	  - Image / Video type
