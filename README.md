@@ -608,7 +608,7 @@ _James Savage, Luming Yin_
     - Can not include bundle extensions like content blockers
 - **Device states and transitions**
     - User scans QR code
-    - iOS locates, downloads and runs the app clip
+    - iOS locates, downloads and runs the App Clip
     - If the app clip is not revisited for a while, the app clip and it’s data gets deleted
         - Treat App Clip data as cache; which can be deleted
     - If the app clip is visited frequently, the app clip lifetime will be extended and data may never be cleared
