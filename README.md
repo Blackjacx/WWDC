@@ -592,7 +592,7 @@ _James Savage, Luming Yin_
             - Use #if !APPCLIP to compile out unwanted references in Swift code
     - Write code for App Clip
         - Add required models and views to the new AppClip
-        - Include existing views in the AppClip’s content view
+        - Include existing views in the App Clip’s content view
 - **Technology Overview**
     - AppClips are built using same UI components as an App
     - When launched, it receives `NSUserActivity`
