@@ -597,7 +597,7 @@ _James Savage, Luming Yin_
     - App Clips are built using same UI components as an app
     - When launched, it receives `NSUserActivity`
         - Use the URL to identify the type of experience to be handled
-    - Unlike extensions, AppClip can make use of all iOS SDK APIs
+    - Unlike extensions, App Clip can make use of all iOS SDK APIs
         - Note: Access to sensitive data is limited
         - Always check if data is available
     - New location confirmation API helps get the location quickly without requesting full access
