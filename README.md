@@ -604,7 +604,7 @@ _James Savage, Luming Yin_
     - New API for migrating data from App Clip to main app using shared data container once installed
     - App Clip and its local storage will be deleted after period of inactivity
         - Not included in backups
-    - Can not be launched via Universal links or custom URL schemes
+    - Can not be launched via Universal Links or custom URL schemes
     - Can not include bundle extensions like content blockers
 - **Device states and transitions**
     - User scans QR code
