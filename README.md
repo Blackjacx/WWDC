@@ -570,7 +570,7 @@ _Yongjun Zhang, Luming Yin_
   - Make sure your App Clip has the same name and icon as your app
   - Put shared assets in a shared asset catalog
   - Authentication
-    - Support sign in with apple
+    - Support Sign in with Apple
     - Use `ASWebAuthenticationSession` for other federated login
     - Offer username and password login for existing users
     - Offer "Sign In With Apple" upgrade in the app
@@ -592,7 +592,7 @@ _Yongjun Zhang, Luming Yin_
 - **Transition users to your app**
   - iOS suggests downloading your app from App Clip experiences, banners and App Clip settings
   - You can embed `StoreKit` `SKOverlay` in a view
-    - Suggestion: display this overlay only after the user finishes their task. E.g. after payment
+    - Suggestion: display this overlay only after the user finishes their task, e.g. after payment
   - **Transfer data on device with a secure App Group**
     - Only accessible between your App Clip and your app
     - Once user downloads the app, the App Group will be transferred to the app after the App Clip is deleted
