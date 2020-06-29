@@ -609,7 +609,7 @@ _James Savage, Luming Yin_
 - **Device states and transitions**
     - User scans QR code
     - iOS locates, downloads and runs the App Clip
-    - If the app clip is not revisited for a while, the app clip and it’s data gets deleted
+    - If the App Clip is not revisited for a while, the App Clip and its data gets deleted
         - Treat App Clip data as cache; which can be deleted
     - If the app clip is visited frequently, the app clip lifetime will be extended and data may never be cleared
         - When user downloads your app, iOS will automatically migrate the data container and the user permissions granted by user already
