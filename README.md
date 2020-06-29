@@ -568,7 +568,7 @@ _James Savage, Luming Yin_
     - On-demand app experiences
 - **App Clip Experiences**
     - App Clip URLs are similar to Universal Links
-    - Registered using App Store connect
+    - Registered using App Store Connect
     - Surfaced through user actions via NFC / QR codes / links in safari or other apps / Apple App Clip codes combine the ease of NFC and visual codes so they can be tapped or scanned
 - **New App Clip Target in Xcode**
     - Contains all assets
