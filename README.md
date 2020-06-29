@@ -214,7 +214,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Core Data: Sundries and maxims](#core-data-sundries-and-maxims)
 1. **(TO-DO)** [Create custom apps for employees](#create-custom-apps-for-employees)
 1. **(TO-DO)** [Create quick interactions with Shortcuts on watchOS](#create-quick-interactions-with-shortcuts-on-watchos)
-1. **(TO-DO)** [Data Essentials in SwiftUI](#data-essentials-in-swiftui)
+1. [Data Essentials in SwiftUI](#data-essentials-in-swiftui)
 1. **(TO-DO)** [Decipher and deal with common Siri errors](#decipher-and-deal-with-common-siri-errors)
 1. **(TO-DO)** [Deliver a better HLS audio experience](#deliver-a-better-hls-audio-experience)
 1. **(TO-DO)** [Design for location privacy](#design-for-location-privacy)
@@ -2414,11 +2414,65 @@ Presenters: _Example Guy, Another Person_
 
 ## Data Essentials in SwiftUI
 
-https://developer.apple.com/wwdc20/`insert-session-number-here`
+https://developer.apple.com/wwdc20/10040
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Curt Clifton, Luca Bernardi, Raj Ramamurthy_
 
-// TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Getting Started**
+  - Always ask you the following questions:
+    - What data does my view need?
+    - How will the view manipulate this date?
+    - Where will the data come from?
+  - Immutable views, that just display data, contain only let properties
+  - Pull multiple properties in their own **config object**
+    - The config object can contain functions to mutate its state
+    - Using `@State private var config: ConfigObject()` to re-render your view after `config` changed
+    - Let parent and sub views communicate over a single config object by sharing it using `@Binding var config`
+    - Pass `config` down by marking the it as reference using the dollar symbol: `SubView(config: $config)`
+- **Modeling Data Using ObservableObject**
+  - Class-constrained protocol (only adoptable by reference types)
+  - Can be used to achieve super-custom behaviors, e.g. _backing data by a service or server_
+  - Conform by implementing `var objectWillChange: Self.ObjectWillChangePublisher { get }`
+  - Use to **manage data life cycle**, **handle side-effects**, **integrate with existing components**
+  - Will be your source of truth
+  - Doesn't need to be your full data model - split into multiple observable objects if your model is complex
+  - Use a single ObservableObject for all your views if your data model is simple
+  - Mark properties of your ObservableObject, your view is interested in as `@Published var progress: Double`
+  - **How to create an ObservableObject dependency?**
+    - `@ObservedObject` 
+      - `@ObservedObject var config: Configuration`
+      - You need to manage the objects ownership outside of your view
+      - Create a binding to any value-type property of the ObservableObject to pass it into e.g. `$config.isFinished` a `Toggle` control and let it automatically update your view
+    - `@StateObject`
+      - SwiftUI owns the ObservableObject
+      - Creation/destruction is tied to view's life cycle
+      - Instantiated just before body runs
+      - Use it to implement e.g. an `ImageLoader: ObservableObject` with a `@published var image: Image` property
+      - Whenever `@StateObject` changes the view is re-rendered and thus populated with the image
+    - `EnvironmentObject`
+      - In SwiftUI you typically have a hierarchy of many modular sub views
+      - To avoid a lot of boilerplate by passing around ObservableObject's pass it to `.environmentObject(...)` on your root view
+      - Changes to it, from any view in the hierarchy, will be reflected in any other view
+- **SwiftUI Performance Considerations**
+  - **Avoid slow view updates**
+    - Make view initializers cheap, e.g. no dispatches
+    - Make body a pure function
+    - Avoid assumptions
+  - New event sources: `onChange`, `onOpenURL`, `onContinueUserActivity` - run on main thread
+- **Who owns the data?**
+  - Share data in a common ancestor
+  - Leverage `@StateObject`
+  - Consider placing global data in `App` and pass it down the view hierarchy. Changes to it will re-render **all** scenes (instances/windows) of your app
+  - New 2020: Property Wrappers that offer **data persistence across app restarts** and can be used as source of truth
+    - `@SceneStorage` 
+      - Per-scene property wrapper for reading/writing data managed by SwiftUI
+      - Light-weight storage for your views data
+      - Use it to populate your collection views
+    - `@AppStorage`
+      - App-scoped global storage, persisted using `UserDefaults`, usable anywhere (app/view)
+      - Perfect for storing settings
+      - `@AppStorage("amountOfGold") private var amountOfGold = 5000`
+      - Automatically reads/writes from/to UserDefaults whenever the property changes
 
 
 ## Decipher and deal with common Siri errors
