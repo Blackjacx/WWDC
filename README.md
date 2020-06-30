@@ -169,7 +169,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Design high quality Siri media interactions](#design-high-quality-siri-media-interactions)
 1. **(TO-DO)** [Discover AppleSeed for IT and Managed Software Updates](#discover-appleseed-for-it-and-managed-software-updates)
 1. **(TO-DO)** [Discover WKWebView enhancements](#discover-wkwebview-enhancements)
-1. **(TO-DO)** [Embrace Swift type inference](#embrace-swift-type-inference)
+1. [Embrace Swift type inference](#embrace-swift-type-inference)
 1. **(TO-DO)** [Expand your SiriKit Media Intents to more platforms](#expand-your-sirikit-media-intents-to-more-platforms)
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#expanding-automation-with-the-app-store-connect-api)
 1. **(TO-DO)** [Explore numerical computing in Swift](#explore-numerical-computing-in-swift)
@@ -1993,12 +1993,28 @@ Presenters: _Example Guy, Another Person_
 
 ## Embrace Swift type inference
 
-https://developer.apple.com/wwdc20/`insert-session-number-here`
+https://developer.apple.com/wwdc20/10165/
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Holly Borla_
 
-// TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
+- **Leveraging type inference**
+	- A type can be inferred by the compiler given the context surrounding a variable or function
+	- SwiftUI code relies on type inference for reusable views
+	- A demo is presented showing a SwiftUI component being built using generics
+- **How type inference works in compiler**
+	- Think of type inference as a puzzle
+	- It resolves the puzzle by filling in the missing pieces using clues from the source code
+	- Solving one puzzle can give the compiler more clues on how to solve other puzzles
+	- **Type inference errors**
+		- If a puzzle can't be solved, there's an error in the source code
+		- During type inference, the compiler will record information about errors in source code
+		- Compiler uses heuristics to attempt to fix errors in order to continue type inference
+		- Once type inference is done, the compiler will provide actionable error messages based on collected information (some errors might have auto-fixes)
+	- Swift 5.3 and Xcode 12 improved error handling a lot, showing more meaningful and reliable error messages
+- **Using Swift and Xcode to fix compile errors**
+	- The compiler will leave breadcrumbs about what the compiler was doing when it found an error
+	- This can help you connect the dots between the error you're seeing on the editor and other files in your project
+	- Hold `**⌥** (Option) + **⇧** (Shift)` on an error breadcrumb and drag it to the right of the source editor, to open the source editor and the breadcrumbs details side by side
 
 ## Expand your SiriKit Media Intents to more platforms
 
