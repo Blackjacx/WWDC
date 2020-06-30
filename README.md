@@ -2014,7 +2014,7 @@ Presenter: _Holly Borla_
 - **Using Swift and Xcode to fix compile errors**
 	- The compiler will leave breadcrumbs about what the compiler was doing when it found an error
 	- This can help you connect the dots between the error you're seeing on the editor and other files in your project
-	- Hold `**⌥** (Option) + **⇧** (Shift)` on an error breadcrumb and drag it to the right of the source editor, to open the source editor and the breadcrumbs details side by side
+	- Hold **⌥ + ⇧** on an error breadcrumb and drag it to the right of the source editor, to open the source editor and the breadcrumbs details side by side
 
 ## Expand your SiriKit Media Intents to more platforms
 
