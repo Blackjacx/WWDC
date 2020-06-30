@@ -954,22 +954,21 @@ Presenter: _Daniel Miao_
 
 https://developer.apple.com/wwdc20/10182/
 
-Presenters: _Netra Kenkarey_
+Presenter: _Netra Kenkarey_
 
 - **Symptoms**
   - Developers can now track symptoms in HealthKit, read and write symptom samples
-  - HealthKit attempted to cover and track a wide range of symptoms (shortness of breath, sleep changes, appetite changes, fever, headache, fever etc)
+  - HealthKit attempted to cover and track a wide range of symptoms (shortness of breath, sleep changes, appetite changes, fever, headache, etc)
   - There are 13 symptom data types in HealthKit
 - **Electrocardiogram (ECG)**
   - ECG samples will be available for reading in the latest version of iOS and watchOS 
   - An ECG sample can be read as an [HKElectrocardiogram](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram) (it represents a waveform as a series of voltage values)
-  - The [HKElectrocardiogram](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram) sample is a collection of voltage measurements
   - ECG sample has important properties that describe the measurements
   - [classification (HKElectrocardiogram.Classification)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551981-classification)
     - Apple Watch will give the result of the recording in the form of a classification
     - The classification is divided into 2 types
       - Sinus Rhithm (heart is beating in a uniform pattern)
-      - Atrial fibrillation (form of irregular rhythm, user shopuld probably go see their doctor)
+      - Atrial fibrillation (form of irregular rhythm, user should probably go see their doctor)
     - If Apple Watch is unable to determine the ECG result, either due to a low or a high heart rate or due to any other reason, the result is considered inconclusive
   - [symptomStatus (HKElectrocardiogram.SymptomsStatus)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551984-symptomsstatus)
     - It tells if the user associated a symptom with this ECG (e.g. heartburn, tightness in the chest)
@@ -978,16 +977,16 @@ Presenters: _Netra Kenkarey_
   - [samplingFrequence (HKQuantity?)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551983-samplingfrequency)
   - [numberOfVoltageMeasurements (Int)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551982-numberofvoltagemeasurements)
     - It refers to the individual voltage measurements that make up an ECG sample
-- **[HKEelectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)**
-  - To retrieve the individual measurements run the [HKEelectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)
-  - Fetch the ECG samples with any of the HealthKit queries and then initialize the [HKEelectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery) with the fetched sample
+- **[HKElectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)**
+  - To retrieve the individual measurements run the [HKElectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)
+  - Fetch the ECG samples with any of the HealthKit queries and then initialize the [HKElectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery) with the fetched sample
   - When this query is executed on the HealthStore, you get the individual voltage measurements back in the ECG and the data handler
 - **Mobility**
   - **New set of mobility types** (available for reading and writing on the latest iOS and watchOS)
     - Walking speed and step length
-    - Walking assymetry and double sypport percentage
+    - Walking assymetry and double support percentage
     - Stair ascent and descent speed
-    - Six minute walk test distance
+    - Six-minute walk test distance
   
 ## What's new in Low-Latency HLS
 
