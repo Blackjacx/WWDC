@@ -1,0 +1,36 @@
+name: Readme Auto Generation
+
+on:
+  push:
+    branches:
+    - master
+    paths-ignore:
+    - README.md
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v2
+      # We need to switch to master below
+      with:
+        ref: 'auto-generate-readme'
+        fetch-depth: 0          
+    - name: Install Dependencies
+      run: brew install ag
+    - name: Generating Readme
+      run: ./generate-readme.sh
+    - name: Output Readme
+      run: cat README.md
+    - name: Commit New Readme
+      run: |
+          git config --global user.email "stefan.herold@gmail.com"
+          git config --global user.name "Stefan Herold"
+          git checkout master          
+          git add README.md || echo "No changes to commit"
+          git commit README.md -m 'Re-build README.md' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
