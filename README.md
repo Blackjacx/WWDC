@@ -962,24 +962,24 @@ Presenter: _Netra Kenkarey_
   - There are 13 symptom data types in HealthKit
 - **Electrocardiogram (ECG)**
   - ECG samples will be available for reading in the latest version of iOS and watchOS 
-  - An ECG sample can be read as an [HKElectrocardiogram](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram) (it represents a waveform as a series of voltage values)
+  - An ECG sample can be read as an [`HKElectrocardiogram`](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram) (it represents a waveform as a series of voltage values)
   - ECG sample has important properties that describe the measurements
-  - [classification (HKElectrocardiogram.Classification)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551981-classification)
+  - [classification (`HKElectrocardiogram.Classification`)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551981-classification)
     - Apple Watch will give the result of the recording in the form of a classification
     - The classification is divided into 2 types
       - Sinus Rhithm (heart is beating in a uniform pattern)
       - Atrial fibrillation (form of irregular rhythm, user should probably go see their doctor)
     - If Apple Watch is unable to determine the ECG result, either due to a low or a high heart rate or due to any other reason, the result is considered inconclusive
-  - [symptomStatus (HKElectrocardiogram.SymptomsStatus)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551984-symptomsstatus)
+  - [symptomStatus (`HKElectrocardiogram.SymptomsStatus`)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551984-symptomsstatus)
     - It tells if the user associated a symptom with this ECG (e.g. heartburn, tightness in the chest)
     - The symptom experienced can be recorded along with the ECG
-  - [averageHeartRage (HKQuantity?)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551980-averageheartrate)
-  - [samplingFrequence (HKQuantity?)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551983-samplingfrequency)
-  - [numberOfVoltageMeasurements (Int)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551982-numberofvoltagemeasurements)
+  - [averageHeartRage (`HKQuantity?`)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551980-averageheartrate)
+  - [samplingFrequence (`HKQuantity?`)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551983-samplingfrequency)
+  - [numberOfVoltageMeasurements (`Int`)](https://developer.apple.com/documentation/healthkit/hkelectrocardiogram/3551982-numberofvoltagemeasurements)
     - It refers to the individual voltage measurements that make up an ECG sample
-- **[HKElectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)**
-  - To retrieve the individual measurements run the [HKElectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)
-  - Fetch the ECG samples with any of the HealthKit queries and then initialize the [HKElectrocardiogramQuery](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery) with the fetched sample
+- **[`HKElectrocardiogramQuery`](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)**
+  - To retrieve the individual measurements run the [`HKElectrocardiogramQuery`](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery)
+  - Fetch the ECG samples with any of the HealthKit queries and then initialize the [`HKElectrocardiogramQuery`](https://developer.apple.com/documentation/healthkit/hkelectrocardiogramquery) with the fetched sample
   - When this query is executed on the HealthStore, you get the individual voltage measurements back in the ECG and the data handler
 - **Mobility**
   - **New set of mobility types** (available for reading and writing on the latest iOS and watchOS)
