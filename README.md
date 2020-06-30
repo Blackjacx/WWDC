@@ -952,7 +952,7 @@ Presenter: _Daniel Miao_
 
 ## What's new in HealthKit
 
-https://developer.apple.com/wwdc20/10165/
+https://developer.apple.com/wwdc20/10182/
 
 Presenters: _Netra Kenkarey_
 
