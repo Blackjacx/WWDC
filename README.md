@@ -38,6 +38,8 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
+![Progress](https://progress-bar.dev/13/?scale=185&title=Progress&width=600&suffix=%20/%20185%20Sessions)
+
 1. [Keynote ★](#keynote-)
 1. [Platform State of the Union ★](#platform-state-of-the-union-)
 1. **(TO-DO)** [Adopt the new look of macOS](#adopt-the-new-look-of-macos)
@@ -2439,7 +2441,7 @@ Presenters: _Curt Clifton, Luca Bernardi, Raj Ramamurthy_
   - Use a single ObservableObject for all your views if your data model is simple
   - Mark properties of your ObservableObject, your view is interested in as `@Published var progress: Double`
   - **How to create an ObservableObject dependency?**
-    - `@ObservedObject` 
+    - `@ObservedObject`
       - `@ObservedObject var config: Configuration`
       - You need to manage the objects ownership outside of your view
       - Create a binding to any value-type property of the ObservableObject to pass it into e.g. `$config.isFinished` a `Toggle` control and let it automatically update your view
@@ -2464,7 +2466,7 @@ Presenters: _Curt Clifton, Luca Bernardi, Raj Ramamurthy_
   - Leverage `@StateObject`
   - Consider placing global data in `App` and pass it down the view hierarchy. Changes to it will re-render **all** scenes (instances/windows) of your app
   - New 2020: Property Wrappers that offer **data persistence across app restarts** and can be used as source of truth
-    - `@SceneStorage` 
+    - `@SceneStorage`
       - Per-scene property wrapper for reading/writing data managed by SwiftUI
       - Light-weight storage for your views data
       - Use it to populate your collection views
