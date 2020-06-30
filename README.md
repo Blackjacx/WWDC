@@ -38,7 +38,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/13/?scale=185&title=Progress&width=600&suffix=%20/%20185%20Sessions)
+![Progress](https://progress-bar.dev/14/?scale=184&title=Progress&width=600&suffix=%20/%20184%20Sessions)
 
 1. [Keynote ★](#keynote-)
 1. [Platform State of the Union ★](#platform-state-of-the-union-)
