@@ -5,7 +5,7 @@ folder="./summaries/2020"
 readme="./README.md"
 
 total=$(find $folder -type f 2> /dev/null -name "*.md" | wc -l | sed 's/^[ ]*//')
-todo=$(cat $folder/* | grep -c "^##### TO-DO" | wc -l | sed 's/^[ ]*//')
+todo=$(cat $folder/* | grep -c "^##### TO-DO")
 done=$((total - todo))
 toc=()
 content=()
