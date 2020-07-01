@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/14/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
+![Progress](https://progress-bar.dev/15/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -57,7 +57,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Create a seamless speech experience in your apps](#Create-a-seamless-speech-experience-in-your-apps)
 1. **(TO-DO)** [Lists in UICollectionView](#Lists-in-UICollectionView)
 1. **(TO-DO)** [Modern cell configuration](#Modern-cell-configuration)
-1. **(TO-DO)** [Meet WidgetKit](#Meet-WidgetKit)
+1. [Meet WidgetKit](#Meet-WidgetKit)
 1. **(TO-DO)** [Stacks, Grids, and Outlines in SwiftUI](#Stacks-Grids-and-Outlines-in-SwiftUI)
 1. **(TO-DO)** [Build SwiftUI views for widgets](#Build-SwiftUI-views-for-widgets)
 1. **(TO-DO)** [Widgets Code-along, part 1: The adventure begins](#Widgets-Code-along-part-1-The-adventure-begins)
@@ -409,9 +409,68 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10028
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Nahir Khan, Neil Desai_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- Widgets are now used across all platforms
+- Great widgets are glancable, relevant and personalized
+- **Smart stacks** are collections of widgets and automatically show the right one on top using on-device intelligence
+- Widgets support **configuration** by tapping them - this is realized using **intents** similar to SiriKit
+- e.g. choosing the city in a Weather app
+- UI built entirely in SwiftUI
+- **How WidgetKit works**
+  - WidgetKit extensions are background extensions 
+  - They return a series of view hierarchies in a time line
+  - Time line is sent to the home screen which presents the right view at the right time
+  - Since views are "ready" they can be re-used at different points in the system, e.g. the Widget Gallery
+  - Time line is refreshed from main app and updates are scheduled by extension
+    - Imagine the Calendar time line for the day. One event is updated from Calendar, which then wakes up the extension and provides the new time line.
+- **Building a Widget**
+  - Single Widget Extension supports multiple kinds of widgets on different platforms
+  - **Possible configurations:** `Static` (Workout widget) or `Intent-Based` (Reminder widget that can be personalized)
+  - **Supported Families:** A widget can enable one or many of the following families: `systemSmall`, `systemMedium`, `systemLarge`
+  - Widget struct must conform to `Widget` and its body to `WidgetConfiguration`
+  - **How to build a glancable experience**
+    - Widgets are **not** mini apps they rather project content on the home screen
+    - No scrolling
+    - No videos or animated images
+    - Tap interactions to deep link into main app. Widget associable with a URL link using the widgetURL API (use the new Link API of SwiftUI)
+    - Important new view types: 
+      - `Placeholder`
+        - Should not contain user data
+        - Great placeholder UIs show a representation of what kind your data is
+      - `Snapshot` 
+        - Represent a single entry in time
+        - Should return a view as quickly as possible
+        - Used to display your widget in the gallery
+        - Use it as the first entry in your time line so users get what they see in the gallery
+      - `Time line`
+        - Combination of views and dates
+        - Output if WidgetKit extension is serialized to disk which enabled rendering of individual entries just in time
+    - **Reloads** 
+      - Wake up the extension and ask for a new time line
+      - Help to ensure that content is up to date
+  - Get a `TimelineProvider` by `struct Provider: TimelineProvider`
+    - Implement `func snapshot(...)` and `func timeline(...)` for returning the respective data
+    - Provide a reload policy at Time line cretion time  to tell when the time line should be reloaded: `atEnd`, `after(date: Date)`, `never`
+  - System determines the best time to reload the widget, e.g. based on:
+    - Background notification
+    - Significant time change
+    - Changes in the app made by the user, e.g. new Calendar entry
+  - Use `WidgetCenter.[reloadTimelines(ofKind:), reloadAllTimelined]` to programmatically reload time lines
+  - Get current configurations with `WidgetCenter.getCurrentConfigurations(completion:)`
+    - Use batch requests 
+    - Do not overuse networking from a widget
+  - Use `onBackgroundURLSessionEvents` modifier to launch a network task which delivers the result to your extension
+    - Reloads are budgeted by the system, do not overuse them
+  - **Personalization**
+    - Use the `Intents` framework, known from Siri, to customize the widgets behavior
+    - Use the new **In-App Intent Handling** to answer requests from your widget
+    - `IntentConfiguration` is used to power intent-based widget configurations
+    - `IntentTimelineProvider` is used to generate specific time lines
+  - **Intelligence**
+    - Widgets are displayed on the home screen by on-device intelligence
+    - Your app can donate shortcuts
+    - Widget extension can annotate time line entries using `TimelineEntryRelevance` with its score and duration properties
 
 
 ## Stacks, Grids, and Outlines in SwiftUI
