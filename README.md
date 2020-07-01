@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/15/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
+![Progress](https://progress-bar.dev/16/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -85,7 +85,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Empower your intents](#Empower-your-intents)
 1. **(TO-DO)** [Decipher and deal with common Siri errors](#Decipher-and-deal-with-common-Siri-errors)
 1. **(TO-DO)** [Diagnose performance issues with the Xcode Organizer](#Diagnose-performance-issues-with-the-Xcode-Organizer)
-1. **(TO-DO)** [Eliminate animation hitches with XCTest](#Eliminate-animation-hitches-with-XCTest)
+1. [Eliminate animation hitches with XCTest](#Eliminate-animation-hitches-with-XCTest)
 1. **(TO-DO)** [Why is my app getting killed?](#Why-is-my-app-getting-killed)
 1. **(TO-DO)** [What's new in MetricKit](#Whats-new-in-MetricKit)
 1. **(TO-DO)** [Integrate your app with Wind Down](#Integrate-your-app-with-Wind-Down)
@@ -816,9 +816,38 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10077
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Tanuja Mohan_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Hitch:** A frame appears on screen later than expected
+- **VSYNC:** Time the screen swaps the frame onto the display 
+- **Hitch time:** Time in *ms* that a frame is late to display
+- **Hitch ratio:** Hitch time in **ms** per second for a given duration
+- Apple doesn't use frames per second (fps) since:
+  - 60 or 120 fps is not always the desired target
+  - Display may intentionally not be updated
+  - Target frame rate may intentionally be lower than possible
+- Hitch ratio is always comparable across tests, following ratios are recommended:
+  - Good: < 5ms/s
+  - Warning: 5..10ms/s - users will start recognizing hitches
+  - Critical: >10ms/s
+- Can be measured using `XCTestMetrics`  and unit tests or for production apps using `MetricsKit` and Xcode Organizer
+- `XCTOSSignpostMetric` gives you the following when using an animation os_signpost interval:
+  - Duration
+  - Total count of hitches
+  - Total duration of hitches
+  - Hitch time ratio
+  - Frame rate
+  - Frame count
+- Specify an animation os_signpost interval by:
+  - `os_signpost(.animationBegin, log: logHandle, name: "performanceAnimationInterval")`
+  - `os_signpost(.end, log: logHandle, name: "performanceAnimationInterval")`
+- UIKit has pre-defined metrics:
+  - `XCTOSSignpostMetric.navigationTransitionMetric`
+  - `XCTOSSignpostMetric.customNavigationTransitionMetric`
+  - `XCTOSSignpostMetric.scrollDecelerationMetric`
+  - `XCTOSSignpostMetric.scrollDraggingMetric`
+- Application state can be reset to avoid tests influencing themselves: `XCTMeasureOptions().invocationOptions = [.manualStop]`
+- Listen to a live testing session at [8:15](https://developer.apple.com/wwdc20/10077/?time=498)
 
 
 ## Why is my app getting killed?
