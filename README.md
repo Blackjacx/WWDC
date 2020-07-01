@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/0/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
+![Progress](https://progress-bar.dev/217/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
