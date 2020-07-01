@@ -14,8 +14,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install Dependencies
-      run: brew install ag
     - name: Generating Readme
       run: ./generate-readme.sh
     - name: Output Readme
