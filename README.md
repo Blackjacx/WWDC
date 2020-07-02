@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/17/?scale=208&title=Progress&width=600&suffix=%20/%20208%20Sessions)
+![Progress](https://progress-bar.dev/18/?scale=208&title=Progress&width=600&suffix=%20/%20208%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -179,7 +179,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Meet Audio Workgroups](#Meet-Audio-Workgroups)
 1. **(TO-DO)** [Improve stream authoring with HLS Tools](#Improve-stream-authoring-with-HLS-Tools)
 1. **(TO-DO)** [Record stereo audio with AVAudioSession](#Record-stereo-audio-with-AVAudioSession)
-1. **(TO-DO)** [What's new in Low-Latency HLS](#Whats-new-in-Low-Latency-HLS)
+1. [What's new in Low-Latency HLS](#Whats-new-in-Low-Latency-HLS)
 1. **(TO-DO)** [Discover HLS Blocking Preload Hints](#Discover-HLS-Blocking-Preload-Hints)
 1. **(TO-DO)** [Optimize live streams with HLS Playlist Delta Updates](#Optimize-live-streams-with-HLS-Playlist-Delta-Updates)
 1. **(TO-DO)** [Reduce latency with HLS Blocking Playlist Reload](#Reduce-latency-with-HLS-Blocking-Playlist-Reload)
@@ -2100,9 +2100,44 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10228
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Roger Pantos_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- Comes out of beta this year
+- Available in iOS 14, tvOS 14, watchOS 7 and this year's macOS
+- Includes support for bit-rate switching, FairPlay Streaming, fMP4 CMAF, ad insertion, captioning
+- Native app support, no entitlement necessary
+- [draft-pantos-hls-rfc8216bis07](https://tools.ietf.org/html/draft-pantos-hls-rfc8216bis-07) and later now includes LL-HLS
+- Includes Low-Latency Server Configuration Profile
+- Includes CDN tune-in algorithm
+- Updated informative articles on [developer.apple.com](https://developer.apple.com/)
+  - [Protocol Extension for Low-Latency HLS](https://developer.apple.com/documentation/http_live_streaming/protocol_extension_for_low-latency_hls_preliminary_specification)
+  - [HLS Authoring Specification for Apple Devices](https://developer.apple.com/documentation/http_live_streaming/hls_authoring_specification_for_apple_devices)
+- **Significant changes and improvements to the protocol**
+  - **Reducing segment delay**
+    - Approach described last year using HTTP/2 Push to send segment with Playlist is not compatible with some delivery models
+    - **Replaced Push with Blocking Preload Hints**
+      - Client requests next part in advance
+      - Server will hold on to the request until it can send it
+      - Also triggers global CDN cache fill
+      - [Discover HLS Blocking Preload Hints session](https://developer.apple.com/videos/play/wwdc2020/10229/) for more information
+  - **Other improvements**
+    - Eliminated HLS report
+      - All Rendition Reports are provided unconditionally
+    - Defined EXT-X-DATERANGE handling for Playlist Delta Updates
+      - [Optimize Live Streams with HLS Playlist Delta Updates](https://developer.apple.com/videos/play/wwdc2020/10230/) session for more detailed information
+    - Added signaling of gaps in Parts and Rendition Reports
+      - New attributes: GAP=YES in EXT-X-PART and EXTT-X-RENDITION-REPORT
+      - This allowing clients to deal better with encoded outages in Low-Latency streams
+- **Low-Latency HLS Tools changes**
+  - Reference implementation now produces fMP4/CMAF
+  - Added self-contained LL-HLS origin written in Go
+  - Incorporated Low-Latency HLS tools into the regular HLS tools package
+    - Find out more in [Improve Stream Authoring with HLS Tools](https://developer.apple.com/videos/play/wwdc2020/10225/) session
+- **Summary of important changes**
+  - Replaced HTTP/2 Push with Preloading Hinting
+  - Simplified Delivery Directives
+  - Generate CMAF in reference tools
+- **Everything is included in the current HLS spec**
 
 
 ## Discover HLS Blocking Preload Hints
