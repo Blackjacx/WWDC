@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/18/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/19/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -128,7 +128,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [What's new in Mac Catalyst](#Whats-new-in-Mac-Catalyst)
 1. **(TO-DO)** [Design for Game Center](#Design-for-Game-Center)
 1. [Configure and link your app clips](#Configure-and-link-your-app-clips)
-1. **(TO-DO)** [Distribute binary frameworks as Swift packages](#Distribute-binary-frameworks-as-Swift-packages)
+1. [Distribute binary frameworks as Swift packages](#Distribute-binary-frameworks-as-Swift-packages)
 1. **(TO-DO)** [Inspect, modify, and construct PencilKit drawings](#Inspect-modify-and-construct-PencilKit-drawings)
 1. **(TO-DO)** [Structure your app for SwiftUI previews](#Structure-your-app-for-SwiftUI-previews)
 1. **(TO-DO)** [What's new in CareKit](#Whats-new-in-CareKit)
@@ -1376,9 +1376,38 @@ Presenters: _Ada Chan, Luming Yin_
 
 https://developer.apple.com/wwdc20/10147
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Boris Buegling_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Xcode 11**
+  - Introduction of Swift Packages to distribute libraries as source code
+  - Introduction of XCFrameworks to distribute closed-source binary frameworks and libraries
+- **Xcode 12** adds support for binary dependencies 
+- **Binary Dependencies (XCFrameworks)**
+  - Used to distribute closed-source frameworks, static and dynamic libraries
+  - Contain a single module
+  - Easily addable via the `Xcode > File > Swift Packages > Add Package Dependency`
+  - Has sub directories corresponding to platform and target environment, each containing a framework
+  - Declare dependency in your Package.swift using `.package(url: "https://github.com/owner/package", from: "1.0.0")`
+- **Distribute Binary Frameworks as a Swift Package**
+  - New target type `.binaryTarget(name: "Emoji", url: https://example.com/Emoji/Emoji-1.0.0.xcframework.zip, checksum: "6d98....")`
+  - Binary targets can be offered to clients just like regular targets
+  - **Binary Targets** 
+    - Use XCFrameworks
+    - Only supported on Apple platforms
+    - HTTPS or path based - paths can point to files inside your package
+    - Name corresponds to the module name
+    - Use semantic versioning
+- **Create your own Binary Dependency**
+  - Create `File > New Swift Package`
+  - Replace template-added targets and add a binary target
+  - Compute the checksum using `swift package compute-checksum Emoji-1.0.0.xcframework.zip`
+  - Set `Build Libraries for Distribution` build setting
+  - Archive each variant
+  - `xcodebuild -create-xcframework`
+  - See [2019 session "Binary frameworks in Swift"](https://developer.apple.com/wwdc19/416) or read the [session notes](https://github.com/Blackjacx/WWDC/tree/2019#binary-frameworks-in-swift) which is way quicker
+- Tradeoffs of Binary Dependencies
+  - Harder to debug since source code is missing
+  - You won't be able to compile for your specific platform if not included by the author
 
 
 ## Inspect, modify, and construct PencilKit drawings
