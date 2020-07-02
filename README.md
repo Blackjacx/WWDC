@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/18/?scale=208&title=Progress&width=600&suffix=%20/%20208%20Sessions)
+![Progress](https://progress-bar.dev/18/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -243,10 +243,6 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Build trust through better privacy](#Build-trust-through-better-privacy)
 1. **(TO-DO)** [Build customized ML models with the Metal Performance Shaders Graph](#Build-customized-ML-models-with-the-Metal-Performance-Shaders-Graph)
 1. **(TO-DO)** [Refine Objective-C frameworks for Swift](#Refine-Objective-C-frameworks-for-Swift)
-1. **(TO-DO)** [Swan's Quest, Chapter 1: Voices in the dark](#Swans-Quest-Chapter-1-Voices-in-the-dark)
-1. **(TO-DO)** [Swan's Quest, Chapter 2: A time for tones](#Swans-Quest-Chapter-2-A-time-for-tones)
-1. **(TO-DO)** [Swan's Quest, Chapter 3: The notable scroll](#Swans-Quest-Chapter-3-The-notable-scroll)
-1. **(TO-DO)** [Swan's Quest, Chapter 4: The sequence completes](#Swans-Quest-Chapter-4-The-sequence-completes)
 1. **(TO-DO)** [Explore the new system architecture of Apple Silicon Macs](#Explore-the-new-system-architecture-of-Apple-Silicon-Macs)
 1. **(TO-DO)** [Triage test failures with XCTIssue](#Triage-test-failures-with-XCTIssue)
 
@@ -2880,42 +2876,6 @@ Presenters: _Example Guy, Another Person_
 ## Refine Objective-C frameworks for Swift
 
 https://developer.apple.com/wwdc20/10680
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Swan's Quest, Chapter 1: Voices in the dark
-
-https://developer.apple.com/wwdc20/10681
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Swan's Quest, Chapter 2: A time for tones
-
-https://developer.apple.com/wwdc20/10682
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Swan's Quest, Chapter 3: The notable scroll
-
-https://developer.apple.com/wwdc20/10683
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Swan's Quest, Chapter 4: The sequence completes
-
-https://developer.apple.com/wwdc20/10684
 
 Presenters: _Example Guy, Another Person_
 
