@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/16/?scale=218&title=Progress&width=600&suffix=%20/%20218%20Sessions)
+![Progress](https://progress-bar.dev/16/?scale=208&title=Progress&width=600&suffix=%20/%20208%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -249,16 +249,6 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Swan's Quest, Chapter 4: The sequence completes](#Swans-Quest-Chapter-4-The-sequence-completes)
 1. **(TO-DO)** [Explore the new system architecture of Apple Silicon Macs](#Explore-the-new-system-architecture-of-Apple-Silicon-Macs)
 1. **(TO-DO)** [Triage test failures with XCTIssue](#Triage-test-failures-with-XCTIssue)
-1. **(TO-DO)** [2020 Apple Design Awards](#2020-Apple-Design-Awards)
-1. **(TO-DO)** [Monday@WWDC](#MondayWWDC)
-1. **(TO-DO)** [Tuesday@WWDC](#TuesdayWWDC)
-1. **(TO-DO)** [Wednesday@WWDC](#WednesdayWWDC)
-1. **(TO-DO)** [Thursday@WWDC](#ThursdayWWDC)
-1. **(TO-DO)** [Friday@WWDC](#FridayWWDC)
-1. **(TO-DO)** [A conversation with the cast and creators of Mythic Quest: Raven’s Banquet](#A-conversation-with-the-cast-and-creators-of-Mythic-Quest-Ravens-Banquet)
-1. **(TO-DO)** [A conversation with Lisa Jackson and former Attorney General Eric Holder](#A-conversation-with-Lisa-Jackson-and-former-Attorney-General-Eric-Holder)
-1. **(TO-DO)** [Submit your questions for the cast and creators of Mythic Quest: Raven’s Banquet](#Submit-your-questions-for-the-cast-and-creators-of-Mythic-Quest-Ravens-Banquet)
-1. **(TO-DO)** [The winners of the 2020 Apple Design Awards](#The-winners-of-the-2020-Apple-Design-Awards)
 
 
 ## Expanding automation with the App Store Connect API
@@ -2879,96 +2869,6 @@ Presenters: _Example Guy, Another Person_
 ## Triage test failures with XCTIssue
 
 https://developer.apple.com/wwdc20/10687
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## 2020 Apple Design Awards
-
-https://developer.apple.com/wwdc20/10690
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Monday@WWDC
-
-https://developer.apple.com/wwdc20/10691
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Tuesday@WWDC
-
-https://developer.apple.com/wwdc20/10692
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Wednesday@WWDC
-
-https://developer.apple.com/wwdc20/10693
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Thursday@WWDC
-
-https://developer.apple.com/wwdc20/10694
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Friday@WWDC
-
-https://developer.apple.com/wwdc20/10695
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## A conversation with the cast and creators of Mythic Quest: Raven’s Banquet
-
-https://developer.apple.com/wwdc20/10969
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## A conversation with Lisa Jackson and former Attorney General Eric Holder
-
-https://developer.apple.com/wwdc20/10970
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## Submit your questions for the cast and creators of Mythic Quest: Raven’s Banquet
-
-https://developer.apple.com/wwdc20/10971
-
-Presenters: _Example Guy, Another Person_
-
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-
-## The winners of the 2020 Apple Design Awards
-
-https://developer.apple.com/wwdc20/20022
 
 Presenters: _Example Guy, Another Person_
 
