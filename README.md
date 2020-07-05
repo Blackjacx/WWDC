@@ -802,7 +802,7 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10077
 
-Presenters: _Tanuja Mohan_
+Presenter: _Tanuja Mohan_
 
 - **Hitch:** A frame appears on screen later than expected
 - **VSYNC:** Time the screen swaps the frame onto the display 
@@ -816,7 +816,7 @@ Presenters: _Tanuja Mohan_
   - Good: < 5ms/s
   - Warning: 5..10ms/s - users will start recognizing hitches
   - Critical: >10ms/s
-- Can be measured using `XCTestMetrics`  and unit tests or for production apps using `MetricsKit` and Xcode Organizer
+- Can be measured using `XCTestMetrics` and unit tests or for production apps using `MetricsKit` and Xcode Organizer
 - `XCTOSSignpostMetric` gives you the following when using an animation os_signpost interval:
   - Duration
   - Total count of hitches
