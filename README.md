@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/19/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/20/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -90,7 +90,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [What's new in MetricKit](#Whats-new-in-MetricKit)
 1. **(TO-DO)** [Integrate your app with Wind Down](#Integrate-your-app-with-Wind-Down)
 1. **(TO-DO)** [Feature your actions in the Shortcuts app](#Feature-your-actions-in-the-Shortcuts-app)
-1. **(TO-DO)** [Design for intelligence: Apps, evolved](#Design-for-intelligence-Apps-evolved)
+1. [Design for intelligence: Apps, evolved](#Design-for-intelligence-Apps-evolved)
 1. **(TO-DO)** [Design for intelligence: Make friends with ](#Design-for-intelligence-Make-friends-with)
 1. **(TO-DO)** [Design for intelligence: Discover new opportunities](#Design-for-intelligence-Discover-new-opportunities)
 1. **(TO-DO)** [Discover Core Image debugging techniques](#Discover-Core-Image-debugging-techniques)
@@ -876,9 +876,28 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10086
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Mark Mikin_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- This is one of those "why" sessions. Why we should build something?
+- **Intelligent System Experience**
+  - The main idea is to be proactive
+  - Intelligence is how the OS works with the apps that people use every day to make the "every day" easier for people
+  - Intelligence is design (it should be viewed as a design practice)
+- **Living design**. What is that?
+  - The core job of the designer is to help people accomplish something
+  - One of the key ways a designer can leverage this is by using elements familiar to the user
+  - People use a signifier or a symbol
+  - For example, "Share" button. In the case of iOS, almost everyone can easily recognize the "default" share symbol because it consistently gets used across a lot of apps
+  - Intelligence is a platform convention, it's in a static glyph or icon, like the share button. It's live
+  - Intelligence manifests itself by adapting to how the system, the platform, conforms to how people use their devices
+  - Intelligence is expected (people expect their devices and apps to be smart)
+- **Extensibility**
+  - Intelligence is powered by an app through extensibility
+  - Apps have actually been evolving over time
+  - A lot of the technologies built by Apple that are foundational to the intelligence system (starting from App Extensions debuted at WWDC 2014 and ending with App Clips so far)
+  - It's built to help growing ecosystem of devices and apps
+  - Intelligence system is built from a foundation of respecting users privacy
+- In the next sessions about system intelligence, Apple's team will try to cover it from a few different angles
 
 
 ## Design for intelligence: Make friends with 
