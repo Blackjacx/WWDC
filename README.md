@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/20/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/21/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -86,7 +86,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Decipher and deal with common Siri errors](#Decipher-and-deal-with-common-Siri-errors)
 1. **(TO-DO)** [Diagnose performance issues with the Xcode Organizer](#Diagnose-performance-issues-with-the-Xcode-Organizer)
 1. [Eliminate animation hitches with XCTest](#Eliminate-animation-hitches-with-XCTest)
-1. **(TO-DO)** [Why is my app getting killed?](#Why-is-my-app-getting-killed)
+1. [Why is my app getting killed?](#Why-is-my-app-getting-killed)
 1. **(TO-DO)** [What's new in MetricKit](#Whats-new-in-MetricKit)
 1. **(TO-DO)** [Integrate your app with Wind Down](#Integrate-your-app-with-Wind-Down)
 1. **(TO-DO)** [Feature your actions in the Shortcuts app](#Feature-your-actions-in-the-Shortcuts-app)
@@ -840,9 +840,89 @@ Presenter: _Tanuja Mohan_
 
 https://developer.apple.com/wwdc20/10078
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Andy Aude_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Most common reasons why apps can be terminated in the background**
+  - **Crash**
+    - Segmentation fault
+    - Illegal instruction
+    - Asserts and uncaught exceptions
+  - **CPU resource limit**
+    - High sustained CPU load in background
+    - Energy Exception Report
+      - Xcode Organizer
+      - [`MXCPUExceptionDiagnostic`](https://developer.apple.com/documentation/metrickit/mxcpuexceptiondiagnostic)
+    - Reports contain call stack points out hotspots in code
+    - Consider moving work into [`BGProcessingTask`](https://developer.apple.com/documentation/backgroundtasks/bgprocessingtask)
+  - **Watchdog**
+    - Long hang during key app transitions
+      - `application(_:didFinishLaunchingWithOptions:)`
+      - `applicationDidEnterBackground(_:)`
+      - `applicationWillEnterForeground(_:)`
+    - These transitions have a time limit on the order of 20 seconds
+    - Terminations are disabled in Simulator and in the Debugger
+    - Eliminate deadlocks, infinite loops, synchronous work
+    - Report available via [`MXCrashDiagnostic`](https://developer.apple.com/documentation/metrickit/mxcrashdiagnostic)
+  - **Memory limit exceeded**
+    - App using too much memory
+    - Same limit for foreground and background
+    - Use Instruments and Memory Debugger
+    - Keep in mind older devices
+  - **Memory pressure exit** (jetsam)
+    - Not a bug with your app
+    - Most common termination
+    - System freeing up memory for active applications
+    - Reducing jetsame rate
+      - Aim for less than 50MB in background
+      - Upon background flush state to disk, clear out image views, drop caches
+    - Recovering from jetsame
+      - Save state upon entering background
+      - Adopt UIKit State Restoration
+      - User should not realize app was terminated
+  - **Background task timeout**
+    - [`UIApplication.beginBackgroundTask(expirationHandler:)`](https://developer.apple.com/documentation/uikit/uiapplication/1623031-beginbackgroundtask)
+    - [`UIApplication.endBackgroundTask(_:)`](https://developer.apple.com/documentation/uikit/uiapplication/1622970-endbackgroundtask)
+    - Failure to end the task explicitly result in termination
+    - Counts exposed via [`MXBackgroundExitData`](https://developer.apple.com/documentation/metrickit/mxbackgroundexitdata)
+    - Preventable
+      - Use the named variant of the UIKit API [`beginBackgroundTask(withName:expirationHandler:)`](https://developer.apple.com/documentation/uikit/uiapplication/1623051-beginbackgroundtask)
+      - Terminations do not occur in Debugger
+      - New console message in iOS 13.4 (_Background Task DatabaseTransaction was created over 30 seconds ago. In Applications running in the background, this creates a risk of termination. Remember to call `endBackgroundTask` for your task in a timely manner to avoid this._)
+    - Expiration handler
+      - Implement an `expirationHandler`
+      - Call `endBackgroundTask(_:)` inside the handler
+      - Do not begin new work
+      - Do not rely on it exclusively
+      - Add telemetry at the start and end of each expiration handler
+      - Inspect [`MXMetricPayload`](https://developer.apple.com/documentation/metrickit/mxmetricpayload)
+    - Check [`backgroundTimeRemaining`](https://developer.apple.com/documentation/uikit/uiapplication/1623029-backgroundtimeremaining)
+      - Only start work if plenty of time remains
+      - Unsafe to begin tasks with < 5 seconds remaining
+    - Avoid leaking [`UIBackgroundTaskIdentifier`](https://developer.apple.com/documentation/uikit/uibackgroundtaskidentifier)
+- **New MetricKit API (iOS 14)**
+  - [`MXBackgroundExitData`](https://developer.apple.com/documentation/metrickit/mxbackgroundexitdata)  shows how often these terminations happen providing counts of each termination type
+    - `cumulativeBadAccessExitCount`
+    - `cumulativeIllegalInstructionExitCount`
+    - `cumulativeAbnormalExitCount`
+    - `cumulativeMemoryResourceLimitExitCount`
+    - `cumulativeMemoryPressureExitCount`
+    - `cumulativeSuspendedWithLockedFileExitCount`
+    - `cumulativeAppWatchdogExitCount`
+    - `cumulativeBackgroundTaskAssertionTimeoutExitCount`
+    - `cumulativeNormalExitCount`
+  - Crash reporting via MetricKit
+    - Diagnostics on a per-device basis
+    - Ability to get crash info programmatically directly from the device
+    - [`MXCrashDiagnostic`](https://developer.apple.com/documentation/metrickit/mxcrashdiagnostic)
+      - Stack trace
+      - Signal
+      - Exception code
+      - Termination reason
+    - Check out [What's New in MetricKit](https://github.com/Blackjacx/WWDC#whats-new-in-metrickit) to get detailed information
+- **How to improve multi-tasking experience?**
+  - Identify and fix terminations
+  - Reduce memory usage
+  - Implement state restoration
 
 
 ## What's new in MetricKit
