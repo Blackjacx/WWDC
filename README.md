@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/21/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/22/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -92,7 +92,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Feature your actions in the Shortcuts app](#Feature-your-actions-in-the-Shortcuts-app)
 1. [Design for intelligence: Apps, evolved](#Design-for-intelligence-Apps-evolved)
 1. **(TO-DO)** [Design for intelligence: Make friends with ](#Design-for-intelligence-Make-friends-with)
-1. **(TO-DO)** [Design for intelligence: Discover new opportunities](#Design-for-intelligence-Discover-new-opportunities)
+1. [Design for intelligence: Discover new opportunities](#Design-for-intelligence-Discover-new-opportunities)
 1. **(TO-DO)** [Discover Core Image debugging techniques](#Discover-Core-Image-debugging-techniques)
 1. **(TO-DO)** [Decode ProRes with AVFoundation and VideoToolbox](#Decode-ProRes-with-AVFoundation-and-VideoToolbox)
 1. **(TO-DO)** [Write tests to fail](#Write-tests-to-fail)
@@ -993,9 +993,28 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10088
 
-Presenters: _Example Guy, Another Person_
+Presenters: _JP Lacerda_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Intelligence**
+  - Goal to make your Apple products knowing/understanding you
+  - Achieve and Discover more, Less tedium, Fewer distraction
+  - System helps you through suggestions from **Siri**, **Shortcuts**, **Suggestions**, **Widgets**
+- **Siri / Shortcuts**
+  - Helps you getting things done by a single tap or asking Siri
+  - Helps you setting up simple and complex operations ran, e.g. just by your voice
+  - View shortcuts through the new Siri suggestion Widget displayed just at the right time to you using the new smart stack and on-device intelligence
+  - Siri suggestions automatically appear at the right place and time, e.g. restaurant reservations are added automatically to the calendar
+  - Siri can remind you when it's time to leave right on your lock screen
+  - Get Siri suggestions in Maps to e.g. conveniently find your way to the Airport
+- **Privacy / Analytics**
+  - Apple chose opt-in to enable analytics on your device to help improve their intelligence services
+  - **Examples**
+    - 82% of all notification-based check-ins come from suggestions (data from some Airline apps)
+    - Apps are visible on average 5x more per day via lock screen, sharing suggestion, search or other entry points
+- **Give your app superpowers**
+  - Think about which entry points are suitable for your app
+  - Consider how you can measure the impact of intelligence on your app
+  - Understand intelligence from the users perspective
 
 
 ## Discover Core Image debugging techniques
