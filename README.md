@@ -39,11 +39,11 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/23/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/24/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
-1. **(TO-DO)** [Introducing Car Keys](#Introducing-Car-Keys)
+1. [Introducing Car Keys](#Introducing-Car-Keys)
 1. **(TO-DO)** [Optimize the Core Image pipeline for your video app](#Optimize-the-Core-Image-pipeline-for-your-video-app)
 1. **(TO-DO)** [Edit and play back HDR video with AVFoundation](#Edit-and-play-back-HDR-video-with-AVFoundation)
 1. **(TO-DO)** [Export HDR media in your app with AVFoundation](#Export-HDR-media-in-your-app-with-AVFoundation)
@@ -269,9 +269,103 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10006
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Matthias Lerch_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- People can unlock, lock and start their car (iPhone or Apple Watch)
+- Stored securely on the device and can be deleted via iCloud
+- Keys can be shared with the family or friends
+- Agnostic to radio technology (**supports NFC so far**)
+- Offline capable
+- Car needs to support:
+  - **Owner pairing** (association if iPhone and car)
+    - Prove ownership of car
+    - Initiate pairing
+    - Place iPhone near car's NFC reader
+    - Car key appears in Wallet
+  - **Transactions** (unlock, lock, start the car)
+    - NFC readers in door handle and dashboard (engine start)
+    - Optimized for security and performance
+    - Express mode lets the feature work without Face ID or passcode (turned on by default)
+    - iPhone and car can be offline
+    - Apple doesn't know when you use your car
+  - **Server Interfaces** (key sharing, key management)
+    - Share keys over Messages
+    - Car can be offline when sharing
+    - Apple doesn't know who you share your car key with
+    - Optional access levels (e.g. 'Unlock and Drive', 'Access and drive up to 65 mph')
+    - It's up to each auto maker to define access levels
+- **Key management**
+  - Manage owner and shared keys from iPhone or car
+  - Keys removed from a device stop working immediately (even if the device is offline)
+  - Easy to change owner device (e.g. when buying a new iPhone)
+- **System architecture**
+  - Fully integrated into iOS natively
+  - Keys created and stored in Secure Elements and never exported
+  - All features use AES and eliptic-curve cryptography
+  - Offline design based on PKI
+  - Automaker TSM (Trusted Service Manager) not required for simple server integration
+  - **What is a digital car key?**
+    - Binded to the user's device and not to Apple or auto makers
+    - Private key (SK) never leaves SE (Secure Element)
+    - Public key is exported in an X.509 certificate for verification
+    - **Applet**
+      - Implements the car key in the Secure Element
+      - Stores key pair, car public key, secure mailboxes
+      - All car keys hosted in a single applet instance
+    - **Owner pairing flow (online)**
+      1. PAKE Verifier
+      2. Pairing password
+      3. Pairing
+      4. Cryptographic linking
+      5. Key activation/registration
+      6. Key attestation
+    - **Key sharing flow**
+      1. Owner sends invitation using Messages
+      2. New key crated in
+      3. Identity certificate chain
+      4. Owner verification
+      5. Attestation returned
+      6. Offline registration
+    - **Lifecycle of a car key**
+      - Created during owner pairing or key sharing
+      - Transactions
+      - Suspensions
+      - Revocation
+      - Deletion
+    - **Certificates and Transaction**
+      - Owner sharing, key sharing, fast and standard transactions
+      - Take a deeper look at the presented flows and schemes at [11:30](https://developer.apple.com/wwdc20/10006?time=690)
+- **Radio technologies**
+  - **NFC**
+    - Based on standard NFC reader
+    - Enhanced Contactless Protocol (ECP)
+    - Enables a fully automatic NFC experience
+    - Identifiers available before transaction starts (Reader type, Automaker)
+    - Efficient reader polling
+  - **Ultra Wideband**
+    - iPhone with U1 chip
+    - Use with iPhone in bag or pocket
+    - Common key management architecture
+    - Specification is currently in development
+- **Server integration**
+  - Required for remote key management
+  - Auto maker server needs to establish connection to Apple's backend (for each environment, e.g. testing and production)
+  - Exchange certificates
+  - Implement and test server interfaces (register a new key, revoke keys, send notifications)
+  - Provide artwork
+  - Connect to automaker app
+- **Automaker apps**
+  - Provide custom features using keys stored in Wallet
+  - Start owner pairing
+  - Available to automakers
+  - Entitlement is required
+  - Use PassKit APIs
+- **How to get started (for auto makers)**
+  - Car Connectivity Consortium
+  - Digital Key Specification 2.0
+  - Digital Key Specification 3.0 (in development, will support Ultra Wideband)
+  - [carconnectivity.org](https://carconnectivity.org/)
+  - Entroll to [Apple MFi Program](https://mfi.apple.com/contact)
 
 
 ## Optimize the Core Image pipeline for your video app
