@@ -1187,7 +1187,7 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10098
 
-Presenters: _Christopher Linn_
+Presenter: _Christopher Linn_
 
 - **Universal Links**
   - HTTPS URLs that represent your content both on the web and in your app
@@ -1255,7 +1255,7 @@ Presenters: _Christopher Linn_
     - CDN Reduces load on your server
     - CDN routes devices to a known-good, known-fast connection
   - **Alternate Modes** for internal domains not reachable from an Apple CDN
-    - **Managed Mode** when distributing within your organization (see [What's New in Managing Apple Devices (WWDC20)](https://developer.apple.com/wwdc20/10639))
+    - **Managed Mode** when distributing within your organization (see [What's New in Managing Apple Devices (WWDC20)](https://github.com/Blackjacx/WWDC#Whats-new-in-managing-Apple-devices))
       - System trusted root certificate
       - MDN admin must opt-in
       - Works using any profile
