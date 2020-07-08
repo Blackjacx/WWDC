@@ -91,7 +91,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Integrate your app with Wind Down](#Integrate-your-app-with-Wind-Down)
 1. **(TO-DO)** [Feature your actions in the Shortcuts app](#Feature-your-actions-in-the-Shortcuts-app)
 1. [Design for intelligence: Apps, evolved](#Design-for-intelligence-Apps-evolved)
-1. **(TO-DO)** [Design for intelligence: Make friends with ](#Design-for-intelligence-Make-friends-with)
+1. **(TO-DO)** [Design for intelligence: Make friends with "The System"](#Design-for-intelligence-Make-friends-with-The-System)
 1. [Design for intelligence: Discover new opportunities](#Design-for-intelligence-Discover-new-opportunities)
 1. **(TO-DO)** [Discover Core Image debugging techniques](#Discover-Core-Image-debugging-techniques)
 1. **(TO-DO)** [Decode ProRes with AVFoundation and VideoToolbox](#Decode-ProRes-with-AVFoundation-and-VideoToolbox)
@@ -1074,7 +1074,7 @@ Presenter: _Mark Mikin_
 - In the next sessions about system intelligence, Apple's team will try to cover it from a few different angles
 
 
-## Design for intelligence: Make friends with 
+## Design for intelligence: Make friends with "The System"
 
 https://developer.apple.com/wwdc20/10087
 
