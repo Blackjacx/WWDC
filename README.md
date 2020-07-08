@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/24/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/25/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -138,7 +138,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Deliver a better HLS audio experience](#Deliver-a-better-HLS-audio-experience)
 1. **(TO-DO)** [Build an Endpoint Security app](#Build-an-Endpoint-Security-app)
 1. **(TO-DO)** [Formatters: Make data human-friendly](#Formatters-Make-data-human-friendly)
-1. **(TO-DO)** [Design for location privacy](#Design-for-location-privacy)
+1. [Design for location privacy](#Design-for-location-privacy)
 1. **(TO-DO)** [Advancements in the Objective-C runtime](#Advancements-in-the-Objective-C-runtime)
 1. **(TO-DO)** [XCTSkip your tests](#XCTSkip-your-tests)
 1. [Embrace Swift type inference](#Embrace-Swift-type-inference)
@@ -1782,9 +1782,28 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10162
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Rachel Needle_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- Today people share precise location data
+- **In iOS 14, Core Location allowing users to control and share their approximate location**
+- All kinds of apps will be impacted by this change (even Apple's apps)
+- **How to adapt the app** to work without precise location?
+  - **Prioritize user control**
+    - Give everyone control over their location data they share and respect their preferences
+    - Don't require precise location
+    - Replace precise data with approximate where possible
+    - Identify where else you use precise location and remove non-essential uses of precise location
+  - **Build trust through transparency**
+    - Communicate with people about what data your app uses and how that data is used
+    - Make status easy to access
+    - Allow users to change their decision
+  - **Offer proportional value**
+    - Only ask for precise location when you really need it
+    - Request precise location in response to user action
+    - Position the request close to the value it provides
+  - Consider checking out these two sessions to **get detailed information**
+    - [Build trust through better privacy](https://github.com/Blackjacx/WWDC#build-trust-through-better-privacy)
+    - [What's new in location](https://github.com/Blackjacx/WWDC#whats-new-in-location)
 
 
 ## Advancements in the Objective-C runtime
