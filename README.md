@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/22/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/23/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -101,7 +101,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [The Push Notifications primer](#The-Push-Notifications-primer)
 1. **(TO-DO)** [Explore Packages and Projects with Xcode Playgrounds](#Explore-Packages-and-Projects-with-Xcode-Playgrounds)
 1. **(TO-DO)** [Advances in UICollectionView](#Advances-in-UICollectionView)
-1. **(TO-DO)** [What's new in Universal Links](#Whats-new-in-Universal-Links)
+1. [What's new in Universal Links](#Whats-new-in-Universal-Links)
 1. **(TO-DO)** [Explore the Action & Vision app](#Explore-the-Action--Vision-app)
 1. [Keynote ★](#Keynote-)
 1. **(TO-DO)** [Meet Watch Face Sharing](#Meet-Watch-Face-Sharing)
@@ -1093,9 +1093,84 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10098
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Christopher Linn_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Universal Links**
+  - HTTPS URLs that represent your content both on the web and in your app
+  - Allow to open your app instead of browser
+  - Enable by adding an entitlement to your app and a JSON file to your web server - creates secure association between both
+  - Custom URL schemes not recommended anymore - switch as soon as possible
+- **Support for watchOS**
+  - Same functionalities like on iOS, tvOS and macOS
+  - Apply entitlement to your WatchKit extension - not your WatchKit App
+  - Use `[WKExtensionDelegate.handle(_ userActivity: NSUserActivity) -> Void](https://developer.apple.com/documentation/watchkit/wkextensiondelegate/2798966-handle)` to handle Universal Links
+  - Use `[WKExtension.shared().openSystemURL(url)](https://developer.apple.com/documentation/watchkit/wkextension/1628224-opensystemurl)` to open Universal Links in other apps
+  - Different API on iOS (UIKit) and macOS (AppKit)
+- **Universal Links in SwiftUI**
+  - Now it is possible to handle Universal Links equally on all platforms
+  - Handle Universal Links using `.onOpenURL { url in /* ... */ }`
+  - Open Universal Links in other apps using `@Environment (\.openURL) var openURL; let url = /* ... */; openURL(url)`
+- **Enhanced Pattern Matching**
+  - `*` matches zero or more characters greedily
+  - `?` matches any one character
+  - `*?` matches at least one character
+  - `"components": [{ "/": "/sourdough/?*", "caseSensitive": false }]` for case-insensitive pattern matching (macOS Catalina 10.15.5 and iOS 13.5)
+  - `"components": [{ "/": "/中國哲學書電子化計劃/?*", "percentEncoded": false }]` for Unicode pattern matching (macOS Big Sur and iOS 14)
+  - `"defaults": { "percentEncoded": false, "caseSensitive": false }` to specify defaults for all components (macOS Big Sur and iOS 14)
+    - Apply `defaults` to "details" (includes app IDs and components) or only to "components" to match all elements of the respective arrays
+- **Substitution Variables**
+  - Named lists of substrings to match against
+  - Names can contain anything but `$`, `(`, `)`
+  - Names are always case sensitive in patterns
+  - Values can contain `?` and `*` but no other substitution variables
+  - Values are case-sensitive by default
+  - Available today in macOS Catalina 10.15.6 and iOS 13.5
+  - **Predefined Substitution Variables**
+    - `$(alpha)* - match upper and lower case letters`
+    - `$(upper),$(lower)* - match either upper or lower case letters`
+    - `$(alnum)* - match upper and lower case letters including digits`
+    - `$(digit),$(xdigit)* - match either digits or hexadecimal digits`
+    - `$(region)** - match every ISO region code defined by Foundation: Locale.isoRegionCodes`
+    - `$(lang)** - match every ISO language code defined by Foundation: Locale.isoLanguageCodes`
+    - Use `"exclude": true` to exclude specific patterns
+    - Substitution variables can be used to form different combinations of patterns, e.g. show different menus for different countries
+    - **Example**
+      ```json
+      {
+        "appLinks": {
+          "substitutionVariables": {
+            "food": [ "burrito", "sushi" ],
+            "Canadian food": [ "burrito", "poutine", "tête-de-violon" ]
+          },
+          "details": [{
+            "appIDs": [ "ABCDEF.com..example.restaurant" ],
+            "components": [
+              { "/": "$(lang)_CA/$(Canadian food)/", "percentEncoded": false }
+              { "/": "$(lang)_CA/$(food)/", "exclude": true }
+              { "/": "$(lang)_$(region)/$(food)/" }
+            ]
+          }]
+        }
+      }
+      ```
+- **Universal Links Workflow** 
+  - After download of an app the system checks its entitlements to see if it needs any app-association files, and downloads them
+  - App association files can now be downloaded in parallel by connecting to an **Apple CDN** instead of opening one connection per downloaded app
+    - CDN is dedicated to associated domains
+    - CDN uses single HTTP/2 connection for all associated domains on a device
+    - CDN Reduces load on your server
+    - CDN routes devices to a known-good, known-fast connection
+  - **Alternate Modes** for internal domains not reachable from an Apple CDN
+    - **Managed Mode** when distributing within your organization (see [What's New in Managing Apple Devices (WWDC20)](https://developer.apple.com/wwdc20/10639))
+      - System trusted root certificate
+      - MDN admin must opt-in
+      - Works using any profile
+    - **Developer Mode** when building your app
+      - Use any SSL certificate
+      - User must opt-in from `iOS Settings > Developer > Associated Domains Development` or for macOS using the command `swcutil developer-mode -e true`
+      - Only works using a development profile
+    - Server path for all modes: `https://example.com/.well-known/apple-app-site-association`
+    - Specify domains for different modes in the entitlements as `<string>applinks:testing.example.com?mode=developer</string>` (or `?mode=managed` or `?mode=developer+managed`) in an array under the key `com.apple.developer.associated-domains`
 
 
 ## Explore the Action & Vision app
