@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/25/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/26/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -74,7 +74,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Enable encrypted DNS](#Enable-encrypted-DNS)
 1. **(TO-DO)** [Build complications in SwiftUI](#Build-complications-in-SwiftUI)
 1. **(TO-DO)** [Keep your complications up to date](#Keep-your-complications-up-to-date)
-1. **(TO-DO)** [Build with iOS pickers, menus and actions](#Build-with-iOS-pickers-menus-and-actions)
+1. [Build with iOS pickers, menus and actions](#Build-with-iOS-pickers-menus-and-actions)
 1. **(TO-DO)** [Optimize the interface of your Mac Catalyst app](#Optimize-the-interface-of-your-Mac-Catalyst-app)
 1. **(TO-DO)** [Identify trends with the Power and Performance API](#Identify-trends-with-the-Power-and-Performance-API)
 1. **(TO-DO)** [Design high quality Siri media interactions](#Design-high-quality-Siri-media-interactions)
@@ -797,9 +797,42 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10052
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Eric Dudiac, David Duncan_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **UISlider and UIProgressView:** More consistent across platforms now
+- **UIActivityIndicatorView:** New simpler design, Use color API and modern styles, Updates "pull-to-refresh"
+- **UIPickerView:** Updated styling
+- **UIPageControl** 
+  - New interactions (scrubbing, scrolling)
+  - Unlimited pages
+  - Optional custom indicator icons: `.preferredIndicatorImage(UIImage())` to set all or `.setIndicatorImage(UIImage(), forPage: 0)` for a specific image
+  - Multiple styles: `.backgroundStyle = .prominent` to highlight the background
+- **UIColorPickerViewController**
+  - New view controller for picking colors
+  - Eyedropper, Favorites, Hex specification
+- **UIDatePicker**
+  - New compact style to select date and time
+  - In-line style on iOS - great for iPad or if date picking is primary UI (matches modal presentation)
+  - Useful when you have space constraints
+  - Full modal calendar when selecting dates
+  - Keyboard for selecting times
+  - New macOS style (10.15.4)
+    - Compact, modal calendar presentation
+    - Supported in Catalyst apps
+- **Menus**
+  - Provided on `UIControl`
+  - Directly supported by UIButton and UIBarButtonItem by `button.menu = UIMenu(...)`
+  - Triggered via long-press by default
+  - Show the menu by a simple tap by setting `button.showsMenuAsPrimaryAction = true` and don't provide a primary action
+  - Back buttons implement menus to quickly jump back in navigation stack
+  - Take action when the menu action is recognized, register for `UIControl.Event.menuActionTriggered`
+  - `UIDeferredMenuElement` to async provide menu items
+  - `UIContextMenuInteraction` to modify or replace provided menu `updateVisibleMenu(_ block menu: (UIMenu) -> UIMenu)`
+    - Use `UIContextMenuInteraction.rich` to display previews and `.compact` to only show a menu
+  - New `UIBarButtonItem` initializers `init(systemItem:primaryAction:menu:)`, `init(title:image:primaryAction:menu:)`
+  - New `UIBarButtonItem` `.fixedSpace()` and `.flexibleSpace`
+  - `UIButton` can finally be initialized using an `UIAction`: `init(type:primaryAction:)` -> **native block based API**
+  - `UISegmentedControls` can now finally be initialized using `UIActions` -> **native block based API**
 
 
 ## Optimize the interface of your Mac Catalyst app
