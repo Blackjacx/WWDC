@@ -20,7 +20,7 @@ Please respect the following rules to maintain a consistent look and feel across
 - The video duration is not needed here since you can see it when you click the link.
 - For the session please do not add **code samples** (except one-liners) and no **images**. I plan to have all session notes skimmable as easy as possible. But you can link to the relevant position in the video by using a short link like this one: [22:32](https://developer.apple.com/wwdc19/245/?time=1337). The time parameter is in seconds. Just put in the time where the interesting part starts in the video.
 - Writing while watching the session can be challenging and you'll often make typos or innocent grammar mistakes. Please review what you're submitting before opening a PR, as this will make your notes available to others faster, and with higher quality.
-- `objc` != `Obj-C` != `objective-C` != `Objective-C`. `IOS` is not an operating system and neither `XCode` is an IDE (`iOS` and `Xcode` would be correct). Please double check your spelling and make sure it's consistent.
+- `objc` != `Obj-C` != `objective-C` != `Objective-C`. `IOS` is not an Apple operating system and neither `XCode` is an IDE (`iOS` and `Xcode` would be correct). Please double check your spelling and make sure it's consistent.
 
 When you are finished please send a [GitHub Pull Request](https://github.com/Blackjacx/WWDC/compare) with some notes of what you have done (read more about [PRs](http://help.github.com/pull-requests/)).
 
