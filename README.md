@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/26/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/27/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -55,7 +55,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Make your app visually accessible](#Make-your-app-visually-accessible)
 1. **(TO-DO)** [Build Metal-based Core Image kernels with Xcode](#Build-Metal-based-Core-Image-kernels-with-Xcode)
 1. **(TO-DO)** [Create a seamless speech experience in your apps](#Create-a-seamless-speech-experience-in-your-apps)
-1. **(TO-DO)** [Lists in UICollectionView](#Lists-in-UICollectionView)
+1. [Lists in UICollectionView](#Lists-in-UICollectionView)
 1. **(TO-DO)** [Modern cell configuration](#Modern-cell-configuration)
 1. [Meet WidgetKit](#Meet-WidgetKit)
 1. **(TO-DO)** [Stacks, Grids, and Outlines in SwiftUI](#Stacks-Grids-and-Outlines-in-SwiftUI)
@@ -471,9 +471,65 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10026
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Michael Ochs_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- Lists in iOS 14 Collection Views present `UITableView`-like appearances in `UICollectionView`
+- Improved self-sizing support: now default when using lists in `UICollectionView`
+  - Build cells with AutoLayout and let collection view take over
+  - Override `preferredLayoutAttributesFittingAttributes:` on cell subclasses to exercise manual sizing
+- [**UICollectionLayoutListConfiguration**](https://developer.apple.com/documentation/uikit/uicollectionlayoutlistconfiguration)
+  - The only new type required on the layout side to build lists in collection view
+  - Built on top of `NSCollectionLayoutSection` and `UICollectionViewCompositionalLayout`: check out [Advances in Collection View Layout](https://developer.apple.com/videos/play/wwdc2019/215)
+  - Adds two list-exclusive styles: `.sidebar` and `.sidebarPlain` for building multicolumn apps on iPadOS 14
+  - Options to show/hide separators and configure list headers/footers
+- Creating lists
+  - Easy way
+    1. Create a `UICollectionLayoutListConfiguration`
+    2. Create a `UICollectionViewCompositionalLayout` with the configuration
+  - **Per-section setup**
+    1. Create a `UICollectionLayoutListConfiguration`
+    2. Create a `NSCollectionLayoutSection` with the configuration
+    3. Place the above code inside existing section provider initializer on compositional layout
+    4. Customize the layout on a per section basis
+- Configuring list section headers/footers
+  - List headers/footers have to be explicitly enabled
+    - Register headers/footers as supplementary views
+      - Set header/footer configuration mode to 'supplementary'
+      - **Provide a supplementary view** when rendering the header/footer on screen
+    - **Set `headerMode` to `firstItemInSection` (headers-only)**
+      - Configure the first collection view cell to look like a header
+      - Recommended for hierarchical data structures and snapshot APIs: check out [Advances in Diffable Data Source](https://developer.apple.com/videos/play/wwdc2020/10045/)
+      - Data source need to be aware of first cell being header
+- **[UICollectionViewListCell](https://developer.apple.com/documentation/uikit/uicollectionviewlistcell?language=objc)**
+  - Subclass of `UICollectionViewCell`, can be used interchangeably
+  - Better support to configure separator insets and cell content indentations
+  - Features Swipe Actions
+  - Better accessories API
+  - Granted access to default system content/background configurations: check out [Modern Cell Configuration](https://developer.apple.com/videos/play/wwdc2020/10027)
+- Separator Layout Guide
+  - Separators are supposed to line up with **primary** cell content
+  - Constrain this layout guide to the content: opposite of UIKit layout guides
+    1. Configure the cell's layout
+    2. Constrain the separator layout guide's leading anchor to cell's primary content's leading anchor
+  - Automatically handled when using system provided content configurations
+- Swipe Actions
+  - Only supported if the cell is rendered inside sections configured using a list configuration
+  - Override the leading/trailing swipe action's configuration getter to configure
+  - **Caution**: never capture the index path (unstable) of the cell being configured in action handler
+    - Directly capture the data model
+    - Capture a stable identifier of the cell:
+      - Diffable Data Source and its stable item identifier
+      - The new cell registration type in iOS 14: UICollectionViewListCell
+- Accessories API of list cells
+  - Options to configure both leading and trailing side of the cell
+  - Configure multiple accessories on the same side
+  - Functionalities on list cell accessories
+    - Re-ordering accessory: cell is automatically in re-rodering mode when tapped
+    - Delete accessory: cell automatically reveals configured trailing swipe actions when tapped
+    - Outline disclosure accessory
+      - Cell automatically communicate with the data source and expand/collapse its children when tapped
+      - Requires the new section snapshot APIs: check out [Advances in Diffable Data Source](https://developer.apple.com/videos/play/wwdc2020/10045/)
+- Plenty of system defaults are provided while customizabilities are kept
 
 
 ## Modern cell configuration
