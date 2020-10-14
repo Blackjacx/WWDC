@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/27/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/28/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -100,7 +100,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Handle trackpad and mouse input](#Handle-trackpad-and-mouse-input)
 1. **(TO-DO)** [The Push Notifications primer](#The-Push-Notifications-primer)
 1. **(TO-DO)** [Explore Packages and Projects with Xcode Playgrounds](#Explore-Packages-and-Projects-with-Xcode-Playgrounds)
-1. **(TO-DO)** [Advances in UICollectionView](#Advances-in-UICollectionView)
+1. [Advances in UICollectionView](#Advances-in-UICollectionView)
 1. [What's new in Universal Links](#Whats-new-in-Universal-Links)
 1. **(TO-DO)** [Explore the Action & Vision app](#Explore-the-Action--Vision-app)
 1. [Keynote ★](#Keynote-)
@@ -1267,9 +1267,43 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10097
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Steve Breen_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Diffable Data Source**
+  - Recap
+    - `UICollectionView` was first released in iOS 6
+    - `UICollectionView` was built on the separation of concerns between the data, or the "what"; from the layout, the "where" content is being rendered.
+    - For layout, an abstract class is `UICollectionViewLayout`, and a concrete subclass is `UICollectionViewFlowLayout`.
+    - For the presentation, there are `UICollectionViewCell` and `UICollectionReusableView`.
+    - In iOS 13, there are two new components for Data and Layout respectively with Diffable Data Source and Compositional Layout. 
+  - Section snapshot [New in iOS 14]
+    - Allow data sources to be more composable into section-sized chunks of data.
+    - Allow modeling of hierarchical data, which is needed to support rendering outline-style UIs.
+
+- **Compositional Layout**
+  - Recap
+    - Compositional Layout was introduced in iOS 13
+    - Allows us to build rich, complex layouts by composing smaller, easy-to-reason bits of layout together.
+    - Describes what the layout to look like instead of how the layout ought to work.
+    - Section-specific layouts to help you build more sophisticated UIs
+    - Support for orthogonal scrolling sections.
+- Lists [New in iOS 14]
+    - `UITableView`-like sections right in to any `UICollectionView`.
+    - Rich with features you've come to expect from `UITableView`, like swipe actions and many common cell layouts. 
+    - Easily mix and match Lists with other kinds of layout on a per-section basis.
+    - Concrete `UICollectionViewListCell`, header and footer support
+    - New Sidebar appearance we see in many iPadOS system apps.
+
+- **Modern Cells**
+  - Cell registrations
+    - Simple, reusable way to set up a cell from a view model.
+    - Eliminate the extra step of registering a cell class or nib to associate it with a reuse identifier.
+    - Use a generic registration type which incorporates a configuration closure for setting up a new cell from a view model.
+  - Cell content configurations. 
+    - Standardized layouts for cells similar to what is seen in `UITableView` standard cell types.
+    - Can be used with any cell, or even a generic UIView. 
+  - Background configurations. 
+    - Similar to content configurations but apply to any cell's background with the ability to adjust properties such as color, border styles and more.
 
 
 ## What's new in Universal Links
