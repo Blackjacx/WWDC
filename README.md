@@ -1279,7 +1279,6 @@ Presenters: _Steve Breen_
   - Section snapshot [New in iOS 14]
     - Allow data sources to be more composable into section-sized chunks of data.
     - Allow modeling of hierarchical data, which is needed to support rendering outline-style UIs.
-
 - **Compositional Layout**
   - Recap
     - Compositional Layout was introduced in iOS 13
@@ -1287,13 +1286,12 @@ Presenters: _Steve Breen_
     - Describes what the layout to look like instead of how the layout ought to work.
     - Section-specific layouts to help you build more sophisticated UIs
     - Support for orthogonal scrolling sections.
-- Lists [New in iOS 14]
+- **Lists [New in iOS 14]**
     - `UITableView`-like sections right in to any `UICollectionView`.
     - Rich with features you've come to expect from `UITableView`, like swipe actions and many common cell layouts. 
     - Easily mix and match Lists with other kinds of layout on a per-section basis.
     - Concrete `UICollectionViewListCell`, header and footer support
     - New Sidebar appearance we see in many iPadOS system apps.
-
 - **Modern Cells**
   - Cell registrations
     - Simple, reusable way to set up a cell from a view model.
