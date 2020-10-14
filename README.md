@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/28/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/29/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -140,7 +140,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Formatters: Make data human-friendly](#Formatters-Make-data-human-friendly)
 1. [Design for location privacy](#Design-for-location-privacy)
 1. **(TO-DO)** [Advancements in the Objective-C runtime](#Advancements-in-the-Objective-C-runtime)
-1. **(TO-DO)** [XCTSkip your tests](#XCTSkip-your-tests)
+1. [XCTSkip your tests](#XCTSkip-your-tests)
 1. [Embrace Swift type inference](#Embrace-Swift-type-inference)
 1. **(TO-DO)** [Safely manage pointers in Swift](#Safely-manage-pointers-in-Swift)
 1. **(TO-DO)** [Explore logging in Swift](#Explore-logging-in-Swift)
@@ -1940,9 +1940,13 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10164
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Wil Addario-Turner_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- Tests can pass or fail, or with `XCTSkip`, be marked with an explicit "skip" result.
+- In Xcode 11.4, `XCTSkip`, `XCTSkipIf` and `XCTSkipUnless` were introduced to allow skipping tests at runtime.
+- Call `throw XCTSkip("message")` and the test will be skipped.
+- `XCTSkipIf` skips when the expression is true. `XCTSkipUnless` skips when the expression is false.
+- Check the results from the test navigator and the test report with the line where the skip occurred, along with a reason explaining why.
 
 
 ## Embrace Swift type inference
