@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/30/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/31/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -56,7 +56,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Build Metal-based Core Image kernels with Xcode](#Build-Metal-based-Core-Image-kernels-with-Xcode)
 1. **(TO-DO)** [Create a seamless speech experience in your apps](#Create-a-seamless-speech-experience-in-your-apps)
 1. [Lists in UICollectionView](#Lists-in-UICollectionView)
-1. **(TO-DO)** [Modern cell configuration](#Modern-cell-configuration)
+1. [Modern cell configuration](#Modern-cell-configuration)
 1. [Meet WidgetKit](#Meet-WidgetKit)
 1. **(TO-DO)** [Stacks, Grids, and Outlines in SwiftUI](#Stacks-Grids-and-Outlines-in-SwiftUI)
 1. **(TO-DO)** [Build SwiftUI views for widgets](#Build-SwiftUI-views-for-widgets)
@@ -536,9 +536,37 @@ Presenters: _Michael Ochs_
 
 https://developer.apple.com/wwdc20/10027
 
-Presenters: _Example Guy, Another Person_
+Presenter: _Tylor Fox_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Getting started with configurations**
+  - In iOS 13, we use the built-in imageView and textLabel properties on `UITableViewCell` to display an image and some text.
+  - In iOS 14, we use the content configuration to describe the cell appearance for a specific state
+  - This is how you configure a cell using a content configuration:
+    - `var content = cell.defaultContentConfiguration()` This always returns a fresh configuration without any content set on it. Don't need to think about the old state at all.
+    - Set the image and text on the content configuration. 
+    - `cell.contentConfiguration = content` As soon as we call this, the cell is updated to display the image and text that we specified.
+  - Same code to configure any cell and any view that supports content configurations.
+  - Composable, lightweight, very inexpensive to create and built for performance
+- **Configuration types**
+  - Background Configuration
+    - let you set things such as background color, visual effect, stroke, insets, corner radius and custom view
+  - List Content Configuration
+    - let you set things such as image, text, secondary text, layout metrics and behaviors
+- **Configuration state**
+  - Configuration state represents the various inputs that you use to configure your cells and views.
+  - Each cell, header and footer has its own configuration state.
+  - **Two Types**
+    - **View configuration state**
+      - Trait collection
+      - 4 states: highlighted, selected, disabled and focused
+      - Custom state: this is key-value storage to add any extra states or data that use to configuring your view.
+    - **Cell configuration state**
+      - Everything from the View configuration state
+      - Editing, swiped, expanded
+      - Drag and drop states
+  - When `automaticallyUpdatesContentConfiguration` is true, The cell automatically calls `updated(for:)` on its contentConfiguration when the cell’s configurationState changes, and applies the updated configuration back to the cell. The default value is true.
+  - When `automaticallyUpdatesBackgroundConfiguration` is true, the cell automatically calls `updated(for:)` on its backgroundConfiguration when the cell’s configurationState changes, and applies the updated configuration back to the cell. The default value is true.
+  - You can override `updateConfiguration(using:)` to manually update and customize the content configuration, disable automatic updates by setting this property to false. This method is called before your cell first displays and will be called anytime the configuration state have changed.
 
 
 ## Meet WidgetKit
