@@ -39,7 +39,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 
 ## Table of Contents
 
-![Progress](https://progress-bar.dev/29/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
+![Progress](https://progress-bar.dev/30/?scale=204&title=Progress&width=600&suffix=%20/%20204%20Sessions)
 
 1. **(TO-DO)** [Expanding automation with the App Store Connect API](#Expanding-automation-with-the-App-Store-Connect-API)
 1. **(TO-DO)** [What's new in assessment](#Whats-new-in-assessment)
@@ -173,7 +173,7 @@ This repo has already been mentioned many times on Twitter and apart from this a
 1. **(TO-DO)** [Explore numerical computing in Swift](#Explore-numerical-computing-in-Swift)
 1. **(TO-DO)** [Build localization-friendly layouts using Xcode](#Build-localization-friendly-layouts-using-Xcode)
 1. **(TO-DO)** [Handle interruptions and alerts in UI tests](#Handle-interruptions-and-alerts-in-UI-tests)
-1. **(TO-DO)** [Get your test results faster](#Get-your-test-results-faster)
+1. [Get your test results faster](#Get-your-test-results-faster)
 1. **(TO-DO)** [Create custom apps for employees](#Create-custom-apps-for-employees)
 1. **(TO-DO)** [Deploy Apple devices using zero-touch](#Deploy-Apple-devices-using-zero-touch)
 1. **(TO-DO)** [Meet Audio Workgroups](#Meet-Audio-Workgroups)
@@ -2502,9 +2502,22 @@ Presenters: _Example Guy, Another Person_
 
 https://developer.apple.com/wwdc20/10221
 
-Presenters: _Example Guy, Another Person_
+Presenters: _Sean Olszewski_
 
-##### TO-DO! You can contribute to this session, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+- **The Testing Feedback Loop**
+  - Write tests > run tests > Interpret result >if sufficient confidence [ > Next task] else go back to write tests
+  - Short feedback loops is important because that means you get results from your tests faster, you can ship features to your users faster.
+  - Real world example: Result bundle from that CI job, which never finished. Due to dead lock, poorly chosen timeout.
+- **Execution Time Allowance [NEW in XCode 12]**
+  - When enabled, Xcode enforces a limit on the amount of time each individual test can take. When a test exceeds this limit, Xcode will first capture spin dump, then kill the test that hung, restart the test runner, so that the rest of the suite can execute.
+  - A spin dump shows you which functions each thread is spending the most time in. It's also possible to manually capture spin dump from Terminal using the spin dump command or from within Activity Monitor. 
+  - By default, each test gets 10 minutes. If you need to a specific test or test class, you can use the `executionTimeAllowance` API to special case a particular test or subclass. For values under 60 seconds, they'll be rounded up to 60 seconds, the nearest whole minute.
+  - Prevent a test requests unlimited time by enforcing a maximum allowance.
+  - You can customize the default time allowance and a maximum allowance either via a setting in the Test Plan or through an Xcodebuild option.
+  - Use `XCTest`'s performance APIs to automate testing for regressions in the performance. Use Instruments to identify what parts of your code are slow,
+- **Parallel Distributed Testing**
+  - Xcode build will distribute tests to each run destination by class. Each device runs a single test class at a time.
+  - If you're testing logic that is device or OS specific, this can lead to unexpected failures or skipped tests.
 
 
 ## Create custom apps for employees
