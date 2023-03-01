@@ -1,6 +1,6 @@
 # WWDC 2020 Session Notes
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/blackjacxxx?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Fblackjacx&screen_name=Blackjacxxx)
+[![Twitter Follow](https://img.shields.io/badge/follow-%40blackjacx-1DA1F2?logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Fblackjacx&screen_name=Blackjacxxx)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?color=1DA1F2&logo=paypal&style=for-the-badge)](https://www.paypal.me/STHEROLD)
 
 ## Thank You 🎉
